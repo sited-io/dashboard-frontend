@@ -1,0 +1,73 @@
+$header-height: 56px;
+
+.Header {
+  width: 100%;
+  height: $header-height;
+  padding: 0 4px;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease-out 0ms;
+  z-index: 10;
+  background-color: var(--md-sys-color-primary-container);
+}
+
+.HeaderShadow {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.HeaderLeft {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+
+.MenuIcon {
+  fill: var(--md-sys-color-on-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.MainLink {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: black;
+  margin-left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HeaderRight {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.Links {
+  margin-right: 8px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.Link {
+  color: black;
+  text-decoration: none;
+  line-height: 1.25rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.0178571429em;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 8px;
+  position: relative;
+  text-transform: none;
+}
+
+.LinkActive {
+  box-shadow: inset 0px -3px 0px 0px var(--md-sys-color-primary);
+}

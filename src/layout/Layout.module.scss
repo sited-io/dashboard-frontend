@@ -1,0 +1,15 @@
+$header-height: 56px;
+
+.Main {
+  width: 100%;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}
+
+.Content {
+  max-width: var(--medium-max-width);
+  min-height: calc(100vh - 32px);
+  margin: 0 auto;
+  padding-top: $header-height;
+  box-sizing: border-box;
+}

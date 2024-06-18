@@ -1,0 +1,29 @@
+// .Danger {
+//   --md-elevated-button-container-color: var(--primary-background-color);
+//   --md-elevated-button-label-text-color: var(--danger-content-color);
+
+//   --md-filled-button-container-color: var(--danger-content-color);
+//   --md-filled-button-label-text-color: var(--primary-background-color);
+
+//   --md-outlined-button-outline-color: var(--danger-content-color);
+//   --md-outlined-button-label-text-color: var(--danger-content-color);
+
+//   --md-text-button-label-text-color: var(--danger-content-color);
+// }
+
+.Square {
+  --md-elevated-button-container-shape: 4px;
+  --md-filled-button-container-shape: 4px;
+  --md-outlined-button-container-shape: 4px;
+}
+
+.Wide {
+  width: 100%;
+}
+
+.Small {
+  // height: 32px;
+  // min-height: 20px;
+  padding-block: 9px;
+  padding-inline: 22px;
+}

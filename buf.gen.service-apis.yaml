@@ -1,0 +1,11 @@
+version: v1
+plugins:
+  - plugin: es
+    out: src/services/
+    opt:
+      - target=ts
+
+  - plugin: connect-es
+    out: src/services/
+    opt:
+      - target=ts

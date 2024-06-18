@@ -1,0 +1,53 @@
+.Display {
+  display: block;
+  font: var(--font-display);
+}
+
+.Headline {
+  display: block;
+  font: var(--font-headline);
+}
+
+.Title {
+  display: block;
+  font: var(--font-title);
+}
+
+.Label {
+  display: block;
+  font: var(--font-label);
+}
+
+.Body {
+  display: block;
+  font: var(--font-body);
+}
+
+.Detail {
+  display: block;
+  font: var(--font-detail);
+}
+
+.Inline {
+  display: inline;
+}
+
+.Strong {
+  font-weight: 500;
+}
+
+.Light {
+  font-weight: 300;
+}
+
+.Active {
+  color: var(--active-content-color);
+}
+
+.Warn {
+  color: var(--warning-content-color);
+}
+
+.Danger {
+  color: var(--danger-content-color);
+}

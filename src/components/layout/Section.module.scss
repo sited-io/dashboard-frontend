@@ -1,0 +1,46 @@
+.Section {
+  // width: 100%;
+  padding: 1.5rem 1rem;
+  // box-sizing: border-box;
+}
+
+.Bordered {
+  margin: 1rem;
+  border: var(--primary-border);
+  border-radius: var(--medium-border-radius);
+}
+
+.Active {
+  @extend .Bordered;
+  border-color: var(--active-content-color);
+}
+
+.Danger {
+  @extend .Bordered;
+  border: var(--danger-border);
+}
+
+.Warn {
+  @extend .Bordered;
+  border-color: var(--warning-content-color);
+}
+
+.Flat {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.Padded {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.Narrow {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Centered {
+  display: flex;
+  justify-content: center;
+}

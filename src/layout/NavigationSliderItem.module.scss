@@ -1,0 +1,59 @@
+$navigation-item-height: 48px;
+
+.NavigationSliderItem {
+  $border-radius: calc($navigation-item-height / 2);
+  width: 100%;
+  height: $navigation-item-height;
+  margin-left: 16px;
+  padding: 0 16px;
+  border: none;
+  border-radius: $border-radius 0 0 $border-radius;
+
+  user-select: none;
+  font: var(--font-label);
+  text-decoration: none;
+  color: var(--header-content-color);
+  background: none;
+  outline: inherit;
+  box-sizing: border-box;
+}
+
+.NavigationSliderItem:hover {
+  cursor: pointer;
+}
+
+.Inner {
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.Action {
+  justify-content: center;
+  gap: 32px;
+}
+
+.Icon {
+  width: calc($navigation-item-height / 2.2);
+  height: calc($navigation-item-height / 2.2);
+  fill: var(--header-content-color);
+}
+
+.Label {
+  font-weight: 500;
+}
+
+.Active {
+  color: var(--active-content-color);
+  fill: var(--active-content-color);
+  background-color: var(--md-sys-color-tertiary-container);
+}
+
+.Danger {
+  color: var(--danger-content-color);
+  fill: var(--danger-content-color);
+  border-color: var(--danger-content-color);
+}
