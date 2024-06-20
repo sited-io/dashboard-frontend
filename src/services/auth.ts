@@ -4,9 +4,10 @@ import _ from "lodash";
 import { getQuery, useSession } from "vinxi/http";
 
 import { buildUrl } from "~/lib/env";
-import { hashCodeVerifier } from "~/lib/string-manipulation";
+import { hashCodeVerifier, parseJwtPayload } from "~/lib/string-manipulation";
 
 export type Session = {
+  userId?: string;
   isAuthenticated?: boolean;
   userLogin?: UserLogin;
   accessTokens?: AccessTokens;
@@ -137,6 +138,8 @@ export async function signInCallback(event: APIEvent) {
       await axios.post(`${process.env.OAUTH_URL}/oauth/v2/token`, body)
     ).data;
 
+    const claims = parseJwtPayload(accessTokenResponse.access_token);
+
     const expiresAt = new Date();
     expiresAt.setSeconds(
       expiresAt.getSeconds() + accessTokenResponse.expires_in
@@ -145,6 +148,7 @@ export async function signInCallback(event: APIEvent) {
     await session.update(
       () =>
         ({
+          userId: claims.sub,
           isAuthenticated: true,
           accessTokens: {
             accessToken: accessTokenResponse.access_token,

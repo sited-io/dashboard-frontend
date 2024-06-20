@@ -11,6 +11,7 @@ import "./normalize.scss";
 import "./theme.scss";
 import { LOCALES } from "./locales";
 import { TransProvider } from "@mbarzda/solid-i18next";
+import { WebsiteContextProvider } from "./contexts/WebsiteContext";
 
 export default function App() {
   const i18nextInstance = i18next.createInstance({
@@ -22,9 +23,11 @@ export default function App() {
 
   return (
     <TransProvider instance={i18nextInstance}>
-      <Router root={Layout}>
-        <FileRoutes />
-      </Router>
+      <WebsiteContextProvider>
+        <Router root={Layout}>
+          <FileRoutes />
+        </Router>
+      </WebsiteContextProvider>
     </TransProvider>
   );
 }

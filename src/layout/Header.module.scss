@@ -23,11 +23,16 @@ $header-height: 56px;
   justify-content: start;
   align-items: center;
   gap: 4px;
+  flex-grow: 1;
 }
 
 .MenuIcon {
   fill: var(--md-sys-color-on-surface-variant);
   color: var(--md-sys-color-on-surface-variant);
+
+  // @media only screen and (min-width: 1080px) {
+  //   display: none;
+  // }
 }
 
 .MainLink {
@@ -63,11 +68,20 @@ $header-height: 56px;
   letter-spacing: 0.0178571429em;
   font-weight: 500;
   overflow: hidden;
-  padding: 8px;
+  padding: 8px 4px;
+  margin: 0 4px;
   position: relative;
   text-transform: none;
 }
 
 .LinkActive {
-  box-shadow: inset 0px -3px 0px 0px var(--md-sys-color-primary);
+  box-shadow: inset 0px -2px 0px 0px var(--md-sys-color-primary);
+}
+
+.WebsiteSelect {
+  width: 100%;
+  max-width: 210px;
+  min-width: 100px;
+  --md-outlined-field-bottom-space: 4px;
+  --md-outlined-field-top-space: 4px;
 }
