@@ -1,0 +1,14 @@
+[Unit]
+Description=Sited.io dashboard-frontend service
+After=network.target
+
+[Service]
+User=root
+EnvironmentFile=/opt/services/dashboard-frontend/.env
+ExecStart=/home/admin/.nvm/versions/node/v22.2.0/bin/node /opt/services/dashboard-frontend/dist/server/index.mjs
+ExecReload=/home/admin/.nvm/versions/node/v22.2.0/bin/node /opt/services/dashboard-frontend/dist/server/index.mjs
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
