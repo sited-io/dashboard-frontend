@@ -169,6 +169,11 @@ export async function fetchSession(): Promise<Session | undefined> {
   "use server";
   try {
     const session = await getSession();
+    if (_.isObject(session.data) && _.isEmpty(session.data)) {
+      return {
+        isAuthenticated: false,
+      };
+    }
     return session.data as Session;
   } catch (err) {
     console.error(`[fetchSession]: ${err}`);

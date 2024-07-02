@@ -1,28 +1,20 @@
-import {
-  ParentProps,
-  Show,
-  Suspense,
-  createEffect,
-  createResource,
-} from "solid-js";
-import { useLocation, useNavigate } from "@solidjs/router";
+import { useLocation } from "@solidjs/router";
 import _ from "lodash";
+import { ParentProps, Show, createResource } from "solid-js";
 
+import { Title } from "@solidjs/meta";
+import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
+import { CreateWebsite } from "~/components/websites/CreateWebsite";
+import { useWebsiteContext } from "~/contexts/WebsiteContext";
 import { userIndexPath } from "~/routes/user/(user)";
 import { fetchSession } from "~/services/auth";
-import { websiteService } from "~/services/website";
-import { CreateWebsite } from "../components/websites/CreateWebsite";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import styles from "./Layout.module.scss";
 import { SignIn } from "./SignIn";
-import { useWebsiteContext } from "~/contexts/WebsiteContext";
-import { Title } from "@solidjs/meta";
-import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 
 export function Layout(props: ParentProps) {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [session] = createResource(fetchSession);
   const { websites, selectedWebsite } = useWebsiteContext();

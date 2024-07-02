@@ -9,11 +9,7 @@ export function ResourceBoundary(props: Props) {
   return (
     <>
       <Suspense>
-        <Show
-          when={props.resource.state === "ready" && !_.isNil(props.resource())}
-        >
-          {props.children}
-        </Show>
+        <Show when={props.resource() !== undefined}>{props.children}</Show>
       </Suspense>
     </>
   );
