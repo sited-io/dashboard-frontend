@@ -1,5 +1,5 @@
 {
-  "name": "example-basic",
+  "name": "dashboard-frontend",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev --port 8001",
