@@ -5,6 +5,8 @@ import _ from "lodash";
 
 import { PageService } from "./sited_io/websites/v1/page_connect";
 import {
+  CreatePageRequest,
+  DeletePageRequest,
   GetPageRequest,
   ListPagesRequest,
   ListPagesResponse,
@@ -12,10 +14,27 @@ import {
 } from "./sited_io/websites/v1/page_pb";
 import { WebsiteService } from "./sited_io/websites/v1/website_connect";
 import {
+  CreateWebsiteRequest,
+  DeleteWebsiteRequest,
   GetWebsiteRequest,
   ListWebsitesRequest,
+  UpdateWebsiteRequest,
   WebsiteResponse,
 } from "./sited_io/websites/v1/website_pb";
+import { withAuthHeader } from "./auth";
+import { CustomizationService } from "./sited_io/websites/v1/customization_connect";
+import {
+  PutLogoImageRequest,
+  RemoveLogoImageRequest,
+  UpdateCustomizationRequest,
+} from "./sited_io/websites/v1/customization_pb";
+import { DomainService } from "./sited_io/websites/v1/domain_connect";
+import {
+  CheckDomainStatusRequest,
+  CreateDomainRequest,
+  DeleteDomainRequest,
+  DomainResponse,
+} from "./sited_io/websites/v1/domain_pb";
 
 const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 
@@ -25,25 +44,66 @@ const websiteClient = createPromiseClient(
 );
 
 export const websiteService = {
-  async getWebiste(request: PartialMessage<GetWebsiteRequest>) {
-    "use server";
+  createWebsite: async (request: PartialMessage<CreateWebsiteRequest>) => {
+    const headers = await withAuthHeader();
+    const { website } = await websiteClient.createWebsite(request, { headers });
+    if (_.isNil(website)) {
+      throw new Error("[websiteService: response was empty");
+    }
+    return toPlainMessage(website) as WebsiteResponse;
+  },
+  getWebiste: async (request: PartialMessage<GetWebsiteRequest>) => {
     const { website } = await websiteClient.getWebsite(request);
     if (_.isNil(website)) {
       throw new Error("[websiteService]: response was empty");
     }
     return toPlainMessage(website) as WebsiteResponse;
   },
-  async listWebsites(request: PartialMessage<ListWebsitesRequest>) {
+  listWebsites: async (request: PartialMessage<ListWebsitesRequest>) => {
     try {
-      const { webistes } = await websiteClient.listWebsites(request);
-      if (_.isNil(webistes)) {
+      const { websites } = await websiteClient.listWebsites(request);
+      if (_.isNil(websites)) {
         throw new Error("[websiteService]: response was nil");
       }
-      return webistes.map((w) => toPlainMessage(w)) as WebsiteResponse[];
+      return websites.map((w) => toPlainMessage(w)) as WebsiteResponse[];
     } catch (err) {
       console.error(err);
       return [];
     }
+  },
+  updateWebsite: async (request: PartialMessage<UpdateWebsiteRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await websiteClient.updateWebsite(request, { headers });
+  },
+  deleteWebsite: async (request: PartialMessage<DeleteWebsiteRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await websiteClient.deleteWebsite(request, { headers });
+  },
+};
+
+const customizationClient = createPromiseClient(
+  CustomizationService,
+  createGrpcWebTransport({ baseUrl })
+);
+
+export const customizationService = {
+  updateCustomization: async (
+    request: PartialMessage<UpdateCustomizationRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await customizationClient.updateCustomization(request, { headers });
+  },
+  putLogoImage: async (request: PartialMessage<PutLogoImageRequest>) => {
+    const headers = await withAuthHeader();
+    const res = await customizationClient.putLogoImage(request, { headers });
+  },
+  removeLogoImage: async (request: PartialMessage<RemoveLogoImageRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await customizationClient.removeLogoImage(request, { headers });
   },
 };
 
@@ -53,20 +113,69 @@ const pageClient = createPromiseClient(
 );
 
 export const pageService = {
-  async getPage(request: PartialMessage<GetPageRequest>) {
+  createPage: async (request: PartialMessage<CreatePageRequest>) => {
     "use server";
+    const headers = await withAuthHeader();
+    const { page } = await pageClient.createPage(request, {
+      headers,
+    });
+    if (_.isNil(page)) {
+      throw new Error("[pageService.createPage]: response was empty");
+    }
+    return toPlainMessage(page) as PageResponse;
+  },
+  getPage: async (request: PartialMessage<GetPageRequest>) => {
     const { page } = await pageClient.getPage(request);
     if (_.isNil(page)) {
       throw new Error("[pageService.getPage]: response was empty");
     }
     return toPlainMessage(page) as PageResponse;
   },
-  async listPages(request: PartialMessage<ListPagesRequest>) {
-    "use server";
+  listPages: async (request: PartialMessage<ListPagesRequest>) => {
     const { pages, pagination } = await pageClient.listPages(request);
     return {
       pages: pages.map((p) => toPlainMessage(p)),
       pagination: pagination && toPlainMessage(pagination),
     } as ListPagesResponse;
+  },
+  deletePage: async (request: PartialMessage<DeletePageRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await pageClient.deletePage(request, { headers });
+  },
+};
+
+const domainClient = createPromiseClient(
+  DomainService,
+  createGrpcWebTransport({ baseUrl })
+);
+
+export const domainService = {
+  createDomain: async (request: PartialMessage<CreateDomainRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { domain } = await domainClient.createDomain(request, { headers });
+    if (_.isNil(domain)) {
+      throw new Error("[domainService.createDomain]: response was empty");
+    }
+    return toPlainMessage(domain) as DomainResponse;
+  },
+  checkDomainStatus: async (
+    request: PartialMessage<CheckDomainStatusRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { domain } = await domainClient.checkDomainStatus(request, {
+      headers,
+    });
+    if (_.isNil(domain)) {
+      throw new Error("[domainService.checkDomainStatus]: response was empty");
+    }
+    return toPlainMessage(domain) as DomainResponse;
+  },
+  deleteDomain: async (request: PartialMessage<DeleteDomainRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await domainClient.deleteDomain(request, { headers });
   },
 };

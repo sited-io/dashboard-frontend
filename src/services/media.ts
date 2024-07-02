@@ -6,9 +6,23 @@ import _ from "lodash";
 import { withAuthHeader } from "./auth";
 import { MediaService } from "./sited_io/media/v1/media_connect";
 import {
+  AddMediaToOfferRequest,
+  CompleteMultipartUploadRequest,
+  CreateMediaRequest,
+  DeleteMediaRequest,
   DownloadMediaRequest,
+  InitiateMultipartUploadRequest,
+  InitiateMultipartUploadResponse,
   ListAccessibleMediaRequest,
+  ListMediaRequest,
+  ListMediaResponse,
   MediaResponse,
+  Part,
+  PutMultipartChunkRequest,
+  PutMultipartChunkResponse,
+  RemoveMediaFromOfferRequest,
+  UpdateMediaOfferOrderingRequest,
+  UpdateMediaRequest,
 } from "./sited_io/media/v1/media_pb";
 import { MediaSubscriptionService } from "./sited_io/media/v1/media_subscription_connect";
 import {
@@ -80,6 +94,52 @@ const mediaClient = createPromiseClient(
 );
 
 export const mediaService = {
+  createMedia: async (request: PartialMessage<CreateMediaRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { media } = await mediaClient.createMedia(request, { headers });
+    if (_.isNil(media)) {
+      throw new Error("[mediaService.createMedia]: response was empty");
+    }
+    return toPlainMessage(media) as MediaResponse;
+  },
+  initiateMultipartUpload: async (
+    request: PartialMessage<InitiateMultipartUploadRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const res = await mediaClient.initiateMultipartUpload(request, { headers });
+    return toPlainMessage(res) as InitiateMultipartUploadResponse;
+  },
+  putMultipartChunk: async (
+    request: PartialMessage<PutMultipartChunkRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { part } = await mediaClient.putMultipartChunk(request, { headers });
+    if (_.isNil(part)) {
+      throw new Error("[mediaService.putMultipartChunk]: reaponse was empty");
+    }
+    return toPlainMessage(part) as Part;
+  },
+  completeMultipartUpload: async (
+    request: PartialMessage<CompleteMultipartUploadRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.completeMultipartUpload(request, { headers });
+  },
+  listMedia: async (request: PartialMessage<ListMediaRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { medias, pagination } = await mediaClient.listMedia(request, {
+      headers,
+    });
+    return {
+      medias: medias.map((m) => toPlainMessage(m)),
+      pagination: pagination && toPlainMessage(pagination),
+    } as ListMediaResponse;
+  },
   listAccessible: async (
     request: PartialMessage<ListAccessibleMediaRequest>
   ) => {
@@ -108,5 +168,34 @@ export const mediaService = {
       throw new Error("[mediaService.downloadMedia]: response was empty");
     }
     return downloadUrl;
+  },
+  updateMedia: async (request: PartialMessage<UpdateMediaRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.updateMedia(request, { headers });
+  },
+  deleteMedia: async (request: PartialMessage<DeleteMediaRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.deleteMedia(request, { headers });
+  },
+  addMediaToOffer: async (request: PartialMessage<AddMediaToOfferRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.addMediaToOffer(request, { headers });
+  },
+  updateMediaOfferOrdering: async (
+    request: PartialMessage<UpdateMediaOfferOrderingRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.updateMediaOfferOrdering(request, { headers });
+  },
+  removeMediaFromOffer: async (
+    request: PartialMessage<RemoveMediaFromOfferRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await mediaClient.removeMediaFromOffer(request, { headers });
   },
 };

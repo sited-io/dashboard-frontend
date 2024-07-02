@@ -1,0 +1,26 @@
+.EditImages {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.PlaceholderImage {
+  width: 100px;
+  height: 100px;
+}
+
+.Image {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 2px;
+  max-height: 200px;
+
+  @media only screen and (min-width: 600px) {
+    max-height: 400px;
+  }
+}

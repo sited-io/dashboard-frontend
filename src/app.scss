@@ -7,28 +7,35 @@ html {
   ::-webkit-scrollbar {
     display: none;
   }
+
+  --font-display: normal normal 400 36px "Noto Sans";
+  --font-headline: normal normal 400 24px "Noto Sans";
+  --font-title: normal normal 500 20px "Noto Sans";
+  --font-label: normal normal 500 16px "Roboto";
+  --font-body: normal normal 400 16px "Roboto";
+  --font-detail: normal normal 400 14px "Roboto";
 }
 
 .font-display {
-  font: normal normal 400 36px "Noto Sans";
+  font: var(--font-display);
 }
 
 .font-headline {
-  font: normal normal 400 24px "Noto Sans";
+  font: var(--font-headline);
 }
 
 .font-title {
-  font: normal normal 400 20px "Noto Sans";
+  font: var(--font-title);
 }
 
 .font-label {
-  font: normal normal 500 14px "Roboto";
+  font: var(--font-label);
 }
 
 .font-body {
-  font: normal normal 400 14px "Roboto";
+  font: var(--font-body);
 }
 
 .font-detail {
-  font: normal normal 400 12px "Roboto";
+  font: var(--font-detail);
 }

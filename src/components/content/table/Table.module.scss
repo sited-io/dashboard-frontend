@@ -1,0 +1,42 @@
+.Table {
+  display: grid;
+}
+
+.row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  margin: 2px 0;
+  padding: 2px 0;
+}
+
+.TableHead {
+  @extend .row;
+  border-bottom: 1px solid var(--md-sys-color-on-surface);
+}
+
+.TableRow {
+  @extend .row;
+  border-radius: 4px;
+}
+
+.TableRow:hover {
+  background-color: var(--hovered-background-color);
+}
+
+.TableCell {
+  min-width: 80px;
+  margin: auto 4px;
+  overflow-wrap: break-word;
+}
+
+.JustifyEnd {
+  min-width: unset;
+  // margin-right: 0;
+  // margin-left: auto;
+  justify-self: end;
+}
+
+.Header {
+  font: var(--font-label);
+}

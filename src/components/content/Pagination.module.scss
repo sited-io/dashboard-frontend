@@ -1,0 +1,29 @@
+.Pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem 0.2rem;
+  border: 1px solid var(--secondary-content-color);
+  border-radius: 4px;
+  background-color: inherit;
+  text-decoration: none;
+  outline: 0;
+  user-select: none;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background: var(--hovered-background);
+}
+
+.Arrow {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: var(--primary-content-color);
+}

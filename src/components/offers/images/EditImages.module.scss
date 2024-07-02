@@ -1,0 +1,46 @@
+.ImageGrid {
+  margin-bottom: 16px;
+}
+
+.ImageContainer {
+  width: 108px;
+  height: 108px;
+  padding: 4px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (min-width: 600px) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.ImageContainer:hover {
+  cursor: pointer;
+  background-color: var(--hovered-background-color);
+}
+
+.Image {
+  max-width: 100px;
+  max-height: 100px;
+
+  @media only screen and (min-width: 600px) {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+.Selected {
+  border: 2px solid var(--md-sys-color-primary);
+  border-radius: 2px;
+}
+
+.Actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}

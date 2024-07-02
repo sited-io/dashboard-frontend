@@ -7,7 +7,7 @@ $header-height: 56px;
 }
 
 .Content {
-  max-width: var(--medium-max-width);
+  max-width: 1080px;
   min-height: calc(100vh - 32px);
   margin: 0 auto;
   padding-top: $header-height;

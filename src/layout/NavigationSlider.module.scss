@@ -2,7 +2,7 @@ $slider-width: 290px;
 
 .NavigationSlider {
   position: fixed;
-  z-index: 20;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
@@ -24,7 +24,6 @@ $slider-width: 290px;
   overflow: scroll;
 
   // @media only screen and (min-width: 1080px) {
-  //   z-index: 9;
   //   transform: translate(0%);
   // }
 }

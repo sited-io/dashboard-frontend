@@ -303,9 +303,9 @@ export class ListWebsitesRequest extends Message<ListWebsitesRequest> {
  */
 export class ListWebsitesResponse extends Message<ListWebsitesResponse> {
   /**
-   * @generated from field: repeated sited_io.websites.v1.WebsiteResponse webistes = 1;
+   * @generated from field: repeated sited_io.websites.v1.WebsiteResponse websites = 1;
    */
-  webistes: WebsiteResponse[] = [];
+  websites: WebsiteResponse[] = [];
 
   /**
    * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
@@ -320,7 +320,7 @@ export class ListWebsitesResponse extends Message<ListWebsitesResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ListWebsitesResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "webistes", kind: "message", T: WebsiteResponse, repeated: true },
+    { no: 1, name: "websites", kind: "message", T: WebsiteResponse, repeated: true },
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 

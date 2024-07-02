@@ -1,5 +1,7 @@
-.light {
-  --md-sys-color-primary: rgb(68 94 145);
+:root {
+  --hovered-background-color: rgba(0, 0, 0, 0.06);
+
+  --md-sys-color-primary: rgb(68, 94, 145);
   --md-sys-color-surface-tint: rgb(68 94 145);
   --md-sys-color-on-primary: rgb(255 255 255);
   --md-sys-color-primary-container: rgb(216 226 255);
@@ -58,7 +60,7 @@
   --md-extended-color-custom-color2-on-color-container: rgb(43 23 0);
 }
 
-.dark {
+:root.theme-default-dark {
   --md-sys-color-primary: rgb(173 198 255);
   --md-sys-color-surface-tint: rgb(173 198 255);
   --md-sys-color-on-primary: rgb(16 47 96);

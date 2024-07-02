@@ -1,0 +1,52 @@
+.Redirect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primary-background-color);
+}
+
+.Container {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.Header {
+  width: 80%;
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.Logo {
+  width: 100%;
+  fill: var(--primary-content-color);
+  user-select: none;
+}
+
+.Loading {
+  min-height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer {
+  padding: 4rem 0;
+}
+
+.Headline {
+  display: block;
+  font: var(--font-headline);
+  font-weight: 400;
+}

@@ -41,7 +41,7 @@
 }
 
 .Active {
-  color: var(--active-content-color);
+  color: var(--md-sys-color-primary);
 }
 
 .Warn {
@@ -49,5 +49,5 @@
 }
 
 .Danger {
-  color: var(--danger-content-color);
+  color: var(--md-sys-color-error);
 }

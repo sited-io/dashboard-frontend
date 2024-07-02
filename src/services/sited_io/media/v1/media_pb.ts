@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { Direction } from "../../ordering/v1/ordering_pb.js";
-import { Pagination, PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.media.v1.MediaOrderByField
@@ -530,9 +530,9 @@ export class ListMediaRequest extends Message<ListMediaRequest> {
   shopId = "";
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.Pagination pagination = 2;
+   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 2;
    */
-  pagination?: Pagination;
+  pagination?: PaginationRequest;
 
   /**
    * @generated from field: optional sited_io.media.v1.MediaOrderBy order_by = 3;
@@ -553,7 +553,7 @@ export class ListMediaRequest extends Message<ListMediaRequest> {
   static readonly typeName = "sited_io.media.v1.ListMediaRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "pagination", kind: "message", T: Pagination, opt: true },
+    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
     { no: 3, name: "order_by", kind: "message", T: MediaOrderBy, opt: true },
     { no: 4, name: "filter", kind: "message", T: MediaFilter, opt: true },
   ]);
@@ -585,9 +585,9 @@ export class ListMediaResponse extends Message<ListMediaResponse> {
   medias: MediaResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.Pagination pagination = 2;
+   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
    */
-  pagination?: Pagination;
+  pagination?: PaginationResponse;
 
   constructor(data?: PartialMessage<ListMediaResponse>) {
     super();
@@ -598,7 +598,7 @@ export class ListMediaResponse extends Message<ListMediaResponse> {
   static readonly typeName = "sited_io.media.v1.ListMediaResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "medias", kind: "message", T: MediaResponse, repeated: true },
-    { no: 2, name: "pagination", kind: "message", T: Pagination },
+    { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMediaResponse {

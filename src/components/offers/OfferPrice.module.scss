@@ -1,0 +1,17 @@
+.OfferPrice {
+  text-align: end;
+}
+
+.Recurring {
+  font: var(--font-label);
+}
+
+.TrialPeriod {
+  display: block;
+  font: var(--font-label);
+  color: var(--active-content-color);
+}
+
+.Small {
+  font: var(--font-body);
+}

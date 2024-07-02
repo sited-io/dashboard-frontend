@@ -1,49 +1,34 @@
-import {
-  A,
-  PathMatch,
-  useMatch,
-  useNavigate,
-  useParams,
-} from "@solidjs/router";
+import { useTransContext } from "@mbarzda/solid-i18next";
+import { A, useMatch, useNavigate } from "@solidjs/router";
 import _ from "lodash";
-import {
-  Suspense,
-  createEffect,
-  createResource,
-  createSignal,
-  onMount,
-} from "solid-js";
+import { Show, Suspense, createSignal, onMount } from "solid-js";
 
 import { MdIcon } from "~/components/assets/MdIcon";
 import { MdIconButton } from "~/components/form/MdIconButton";
 import { MdSelect, SelectKey } from "~/components/form/MdSelect";
-import { userIndexPath } from "~/routes/user";
-import { fetchSession } from "~/services/auth";
-import { websiteService } from "~/services/website";
+import { useWebsiteContext } from "~/contexts/WebsiteContext";
+import { TKEYS } from "~/locales";
+import { indexPath } from "~/routes";
+import { configurationPath } from "~/routes/configuration";
+import { offersPath } from "~/routes/offers/(offers)";
+import { pagesPath } from "~/routes/pages/(pages)";
+import { settingsPath } from "~/routes/settings";
+import { userIndexPath } from "~/routes/user/(user)";
 import styles from "./Header.module.scss";
 import { NavigationSlider } from "./NavigationSlider";
 import { NavigationSliderItem } from "./NavigationSliderItem";
-import { useWebsiteContext } from "~/contexts/WebsiteContext";
-import { Title } from "@solidjs/meta";
-import { indexPath } from "~/routes";
-import { offersPath } from "~/routes/offers";
-import { configurationPath } from "~/routes/configuration";
-import { settingsPath } from "~/routes/settings";
-import { pagesPath } from "~/routes/pages/index";
-import { createWebsitePath } from "~/routes/create-website";
 
-export function Header() {
+type Props = {
+  hasWebsite: boolean;
+};
+
+export function Header(props: Props) {
   const navigate = useNavigate();
 
-  const { setWebsites, selectedWebsite, setSelectedWebsite } =
+  const [trans] = useTransContext();
+
+  const { websites, selectedWebsiteId, setSelectedWebsite } =
     useWebsiteContext();
-
-  const [session] = createResource(fetchSession);
-
-  const [websites, { refetch }] = createResource(
-    () => session()?.userId,
-    async (userId: string) => websiteService.listWebsites({ userId })
-  );
 
   const [showHeaderShadow, setShowHeaderShadow] = createSignal(false);
   const [showNavigationSlider, setShowNavigationSlider] = createSignal(false);
@@ -52,36 +37,20 @@ export function Header() {
     window.addEventListener("scroll", handleHeaderShadow);
   });
 
-  createEffect(async () => {
-    await refetch();
-    const _websites = websites();
-    setWebsites(_websites);
-    if (
-      _.isNil(selectedWebsite()) &&
-      !_.isNil(_websites) &&
-      !_.isEmpty(_websites)
-    ) {
-      setSelectedWebsite(_.first(_websites));
-    }
-  });
-
   function websiteOptions() {
-    return (
-      websites()?.map((w) => ({
-        name: w.name,
-        key: w.websiteId,
-      })) || []
-    );
+    const _websites = websites();
+    if (_.isNil(_websites)) {
+      return [];
+    }
+    return _websites.map((w) => ({
+      name: w.name,
+      key: w.websiteId,
+    }));
   }
 
   function handleSelectWebsite(selectKey: SelectKey) {
-    if (selectKey === "create") {
-      navigate(createWebsitePath);
-      setSelectedWebsite(undefined);
-    } else {
-      const foundWebsite = websites()?.find((w) => w.websiteId == selectKey);
-      setSelectedWebsite(foundWebsite);
-    }
+    const foundWebsite = websites()?.find((w) => w.websiteId == selectKey);
+    setSelectedWebsite(foundWebsite);
   }
 
   function handleHeaderShadow() {
@@ -106,40 +75,41 @@ export function Header() {
 
   return (
     <>
-      <Title>Dashboard - {selectedWebsite()?.name} - sited.io</Title>
-
       <div
         class={styles.Header}
         classList={{ [styles.HeaderShadow]: showHeaderShadow() }}
       >
         <div class={styles.HeaderLeft}>
-          <MdIconButton
-            class={styles.MenuIcon}
-            onClick={handleOpenNavigationSlider}
-          >
-            <MdIcon icon="menu" />
-          </MdIconButton>
-
-          <MdSelect
-            class={styles.WebsiteSelect}
-            type="outlined"
-            label="Website"
-            options={websiteOptions()}
-            selected={selectedWebsite()?.websiteId}
-            onChange={handleSelectWebsite}
-          />
+          <Show when={props.hasWebsite}>
+            <MdIconButton
+              class={styles.MenuIcon}
+              onClick={handleOpenNavigationSlider}
+            >
+              <MdIcon icon="menu" />
+            </MdIconButton>
+          </Show>
         </div>
 
         <div class={styles.HeaderRight}>
           <div class={styles.Links}>
-            <NavLink path={indexPath} label="Home" />
-            <NavLink path={pagesPath} label="Pages" />
-            {/* <NavLink path={offersPath} label="Offers" />
-            <NavLink path={configurationPath} label="Configuration" />
-            <NavLink path={settingsPath} label="Settings" /> */}
+            <NavLink
+              path={indexPath()}
+              label={trans(TKEYS.navigation.pages.Home)}
+            />
+            <Show when={props.hasWebsite}>
+              <NavLink
+                path={pagesPath()}
+                label={trans(TKEYS.navigation.pages.Pages)}
+              />
+
+              <NavLink
+                path={offersPath()}
+                label={trans(TKEYS.navigation.pages.Offers)}
+              />
+            </Show>
           </div>
 
-          <MdIconButton href={userIndexPath}>
+          <MdIconButton href={userIndexPath()}>
             <MdIcon icon="account_circle" />
           </MdIconButton>
         </div>
@@ -149,52 +119,63 @@ export function Header() {
         show={showNavigationSlider()}
         onClose={handleCloseNavigationSlider}
       >
+        <Suspense>
+          <MdSelect
+            class={styles.WebsiteSelect}
+            type="outlined"
+            label="Website"
+            options={websiteOptions}
+            selected={selectedWebsiteId}
+            onChange={handleSelectWebsite}
+          />
+        </Suspense>
+
         <NavigationSliderItem
           type="body"
-          active={Boolean(useMatch(() => indexPath)())}
+          active={Boolean(useMatch(indexPath)())}
           icon="home"
-          label="Home"
-          onClick={() => handleNavigate(indexPath)}
+          label={trans(TKEYS.navigation.pages.Home)}
+          onClick={() => handleNavigate(indexPath())}
         />
 
         <NavigationSliderItem
           type="body"
-          active={Boolean(useMatch(() => pagesPath)())}
+          active={Boolean(useMatch(pagesPath)())}
           icon="article"
-          label="Pages"
-          onClick={() => handleNavigate(pagesPath)}
+          label={trans(TKEYS.navigation.pages.Pages)}
+          onClick={() => handleNavigate(pagesPath())}
         />
 
         <NavigationSliderItem
           type="body"
-          active={Boolean(useMatch(() => configurationPath)())}
-          icon="tune"
-          label="Configuration"
-          onClick={() => handleNavigate(configurationPath)}
-        />
-
-        <NavigationSliderItem
-          type="body"
-          active={Boolean(useMatch(() => settingsPath)())}
-          icon="settings"
-          label="Settings"
-          onClick={() => handleNavigate(settingsPath)}
-        />
-
-        <NavigationSliderItem
-          type="body"
-          active={Boolean(useMatch(() => offersPath)())}
+          active={Boolean(useMatch(offersPath)())}
           icon="view_list"
-          label="Offers"
-          onClick={() => handleNavigate(offersPath)}
+          label={trans(TKEYS.navigation.pages.Offers)}
+          onClick={() => handleNavigate(offersPath())}
         />
 
         <NavigationSliderItem
           type="body"
-          active={Boolean(useMatch(() => userIndexPath)())}
+          active={Boolean(useMatch(configurationPath)())}
+          icon="tune"
+          label={trans(TKEYS.navigation.pages.Configuration)}
+          onClick={() => handleNavigate(configurationPath())}
+        />
+
+        <NavigationSliderItem
+          type="body"
+          active={Boolean(useMatch(settingsPath)())}
+          icon="settings"
+          label={trans(TKEYS.navigation.pages.Settings)}
+          onClick={() => handleNavigate(settingsPath())}
+        />
+
+        <NavigationSliderItem
+          type="body"
+          active={Boolean(useMatch(userIndexPath)())}
           icon="account_circle"
-          label="Profile"
-          onClick={() => handleNavigate(userIndexPath)}
+          label={trans(TKEYS.navigation.pages.Profile)}
+          onClick={() => handleNavigate(userIndexPath())}
         />
       </NavigationSlider>
     </>

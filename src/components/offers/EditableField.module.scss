@@ -1,0 +1,26 @@
+.EditableField {
+  position: relative;
+  margin-bottom: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  box-sizing: content-box;
+  border: 1px solid transparent;
+}
+
+.EditableField:hover {
+  cursor: pointer;
+  background-color: var(--hovered-background-color);
+  border-color: var(--md-sys-color-primary);
+}
+
+.Content {
+  margin-right: 27px;
+}
+
+.EditIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--md-sys-color-primary);
+  font-size: 20px;
+}

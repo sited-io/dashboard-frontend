@@ -1,0 +1,83 @@
+.PriceField {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.PriceInput {
+  position: relative;
+  background-color: var(--secondary-background-color);
+  flex-grow: 1;
+}
+
+.Input {
+  width: 100%;
+  height: 54px;
+  padding: 13px 15px;
+  background-color: inherit;
+  border: var(--secondary-border);
+  border-radius: 4px;
+  font: var(--font-body);
+  color: var(--primary-content-color);
+  box-sizing: border-box;
+
+  ::placeholder {
+    color: var(--secondary-content-color);
+  }
+}
+
+.Input:focus {
+  outline: none;
+  border-color: var(--active-content-color);
+}
+
+.Input:focus::placeholder {
+  opacity: 0;
+  transform: translateY(-9px);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Input:focus + label {
+  opacity: 1;
+  transform: translateY(-2.8em);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Label {
+  position: absolute;
+  opacity: 0;
+  padding: 0 6px;
+  top: 2.2em;
+  left: 11px;
+  text-align: center;
+  font: var(--font-detail);
+  color: var(--active-content-color);
+  background-color: inherit;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.LabelEdited {
+  color: var(--secondary-content-color);
+  opacity: 1;
+  transform: translateY(-2.7em);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.CurrencySelect {
+  min-width: 6rem;
+  height: 54px;
+}
+
+.HasErrors {
+  border: var(--danger-border);
+}
+
+.Error {
+  color: var(--danger-content-color);
+}
+
+.Small {
+  height: 3rem;
+}

@@ -27,9 +27,9 @@ type Props = Omit<ComponentProps<"select">, "onChange"> & {
   readonly label?: string | undefined;
   readonly menuPositioning?: "absolute" | "fixed" | undefined;
   readonly children?: SolidJSX.Element;
-  readonly options?: Option[] | undefined;
-  readonly selected?: SelectKey | Option | undefined;
-  readonly onChange?: (_value: SelectKey) => void;
+  readonly options?: () => Option[] | undefined;
+  readonly selected?: () => SelectKey | Option | undefined;
+  readonly onChange?: (_value: string) => void;
 };
 
 export function MdSelect(props: Props) {
@@ -43,7 +43,8 @@ export function MdSelect(props: Props) {
   ]);
 
   function isSelected(currentOption: SelectKey | Option) {
-    if (_.isNil(local.selected)) {
+    const selected = local.selected?.();
+    if (_.isNil(selected)) {
       return false;
     }
 
@@ -60,14 +61,10 @@ export function MdSelect(props: Props) {
       currentKey = currentOption.key;
     }
 
-    if (
-      _.isString(local.selected) ||
-      _.isNumber(local.selected) ||
-      _.isBoolean(local.selected)
-    ) {
-      selectedKey = local.selected;
+    if (_.isString(selected) || _.isNumber(selected) || _.isBoolean(selected)) {
+      selectedKey = selected;
     } else {
-      selectedKey = local.selected.key;
+      selectedKey = selected.key;
     }
 
     return currentKey === selectedKey;
@@ -80,12 +77,10 @@ export function MdSelect(props: Props) {
           <md-outlined-select
             {...other}
             menu-positioning={local.menuPositioning}
-            onChange={(event) =>
-              local.onChange?.(event.target.value as SelectKey)
-            }
+            onChange={(event) => local.onChange?.(event.target.value)}
           >
             <Show when={_.isNil(local.children)} fallback={local.children}>
-              <For each={local.options}>
+              <For each={local.options?.()}>
                 {(option) => (
                   <MdSelectOption
                     selected={isSelected(option)}
@@ -102,12 +97,10 @@ export function MdSelect(props: Props) {
           <md-filled-select
             {...other}
             menu-positioning={local.menuPositioning}
-            onChange={(event) =>
-              local.onChange?.(event.target.value as SelectKey)
-            }
+            onChange={(event) => local.onChange?.(event.target.value)}
           >
             <Show when={_.isNil(local.children)} fallback={local.children}>
-              <For each={local.options}>
+              <For each={local.options?.()}>
                 {(option) => (
                   <MdSelectOption
                     selected={isSelected(option)}

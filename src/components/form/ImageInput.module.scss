@@ -1,0 +1,39 @@
+.ImageInput {
+  display: block;
+  min-height: 42px;
+}
+
+.ImageInput:hover {
+  cursor: pointer;
+}
+
+.Input {
+  display: none;
+}
+
+.LogoLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.LogoLink:hover {
+  background-color: var(--hovered-background-color);
+  cursor: pointer;
+}
+
+.Logo {
+  max-width: 100%;
+  height: 42px;
+  object-fit: contain;
+}
+
+.PlaceholderAdd {
+  width: 42px;
+  height: 42px;
+}

@@ -1,0 +1,24 @@
+.Breadcrumbs {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.Link {
+  text-decoration: none;
+  color: var(--md-sys-color-primary);
+}
+
+.Link:hover {
+  cursor: pointer;
+  color: var(--md-sys-color-on-primary-fixed);
+}
+
+.Icon {
+  height: 7px;
+  width: 7px;
+  fill: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
+}

@@ -1,0 +1,32 @@
+.StripeButton {
+  display: flex;
+  align-items: center;
+}
+
+.StripeLogo {
+  height: 32px;
+}
+
+.Ok {
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  color: var(--green);
+  font: var(--font-body);
+  user-select: none;
+}
+
+.LoadingDialog {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OpenInNewIcon {
+  display: inline;
+  font-size: 14px;
+}

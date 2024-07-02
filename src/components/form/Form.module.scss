@@ -1,0 +1,22 @@
+.Form {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 8px;
+}
+
+.DefaultField {
+  width: 100%;
+}
+
+.Actions {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 4px;
+}
