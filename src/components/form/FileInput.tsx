@@ -1,4 +1,5 @@
-import { ComponentProps, JSX, splitProps } from "solid-js";
+import _ from "lodash";
+import { ComponentProps, JSX, createEffect, splitProps } from "solid-js";
 
 type Props = {
   readonly onValue: (_value: FileList | null) => void;

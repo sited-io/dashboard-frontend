@@ -1,6 +1,6 @@
 import { Trans } from "@mbarzda/solid-i18next";
 import _ from "lodash";
-import { createEffect, createSignal } from "solid-js";
+import { Show, createEffect, createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 
 import { Font } from "~/components/content/Font";
@@ -13,6 +13,8 @@ import { TKEYS } from "~/locales";
 import { PutLogoImageRequest } from "~/services/sited_io/websites/v1/customization_pb";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
 import { customizationService } from "~/services/website";
+import commonStyles from "./CommonForm.module.scss";
+import { FileInput } from "../form/FileInput";
 
 type Props = {
   website: WebsiteResponse;
@@ -21,7 +23,7 @@ type Props = {
 
 export function UpdateLogoImageForm(props: Props) {
   const [form, setForm] = createStore({
-    websiteId: undefined as string | undefined,
+    websiteId: props.website.websiteId,
     image: undefined as File | undefined,
     imageUrl: undefined as string | undefined,
   });
@@ -29,20 +31,6 @@ export function UpdateLogoImageForm(props: Props) {
   const [loading, setLoading] = createSignal(false);
 
   const [errors, setErrors] = createStore({ image: [] as string[] });
-
-  createEffect(() => {
-    if (_.isEmpty(form.websiteId)) {
-      setForm("websiteId", props.website.websiteId);
-    }
-  });
-
-  createEffect(() => {
-    if (_.isNil(form.image)) {
-      if (!_.isNil(props.website.customization?.logoImageUrl)) {
-        setForm("imageUrl", props.website.customization?.logoImageUrl);
-      }
-    }
-  });
 
   function resetErrors() {
     setErrors({ image: [] });
@@ -55,13 +43,19 @@ export function UpdateLogoImageForm(props: Props) {
 
   async function handleLogoImageInput(files: FileList | null) {
     resetErrors();
+
     const file = _.first(files);
-    if (!_.isNil(file)) {
+    if (_.isNil(file)) {
+      setErrors("image", ["No image selected"]);
+      return;
+    }
+    try {
       const resized = await resizeImage(URL.createObjectURL(file), 270, 270);
       setForm("image", resized);
       setForm("imageUrl", URL.createObjectURL(resized));
-    } else {
-      setErrors("image", ["No image selected"]);
+    } catch (err: any) {
+      console.error(err);
+      setErrors("image", ["Unkown error"]);
     }
   }
 
@@ -99,24 +93,58 @@ export function UpdateLogoImageForm(props: Props) {
 
   return (
     <>
-      <Font type="label" key={TKEYS.customization.labels["logo-image"]} />
-      <Form onSubmit={handlePutLogoImage}>
-        <ImageInput
-          imageUrl={form.imageUrl}
-          loading={loading}
-          onValue={handleLogoImageInput}
+      <div class={commonStyles.Fields}>
+        <Font
+          class={commonStyles.Label}
+          type="label"
+          key={TKEYS.customization.labels["logo-image"]}
         />
 
-        <div>
-          <MdButton onClick={handlePutLogoImage}>
-            <Trans key={TKEYS.form.action.Update} />
-          </MdButton>
+        <Form
+          onSubmit={handlePutLogoImage}
+          actions={
+            <>
+              <Show
+                when={
+                  _.isNil(form.imageUrl) &&
+                  !_.isNil(props.website.customization?.logoImageUrl)
+                }
+              >
+                <MdButton
+                  type="outlined"
+                  danger
+                  onClick={handleRemoveLogoImage}
+                >
+                  <Trans key={TKEYS.form.action.Delete} />
+                </MdButton>
+              </Show>
 
-          <MdButton type="outlined" danger onClick={handleRemoveLogoImage}>
-            <Trans key={TKEYS.form.action.Delete} />
-          </MdButton>
-        </div>
-      </Form>
+              <MdButton
+                onClick={handlePutLogoImage}
+                disabled={_.isNil(form.image)}
+              >
+                <Trans key={TKEYS.form.action.Update} />
+              </MdButton>
+            </>
+          }
+        >
+          <div class={commonStyles.Field}>
+            <FileInput accept="image/*" onValue={handleLogoImageInput} />
+
+            <Show
+              when={
+                !_.isNil(form.imageUrl) ||
+                !_.isNil(props.website.customization?.logoImageUrl)
+              }
+            >
+              <img
+                class={commonStyles.ImagePreview}
+                src={form.imageUrl || props.website.customization?.logoImageUrl}
+              />
+            </Show>
+          </div>
+        </Form>
+      </div>
     </>
   );
 }

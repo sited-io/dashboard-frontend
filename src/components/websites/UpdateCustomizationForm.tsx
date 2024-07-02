@@ -1,14 +1,18 @@
 import { Trans } from "@mbarzda/solid-i18next";
 import _ from "lodash";
 import { createStore } from "solid-js/store";
+
+import { Font } from "~/components/content/Font";
+import { ColorInput } from "~/components/form/ColorInput";
+import { Form } from "~/components/form/Form";
+import { MdButton } from "~/components/form/MdButton";
 import { TKEYS } from "~/locales";
 import { UpdateCustomizationRequest } from "~/services/sited_io/websites/v1/customization_pb";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
 import { customizationService } from "~/services/website";
-import { Font } from "../content/Font";
-import { ColorInput } from "../form/ColorInput";
-import { Form } from "../form/Form";
-import { MdButton } from "../form/MdButton";
+import commonStyles from "./CommonForm.module.scss";
+import { MdTextField } from "../form/MdTextField";
+import { isCssColor } from "~/lib/string-manipulation";
 
 type Props = {
   website: WebsiteResponse;
@@ -37,7 +41,12 @@ export function UpdateCustomizationForm(props: Props) {
 
   function handlePrimaryColorInput(primaryColor: string) {
     resetErrors();
-    setRequest("primaryColor", primaryColor);
+
+    if (!isCssColor(primaryColor)) {
+      setErrors("primaryColor", "not valid CSS color");
+    } else {
+      setRequest("primaryColor", primaryColor);
+    }
   }
 
   async function handleUpdateCustomization(event: SubmitEvent) {
@@ -52,17 +61,34 @@ export function UpdateCustomizationForm(props: Props) {
 
   return (
     <>
-      <Font type="label" key={TKEYS.customization.labels["primary-color"]} />
-      <Form onSubmit={handleUpdateCustomization}>
-        <ColorInput
-          value={request.primaryColor}
-          onValue={handlePrimaryColorInput}
+      <div class={commonStyles.Fields}>
+        <Font
+          class={commonStyles.Label}
+          type="label"
+          key={TKEYS.customization.labels["primary-color"]}
         />
 
-        <MdButton submit onClick={handleUpdateCustomization}>
-          <Trans key={TKEYS.form.action.Update} />
-        </MdButton>
-      </Form>
+        <Form
+          onSubmit={handleUpdateCustomization}
+          actions={
+            <MdButton submit onClick={handleUpdateCustomization}>
+              <Trans key={TKEYS.form.action.Update} />
+            </MdButton>
+          }
+        >
+          <ColorInput
+            value={() => request.primaryColor}
+            onValue={handlePrimaryColorInput}
+          />
+          <MdTextField
+            type="text"
+            value={request.primaryColor}
+            onValue={handlePrimaryColorInput}
+            error={!_.isEmpty(errors.primaryColor)}
+            errorText={errors.primaryColor}
+          />
+        </Form>
+      </div>
     </>
   );
 }

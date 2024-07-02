@@ -1,16 +1,18 @@
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import _ from "lodash";
+import { createStore } from "solid-js/store";
+
+import { Font } from "~/components/content/Font";
+import { Form } from "~/components/form/Form";
+import { MdButton } from "~/components/form/MdButton";
+import { MdTextField } from "~/components/form/MdTextField";
 import { TKEYS } from "~/locales";
-import { Font } from "../content/Font";
-import { Form } from "../form/Form";
-import { MdButton } from "../form/MdButton";
-import { MdTextField } from "../form/MdTextField";
 import {
   UpdateWebsiteRequest,
   WebsiteResponse,
 } from "~/services/sited_io/websites/v1/website_pb";
-import { createStore } from "solid-js/store";
 import { websiteService } from "~/services/website";
+import commonStyles from "./CommonForm.module.scss";
 
 type Props = {
   website: WebsiteResponse;
@@ -58,23 +60,33 @@ export function UpdateWebsiteForm(props: Props) {
 
   return (
     <>
-      <Font type="label" key={TKEYS.websites.labels.name} />
-      <Form onSubmit={handleUpdateWebsite}>
-        <MdTextField
-          style={{ width: "100%" }}
-          type="text"
-          value={request.name}
-          required
-          label={trans(TKEYS.websites.labels.name)}
-          onValue={handleNameInput}
-          error={!_.isEmpty(errors.name)}
-          errorText={errors.name}
+      <div class={commonStyles.Fields}>
+        <Font
+          class={commonStyles.Label}
+          type="label"
+          key={TKEYS.websites.labels.name}
         />
 
-        <MdButton onClick={handleUpdateWebsite}>
-          <Trans key={TKEYS.form.action.Update} />
-        </MdButton>
-      </Form>
+        <Form
+          onSubmit={handleUpdateWebsite}
+          actions={
+            <MdButton onClick={handleUpdateWebsite}>
+              <Trans key={TKEYS.form.action.Update} />
+            </MdButton>
+          }
+        >
+          <MdTextField
+            style={{ width: "100%" }}
+            type="text"
+            value={request.name}
+            required
+            label={trans(TKEYS.websites.labels.name)}
+            onValue={handleNameInput}
+            error={!_.isEmpty(errors.name)}
+            errorText={errors.name}
+          />
+        </Form>
+      </div>
     </>
   );
 }

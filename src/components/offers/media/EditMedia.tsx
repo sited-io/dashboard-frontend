@@ -120,7 +120,10 @@ export function EditMedia(props: Props) {
                 false && sortable;
 
                 return (
-                  <TableRow sortable={sortable}>
+                  <TableRow
+                    style={{ "touch-action": "none" }}
+                    sortable={sortable}
+                  >
                     <TableCell>{media.name}</TableCell>
                     <TableCell>{media.ordering.toString()}</TableCell>
                     <TableCell justifyEnd>

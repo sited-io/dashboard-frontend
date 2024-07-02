@@ -3,8 +3,8 @@ import _ from "lodash";
 import { createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 import { Font } from "~/components/content/Font";
+import { FileInput } from "~/components/form/FileInput";
 import { Form } from "~/components/form/Form";
-import { ImageInput } from "~/components/form/ImageInput";
 import { MdButton } from "~/components/form/MdButton";
 import { resizeImage } from "~/lib/image";
 import { readAsUint8Array } from "~/lib/string-manipulation";
@@ -107,11 +107,7 @@ export function AddImageDialog(props: Props) {
 
         <div slot="content">
           <Form onSubmit={handleAddImage}>
-            <ImageInput
-              imageUrl={form.imageUrl}
-              loading={uploading}
-              onValue={handleImageInput}
-            />
+            <FileInput accept="image/*" onValue={handleImageInput} />
           </Form>
         </div>
 

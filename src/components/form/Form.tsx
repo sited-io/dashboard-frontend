@@ -13,7 +13,7 @@ export function Form(props: Props) {
   return (
     <form {...others} classList={{ [styles.Form]: true }}>
       {extra.children}
-      <Show when={!_.isEmpty(extra.actions)}>
+      <Show when={!_.isNil(extra.actions)}>
         <div class={styles.Actions}>{extra.actions}</div>
       </Show>
     </form>

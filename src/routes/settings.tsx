@@ -1,4 +1,3 @@
-import { useTransContext } from "@mbarzda/solid-i18next";
 import { useNavigate } from "@solidjs/router";
 import { createResource } from "solid-js";
 
@@ -6,14 +5,13 @@ import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
 import { DeleteWebsiteForm } from "~/components/websites/DeleteWebsiteForm";
+import { UpdateDomainsForm } from "~/components/websites/UpdateDomainsForm";
 import { UpdateStripeForm } from "~/components/websites/UpdateStripeForm";
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { shopService } from "~/services/commerce";
 import { indexPath } from ".";
-import { UpdateDomainsForm } from "~/components/websites/UpdateDomainsForm";
-import { Font } from "~/components/content/Font";
 
 export const settingsPath = () => "/settings";
 export const settingsUrl = () => buildUrl(settingsPath());
@@ -64,7 +62,7 @@ export default function Settings() {
         </ResourceBoundary>
       </Section>
 
-      <Section>
+      {/* <Section>
         <SectionTitle key={TKEYS.form["critical-settings"]} />
 
         <ResourceBoundary resource={selectedWebsite}>
@@ -73,7 +71,7 @@ export default function Settings() {
             onUpdate={handleUpdateDelete}
           />
         </ResourceBoundary>
-      </Section>
+      </Section> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styles from "./ColorInput.module.scss";
 
 type Props = {
-  value: string | undefined;
+  value: () => string | undefined;
   onValue: (color: string) => void;
 };
 
@@ -13,7 +13,7 @@ export function ColorInput(props: Props) {
           for="color-picker"
           class={styles.ColorInputLabel}
           style={{
-            "background-color": props.value,
+            "background-color": props.value(),
           }}
         />
 
@@ -21,7 +21,7 @@ export function ColorInput(props: Props) {
           id="color-picker"
           class={styles.ColorInputInput}
           type="color"
-          value={props.value}
+          value={props.value()}
           onInput={({ target }) => props.onValue(target.value)}
         />
       </div>

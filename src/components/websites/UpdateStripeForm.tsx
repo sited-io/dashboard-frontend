@@ -2,18 +2,19 @@ import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import { A } from "@solidjs/router";
 import _ from "lodash";
 import { Match, Show, Switch, createResource, createSignal } from "solid-js";
+
+import { MdIcon } from "~/components/assets/MdIcon";
+import { StripeLogo } from "~/components/assets/StripeLogo";
+import { Font } from "~/components/content/Font";
+import { MdLoading } from "~/components/content/MdLoading";
+import { MdButton } from "~/components/form/MdButton";
+import { Redirect } from "~/components/navigation/Redirect";
 import { TKEYS } from "~/locales";
 import { settingsUrl } from "~/routes/settings";
 import { stripeService } from "~/services/payment";
 import { ShopResponse } from "~/services/sited_io/commerce/v1/shop_pb";
-import { MdIcon } from "../assets/MdIcon";
-import { StripeLogo } from "../assets/StripeLogo";
-import { Font } from "../content/Font";
-import { MdLoading } from "../content/MdLoading";
-import { MdButton } from "../form/MdButton";
-import { Redirect } from "../navigation/Redirect";
-import styles from "./UpdateStripeForm.module.scss";
 import commonStyles from "./CommonForm.module.scss";
+import styles from "./UpdateStripeForm.module.scss";
 
 type Props = {
   readonly shop: ShopResponse | undefined;
