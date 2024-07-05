@@ -61,7 +61,12 @@ export async function withAuthHeader() {
   }
 }
 
-export type SignInPrompt = "create" | "select_account" | "login" | undefined;
+export type SignInPrompt =
+  | "create"
+  | "select_account"
+  | "login"
+  | "none"
+  | undefined;
 
 export async function signIn(
   clientId: string,
