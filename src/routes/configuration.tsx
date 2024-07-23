@@ -10,6 +10,7 @@ import { UpdateLogoImageForm } from "~/components/websites/UpdateLogoImageForm";
 import { UpdateWebsiteForm } from "~/components/websites/UpdateWebsiteForm";
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
 import { WebsiteGuard } from "~/guards/WebsiteGuard";
+import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 
@@ -26,7 +27,7 @@ export default function Configuration() {
   }
 
   return (
-    <>
+    <Page>
       <WebsiteGuard />
       <Section>
         <SectionTitle title={trans(TKEYS.navigation.pages.Configuration)} />
@@ -48,6 +49,6 @@ export default function Configuration() {
           />
         </ResourceBoundary>
       </Section>
-    </>
+    </Page>
   );
 }

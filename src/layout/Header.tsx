@@ -75,7 +75,7 @@ export function Header(props: Props) {
 
   return (
     <>
-      <div
+      <nav
         class={styles.Header}
         classList={{ [styles.HeaderShadow]: showHeaderShadow() }}
       >
@@ -113,7 +113,7 @@ export function Header(props: Props) {
             <MdIcon icon="account_circle" />
           </MdIconButton>
         </div>
-      </div>
+      </nav>
 
       <NavigationSlider
         show={showNavigationSlider()}

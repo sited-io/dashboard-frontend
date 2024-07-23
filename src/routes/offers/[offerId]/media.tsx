@@ -1,31 +1,31 @@
-import { Trans, useTransContext } from "@mbarzda/solid-i18next";
+import { PartialMessage } from "@bufbuild/protobuf";
+import { useTransContext } from "@mbarzda/solid-i18next";
 import { useParams } from "@solidjs/router";
+import _ from "lodash";
 import { createResource, createSignal } from "solid-js";
+
+import { Font } from "~/components/content/Font";
+import { Pagination } from "~/components/content/Pagination";
 import { MdButton } from "~/components/form/MdButton";
 import { Breadcrumbs } from "~/components/layout/Breadcrumbs";
 import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
 import { EditMedia } from "~/components/offers/media/EditMedia";
+import { UploadMediaDialog } from "~/components/offers/media/UploadMediaDialog";
+import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { offerService } from "~/services/commerce";
 import { mediaService } from "~/services/media";
-import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
 import {
   MediaFilterField,
-  MediaOrderBy,
   MediaOrderByField,
 } from "~/services/sited_io/media/v1/media_pb";
 import { Direction } from "~/services/sited_io/ordering/v1/ordering_pb";
+import { PaginationRequest } from "~/services/sited_io/pagination/v1/pagination_pb";
 import { offersPath } from "../(offers)";
 import { offerDetailPath } from "./(offerId)";
-import { Font } from "~/components/content/Font";
-import { UploadMediaDialog } from "~/components/offers/media/UploadMediaDialog";
-import _ from "lodash";
-import { Pagination } from "~/components/content/Pagination";
-import { PaginationRequest } from "~/services/sited_io/pagination/v1/pagination_pb";
-import { PartialMessage } from "@bufbuild/protobuf";
 
 export const offerMediaPath = (offerId: string) =>
   "/offers/" + offerId + "/media";
@@ -98,7 +98,7 @@ export default function OfferMedia() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <ResourceBoundary resource={offer}>
           <Breadcrumbs
@@ -150,6 +150,6 @@ export default function OfferMedia() {
           </ResourceBoundary>
         </ResourceBoundary>
       </Section>
-    </>
+    </Page>
   );
 }

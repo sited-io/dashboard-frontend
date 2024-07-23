@@ -18,6 +18,8 @@
     "@solidjs/start": "^1.0.1",
     "@thisbeyond/solid-dnd": "^0.7.5",
     "axios": "^1.7.2",
+    "grapesjs": "^0.21.12",
+    "grapesjs-preset-webpage": "^1.0.3",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-icu": "^2.3.0",
@@ -32,8 +34,11 @@
     "@bufbuild/buf": "^1.33.0",
     "@bufbuild/protoc-gen-es": "^1.10.0",
     "@connectrpc/protoc-gen-connect-es": "^1.4.0",
-    "@types/lodash": "^4.17.5",
+    "@types/lodash": "^4.17.7",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
     "sass": "^1.77.6",
+    "tailwindcss": "^3.4.6",
     "vitest": "^1.6.0"
   }
 }

@@ -15,6 +15,7 @@ import { useTransContext } from "@mbarzda/solid-i18next";
 import { MdButton } from "~/components/form/MdButton";
 import { Font } from "~/components/content/Font";
 import { AddImageDialog } from "~/components/offers/images/AddImageDialog";
+import { Page } from "~/layout/Page";
 
 export const offerImagesPath = (offerId: string) =>
   "/offers/" + offerId + "/images";
@@ -46,7 +47,7 @@ export default function Images() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <ResourceBoundary resource={offer}>
           <Breadcrumbs
@@ -80,6 +81,6 @@ export default function Images() {
           />
         </ResourceBoundary>
       </Section>
-    </>
+    </Page>
   );
 }

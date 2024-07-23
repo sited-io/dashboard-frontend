@@ -26,7 +26,8 @@ import {
   PageType,
 } from "~/services/sited_io/websites/v1/page_pb";
 import { pageService } from "~/services/website";
-import { pageDetailPath } from "./[pageId]";
+import { pageDetailPath } from "./[pageId]/(pageDetail)";
+import { Page } from "~/layout/Page";
 
 export const pagesPath = () => "/pages";
 export const pagesUrl = () => buildUrl(pagesPath());
@@ -46,12 +47,6 @@ export default function Pages() {
     () => selectedWebsite()?.websiteId,
     async (websiteId: string) => pageService.listPages({ websiteId })
   );
-
-  function createPageDisabled() {
-    return !_.isNil(
-      pagesResponse()?.pages.find((p) => p.pageType === PageType.SHOP)
-    );
-  }
 
   function handleShowCreatePage() {
     setShowCreatePage(true);
@@ -87,14 +82,13 @@ export default function Pages() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <SectionTitle title={trans(TKEYS.navigation.pages.Pages)}>
           <MdButton
             type="filled-tonal"
             icon="add"
             onClick={handleShowCreatePage}
-            disabled={createPageDisabled()}
           >
             <Trans key={TKEYS.page["create-page"]} />
           </MdButton>
@@ -135,6 +129,7 @@ export default function Pages() {
                       </MdIconButton>
                       <MdIconButton
                         onClick={() => navigate(pageDetailPath(page.pageId))}
+                        disabled={page.pageType === PageType.SHOP}
                       >
                         <MdIcon icon="edit" />
                       </MdIconButton>
@@ -163,6 +158,6 @@ export default function Pages() {
           onConfirmation={handleConfirmDeletePage}
         />
       </Show>
-    </>
+    </Page>
   );
 }

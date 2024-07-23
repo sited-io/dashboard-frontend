@@ -6,6 +6,7 @@ import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
 
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
+import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { fetchSession } from "~/services/auth";
@@ -14,14 +15,10 @@ export const indexPath = () => "/";
 export const indexUrl = () => buildUrl(indexPath());
 
 export default function Home() {
-  const navigate = useNavigate();
-
-  const { selectedWebsite, websites } = useWebsiteContext();
-
-  const [session] = createResource(fetchSession);
+  const { selectedWebsite } = useWebsiteContext();
 
   return (
-    <>
+    <Page>
       <Section>
         <SectionTitle title="Dashboard" />
 
@@ -39,6 +36,6 @@ export default function Home() {
           )}
         </For>
       </Section>
-    </>
+    </Page>
   );
 }

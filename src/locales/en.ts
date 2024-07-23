@@ -24,6 +24,7 @@ export const EN: typeof TKEYS = {
     },
   },
   navigation: {
+    back: "Back",
     redirecting: "Redirecting",
     pages: {
       Home: "Home",

@@ -22,6 +22,7 @@ export const TKEYS = {
     },
   },
   navigation: {
+    back: "navigation.back",
     redirecting: "navigation.redirecting",
     pages: {
       Home: "navigation.pages.Home",

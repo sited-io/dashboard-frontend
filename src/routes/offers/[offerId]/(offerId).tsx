@@ -19,6 +19,7 @@ import { offerService } from "~/services/commerce";
 import { OfferType } from "~/services/sited_io/commerce/v1/offer_pb";
 import { offersPath } from "../(offers)";
 import { offerMediaPath } from "./media";
+import { Page } from "~/layout/Page";
 
 export const offerDetailPath = (offerId: string) => "/offers/" + offerId;
 export const offerDetailUrl = (offerId: string) =>
@@ -58,7 +59,7 @@ export default function OfferDetail() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <Breadcrumbs
           paths={[
@@ -99,6 +100,6 @@ export default function OfferDetail() {
           />
         </ResourceBoundary>
       </Section>
-    </>
+    </Page>
   );
 }

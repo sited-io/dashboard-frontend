@@ -12,6 +12,7 @@ import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { shopService } from "~/services/commerce";
 import { indexPath } from ".";
+import { Page } from "~/layout/Page";
 
 export const settingsPath = () => "/settings";
 export const settingsUrl = () => buildUrl(settingsPath());
@@ -46,7 +47,7 @@ export default function Settings() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <SectionTitle key={TKEYS.navigation.pages.Settings} />
 
@@ -72,6 +73,6 @@ export default function Settings() {
           />
         </ResourceBoundary>
       </Section> */}
-    </>
+    </Page>
   );
 }

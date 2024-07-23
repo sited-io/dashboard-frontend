@@ -14,6 +14,7 @@ import { TKEYS } from "~/locales";
 import { fetchSession, signOut } from "~/services/auth";
 import { indexPath } from "..";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
+import { Page } from "~/layout/Page";
 
 export const userIndexPath = () => "/user";
 export const userIndexUrl = () => buildUrl(userIndexPath());
@@ -52,7 +53,7 @@ export default function UserIndex() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <SectionTitle title={trans(TKEYS.navigation.pages.Profile)} />
         User ID: {session()?.userId}
@@ -75,6 +76,6 @@ export default function UserIndex() {
         onClose={handleCloseCreateWebsite}
         onUpdate={handleUpdate}
       />
-    </>
+    </Page>
   );
 }

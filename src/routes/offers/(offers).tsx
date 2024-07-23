@@ -18,6 +18,7 @@ import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { offerService, shopService } from "~/services/commerce";
 import { offerDetailPath } from "./[offerId]/(offerId)";
+import { Page } from "~/layout/Page";
 
 export const offersPath = () => "/offers";
 export const offersUrl = () => buildUrl(offersPath());
@@ -51,7 +52,7 @@ export default function Offers() {
   }
 
   return (
-    <>
+    <Page>
       <Section>
         <SectionTitle title={trans(TKEYS.navigation.pages.Offers)}>
           <MdButton
@@ -97,6 +98,6 @@ export default function Offers() {
           </ResourceBoundary>
         </ResourceBoundary>
       </Section>
-    </>
+    </Page>
   );
 }
