@@ -65,6 +65,7 @@ export const DE: typeof TKEYS = {
   page: {
     page: "Seite",
     "create-page": "Erstelle eine neue Seite",
+    "edit-page-settings": "Seiteneinstellungen",
     "home-page": "Hauptseite",
     "no-pages-yet": "Bislang keine Seiten ...",
     labels: {

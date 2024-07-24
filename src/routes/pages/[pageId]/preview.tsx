@@ -23,7 +23,7 @@ export default function Preview() {
   return (
     <Page>
       <ResourceBoundary resource={page}>
-        <PreviewStaticPage class="mt-[56px] overflow-auto" page={page()!} />
+        <PreviewStaticPage class="overflow-auto" page={page()!} />
       </ResourceBoundary>
     </Page>
   );

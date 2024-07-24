@@ -11,6 +11,7 @@ import {
   ListPagesRequest,
   ListPagesResponse,
   PageResponse,
+  UpdatePageRequest,
 } from "./sited_io/websites/v1/page_pb";
 import { WebsiteService } from "./sited_io/websites/v1/website_connect";
 import {
@@ -137,6 +138,15 @@ export const pageService = {
       pages: pages.map((p) => toPlainMessage(p)),
       pagination: pagination && toPlainMessage(pagination),
     } as ListPagesResponse;
+  },
+  updatePage: async (request: PartialMessage<UpdatePageRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    const { page } = await pageClient.updatePage(request, { headers });
+    if (_.isNil(page)) {
+      throw new Error("[pageService.updatePage]: response was empty");
+    }
+    return toPlainMessage(page) as PageResponse;
   },
   deletePage: async (request: PartialMessage<DeletePageRequest>) => {
     "use server";

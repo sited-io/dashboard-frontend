@@ -20,7 +20,7 @@ export function DeleteConfirmationDialog(props: Props) {
   return (
     <MdDialog open={Boolean(props.show)} onClose={props.onCancel}>
       <div slot="headline">
-        <Trans key={TKEYS.form.action["Confirm-Deletion?"]} />
+        <Font type="title" key={TKEYS.form.action["Confirm-Deletion?"]} />
       </div>
 
       <div slot="content">

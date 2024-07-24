@@ -63,6 +63,7 @@ export const EN: typeof TKEYS = {
   page: {
     page: "page",
     "create-page": "Create a new Page",
+    "edit-page-settings": "Edit Page Settings",
     "home-page": "Home Page",
     "no-pages-yet": "No pages yet ...",
     labels: {

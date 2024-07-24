@@ -5,6 +5,7 @@ dist
 .vercel
 .netlify
 .vinxi
+.notes
 
 # Environment
 .env*

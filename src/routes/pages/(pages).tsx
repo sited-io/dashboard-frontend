@@ -28,6 +28,7 @@ import {
 import { pageService } from "~/services/website";
 import { pageDetailPath } from "./[pageId]/(pageDetail)";
 import { Page } from "~/layout/Page";
+import { EditPageSettingsDialog } from "~/components/pages/EditPageSettingsDialog";
 
 export const pagesPath = () => "/pages";
 export const pagesUrl = () => buildUrl(pagesPath());
@@ -40,13 +41,22 @@ export default function Pages() {
   const { selectedWebsite } = useWebsiteContext();
 
   const [showCreatePage, setShowCreatePage] = createSignal(false);
-  const [showDeletePage, setShowDeletePage] = createSignal(false);
+  const [pageToEditSettings, setPageToEditSettings] =
+    createSignal<PageResponse>();
   const [pageToDelete, setPageToDelete] = createSignal<PageResponse>();
 
   const [pagesResponse, pagesActions] = createResource(
     () => selectedWebsite()?.websiteId,
     async (websiteId: string) => pageService.listPages({ websiteId })
   );
+
+  function pagesDisplay() {
+    return _.orderBy(
+      pagesResponse()?.pages,
+      ["isHomePage", "path"],
+      ["desc", "asc"]
+    );
+  }
 
   function handleShowCreatePage() {
     setShowCreatePage(true);
@@ -56,14 +66,22 @@ export default function Pages() {
     setShowCreatePage(false);
   }
 
-  function handleCancelDeletePage() {
-    setShowDeletePage(false);
-    setPageToDelete();
+  function handleStartEditPageSettings(pageId: bigint) {
+    setPageToEditSettings(
+      pagesResponse()?.pages.find((p) => p.pageId === pageId)
+    );
+  }
+
+  function handleCancelEditPageSettings() {
+    setPageToEditSettings();
   }
 
   function handleStartDeletePage(pageId: bigint) {
     setPageToDelete(pagesResponse()?.pages.find((p) => p.pageId === pageId));
-    setShowDeletePage(true);
+  }
+
+  function handleCancelDeletePage() {
+    setPageToDelete();
   }
 
   async function handleConfirmDeletePage() {
@@ -77,7 +95,8 @@ export default function Pages() {
 
   async function handleUpdate() {
     setShowCreatePage(false);
-    setShowDeletePage(false);
+    setPageToEditSettings();
+    setPageToDelete();
     await pagesActions.refetch();
   }
 
@@ -103,7 +122,7 @@ export default function Pages() {
           </TableHead>
           <Suspense fallback={<ContentLoading />}>
             <For
-              each={pagesResponse()?.pages}
+              each={pagesDisplay()}
               fallback={
                 <div>
                   <Font type="body" key={TKEYS.page["no-pages-yet"]} />
@@ -122,16 +141,22 @@ export default function Pages() {
                       />
                     </TableCell>
                     <TableCell justifyEnd>
+                      {/* <Show when={page.pageType === PageType.STATIC}>
+                        <MdIconButton
+                          onClick={() => navigate(pageDetailPath(page.pageId))}
+                        >
+                          <MdIcon icon="edit" />
+                        </MdIconButton>
+                      </Show> */}
+                      <MdIconButton
+                        onClick={() => handleStartEditPageSettings(page.pageId)}
+                      >
+                        <MdIcon icon="settings" />
+                      </MdIconButton>
                       <MdIconButton
                         onClick={() => handleStartDeletePage(page.pageId)}
                       >
                         <MdIcon icon="delete" />
-                      </MdIconButton>
-                      <MdIconButton
-                        onClick={() => navigate(pageDetailPath(page.pageId))}
-                        disabled={page.pageType === PageType.SHOP}
-                      >
-                        <MdIcon icon="edit" />
                       </MdIconButton>
                     </TableCell>
                   </TableRow>
@@ -150,8 +175,15 @@ export default function Pages() {
           onUpdate={handleUpdate}
         />
 
+        <EditPageSettingsDialog
+          show={!_.isNil(pageToEditSettings())}
+          page={pageToEditSettings()}
+          onClose={handleCancelEditPageSettings}
+          onUpdate={handleUpdate}
+        />
+
         <DeleteConfirmationDialog
-          show={showDeletePage()}
+          show={!_.isNil(pageToDelete())}
           item={trans(TKEYS.page.page)}
           itemName={pageToDelete()?.title}
           onCancel={handleCancelDeletePage}

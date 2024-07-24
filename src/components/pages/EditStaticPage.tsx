@@ -1,16 +1,25 @@
-import grapesjs, { Editor } from "grapesjs";
-import "grapesjs/dist/css/grapes.min.css";
-import { onMount } from "solid-js";
-
-import "./EditStaitcPage.scss";
-import { Page } from "~/layout/Page";
-import { useNavigate } from "@solidjs/router";
-import { pagesPath } from "~/routes/pages/(pages)";
-import { MdIcon } from "../assets/MdIcon";
 import { useTransContext } from "@mbarzda/solid-i18next";
+import { useNavigate } from "@solidjs/router";
+import grapesjs, { Editor } from "grapesjs";
+import { onMount } from "solid-js";
+// import grapesjsTailwind from "grapesjs-tailwind";
+
 import { TKEYS } from "~/locales";
+import { pagesPath } from "~/routes/pages/(pages)";
+import "./EditStaitcPage.scss";
 
 type Props = {};
+
+function customComponents(editor: Editor) {
+  editor.DomComponents.addType("section", {
+    isComponent: (el: HTMLElement) => el.tagName === "SECTION",
+    model: {
+      defaults: {
+        tagName: "section",
+      },
+    },
+  });
+}
 
 export function EditStaticPage(props: Props) {
   const navigate = useNavigate();
@@ -23,59 +32,18 @@ export function EditStaticPage(props: Props) {
     editor = grapesjs.init({
       container: "#gjs",
       fromElement: true,
+      height: "none",
       mediaCondition: "min-width",
+      plugins: [customComponents],
       panels: {
         defaults: [
           {
-            id: "basic-actions",
-            el: ".panel__basic-actions",
-            buttons: [
-              {
-                id: "navigate-back-to-pages",
-                label: trans(TKEYS.navigation.back),
-                command() {
-                  navigate(pagesPath());
-                },
-              },
-              {
-                id: "save-page",
-                label: trans(TKEYS.form.action.Save),
-                command() {
-                  handleSavePage();
-                },
-              },
-            ],
-          },
-          {
-            id: "panel-switcher",
-            el: ".panel__switcher",
-            buttons: [
-              {
-                id: "show-layers",
-                active: true,
-                label: "Layers",
-                command: "show-layers",
-                togglable: false,
-              },
-              {
-                id: "show-style",
-                active: true,
-                label: "Styles",
-                command: "show-styles",
-                togglable: false,
-              },
-              {
-                id: "show-traits",
-                active: true,
-                label: "Traits",
-                command: "show-traits",
-                togglable: false,
-              },
-            ] as any,
+            id: "panel-top",
+            el: "#panelTop",
           },
           {
             id: "panel-devices",
-            el: ".panel__devices",
+            el: "#panel_devices",
             buttons: [
               {
                 id: "device-mobile",
@@ -93,25 +61,72 @@ export function EditStaticPage(props: Props) {
             ],
           },
           {
+            id: "panel-switcher",
+            el: "#panel_switcher",
+            buttons: [
+              {
+                id: "show-layers",
+                label: "Layers",
+                command: "show-layers",
+                togglable: false,
+                active: true,
+              },
+              {
+                id: "show-style",
+                label: "Styles",
+                command: "show-styles",
+                togglable: false,
+              },
+              {
+                id: "show-traits",
+                label: "Traits",
+                command: "show-traits",
+                togglable: false,
+              },
+            ] as any,
+          },
+          {
             id: "layers",
-            el: ".panel__configurations",
+            el: "#panelConfigurations",
             // Make the panel resizable
             resizable: {
-              maxDim: 350,
-              minDim: 200,
-              tc: false, // Top handler
-              cl: true, // Left handler
+              minDim: 50,
+              tc: true, // Top handler
+              cl: false, // Left handler
               cr: false, // Right handler
               bc: false, // Bottom handler
-              // Being a flex child we need to change `flex-basis` property
-              // instead of the `width` (default)
-              keyWidth: "flex-basis",
+              keyWidth: "min-height",
+              keyHeight: "min-height",
             },
+          },
+          {
+            id: "panel-bottom",
+            el: "#panelBottom",
+          },
+          {
+            id: "panel-actions",
+            el: "#panelActions",
+            buttons: [
+              {
+                id: "navigate-back-to-pages",
+                label: trans(TKEYS.navigation.back),
+                command() {
+                  navigate(pagesPath());
+                },
+              },
+              {
+                id: "save-page",
+                label: trans(TKEYS.form.action.Save),
+                command() {
+                  handleSavePage();
+                },
+              },
+            ],
           },
         ],
       },
       layerManager: {
-        appendTo: ".layers-container",
+        appendTo: "#layersContainer",
       },
       blockManager: {
         appendTo: "#blocks",
@@ -119,11 +134,11 @@ export function EditStaticPage(props: Props) {
           {
             id: "section", // id is mandatory
             label: "<b>Section</b>", // You can use HTML/SVG inside labels
-            attributes: { class: "gjs-block-section" },
-            content: `<section>
-              <h1>This is a simple title</h1>
-              <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-            </section>`,
+            attributes: { style: "min-height: 20px;" },
+            content: {
+              type: "section",
+              style: { "min-height": "20px" },
+            },
           },
           {
             id: "text",
@@ -145,10 +160,10 @@ export function EditStaticPage(props: Props) {
         ],
       },
       selectorManager: {
-        appendTo: ".styles-container",
+        appendTo: "#stylesContainer",
       },
       styleManager: {
-        appendTo: ".styles-container",
+        appendTo: "#stylesContainer",
         sectors: [
           {
             name: "Dimension",
@@ -185,7 +200,7 @@ export function EditStaticPage(props: Props) {
         ],
       },
       traitManager: {
-        appendTo: ".traits-container",
+        appendTo: "#traitsContainer",
       },
       deviceManager: {
         devices: [
@@ -217,61 +232,65 @@ export function EditStaticPage(props: Props) {
 
     editor.setDevice("Mobile");
 
-    editor.Panels.addPanel({
-      id: "panel-top",
-      el: ".panel__top",
-    });
-
     // Define commands
     editor.Commands.add("show-layers", {
-      getRowEl(editor: any) {
-        return editor.getContainer().closest(".editor-row");
+      getLayersEl(): HTMLElement | null | undefined {
+        return document.getElementById("layersContainer");
       },
-      getLayersEl(row: any) {
-        return row.querySelector(".layers-container");
-      },
-
       run(editor, sender) {
-        const lmEl = this.getLayersEl(this.getRowEl(editor));
-        lmEl.style.display = "";
+        const lmEl = this.getLayersEl();
+        if (lmEl?.style) {
+          lmEl.style.display = "";
+        }
       },
       stop(editor, sender) {
-        const lmEl = this.getLayersEl(this.getRowEl(editor));
-        lmEl.style.display = "none";
+        const lmEl = this.getLayersEl();
+        if (lmEl?.style) {
+          lmEl.style.display = "none";
+        }
       },
     });
+
     editor.Commands.add("show-styles", {
-      getRowEl(editor: any) {
-        return editor.getContainer().closest(".editor-row");
+      getStyleEl(): HTMLElement | null | undefined {
+        return document.getElementById("stylesContainer");
       },
-      getStyleEl(row: any) {
-        return row.querySelector(".styles-container");
+      run(editor, sender) {
+        const smEl = this.getStyleEl();
+        if (smEl?.style) {
+          smEl.style.display = "";
+        }
       },
+      stop(editor, sender) {
+        const smEl = this.getStyleEl();
+        if (smEl?.style) {
+          smEl.style.display = "none";
+        }
+      },
+    });
 
-      run(editor, sender) {
-        const smEl = this.getStyleEl(this.getRowEl(editor));
-        smEl.style.display = "";
-      },
-      stop(editor, sender) {
-        const smEl = this.getStyleEl(this.getRowEl(editor));
-        smEl.style.display = "none";
-      },
-    });
     editor.Commands.add("show-traits", {
-      getTraitsEl(editor: any) {
-        const row = editor.getContainer().closest(".editor-row");
-        return row.querySelector(".traits-container");
+      getTraitsEl(): HTMLElement | null | undefined {
+        return document.getElementById("traitsContainer");
       },
       run(editor, sender) {
-        this.getTraitsEl(editor).style.display = "";
+        const el = this.getTraitsEl();
+        if (el?.style) {
+          el.style.display = "";
+        }
       },
       stop(editor, sender) {
-        this.getTraitsEl(editor).style.display = "none";
+        const el = this.getTraitsEl();
+        if (el?.style) {
+          el.style.display = "none";
+        }
       },
     });
+
     editor.Commands.add("set-device-desktop", {
       run: (editor) => editor.setDevice("Desktop"),
     });
+
     editor.Commands.add("set-device-mobile", {
       run: (editor) => editor.setDevice("Mobile"),
     });
@@ -284,25 +303,44 @@ export function EditStaticPage(props: Props) {
 
   return (
     <>
-      <div class="panel__top">
-        <div class="panel__basic-actions"></div>
-        <div class="panel__devices"></div>
-        <div class="panel__switcher"></div>
-      </div>
-
-      <div id="blocks"></div>
-
-      <div class="editor-row">
-        <div class="editor-canvas">
-          <div id="gjs">
-            <h1>Hello World</h1>
-          </div>
+      <div class="h-screen flex flex-col">
+        <div
+          id="panelTop"
+          class="static p-0 w-full flex initial justify-between"
+        >
+          {/* <div id="panel_basicActions" class="static"></div> */}
+          <div id="panel_devices" class="static"></div>
+          <div id="panel_switcher" class="static"></div>
         </div>
 
-        <div class="panel__configurations">
-          <div class="layers-container"></div>
-          <div class="styles-container"></div>
-          <div class="traits-container"></div>
+        <div id="blocks" class="static"></div>
+
+        <div id="gjs" class="flex-auto">
+          <section style={{ padding: "0 8px" }}>
+            <h1 style={{ "text-align": "center" }}>Title</h1>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+              aliquam.
+            </p>
+
+            <h2>Subtitle</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+              laboriosam. Fugiat neque rerum officia maiores, tempora asperiores
+              voluptate incidunt nobis.
+            </p>
+          </section>
+        </div>
+
+        <div id="panelConfigurations" class="relative w-full min-h-52">
+          <div id="layersContainer" style={{ display: "none" }}></div>
+          <div id="stylesContainer" style={{ display: "none" }}></div>
+          <div id="traitsContainer" style={{ display: "none" }}></div>
+        </div>
+
+        <div id="panelBottom" class="static w-full">
+          <div id="panelActions" class="static w-full"></div>
         </div>
       </div>
     </>

@@ -58,7 +58,12 @@ export class PageResponse extends Message<PageResponse> {
   title = "";
 
   /**
-   * @generated from field: string path = 5;
+   * @generated from field: bool is_home_page = 5;
+   */
+  isHomePage = false;
+
+  /**
+   * @generated from field: string path = 6;
    */
   path = "";
 
@@ -74,7 +79,8 @@ export class PageResponse extends Message<PageResponse> {
     { no: 2, name: "page_type", kind: "enum", T: proto3.getEnumType(PageType) },
     { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "is_home_page", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PageResponse {
@@ -123,6 +129,11 @@ export class CreatePageRequest extends Message<CreatePageRequest> {
    */
   isHomePage = false;
 
+  /**
+   * @generated from field: optional string path = 6;
+   */
+  path?: string;
+
   constructor(data?: PartialMessage<CreatePageRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -136,6 +147,7 @@ export class CreatePageRequest extends Message<CreatePageRequest> {
     { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "is_home_page", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePageRequest {
@@ -393,6 +405,11 @@ export class UpdatePageRequest extends Message<UpdatePageRequest> {
    */
   isHomePage?: boolean;
 
+  /**
+   * @generated from field: optional string path = 6;
+   */
+  path?: string;
+
   constructor(data?: PartialMessage<UpdatePageRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -406,6 +423,7 @@ export class UpdatePageRequest extends Message<UpdatePageRequest> {
     { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 5, name: "is_home_page", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePageRequest {

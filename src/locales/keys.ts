@@ -61,6 +61,7 @@ export const TKEYS = {
   page: {
     page: "page.page",
     "create-page": "page.create-page",
+    "edit-page-settings": "page.edit-page-settings",
     "home-page": "page.home-page",
     "no-pages-yet": "page.no-pages-yet",
     labels: {
