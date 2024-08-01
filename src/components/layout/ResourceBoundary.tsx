@@ -1,5 +1,6 @@
 import _ from "lodash";
 import { ParentProps, Resource, Show, Suspense } from "solid-js";
+import { ContentLoading } from "./ContentLoading";
 
 type Props = {
   resource: Resource<any>;
@@ -8,7 +9,7 @@ type Props = {
 export function ResourceBoundary(props: Props) {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<ContentLoading />}>
         <Show when={props.resource() !== undefined}>{props.children}</Show>
       </Suspense>
     </>

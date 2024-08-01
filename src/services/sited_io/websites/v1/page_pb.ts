@@ -12,9 +12,9 @@ import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagin
  */
 export enum PageType {
   /**
-   * @generated from enum value: PAGE_TYPE_USPECIFIED = 0;
+   * @generated from enum value: PAGE_TYPE_UNSPECIFIED = 0;
    */
-  USPECIFIED = 0,
+  UNSPECIFIED = 0,
 
   /**
    * @generated from enum value: PAGE_TYPE_STATIC = 1;
@@ -28,7 +28,7 @@ export enum PageType {
 }
 // Retrieve enum metadata with: proto3.getEnumType(PageType)
 proto3.util.setEnumType(PageType, "sited_io.websites.v1.PageType", [
-  { no: 0, name: "PAGE_TYPE_USPECIFIED" },
+  { no: 0, name: "PAGE_TYPE_UNSPECIFIED" },
   { no: 1, name: "PAGE_TYPE_STATIC" },
   { no: 2, name: "PAGE_TYPE_SHOP" },
 ]);
@@ -45,7 +45,7 @@ export class PageResponse extends Message<PageResponse> {
   /**
    * @generated from field: sited_io.websites.v1.PageType page_type = 2;
    */
-  pageType = PageType.USPECIFIED;
+  pageType = PageType.UNSPECIFIED;
 
   /**
    * @generated from field: string content_id = 3;
@@ -112,7 +112,7 @@ export class CreatePageRequest extends Message<CreatePageRequest> {
   /**
    * @generated from field: sited_io.websites.v1.PageType page_type = 2;
    */
-  pageType = PageType.USPECIFIED;
+  pageType = PageType.UNSPECIFIED;
 
   /**
    * @generated from field: string content_id = 3;

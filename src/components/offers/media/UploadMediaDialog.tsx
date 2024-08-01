@@ -70,17 +70,17 @@ export function UploadMediaDialog(props: Props) {
   }
 
   async function handleUploadMedia(event: SubmitEvent) {
-    event.preventDefault();
-
-    setUploading(true);
-
-    if (_.isNil(form.file)) {
-      setErrors("file", ["file required"]);
-      setUploading(false);
-      return;
-    }
-
     try {
+      event.preventDefault();
+
+      setUploading(true);
+
+      if (_.isNil(form.file)) {
+        setErrors("file", ["file required"]);
+        setUploading(false);
+        return;
+      }
+
       let media: MediaResponse;
       if (form.file.size < CHUNKSIZE) {
         media = await uploadSimple();
@@ -95,11 +95,12 @@ export function UploadMediaDialog(props: Props) {
       });
 
       handleUpdate();
+      setUploading(false);
     } catch (err) {
       console.error(err);
+      setUploading(false);
+      throw err;
     }
-
-    setUploading(false);
   }
 
   async function uploadSimple() {
@@ -134,23 +135,15 @@ export function UploadMediaDialog(props: Props) {
       const end = i + CHUNKSIZE;
       const chunk = await readAsUint8Array(form.file!, i, end);
       totalRead += chunk.length;
-      try {
-        const part = await mediaService.putMultipartChunk({
-          mediaId: media.mediaId,
-          uploadId: initialized.uploadId,
-          partNumber,
-          chunk,
-        });
-        partNumber += 1;
-        parts.push(part);
-        setUploadedBytes(totalRead);
-      } catch (err: any) {
-        setUploading(false);
-
-        console.error(err);
-
-        throw err;
-      }
+      const part = await mediaService.putMultipartChunk({
+        mediaId: media.mediaId,
+        uploadId: initialized.uploadId,
+        partNumber,
+        chunk,
+      });
+      partNumber += 1;
+      parts.push(part);
+      setUploadedBytes(totalRead);
     }
 
     await mediaService.completeMultipartUpload({
