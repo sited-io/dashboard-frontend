@@ -1,6 +1,5 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import "grapesjs/dist/css/grapes.min.css";
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import ICU from "i18next-icu";
