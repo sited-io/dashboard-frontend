@@ -149,6 +149,7 @@ export function EditMedia(props: Props) {
         <EditMediaDialog
           show={!_.isNil(mediaToEdit())}
           media={mediaToEdit()!}
+          offer={props.offer}
           onClose={handleCloseEditMedia}
           onUpdate={handleUpdate}
         />

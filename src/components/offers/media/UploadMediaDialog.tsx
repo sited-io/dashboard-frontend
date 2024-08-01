@@ -15,12 +15,12 @@ import { mediaService } from "~/services/media";
 import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
 import { MediaResponse, Part } from "~/services/sited_io/media/v1/media_pb";
 
-const CHUNKSIZE = 1024 * 1024 * 5;
+const CHUNKSIZE = 1000 * 1000 * 5 - 1; // 5MB - 1 byte
 
 type Props = {
   show: boolean;
   offer: OfferResponse;
-  nextOrdering?: bigint | undefined;
+  nextOrdering: number;
   onClose: () => void;
   onUpdate: () => void;
 };
@@ -31,7 +31,7 @@ export function UploadMediaDialog(props: Props) {
   const [form, setForm] = createStore({
     file: undefined as File | undefined,
     name: "",
-    ordering: props.nextOrdering || BigInt(1),
+    ordering: BigInt(props.nextOrdering),
   });
 
   const [errors, setErrors] = createStore({

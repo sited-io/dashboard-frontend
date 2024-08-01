@@ -68,13 +68,6 @@ export default function OfferMedia() {
 
   const [showUploadMedia, setShowUploadMedia] = createSignal(false);
 
-  function nextMediaOrdering() {
-    const lastOrdering = _.max(medias()?.medias.map((m) => m.ordering));
-    if (!_.isNil(lastOrdering)) {
-      return lastOrdering + BigInt(1);
-    }
-  }
-
   function handleShowUploadMedia() {
     setShowUploadMedia(true);
   }
@@ -143,7 +136,7 @@ export default function OfferMedia() {
             <UploadMediaDialog
               show={showUploadMedia()}
               offer={offer()!}
-              nextOrdering={nextMediaOrdering()}
+              nextOrdering={medias()?.pagination?.totalElements || 0 + 1}
               onClose={handleCloseUploadMedia}
               onUpdate={handleUpdate}
             />

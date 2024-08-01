@@ -95,7 +95,6 @@ const mediaClient = createPromiseClient(
 
 export const mediaService = {
   createMedia: async (request: PartialMessage<CreateMediaRequest>) => {
-    "use server";
     const headers = await withAuthHeader();
     const { media } = await mediaClient.createMedia(request, { headers });
     if (_.isNil(media)) {
@@ -106,7 +105,6 @@ export const mediaService = {
   initiateMultipartUpload: async (
     request: PartialMessage<InitiateMultipartUploadRequest>
   ) => {
-    "use server";
     const headers = await withAuthHeader();
     const res = await mediaClient.initiateMultipartUpload(request, { headers });
     return toPlainMessage(res) as InitiateMultipartUploadResponse;
@@ -114,7 +112,6 @@ export const mediaService = {
   putMultipartChunk: async (
     request: PartialMessage<PutMultipartChunkRequest>
   ) => {
-    "use server";
     const headers = await withAuthHeader();
     const { part } = await mediaClient.putMultipartChunk(request, { headers });
     if (_.isNil(part)) {
@@ -125,7 +122,6 @@ export const mediaService = {
   completeMultipartUpload: async (
     request: PartialMessage<CompleteMultipartUploadRequest>
   ) => {
-    "use server";
     const headers = await withAuthHeader();
     await mediaClient.completeMultipartUpload(request, { headers });
   },
