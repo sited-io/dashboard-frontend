@@ -1,4 +1,3 @@
-import grapesjs, { Editor } from "grapesjs";
 import _ from "lodash";
 import { createSignal, onMount, Show } from "solid-js";
 import { PageResponse } from "~/services/sited_io/websites/v1/page_pb";
@@ -9,24 +8,27 @@ type Props = {
 };
 
 export function PreviewStaticPage(props: Props) {
-  const [editor, setEditor] = createSignal<Editor>();
+  const [html, setHtml] = createSignal("");
+  const [css, setCss] = createSignal("");
 
   onMount(async () => {
-    const storedProjectData = localStorage.getItem("gjsProject");
-    if (!_.isNil(storedProjectData)) {
-      const projectData = JSON.parse(storedProjectData);
-      const e = grapesjs.init({ headless: true });
-      e.loadProjectData(projectData);
-      setEditor(e);
+    const html = localStorage?.getItem("static_content_html");
+    if (html) {
+      setHtml(html);
+    }
+    const css = localStorage?.getItem("static_content_css");
+    if (css) {
+      setCss(css);
     }
   });
 
   return (
     <div class={props.class}>
-      <Show when={!_.isNil(editor())}>
-        <style>{editor()!.getCss()}</style>
-        <script>{editor()!.getJs()}</script>
-        <div innerHTML={editor()!.getHtml()}></div>
+      <Show when={!_.isNil(css()) && !_.isEmpty(css())}>
+        <style>{css()}</style>
+      </Show>
+      <Show when={!_.isNil(html()) && !_.isEmpty(html())}>
+        <div innerHTML={html()}></div>
       </Show>
     </div>
   );

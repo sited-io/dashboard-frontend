@@ -2,7 +2,6 @@ import { useParams } from "@solidjs/router";
 import { createResource } from "solid-js";
 import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { PreviewStaticPage } from "~/components/pages/PreviewStaticPage";
-import { Header } from "~/layout/Header";
 import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { pageService } from "~/services/website";
@@ -23,7 +22,7 @@ export default function Preview() {
   return (
     <Page>
       <ResourceBoundary resource={page}>
-        <PreviewStaticPage class="overflow-auto" page={page()!} />
+        <PreviewStaticPage page={page()!} />
       </ResourceBoundary>
     </Page>
   );

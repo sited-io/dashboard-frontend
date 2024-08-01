@@ -1,0 +1,4 @@
+#editor:empty:before {
+  content: attr(data-placeholder);
+  color: gray
+}

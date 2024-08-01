@@ -1,17 +1,15 @@
 import { useTransContext } from "@mbarzda/solid-i18next";
 import { useParams } from "@solidjs/router";
-import { Match, Suspense, Switch, createResource } from "solid-js";
+import { Match, Switch, createResource } from "solid-js";
 
 import { Breadcrumbs } from "~/components/layout/Breadcrumbs";
-import { ContentLoading } from "~/components/layout/ContentLoading";
-import { Section } from "~/components/layout/Section";
+import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { EditStaticPage } from "~/components/pages/EditStaticPage";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
+import { pagesPath } from "~/routes/pages/(pages)";
 import { PageType } from "~/services/sited_io/websites/v1/page_pb";
 import { pageService } from "~/services/website";
-import { pagesPath } from "../(pages)";
-import _ from "lodash";
 
 export const pageDetailPath = (pageId: bigint) => "/pages/" + pageId.toString();
 export const pageDetailUrl = (pageId: bigint) =>
@@ -29,7 +27,7 @@ export default function PageDetail() {
 
   return (
     <>
-      <Suspense fallback={<ContentLoading />}>
+      <ResourceBoundary resource={page}>
         <Switch>
           <Match when={page()?.pageType === PageType.SHOP}>
             <Breadcrumbs
@@ -45,10 +43,10 @@ export default function PageDetail() {
             <p>Shop</p>
           </Match>
           <Match when={page()?.pageType === PageType.STATIC}>
-            <EditStaticPage />
+            <EditStaticPage page={page()!} />
           </Match>
         </Switch>
-      </Suspense>
+      </ResourceBoundary>
     </>
   );
 }
