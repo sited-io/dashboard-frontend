@@ -24,7 +24,17 @@ export default function Home() {
 
         <Font type="title" key={TKEYS.websites.labels.domains} />
         <For each={selectedWebsite()?.domains}>
-          {(domain) => <p>{domain.domain}</p>}
+          {(domain) => (
+            <div>
+              <a
+                class="underline"
+                target="__blank"
+                href={"https://" + domain.domain}
+              >
+                {domain.domain}
+              </a>
+            </div>
+          )}
         </For>
 
         <Font type="title" key={TKEYS.websites.labels.pages} />
