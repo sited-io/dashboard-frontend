@@ -1,7 +1,10 @@
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import { For, createResource, createSignal } from "solid-js";
 import { TKEYS } from "~/locales";
-import { DomainResponse } from "~/services/sited_io/websites/v1/domain_pb";
+import {
+  DomainResponse,
+  DomainStatus,
+} from "~/services/sited_io/websites/v1/domain_pb";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
 import { domainService } from "~/services/website";
 import { MdIcon } from "../assets/MdIcon";
@@ -99,10 +102,16 @@ export function UpdateDomainsForm(props: Props) {
                   <Trans key={TKEYS.domain["domain-status"][domain.status]} />
                 </TableCell>
                 <TableCell justifyEnd>
-                  <MdIconButton onClick={() => handleStartDeleteDomain(domain)}>
+                  <MdIconButton
+                    onClick={() => handleStartDeleteDomain(domain)}
+                    disabled={domain.status === DomainStatus.INTERNAL}
+                  >
                     <MdIcon icon="delete" />
                   </MdIconButton>
-                  <MdIconButton onClick={() => handleCheckDomainStatus(domain)}>
+                  <MdIconButton
+                    onClick={() => handleCheckDomainStatus(domain)}
+                    disabled={domain.status === DomainStatus.INTERNAL}
+                  >
                     <MdIcon icon="refresh" />
                   </MdIconButton>
                 </TableCell>
