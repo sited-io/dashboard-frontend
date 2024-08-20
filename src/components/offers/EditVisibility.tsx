@@ -23,6 +23,7 @@ export function EditVisibility(props: Props) {
   }
 
   function handleUpdate() {
+    handleCloseEditVisibility();
     props.onUpdate();
   }
 
