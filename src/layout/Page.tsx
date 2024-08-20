@@ -28,8 +28,8 @@ export function Page(props: Props) {
     <>
       <Header hasWebsite={hasWebsite()} />
 
-      <main class={styles.Main}>
-        <div class={styles.Content}>
+      <main class="w-full bg-slate-100 text-slate-900">
+        <div class="max-w-screen-lg min-h-screen my-0 mx-auto pt-14 box-border">
           <Show
             when={isProfilePath() || hasWebsite()}
             fallback={<CreateWebsite />}

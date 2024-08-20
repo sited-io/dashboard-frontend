@@ -11,6 +11,8 @@
   "dependencies": {
     "@connectrpc/connect": "^1.4.0",
     "@connectrpc/connect-web": "^1.4.0",
+    "@editorjs/editorjs": "^2.30.5",
+    "@editorjs/header": "^2.8.7",
     "@material/web": "^1.5.0",
     "@mbarzda/solid-i18next": "^1.4.1",
     "@solidjs/meta": "^0.29.4",
@@ -33,6 +35,7 @@
     "@bufbuild/protoc-gen-es": "^1.10.0",
     "@connectrpc/protoc-gen-connect-es": "^1.4.0",
     "@types/lodash": "^4.17.7",
+    "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
     "sass": "^1.77.6",
