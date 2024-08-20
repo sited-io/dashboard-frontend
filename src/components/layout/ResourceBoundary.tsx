@@ -10,7 +10,7 @@ export function ResourceBoundary(props: Props) {
   return (
     <>
       <Suspense fallback={<ContentLoading />}>
-        <Show when={props.resource() !== undefined}>{props.children}</Show>
+        <Show when={!_.isNil(props.resource())}>{props.children}</Show>
       </Suspense>
     </>
   );

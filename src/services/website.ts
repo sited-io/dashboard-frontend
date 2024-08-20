@@ -36,6 +36,12 @@ import {
   DeleteDomainRequest,
   DomainResponse,
 } from "./sited_io/websites/v1/domain_pb";
+import { StaticPageService } from "./sited_io/websites/v1/static_page_connect";
+import {
+  GetStaticPageRequest,
+  StaticPageResponse,
+  UpdateStaticPageRequest,
+} from "./sited_io/websites/v1/static_page_pb";
 
 const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 
@@ -66,7 +72,7 @@ export const websiteService = {
       if (_.isNil(websites)) {
         throw new Error("[websiteService]: response was nil");
       }
-      return websites.map((w) => toPlainMessage(w)) as WebsiteResponse[];
+      return websites.map(toPlainMessage) as WebsiteResponse[];
     } catch (err) {
       console.error(err);
       return [];
@@ -135,7 +141,7 @@ export const pageService = {
   listPages: async (request: PartialMessage<ListPagesRequest>) => {
     const { pages, pagination } = await pageClient.listPages(request);
     return {
-      pages: pages.map((p) => toPlainMessage(p)),
+      pages: pages.map(toPlainMessage),
       pagination: pagination && toPlainMessage(pagination),
     } as ListPagesResponse;
   },
@@ -187,5 +193,27 @@ export const domainService = {
     "use server";
     const headers = await withAuthHeader();
     await domainClient.deleteDomain(request, { headers });
+  },
+};
+
+const staticPageClient = createPromiseClient(
+  StaticPageService,
+  createGrpcWebTransport({ baseUrl })
+);
+
+export const staticPageService = {
+  getStaticPage: async (request: PartialMessage<GetStaticPageRequest>) => {
+    const { staticPage } = await staticPageClient.getStaticPage(request);
+    if (_.isNil(staticPage)) {
+      throw new Error("[staticPageService.getStaticPage]: response was empty");
+    }
+    return toPlainMessage(staticPage) as StaticPageResponse;
+  },
+  updateStaticPage: async (
+    request: PartialMessage<UpdateStaticPageRequest>
+  ) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await staticPageClient.updateStaticPage(request, { headers });
   },
 };

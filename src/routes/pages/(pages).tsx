@@ -141,13 +141,13 @@ export default function Pages() {
                       />
                     </TableCell>
                     <TableCell justifyEnd>
-                      {/* <Show when={page.pageType === PageType.STATIC}>
+                      <Show when={page.pageType === PageType.STATIC}>
                         <MdIconButton
                           onClick={() => navigate(pageDetailPath(page.pageId))}
                         >
                           <MdIcon icon="edit" />
                         </MdIconButton>
-                      </Show> */}
+                      </Show>
                       <MdIconButton
                         onClick={() => handleStartEditPageSettings(page.pageId)}
                       >

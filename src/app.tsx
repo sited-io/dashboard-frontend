@@ -6,7 +6,6 @@ import ICU from "i18next-icu";
 
 import { TransProvider } from "@mbarzda/solid-i18next";
 import { MetaProvider } from "@solidjs/meta";
-import "./app.css";
 import "./app.scss";
 import { WebsiteContextProvider } from "./contexts/WebsiteContext";
 import { Layout } from "./layout/Layout";
@@ -14,6 +13,7 @@ import { LOCALES } from "./locales";
 import "./material-icons.scss";
 import "./normalize.scss";
 import "./theme.scss";
+import "./app.css";
 
 export default function App() {
   const i18nextInstance = i18next.createInstance({
