@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Direction } from "../../ordering/v1/ordering_pb.js";
-import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
+import { Direction } from "../../types/v1/ordering_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.media.v1.MediaOrderByField
@@ -444,7 +444,7 @@ export class MediaOrderBy extends Message<MediaOrderBy> {
   field = MediaOrderByField.UNSPECIFIED;
 
   /**
-   * @generated from field: sited_io.ordering.v1.Direction direction = 2;
+   * @generated from field: sited_io.types.v1.Direction direction = 2;
    */
   direction = Direction.UNSPECIFIED;
 
@@ -530,7 +530,7 @@ export class ListMediaRequest extends Message<ListMediaRequest> {
   shopId = "";
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 2;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 2;
    */
   pagination?: PaginationRequest;
 
@@ -585,7 +585,7 @@ export class ListMediaResponse extends Message<ListMediaResponse> {
   medias: MediaResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
   pagination?: PaginationResponse;
 
@@ -623,7 +623,7 @@ export class ListMediaResponse extends Message<ListMediaResponse> {
  */
 export class ListAccessibleMediaRequest extends Message<ListAccessibleMediaRequest> {
   /**
-   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 2;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 2;
    */
   pagination?: PaginationRequest;
 
@@ -677,7 +677,7 @@ export class ListAccessibleMediaResponse extends Message<ListAccessibleMediaResp
   medias: MediaResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
   pagination?: PaginationResponse;
 

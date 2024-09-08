@@ -22,8 +22,8 @@ import {
   MediaFilterField,
   MediaOrderByField,
 } from "~/services/sited_io/media/v1/media_pb";
-import { Direction } from "~/services/sited_io/ordering/v1/ordering_pb";
-import { PaginationRequest } from "~/services/sited_io/pagination/v1/pagination_pb";
+import { Direction } from "~/services/sited_io/types/v1/ordering_pb";
+import { PaginationRequest } from "~/services/sited_io/types/v1/pagination_pb";
 import { offersPath } from "../(offers)";
 import { offerDetailPath } from "./(offerId)";
 

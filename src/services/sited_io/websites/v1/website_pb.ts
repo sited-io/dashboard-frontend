@@ -8,7 +8,7 @@ import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { CustomizationResponse } from "./customization_pb.js";
 import { DomainResponse } from "./domain_pb.js";
 import { PageResponse } from "./page_pb.js";
-import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from message sited_io.websites.v1.WebsiteResponse
@@ -265,7 +265,7 @@ export class ListWebsitesRequest extends Message<ListWebsitesRequest> {
   userId?: string;
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 2;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 2;
    */
   pagination?: PaginationRequest;
 
@@ -308,7 +308,7 @@ export class ListWebsitesResponse extends Message<ListWebsitesResponse> {
   websites: WebsiteResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
   pagination?: PaginationResponse;
 

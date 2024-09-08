@@ -6,8 +6,8 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { Price } from "./price_pb.js";
-import { Direction } from "../../ordering/v1/ordering_pb.js";
-import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
+import { Direction } from "../../types/v1/ordering_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 import { MediaUpload } from "../../media/v1/media_pb.js";
 
 /**
@@ -550,7 +550,7 @@ export class OffersOrderBy extends Message<OffersOrderBy> {
   field = OffersOrderByField.UNSPECIFIED;
 
   /**
-   * @generated from field: sited_io.ordering.v1.Direction direction = 2;
+   * @generated from field: sited_io.types.v1.Direction direction = 2;
    */
   direction = Direction.UNSPECIFIED;
 
@@ -641,7 +641,7 @@ export class ListOffersRequest extends Message<ListOffersRequest> {
   shopId?: string;
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 3;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 3;
    */
   pagination?: PaginationRequest;
 
@@ -697,7 +697,7 @@ export class ListOffersResponse extends Message<ListOffersResponse> {
   offers: OfferResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
   pagination?: PaginationResponse;
 

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../pagination/v1/pagination_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from message sited_io.media.v1.MediaSubscriptionResponse
@@ -334,7 +334,7 @@ export class ListMediaSubscriptionsRequest extends Message<ListMediaSubscription
   shopId?: string;
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.PaginationRequest pagination = 2;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 2;
    */
   pagination?: PaginationRequest;
 
@@ -383,7 +383,7 @@ export class ListMediaSubscriptionsResponse extends Message<ListMediaSubscriptio
   mediaSubscriptions: MediaSubscriptionResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.PaginationResponse pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
   pagination?: PaginationResponse;
 

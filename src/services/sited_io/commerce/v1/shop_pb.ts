@@ -6,8 +6,8 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { ShopCustomizationResponse } from "./shop_customization_pb.js";
-import { Direction } from "../../ordering/v1/ordering_pb.js";
-import { Pagination } from "../../pagination/v1/pagination_pb.js";
+import { Direction } from "../../types/v1/ordering_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.commerce.v1.ShopsOrderByField
@@ -412,7 +412,7 @@ export class ShopsOrderBy extends Message<ShopsOrderBy> {
   field = ShopsOrderByField.UNSPECIFIED;
 
   /**
-   * @generated from field: sited_io.ordering.v1.Direction direction = 2;
+   * @generated from field: sited_io.types.v1.Direction direction = 2;
    */
   direction = Direction.UNSPECIFIED;
 
@@ -498,9 +498,9 @@ export class ListShopsRequest extends Message<ListShopsRequest> {
   userId?: string;
 
   /**
-   * @generated from field: optional sited_io.pagination.v1.Pagination pagination = 2;
+   * @generated from field: optional sited_io.types.v1.PaginationRequest pagination = 2;
    */
-  pagination?: Pagination;
+  pagination?: PaginationRequest;
 
   /**
    * @generated from field: optional sited_io.commerce.v1.ShopsOrderBy order_by = 3;
@@ -526,7 +526,7 @@ export class ListShopsRequest extends Message<ListShopsRequest> {
   static readonly typeName = "sited_io.commerce.v1.ListShopsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "pagination", kind: "message", T: Pagination, opt: true },
+    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
     { no: 3, name: "order_by", kind: "message", T: ShopsOrderBy, opt: true },
     { no: 4, name: "filter", kind: "message", T: ShopsFilter, opt: true },
     { no: 5, name: "extended", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
@@ -559,9 +559,9 @@ export class ListShopsResponse extends Message<ListShopsResponse> {
   shops: ShopResponse[] = [];
 
   /**
-   * @generated from field: sited_io.pagination.v1.Pagination pagination = 2;
+   * @generated from field: sited_io.types.v1.PaginationResponse pagination = 2;
    */
-  pagination?: Pagination;
+  pagination?: PaginationResponse;
 
   constructor(data?: PartialMessage<ListShopsResponse>) {
     super();
@@ -572,7 +572,7 @@ export class ListShopsResponse extends Message<ListShopsResponse> {
   static readonly typeName = "sited_io.commerce.v1.ListShopsResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shops", kind: "message", T: ShopResponse, repeated: true },
-    { no: 2, name: "pagination", kind: "message", T: Pagination },
+    { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShopsResponse {

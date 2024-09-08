@@ -24,6 +24,7 @@ export default function StaticPageEditor(props: Props) {
 
   onMount(() => {
     const blocks = local.staticPage?.components.map(getBlockFromComponent);
+
     editor = new EditorJS({
       holder: "editorjs",
       inlineToolbar: ["link"],
