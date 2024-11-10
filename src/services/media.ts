@@ -19,10 +19,9 @@ import {
   MediaResponse,
   Part,
   PutMultipartChunkRequest,
-  PutMultipartChunkResponse,
   RemoveMediaFromOfferRequest,
   UpdateMediaOfferOrderingRequest,
-  UpdateMediaRequest,
+  UpdateMediaRequest
 } from "./sited_io/media/v1/media_pb";
 import { MediaSubscriptionService } from "./sited_io/media/v1/media_subscription_connect";
 import {

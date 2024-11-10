@@ -88,6 +88,11 @@ export const offerService = {
     }
     return toPlainMessage(offer) as OfferResponse;
   },
+  deleteOffer: async (request: PartialMessage<DeleteOfferRequest>) => {
+    "use server";
+    const headers = await withAuthHeader();
+    await offerClient.deleteOffer(request, { headers });
+  },
   addImageToOffer: async (request: PartialMessage<AddImageToOfferRequest>) => {
     "use server";
     const headers = await withAuthHeader();
@@ -111,11 +116,6 @@ export const offerService = {
     "use server";
     const headers = await withAuthHeader();
     await offerClient.removePriceFromOffer(request, { headers });
-  },
-  deleteOffer: async (request: PartialMessage<DeleteOfferRequest>) => {
-    "use server";
-    const headers = await withAuthHeader();
-    await offerClient.deleteOffer(request, { headers });
   },
 };
 
