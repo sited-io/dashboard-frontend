@@ -22,7 +22,7 @@ export default function PageDetail() {
 
   const [page] = createResource(
     () => BigInt(pageId),
-    async (pageId: bigint) => pageService.getPage({ pageId })
+    async (pageId: bigint) => pageService.getPage({ pageId }),
   );
 
   return (

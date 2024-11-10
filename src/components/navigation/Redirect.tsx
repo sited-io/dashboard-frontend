@@ -4,9 +4,7 @@ import { TKEYS } from "../../locales";
 import { MdLoading } from "../content/MdLoading";
 import styles from "./Redirect.module.scss";
 
-type Props = {};
-
-export function Redirect(props: Props) {
+export function Redirect() {
   return (
     <div class={styles.Redirect}>
       <div class={styles.Container}>

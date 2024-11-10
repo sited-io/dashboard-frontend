@@ -83,7 +83,7 @@ export function UploadMediaDialog(props: Props) {
 
       let media: MediaResponse;
       console.debug(
-        `max chunk size for simple is ${CHUNKSIZE}. file size is ${form.file.size}`
+        `max chunk size for simple is ${CHUNKSIZE}. file size is ${form.file.size}`,
       );
       if (form.file.size < CHUNKSIZE) {
         console.debug("uploading simple");

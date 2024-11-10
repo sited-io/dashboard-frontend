@@ -2,7 +2,7 @@ import _ from "lodash";
 
 export function secondsToLocaleDateTime(
   seconds?: number,
-  locale?: string
+  locale?: string,
 ): string {
   return seconds ? new Date(seconds * 1000).toLocaleString(locale) : "";
 }

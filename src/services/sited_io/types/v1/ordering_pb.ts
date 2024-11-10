@@ -30,4 +30,3 @@ proto3.util.setEnumType(Direction, "sited_io.types.v1.Direction", [
   { no: 1, name: "DIRECTION_ASC" },
   { no: 2, name: "DIRECTION_DESC" },
 ]);
-

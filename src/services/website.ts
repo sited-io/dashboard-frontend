@@ -47,7 +47,7 @@ const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 
 const websiteClient = createPromiseClient(
   WebsiteService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const websiteService = {
@@ -92,12 +92,12 @@ export const websiteService = {
 
 const customizationClient = createPromiseClient(
   CustomizationService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const customizationService = {
   updateCustomization: async (
-    request: PartialMessage<UpdateCustomizationRequest>
+    request: PartialMessage<UpdateCustomizationRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -105,7 +105,7 @@ export const customizationService = {
   },
   putLogoImage: async (request: PartialMessage<PutLogoImageRequest>) => {
     const headers = await withAuthHeader();
-    const res = await customizationClient.putLogoImage(request, { headers });
+    await customizationClient.putLogoImage(request, { headers });
   },
   removeLogoImage: async (request: PartialMessage<RemoveLogoImageRequest>) => {
     "use server";
@@ -116,7 +116,7 @@ export const customizationService = {
 
 const pageClient = createPromiseClient(
   PageService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const pageService = {
@@ -163,7 +163,7 @@ export const pageService = {
 
 const domainClient = createPromiseClient(
   DomainService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const domainService = {
@@ -177,7 +177,7 @@ export const domainService = {
     return toPlainMessage(domain) as DomainResponse;
   },
   checkDomainStatus: async (
-    request: PartialMessage<CheckDomainStatusRequest>
+    request: PartialMessage<CheckDomainStatusRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -198,7 +198,7 @@ export const domainService = {
 
 const staticPageClient = createPromiseClient(
   StaticPageService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const staticPageService = {
@@ -210,7 +210,7 @@ export const staticPageService = {
     return toPlainMessage(staticPage) as StaticPageResponse;
   },
   updateStaticPage: async (
-    request: PartialMessage<UpdateStaticPageRequest>
+    request: PartialMessage<UpdateStaticPageRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();

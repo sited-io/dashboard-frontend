@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -34,23 +41,40 @@ export class StripeAccount extends Message<StripeAccount> {
   static readonly typeName = "sited_io.payment.v1.StripeAccount";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "stripe_account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 2,
+      name: "stripe_account_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 3, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StripeAccount {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StripeAccount {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StripeAccount {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StripeAccount | PlainMessage<StripeAccount> | undefined, b: StripeAccount | PlainMessage<StripeAccount> | undefined): boolean {
+  static equals(
+    a: StripeAccount | PlainMessage<StripeAccount> | undefined,
+    b: StripeAccount | PlainMessage<StripeAccount> | undefined,
+  ): boolean {
     return proto3.util.equals(StripeAccount, a, b);
   }
 }
@@ -77,23 +101,45 @@ export class StripeAccountDetails extends Message<StripeAccountDetails> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.payment.v1.StripeAccountDetails";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "charges_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "details_submitted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    {
+      no: 1,
+      name: "charges_enabled",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+    },
+    {
+      no: 2,
+      name: "details_submitted",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StripeAccountDetails {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StripeAccountDetails {
     return new StripeAccountDetails().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StripeAccountDetails {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccountDetails {
     return new StripeAccountDetails().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StripeAccountDetails {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccountDetails {
     return new StripeAccountDetails().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StripeAccountDetails | PlainMessage<StripeAccountDetails> | undefined, b: StripeAccountDetails | PlainMessage<StripeAccountDetails> | undefined): boolean {
+  static equals(
+    a: StripeAccountDetails | PlainMessage<StripeAccountDetails> | undefined,
+    b: StripeAccountDetails | PlainMessage<StripeAccountDetails> | undefined,
+  ): boolean {
     return proto3.util.equals(StripeAccountDetails, a, b);
   }
 }
@@ -118,19 +164,31 @@ export class CreateAccountRequest extends Message<CreateAccountRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAccountRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateAccountRequest {
     return new CreateAccountRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAccountRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountRequest {
     return new CreateAccountRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAccountRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountRequest {
     return new CreateAccountRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateAccountRequest | PlainMessage<CreateAccountRequest> | undefined, b: CreateAccountRequest | PlainMessage<CreateAccountRequest> | undefined): boolean {
+  static equals(
+    a: CreateAccountRequest | PlainMessage<CreateAccountRequest> | undefined,
+    b: CreateAccountRequest | PlainMessage<CreateAccountRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateAccountRequest, a, b);
   }
 }
@@ -155,19 +213,31 @@ export class CreateAccountResponse extends Message<CreateAccountResponse> {
     { no: 1, name: "account", kind: "message", T: StripeAccount },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAccountResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateAccountResponse {
     return new CreateAccountResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAccountResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountResponse {
     return new CreateAccountResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAccountResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountResponse {
     return new CreateAccountResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateAccountResponse | PlainMessage<CreateAccountResponse> | undefined, b: CreateAccountResponse | PlainMessage<CreateAccountResponse> | undefined): boolean {
+  static equals(
+    a: CreateAccountResponse | PlainMessage<CreateAccountResponse> | undefined,
+    b: CreateAccountResponse | PlainMessage<CreateAccountResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateAccountResponse, a, b);
   }
 }
@@ -200,23 +270,46 @@ export class CreateAccountLinkRequest extends Message<CreateAccountLinkRequest> 
   static readonly typeName = "sited_io.payment.v1.CreateAccountLinkRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "refresh_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 2,
+      name: "refresh_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 3, name: "return_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAccountLinkRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateAccountLinkRequest {
     return new CreateAccountLinkRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAccountLinkRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountLinkRequest {
     return new CreateAccountLinkRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAccountLinkRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountLinkRequest {
     return new CreateAccountLinkRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateAccountLinkRequest | PlainMessage<CreateAccountLinkRequest> | undefined, b: CreateAccountLinkRequest | PlainMessage<CreateAccountLinkRequest> | undefined): boolean {
+  static equals(
+    a:
+      | CreateAccountLinkRequest
+      | PlainMessage<CreateAccountLinkRequest>
+      | undefined,
+    b:
+      | CreateAccountLinkRequest
+      | PlainMessage<CreateAccountLinkRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CreateAccountLinkRequest, a, b);
   }
 }
@@ -241,19 +334,37 @@ export class CreateAccountLinkResponse extends Message<CreateAccountLinkResponse
     { no: 1, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAccountLinkResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateAccountLinkResponse {
     return new CreateAccountLinkResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAccountLinkResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountLinkResponse {
     return new CreateAccountLinkResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAccountLinkResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateAccountLinkResponse {
     return new CreateAccountLinkResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateAccountLinkResponse | PlainMessage<CreateAccountLinkResponse> | undefined, b: CreateAccountLinkResponse | PlainMessage<CreateAccountLinkResponse> | undefined): boolean {
+  static equals(
+    a:
+      | CreateAccountLinkResponse
+      | PlainMessage<CreateAccountLinkResponse>
+      | undefined,
+    b:
+      | CreateAccountLinkResponse
+      | PlainMessage<CreateAccountLinkResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CreateAccountLinkResponse, a, b);
   }
 }
@@ -278,19 +389,31 @@ export class GetAccountRequest extends Message<GetAccountRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAccountRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetAccountRequest {
     return new GetAccountRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAccountRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountRequest {
     return new GetAccountRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAccountRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountRequest {
     return new GetAccountRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetAccountRequest | PlainMessage<GetAccountRequest> | undefined, b: GetAccountRequest | PlainMessage<GetAccountRequest> | undefined): boolean {
+  static equals(
+    a: GetAccountRequest | PlainMessage<GetAccountRequest> | undefined,
+    b: GetAccountRequest | PlainMessage<GetAccountRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(GetAccountRequest, a, b);
   }
 }
@@ -315,19 +438,31 @@ export class GetAccountResponse extends Message<GetAccountResponse> {
     { no: 1, name: "account", kind: "message", T: StripeAccount },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAccountResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetAccountResponse {
     return new GetAccountResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAccountResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountResponse {
     return new GetAccountResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAccountResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountResponse {
     return new GetAccountResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetAccountResponse | PlainMessage<GetAccountResponse> | undefined, b: GetAccountResponse | PlainMessage<GetAccountResponse> | undefined): boolean {
+  static equals(
+    a: GetAccountResponse | PlainMessage<GetAccountResponse> | undefined,
+    b: GetAccountResponse | PlainMessage<GetAccountResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(GetAccountResponse, a, b);
   }
 }
@@ -352,19 +487,37 @@ export class GetAccountDetailsRequest extends Message<GetAccountDetailsRequest> 
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAccountDetailsRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetAccountDetailsRequest {
     return new GetAccountDetailsRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAccountDetailsRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountDetailsRequest {
     return new GetAccountDetailsRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAccountDetailsRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountDetailsRequest {
     return new GetAccountDetailsRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetAccountDetailsRequest | PlainMessage<GetAccountDetailsRequest> | undefined, b: GetAccountDetailsRequest | PlainMessage<GetAccountDetailsRequest> | undefined): boolean {
+  static equals(
+    a:
+      | GetAccountDetailsRequest
+      | PlainMessage<GetAccountDetailsRequest>
+      | undefined,
+    b:
+      | GetAccountDetailsRequest
+      | PlainMessage<GetAccountDetailsRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetAccountDetailsRequest, a, b);
   }
 }
@@ -395,19 +548,37 @@ export class GetAccountDetailsResponse extends Message<GetAccountDetailsResponse
     { no: 2, name: "details", kind: "message", T: StripeAccountDetails },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAccountDetailsResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetAccountDetailsResponse {
     return new GetAccountDetailsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAccountDetailsResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountDetailsResponse {
     return new GetAccountDetailsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAccountDetailsResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetAccountDetailsResponse {
     return new GetAccountDetailsResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetAccountDetailsResponse | PlainMessage<GetAccountDetailsResponse> | undefined, b: GetAccountDetailsResponse | PlainMessage<GetAccountDetailsResponse> | undefined): boolean {
+  static equals(
+    a:
+      | GetAccountDetailsResponse
+      | PlainMessage<GetAccountDetailsResponse>
+      | undefined,
+    b:
+      | GetAccountDetailsResponse
+      | PlainMessage<GetAccountDetailsResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetAccountDetailsResponse, a, b);
   }
 }
@@ -440,23 +611,49 @@ export class CreateCheckoutSessionRequest extends Message<CreateCheckoutSessionR
   static readonly typeName = "sited_io.payment.v1.CreateCheckoutSessionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "success_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 2,
+      name: "success_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 3, name: "cancel_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCheckoutSessionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateCheckoutSessionRequest {
     return new CreateCheckoutSessionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCheckoutSessionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateCheckoutSessionRequest {
     return new CreateCheckoutSessionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCheckoutSessionRequest {
-    return new CreateCheckoutSessionRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateCheckoutSessionRequest {
+    return new CreateCheckoutSessionRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: CreateCheckoutSessionRequest | PlainMessage<CreateCheckoutSessionRequest> | undefined, b: CreateCheckoutSessionRequest | PlainMessage<CreateCheckoutSessionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | CreateCheckoutSessionRequest
+      | PlainMessage<CreateCheckoutSessionRequest>
+      | undefined,
+    b:
+      | CreateCheckoutSessionRequest
+      | PlainMessage<CreateCheckoutSessionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CreateCheckoutSessionRequest, a, b);
   }
 }
@@ -476,24 +673,46 @@ export class CreateCheckoutSessionResponse extends Message<CreateCheckoutSession
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.payment.v1.CreateCheckoutSessionResponse";
+  static readonly typeName =
+    "sited_io.payment.v1.CreateCheckoutSessionResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCheckoutSessionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateCheckoutSessionResponse {
     return new CreateCheckoutSessionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCheckoutSessionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateCheckoutSessionResponse {
     return new CreateCheckoutSessionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCheckoutSessionResponse {
-    return new CreateCheckoutSessionResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateCheckoutSessionResponse {
+    return new CreateCheckoutSessionResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: CreateCheckoutSessionResponse | PlainMessage<CreateCheckoutSessionResponse> | undefined, b: CreateCheckoutSessionResponse | PlainMessage<CreateCheckoutSessionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | CreateCheckoutSessionResponse
+      | PlainMessage<CreateCheckoutSessionResponse>
+      | undefined,
+    b:
+      | CreateCheckoutSessionResponse
+      | PlainMessage<CreateCheckoutSessionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CreateCheckoutSessionResponse, a, b);
   }
 }
@@ -520,23 +739,46 @@ export class CancelSubscriptionRequest extends Message<CancelSubscriptionRequest
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.payment.v1.CancelSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "stripe_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "stripe_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelSubscriptionRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CancelSubscriptionRequest | PlainMessage<CancelSubscriptionRequest> | undefined, b: CancelSubscriptionRequest | PlainMessage<CancelSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | CancelSubscriptionRequest
+      | PlainMessage<CancelSubscriptionRequest>
+      | undefined,
+    b:
+      | CancelSubscriptionRequest
+      | PlainMessage<CancelSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CancelSubscriptionRequest, a, b);
   }
 }
@@ -552,22 +794,39 @@ export class CancelSubscriptionResponse extends Message<CancelSubscriptionRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.payment.v1.CancelSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelSubscriptionResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CancelSubscriptionResponse | PlainMessage<CancelSubscriptionResponse> | undefined, b: CancelSubscriptionResponse | PlainMessage<CancelSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | CancelSubscriptionResponse
+      | PlainMessage<CancelSubscriptionResponse>
+      | undefined,
+    b:
+      | CancelSubscriptionResponse
+      | PlainMessage<CancelSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CancelSubscriptionResponse, a, b);
   }
 }
@@ -594,23 +853,46 @@ export class ResumeSubscriptionRequest extends Message<ResumeSubscriptionRequest
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.payment.v1.ResumeSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "stripe_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "stripe_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeSubscriptionRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ResumeSubscriptionRequest | PlainMessage<ResumeSubscriptionRequest> | undefined, b: ResumeSubscriptionRequest | PlainMessage<ResumeSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | ResumeSubscriptionRequest
+      | PlainMessage<ResumeSubscriptionRequest>
+      | undefined,
+    b:
+      | ResumeSubscriptionRequest
+      | PlainMessage<ResumeSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ResumeSubscriptionRequest, a, b);
   }
 }
@@ -626,23 +908,39 @@ export class ResumeSubscriptionResponse extends Message<ResumeSubscriptionRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.payment.v1.ResumeSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeSubscriptionResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ResumeSubscriptionResponse | PlainMessage<ResumeSubscriptionResponse> | undefined, b: ResumeSubscriptionResponse | PlainMessage<ResumeSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | ResumeSubscriptionResponse
+      | PlainMessage<ResumeSubscriptionResponse>
+      | undefined,
+    b:
+      | ResumeSubscriptionResponse
+      | PlainMessage<ResumeSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ResumeSubscriptionResponse, a, b);
   }
 }
-

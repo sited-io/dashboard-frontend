@@ -5,7 +5,7 @@ type Props = {
 } & ComponentProps<"svg">;
 
 export function StripeLogo(props: Props) {
-  const [extra, others] = splitProps(props, ["slot"]);
+  const [, others] = splitProps(props, ["slot"]);
   return (
     <svg
       {...others}

@@ -1,10 +1,10 @@
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import _ from "lodash";
 import { For, Show, createSignal } from "solid-js";
+
 import { Grid, GridItem } from "~/components/content/grid";
 import { DeleteConfirmationDialog } from "~/components/form/DeleteConfirmationDialog";
 import { MdButton } from "~/components/form/MdButton";
-import { AddImageDialog } from "./AddImageDialog";
 import { TKEYS } from "~/locales";
 import { offerService } from "~/services/commerce";
 import {
@@ -35,10 +35,6 @@ export function EditImages(props: Props) {
 
   function handleSelectImage(image: OfferImageResponse) {
     setSelectedImage(image);
-  }
-
-  function handleUnselectImage() {
-    setSelectedImage();
   }
 
   async function handleDeleteImage() {

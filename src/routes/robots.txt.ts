@@ -1,6 +1,4 @@
-import type { APIEvent } from "@solidjs/start/server";
-
-export async function GET(event: APIEvent) {
+export async function GET() {
   const lines = ["User-agent: *", "Disallow: /"];
 
   return new Response(lines.join("\n"), {

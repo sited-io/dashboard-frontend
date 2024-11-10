@@ -1,20 +1,21 @@
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
-import { MdButton } from "../form/MdButton";
-import { MdDialog } from "../layout/MdDialog";
+import _ from "lodash";
+import { createStore } from "solid-js/store";
+
 import { TKEYS } from "~/locales";
 import {
   CreatePageRequest,
   PageType,
 } from "~/services/sited_io/websites/v1/page_pb";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
-import { MdTextField } from "../form/MdTextField";
-import { createStore } from "solid-js/store";
-import _ from "lodash";
-import { Font } from "../content/Font";
-import { MdSelect, SelectKey } from "../form/MdSelect";
-import { Form } from "../form/Form";
-import { MdCheckbox } from "../form/MdCheckbox";
 import { pageService } from "~/services/website";
+import { Font } from "../content/Font";
+import { Form } from "../form/Form";
+import { MdButton } from "../form/MdButton";
+import { MdCheckbox } from "../form/MdCheckbox";
+import { MdSelect } from "../form/MdSelect";
+import { MdTextField } from "../form/MdTextField";
+import { MdDialog } from "../layout/MdDialog";
 
 type Props = {
   readonly show: boolean;

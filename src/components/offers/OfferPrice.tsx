@@ -2,11 +2,10 @@ import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import _ from "lodash";
 import { Show } from "solid-js";
 
-import { centsToDecimal } from "~/lib/string-manipulation";
-import styles from "./OfferPrice.module.scss";
-import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
 import { TKEYS } from "~/locales";
+import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
 import { Price } from "../content/Price";
+import styles from "./OfferPrice.module.scss";
 
 type Props = {
   readonly offer: OfferResponse;

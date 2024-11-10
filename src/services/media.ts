@@ -21,7 +21,7 @@ import {
   PutMultipartChunkRequest,
   RemoveMediaFromOfferRequest,
   UpdateMediaOfferOrderingRequest,
-  UpdateMediaRequest
+  UpdateMediaRequest,
 } from "./sited_io/media/v1/media_pb";
 import { MediaSubscriptionService } from "./sited_io/media/v1/media_subscription_connect";
 import {
@@ -37,12 +37,12 @@ const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 
 const mediaSubscriptionClient = createPromiseClient(
   MediaSubscriptionService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const mediaSubscriptionService = {
   getMediaSubscription: async (
-    request: PartialMessage<GetMediaSubscriptionRequest>
+    request: PartialMessage<GetMediaSubscriptionRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -52,13 +52,13 @@ export const mediaSubscriptionService = {
       });
     if (_.isNil(mediaSubscription)) {
       throw new Error(
-        "[mediaSubscriptionService.getMediaSubscription]: response was empty"
+        "[mediaSubscriptionService.getMediaSubscription]: response was empty",
       );
     }
     return toPlainMessage(mediaSubscription) as MediaSubscriptionResponse;
   },
   listMediaSubscriptions: async (
-    request: PartialMessage<ListMediaSubscriptionsRequest>
+    request: PartialMessage<ListMediaSubscriptionsRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -68,11 +68,11 @@ export const mediaSubscriptionService = {
       });
     if (_.isNil(mediaSubscriptions)) {
       throw new Error(
-        "[mediaSubscriptionService.listMediaSubscriptions]: response was empty"
+        "[mediaSubscriptionService.listMediaSubscriptions]: response was empty",
       );
     }
     return mediaSubscriptions.map((m) =>
-      toPlainMessage(m)
+      toPlainMessage(m),
     ) as MediaSubscriptionResponse[];
   },
   cancel: async (request: PartialMessage<CancelMediaSubscriptionRequest>) => {
@@ -89,7 +89,7 @@ export const mediaSubscriptionService = {
 
 const mediaClient = createPromiseClient(
   MediaService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const mediaService = {
@@ -102,14 +102,14 @@ export const mediaService = {
     return toPlainMessage(media) as MediaResponse;
   },
   initiateMultipartUpload: async (
-    request: PartialMessage<InitiateMultipartUploadRequest>
+    request: PartialMessage<InitiateMultipartUploadRequest>,
   ) => {
     const headers = await withAuthHeader();
     const res = await mediaClient.initiateMultipartUpload(request, { headers });
     return toPlainMessage(res) as InitiateMultipartUploadResponse;
   },
   putMultipartChunk: async (
-    request: PartialMessage<PutMultipartChunkRequest>
+    request: PartialMessage<PutMultipartChunkRequest>,
   ) => {
     const headers = await withAuthHeader();
     const { part } = await mediaClient.putMultipartChunk(request, { headers });
@@ -119,7 +119,7 @@ export const mediaService = {
     return toPlainMessage(part) as Part;
   },
   completeMultipartUpload: async (
-    request: PartialMessage<CompleteMultipartUploadRequest>
+    request: PartialMessage<CompleteMultipartUploadRequest>,
   ) => {
     const headers = await withAuthHeader();
     await mediaClient.completeMultipartUpload(request, { headers });
@@ -136,7 +136,7 @@ export const mediaService = {
     } as ListMediaResponse;
   },
   listAccessible: async (
-    request: PartialMessage<ListAccessibleMediaRequest>
+    request: PartialMessage<ListAccessibleMediaRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -180,14 +180,14 @@ export const mediaService = {
     await mediaClient.addMediaToOffer(request, { headers });
   },
   updateMediaOfferOrdering: async (
-    request: PartialMessage<UpdateMediaOfferOrderingRequest>
+    request: PartialMessage<UpdateMediaOfferOrderingRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
     await mediaClient.updateMediaOfferOrdering(request, { headers });
   },
   removeMediaFromOffer: async (
-    request: PartialMessage<RemoveMediaFromOfferRequest>
+    request: PartialMessage<RemoveMediaFromOfferRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();

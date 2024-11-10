@@ -1,12 +1,11 @@
 import { JSX } from "solid-js";
 
+import { MdIcon } from "~/components/assets/MdIcon";
 import { MdIconButton } from "~/components/form/MdIconButton";
 import { clickOutside } from "~/directives/click-outside";
 import styles from "./NavigationSlider.module.scss";
-import { MdIcon } from "~/components/assets/MdIcon";
-import _ from "lodash";
 
-false && clickOutside;
+false && clickOutside; // eslint-disable-line
 
 type Props = {
   readonly children?: JSX.Element | undefined;

@@ -1,8 +1,6 @@
 import { useTransContext } from "@mbarzda/solid-i18next";
-import _ from "lodash";
-import { Show, Suspense } from "solid-js";
-import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 
+import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
 import { UpdateCustomizationForm } from "~/components/websites/UpdateCustomizationForm";

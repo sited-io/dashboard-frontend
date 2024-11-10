@@ -3,11 +3,21 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { ShopCustomizationResponse } from "./shop_customization_pb.js";
 import { Direction } from "../../types/v1/ordering_pb.js";
-import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
+import {
+  PaginationRequest,
+  PaginationResponse,
+} from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.commerce.v1.ShopsOrderByField
@@ -39,13 +49,17 @@ export enum ShopsOrderByField {
   RANDOM = 4,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ShopsOrderByField)
-proto3.util.setEnumType(ShopsOrderByField, "sited_io.commerce.v1.ShopsOrderByField", [
-  { no: 0, name: "SHOPS_ORDER_BY_FIELD_UNSPECIFIED" },
-  { no: 1, name: "SHOPS_ORDER_BY_FIELD_CREATED_AT" },
-  { no: 2, name: "SHOPS_ORDER_BY_FIELD_UPDATED_AT" },
-  { no: 3, name: "SHOPS_ORDER_BY_FIELD_NAME" },
-  { no: 4, name: "SHOPS_ORDER_BY_FIELD_RANDOM" },
-]);
+proto3.util.setEnumType(
+  ShopsOrderByField,
+  "sited_io.commerce.v1.ShopsOrderByField",
+  [
+    { no: 0, name: "SHOPS_ORDER_BY_FIELD_UNSPECIFIED" },
+    { no: 1, name: "SHOPS_ORDER_BY_FIELD_CREATED_AT" },
+    { no: 2, name: "SHOPS_ORDER_BY_FIELD_UPDATED_AT" },
+    { no: 3, name: "SHOPS_ORDER_BY_FIELD_NAME" },
+    { no: 4, name: "SHOPS_ORDER_BY_FIELD_RANDOM" },
+  ],
+);
 
 /**
  * @generated from enum sited_io.commerce.v1.ShopsFilterField
@@ -72,12 +86,16 @@ export enum ShopsFilterField {
   NAME_AND_DESCRIPTION = 3,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ShopsFilterField)
-proto3.util.setEnumType(ShopsFilterField, "sited_io.commerce.v1.ShopsFilterField", [
-  { no: 0, name: "SHOPS_FILTER_FIELD_UNSPECIFIED" },
-  { no: 1, name: "SHOPS_FILTER_FIELD_NAME" },
-  { no: 2, name: "SHOPS_FILTER_FIELD_DESCRIPTION" },
-  { no: 3, name: "SHOPS_FILTER_FIELD_NAME_AND_DESCRIPTION" },
-]);
+proto3.util.setEnumType(
+  ShopsFilterField,
+  "sited_io.commerce.v1.ShopsFilterField",
+  [
+    { no: 0, name: "SHOPS_FILTER_FIELD_UNSPECIFIED" },
+    { no: 1, name: "SHOPS_FILTER_FIELD_NAME" },
+    { no: 2, name: "SHOPS_FILTER_FIELD_DESCRIPTION" },
+    { no: 3, name: "SHOPS_FILTER_FIELD_NAME_AND_DESCRIPTION" },
+  ],
+);
 
 /**
  * @generated from message sited_io.commerce.v1.ShopResponse
@@ -172,30 +190,87 @@ export class ShopResponse extends Message<ShopResponse> {
     { no: 4, name: "updated_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 8, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 9, name: "platform_fee_percent", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 10, name: "minimum_platform_fee_cent", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 11, name: "customization", kind: "message", T: ShopCustomizationResponse, opt: true },
+    {
+      no: 7,
+      name: "domain",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 8,
+      name: "description",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 9,
+      name: "platform_fee_percent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+    },
+    {
+      no: 10,
+      name: "minimum_platform_fee_cent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+    },
+    {
+      no: 11,
+      name: "customization",
+      kind: "message",
+      T: ShopCustomizationResponse,
+      opt: true,
+    },
     { no: 12, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 13, name: "contact_email_address", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 14, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 15, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 13,
+      name: "contact_email_address",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 14,
+      name: "client_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 15,
+      name: "website_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ShopResponse {
     return new ShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ShopResponse {
     return new ShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ShopResponse {
     return new ShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ShopResponse | PlainMessage<ShopResponse> | undefined, b: ShopResponse | PlainMessage<ShopResponse> | undefined): boolean {
+  static equals(
+    a: ShopResponse | PlainMessage<ShopResponse> | undefined,
+    b: ShopResponse | PlainMessage<ShopResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(ShopResponse, a, b);
   }
 }
@@ -239,24 +314,54 @@ export class CreateShopRequest extends Message<CreateShopRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "platform_fee_percent", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 5, name: "minimum_platform_fee_cent", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    {
+      no: 3,
+      name: "description",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 4,
+      name: "platform_fee_percent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+      opt: true,
+    },
+    {
+      no: 5,
+      name: "minimum_platform_fee_cent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateShopRequest {
     return new CreateShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateShopRequest {
     return new CreateShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShopRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateShopRequest {
     return new CreateShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined, b: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined): boolean {
+  static equals(
+    a: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined,
+    b: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateShopRequest, a, b);
   }
 }
@@ -281,19 +386,31 @@ export class CreateShopResponse extends Message<CreateShopResponse> {
     { no: 1, name: "shop", kind: "message", T: ShopResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateShopResponse {
     return new CreateShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateShopResponse {
     return new CreateShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateShopResponse {
     return new CreateShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined, b: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined): boolean {
+  static equals(
+    a: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined,
+    b: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateShopResponse, a, b);
   }
 }
@@ -340,27 +457,75 @@ export class GetShopRequest extends Message<GetShopRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.GetShopRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "extended", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
-    { no: 3, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 5, name: "owner", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 6, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 1,
+      name: "shop_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "extended",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "slug",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 4,
+      name: "domain",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 5,
+      name: "owner",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 6,
+      name: "website_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetShopRequest {
     return new GetShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopRequest {
     return new GetShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopRequest {
     return new GetShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetShopRequest | PlainMessage<GetShopRequest> | undefined, b: GetShopRequest | PlainMessage<GetShopRequest> | undefined): boolean {
+  static equals(
+    a: GetShopRequest | PlainMessage<GetShopRequest> | undefined,
+    b: GetShopRequest | PlainMessage<GetShopRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(GetShopRequest, a, b);
   }
 }
@@ -385,19 +550,31 @@ export class GetShopResponse extends Message<GetShopResponse> {
     { no: 1, name: "shop", kind: "message", T: ShopResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetShopResponse {
     return new GetShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopResponse {
     return new GetShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopResponse {
     return new GetShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetShopResponse | PlainMessage<GetShopResponse> | undefined, b: GetShopResponse | PlainMessage<GetShopResponse> | undefined): boolean {
+  static equals(
+    a: GetShopResponse | PlainMessage<GetShopResponse> | undefined,
+    b: GetShopResponse | PlainMessage<GetShopResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(GetShopResponse, a, b);
   }
 }
@@ -424,23 +601,45 @@ export class ShopsOrderBy extends Message<ShopsOrderBy> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.ShopsOrderBy";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(ShopsOrderByField) },
-    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Direction) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(ShopsOrderByField),
+    },
+    {
+      no: 2,
+      name: "direction",
+      kind: "enum",
+      T: proto3.getEnumType(Direction),
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShopsOrderBy {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ShopsOrderBy {
     return new ShopsOrderBy().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShopsOrderBy {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ShopsOrderBy {
     return new ShopsOrderBy().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShopsOrderBy {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ShopsOrderBy {
     return new ShopsOrderBy().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ShopsOrderBy | PlainMessage<ShopsOrderBy> | undefined, b: ShopsOrderBy | PlainMessage<ShopsOrderBy> | undefined): boolean {
+  static equals(
+    a: ShopsOrderBy | PlainMessage<ShopsOrderBy> | undefined,
+    b: ShopsOrderBy | PlainMessage<ShopsOrderBy> | undefined,
+  ): boolean {
     return proto3.util.equals(ShopsOrderBy, a, b);
   }
 }
@@ -467,23 +666,40 @@ export class ShopsFilter extends Message<ShopsFilter> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.ShopsFilter";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(ShopsFilterField) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(ShopsFilterField),
+    },
     { no: 2, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShopsFilter {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ShopsFilter {
     return new ShopsFilter().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShopsFilter {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ShopsFilter {
     return new ShopsFilter().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShopsFilter {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ShopsFilter {
     return new ShopsFilter().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ShopsFilter | PlainMessage<ShopsFilter> | undefined, b: ShopsFilter | PlainMessage<ShopsFilter> | undefined): boolean {
+  static equals(
+    a: ShopsFilter | PlainMessage<ShopsFilter> | undefined,
+    b: ShopsFilter | PlainMessage<ShopsFilter> | undefined,
+  ): boolean {
     return proto3.util.equals(ShopsFilter, a, b);
   }
 }
@@ -525,26 +741,56 @@ export class ListShopsRequest extends Message<ListShopsRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.ListShopsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
+    {
+      no: 1,
+      name: "user_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "pagination",
+      kind: "message",
+      T: PaginationRequest,
+      opt: true,
+    },
     { no: 3, name: "order_by", kind: "message", T: ShopsOrderBy, opt: true },
     { no: 4, name: "filter", kind: "message", T: ShopsFilter, opt: true },
-    { no: 5, name: "extended", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    {
+      no: 5,
+      name: "extended",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShopsRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListShopsRequest {
     return new ListShopsRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShopsRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListShopsRequest {
     return new ListShopsRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShopsRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListShopsRequest {
     return new ListShopsRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListShopsRequest | PlainMessage<ListShopsRequest> | undefined, b: ListShopsRequest | PlainMessage<ListShopsRequest> | undefined): boolean {
+  static equals(
+    a: ListShopsRequest | PlainMessage<ListShopsRequest> | undefined,
+    b: ListShopsRequest | PlainMessage<ListShopsRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(ListShopsRequest, a, b);
   }
 }
@@ -575,19 +821,31 @@ export class ListShopsResponse extends Message<ListShopsResponse> {
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShopsResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListShopsResponse {
     return new ListShopsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShopsResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListShopsResponse {
     return new ListShopsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShopsResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListShopsResponse {
     return new ListShopsResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListShopsResponse | PlainMessage<ListShopsResponse> | undefined, b: ListShopsResponse | PlainMessage<ListShopsResponse> | undefined): boolean {
+  static equals(
+    a: ListShopsResponse | PlainMessage<ListShopsResponse> | undefined,
+    b: ListShopsResponse | PlainMessage<ListShopsResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(ListShopsResponse, a, b);
   }
 }
@@ -645,28 +903,82 @@ export class UpdateShopRequest extends Message<UpdateShopRequest> {
   static readonly typeName = "sited_io.commerce.v1.UpdateShopRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 3, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 5, name: "platform_fee_percent", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 6, name: "minimum_platform_fee_cent", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 7, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
-    { no: 8, name: "contact_email_address", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 2,
+      name: "name",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "slug",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 4,
+      name: "description",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 5,
+      name: "platform_fee_percent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+      opt: true,
+    },
+    {
+      no: 6,
+      name: "minimum_platform_fee_cent",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+      opt: true,
+    },
+    {
+      no: 7,
+      name: "is_active",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+      opt: true,
+    },
+    {
+      no: 8,
+      name: "contact_email_address",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateShopRequest {
     return new UpdateShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateShopRequest {
     return new UpdateShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShopRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateShopRequest {
     return new UpdateShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateShopRequest | PlainMessage<UpdateShopRequest> | undefined, b: UpdateShopRequest | PlainMessage<UpdateShopRequest> | undefined): boolean {
+  static equals(
+    a: UpdateShopRequest | PlainMessage<UpdateShopRequest> | undefined,
+    b: UpdateShopRequest | PlainMessage<UpdateShopRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateShopRequest, a, b);
   }
 }
@@ -691,19 +1003,31 @@ export class UpdateShopResponse extends Message<UpdateShopResponse> {
     { no: 1, name: "shop", kind: "message", T: ShopResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateShopResponse {
     return new UpdateShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateShopResponse {
     return new UpdateShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateShopResponse {
     return new UpdateShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateShopResponse | PlainMessage<UpdateShopResponse> | undefined, b: UpdateShopResponse | PlainMessage<UpdateShopResponse> | undefined): boolean {
+  static equals(
+    a: UpdateShopResponse | PlainMessage<UpdateShopResponse> | undefined,
+    b: UpdateShopResponse | PlainMessage<UpdateShopResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateShopResponse, a, b);
   }
 }
@@ -728,19 +1052,31 @@ export class DeleteShopRequest extends Message<DeleteShopRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteShopRequest {
     return new DeleteShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopRequest {
     return new DeleteShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopRequest {
     return new DeleteShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined, b: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined): boolean {
+  static equals(
+    a: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined,
+    b: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteShopRequest, a, b);
   }
 }
@@ -756,23 +1092,33 @@ export class DeleteShopResponse extends Message<DeleteShopResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.DeleteShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteShopResponse {
     return new DeleteShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopResponse {
     return new DeleteShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopResponse {
     return new DeleteShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined, b: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined): boolean {
+  static equals(
+    a: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined,
+    b: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteShopResponse, a, b);
   }
 }
-

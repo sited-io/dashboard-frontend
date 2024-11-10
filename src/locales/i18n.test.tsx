@@ -9,7 +9,7 @@ describe("Locales", () => {
   test("Check that no language has TKEYS vaules as value", () => {
     function checkValuesAreNotKeyPath(
       obj: Record<string, any>,
-      parentKey: string
+      parentKey: string,
     ) {
       for (const [key, value] of _.entries(obj)) {
         assert(_.isString(key));
@@ -43,7 +43,7 @@ describe("Locales", () => {
   test("Check that all vaules in TKEYS are the path to their keys respectiveley", () => {
     function checkObjectsValuesMatchKeyPath(
       obj: Record<string, any>,
-      parentKey: string
+      parentKey: string,
     ) {
       for (const [key, value] of _.entries(obj)) {
         assert(_.isString(key));
@@ -55,8 +55,8 @@ describe("Locales", () => {
           expect(
             value,
             errorPrint(
-              `Error in TKEYS. Value of key was not the object path to the key`
-            )
+              `Error in TKEYS. Value of key was not the object path to the key`,
+            ),
           ).toEqual(fullPath);
         } else {
           checkObjectsValuesMatchKeyPath(value, fullPath);
@@ -117,7 +117,7 @@ describe("Locales", () => {
       for (const b of _.keys(LOCALES)) {
         expect(
           comparisons[a],
-          errorPrint(`'${b}' was not equal to '${a}'`)
+          errorPrint(`'${b}' was not equal to '${a}'`),
         ).toEqual(comparisons[b]);
       }
     }

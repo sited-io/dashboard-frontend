@@ -3,7 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreatePageRequest, CreatePageResponse, DeletePageRequest, DeletePageResponse, GetPageRequest, GetPageResponse, ListPagesRequest, ListPagesResponse, UpdatePageRequest, UpdatePageResponse } from "./page_pb.js";
+import {
+  CreatePageRequest,
+  CreatePageResponse,
+  DeletePageRequest,
+  DeletePageResponse,
+  GetPageRequest,
+  GetPageResponse,
+  ListPagesRequest,
+  ListPagesResponse,
+  UpdatePageRequest,
+  UpdatePageResponse,
+} from "./page_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -57,6 +68,5 @@ export const PageService = {
       O: DeletePageResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-

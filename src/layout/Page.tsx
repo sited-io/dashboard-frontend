@@ -7,7 +7,6 @@ import { useWebsiteContext } from "~/contexts/WebsiteContext";
 import { userIndexPath } from "~/routes/user/(user)";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import styles from "./Page.module.scss";
 
 type Props = {} & ParentProps;
 

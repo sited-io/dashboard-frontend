@@ -1,21 +1,21 @@
+import { Trans, useTransContext } from "@mbarzda/solid-i18next";
+import _ from "lodash";
+import { createStore } from "solid-js/store";
+
+import { getEnumVariants } from "~/lib/request-helpers";
+import { TKEYS } from "~/locales";
+import { offerService } from "~/services/commerce";
 import {
   OfferResponse,
   OfferType,
   UpdateOfferRequest,
 } from "~/services/sited_io/commerce/v1/offer_pb";
-import { MdDialog } from "../layout/MdDialog";
-import { Trans, useTransContext } from "@mbarzda/solid-i18next";
-import _ from "lodash";
-import { createSignal } from "solid-js";
-import { createStore } from "solid-js/store";
-import { offerService } from "~/services/commerce";
 import { Font } from "../content/Font";
-import { TKEYS } from "~/locales";
 import { Form } from "../form/Form";
 import { MdButton } from "../form/MdButton";
-import { MdTextField } from "../form/MdTextField";
-import { getEnumVariants } from "~/lib/request-helpers";
 import { MdSelect } from "../form/MdSelect";
+import { MdTextField } from "../form/MdTextField";
+import { MdDialog } from "../layout/MdDialog";
 
 type Props = {
   readonly show: boolean;

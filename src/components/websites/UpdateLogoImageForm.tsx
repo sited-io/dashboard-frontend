@@ -1,11 +1,10 @@
 import { Trans } from "@mbarzda/solid-i18next";
 import _ from "lodash";
-import { Show, createEffect, createSignal } from "solid-js";
+import { Show, createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 
 import { Font } from "~/components/content/Font";
 import { Form } from "~/components/form/Form";
-import { ImageInput } from "~/components/form/ImageInput";
 import { MdButton } from "~/components/form/MdButton";
 import { resizeImage } from "~/lib/image";
 import { readAsUint8Array } from "~/lib/string-manipulation";
@@ -13,8 +12,8 @@ import { TKEYS } from "~/locales";
 import { PutLogoImageRequest } from "~/services/sited_io/websites/v1/customization_pb";
 import { WebsiteResponse } from "~/services/sited_io/websites/v1/website_pb";
 import { customizationService } from "~/services/website";
-import commonStyles from "./CommonForm.module.scss";
 import { FileInput } from "../form/FileInput";
+import commonStyles from "./CommonForm.module.scss";
 
 type Props = {
   website: WebsiteResponse;
@@ -28,9 +27,9 @@ export function UpdateLogoImageForm(props: Props) {
     imageUrl: undefined as string | undefined,
   });
 
-  const [loading, setLoading] = createSignal(false);
+  const [, setLoading] = createSignal(false);
 
-  const [errors, setErrors] = createStore({ image: [] as string[] });
+  const [, setErrors] = createStore({ image: [] as string[] });
 
   function resetErrors() {
     setErrors({ image: [] });
@@ -71,12 +70,9 @@ export function UpdateLogoImageForm(props: Props) {
       },
     });
 
-    try {
-      await customizationService.putLogoImage(request);
-      handleUpdate();
-    } catch (err) {
-      // console.error(`${err}`);
-    }
+    await customizationService.putLogoImage(request);
+    handleUpdate();
+
     setLoading(false);
   }
 

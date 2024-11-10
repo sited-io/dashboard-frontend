@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { ParentProps } from "solid-js";
+
 import { CreateWebsiteDialog } from "~/components/websites/CreateWebsiteDialog";
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
 

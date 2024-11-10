@@ -117,7 +117,7 @@ export function EditMedia(props: Props) {
             <For each={props.medias}>
               {(media) => {
                 const sortable = createSortable(media.mediaId);
-                false && sortable;
+                false && sortable; // eslint-disable-line
 
                 return (
                   <TableRow

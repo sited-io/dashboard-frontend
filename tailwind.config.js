@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors")
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,7 +6,13 @@ export default {
   darkMode: "selector",
   theme: {
     fontFamily: {
-      display: ['"Noto Sans"', '"Roboto"', "ui-sans-serif", "system-ui", "sans-serif"]
+      display: [
+        '"Noto Sans"',
+        '"Roboto"',
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+      ],
     },
     extend: {
       colors: {
@@ -15,10 +21,8 @@ export default {
         primary: "#F8F9FA",
         secondary: colors.yellow,
         neutral: colors.neutral,
-      }
+      },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography")
-  ],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

@@ -1,16 +1,13 @@
-import { Trans } from "@mbarzda/solid-i18next";
-import { A } from "@solidjs/router";
-import { Show, createResource, createSignal } from "solid-js";
-import { TKEYS } from "~/locales";
-import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
-import { EditShippingRatesDialog } from "./EditShippingRatesDialog";
-import styles from "./EditShippingRates.module.scss";
-import { EditableField } from "./EditableField";
-import { Font } from "../content/Font";
-import { shippingRateService } from "~/services/commerce";
 import _ from "lodash";
-import { ResourceBoundary } from "../layout/ResourceBoundary";
+import { Show, createResource, createSignal } from "solid-js";
+
+import { TKEYS } from "~/locales";
+import { shippingRateService } from "~/services/commerce";
+import { OfferResponse } from "~/services/sited_io/commerce/v1/offer_pb";
+import { Font } from "../content/Font";
 import { Price } from "../content/Price";
+import { EditShippingRatesDialog } from "./EditShippingRatesDialog";
+import { EditableField } from "./EditableField";
 
 type Props = {
   readonly offer: OfferResponse;
@@ -18,9 +15,9 @@ type Props = {
 };
 
 export function EditShippingRates(props: Props) {
-  const [shippingRate, { refetch }] = createResource(
+  const [shippingRate] = createResource(
     () => props.offer.offerId,
-    fetchShippingRate
+    fetchShippingRate,
   );
 
   async function fetchShippingRate(offerId: string) {
@@ -33,7 +30,7 @@ export function EditShippingRates(props: Props) {
         return shippingRate;
       }
     } catch (err: any) {
-      // console.error(err);
+      console.error(err);
     }
   }
 

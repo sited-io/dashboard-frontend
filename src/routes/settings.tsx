@@ -1,42 +1,26 @@
-import { useNavigate } from "@solidjs/router";
 import { createResource } from "solid-js";
 
 import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
-import { DeleteWebsiteForm } from "~/components/websites/DeleteWebsiteForm";
 import { UpdateDomainsForm } from "~/components/websites/UpdateDomainsForm";
 import { UpdateStripeForm } from "~/components/websites/UpdateStripeForm";
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
+import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { shopService } from "~/services/commerce";
-import { indexPath } from ".";
-import { Page } from "~/layout/Page";
 
 export const settingsPath = () => "/settings";
 export const settingsUrl = () => buildUrl(settingsPath());
 
 export default function Settings() {
-  const navigate = useNavigate();
-
-  const {
-    selectedWebsite,
-    refetchWebsites,
-    setSelectedWebsite,
-    refetchSelectedWebsite,
-  } = useWebsiteContext();
+  const { selectedWebsite, refetchSelectedWebsite } = useWebsiteContext();
 
   const [shop, shopActions] = createResource(
     () => selectedWebsite()?.websiteId,
-    async (websiteId: string) => shopService.getShop({ websiteId })
+    async (websiteId: string) => shopService.getShop({ websiteId }),
   );
-
-  async function handleUpdateDelete() {
-    setSelectedWebsite(undefined);
-    await refetchWebsites();
-    navigate(indexPath());
-  }
 
   async function handleUpdate() {
     await refetchSelectedWebsite();

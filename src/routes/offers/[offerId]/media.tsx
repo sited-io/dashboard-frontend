@@ -1,7 +1,6 @@
 import { PartialMessage } from "@bufbuild/protobuf";
 import { useTransContext } from "@mbarzda/solid-i18next";
 import { useParams } from "@solidjs/router";
-import _ from "lodash";
 import { createResource, createSignal } from "solid-js";
 
 import { Font } from "~/components/content/Font";
@@ -39,7 +38,7 @@ export default function OfferMedia() {
 
   const [offer, { refetch }] = createResource(
     () => offerId,
-    async (offerId: string) => offerService.getOffer({ offerId })
+    async (offerId: string) => offerService.getOffer({ offerId }),
   );
 
   const [pagination, setPagination] = createSignal<
@@ -63,7 +62,7 @@ export default function OfferMedia() {
           direction: Direction.ASC,
         },
         pagination,
-      })
+      }),
   );
 
   const [showUploadMedia, setShowUploadMedia] = createSignal(false);
@@ -77,7 +76,7 @@ export default function OfferMedia() {
   }
 
   function handleMediaPagination(
-    pagination: PartialMessage<PaginationRequest>
+    pagination: PartialMessage<PaginationRequest>,
   ) {
     setPagination(pagination);
   }

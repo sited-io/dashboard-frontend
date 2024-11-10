@@ -15,7 +15,7 @@ export function getUrlFromRequestOrWindow() {
   const url = getRequestEvent()?.request.url || window?.location?.href;
   if (_.isNil(url) || _.isEmpty(url)) {
     throw new Error(
-      "[getDomainFromRequestOrWindow]: Unable to get url from request event or window"
+      "[getDomainFromRequestOrWindow]: Unable to get url from request event or window",
     );
   }
   return new URL(url);

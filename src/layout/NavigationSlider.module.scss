@@ -18,7 +18,8 @@ $slider-width: 290px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--md-sys-color-background);
 
-  box-shadow: 0 1px 2px 0 rgb(60, 64, 67, 0.3),
+  box-shadow:
+    0 1px 2px 0 rgb(60, 64, 67, 0.3),
     0 2px 6px 2px rgb(60, 64, 67, 0.15);
 
   overflow: scroll;

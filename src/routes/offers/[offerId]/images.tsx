@@ -1,21 +1,20 @@
+import { useTransContext } from "@mbarzda/solid-i18next";
 import { useParams } from "@solidjs/router";
-import { Suspense, createResource, createSignal } from "solid-js";
+import { createResource, createSignal } from "solid-js";
+import { Font } from "~/components/content/Font";
+import { MdButton } from "~/components/form/MdButton";
 import { Breadcrumbs } from "~/components/layout/Breadcrumbs";
 import { ResourceBoundary } from "~/components/layout/ResourceBoundary";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
+import { AddImageDialog } from "~/components/offers/images/AddImageDialog";
 import { EditImages } from "~/components/offers/images/EditImages";
+import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
 import { offerService } from "~/services/commerce";
 import { offersPath } from "../(offers)";
-import _ from "lodash";
 import { offerDetailPath } from "./(offerId)";
-import { useTransContext } from "@mbarzda/solid-i18next";
-import { MdButton } from "~/components/form/MdButton";
-import { Font } from "~/components/content/Font";
-import { AddImageDialog } from "~/components/offers/images/AddImageDialog";
-import { Page } from "~/layout/Page";
 
 export const offerImagesPath = (offerId: string) =>
   "/offers/" + offerId + "/images";
@@ -29,7 +28,7 @@ export default function Images() {
 
   const [offer, { refetch }] = createResource(
     () => offerId,
-    async (offerId: string) => offerService.getOffer({ offerId })
+    async (offerId: string) => offerService.getOffer({ offerId }),
   );
 
   const [showAddImage, setShowAddImage] = createSignal(false);

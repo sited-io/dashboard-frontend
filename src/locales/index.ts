@@ -32,7 +32,7 @@ export function getNextLanguageKey(currentLanguageKey: string) {
 
   const currentIndex = _.findIndex(
     languageKeys,
-    (key) => key === currentLanguageKey
+    (key) => key === currentLanguageKey,
   );
 
   const nextIndex = currentIndex + 1;

@@ -78,7 +78,7 @@ export function addHtmlLinebreaks(text?: string): string {
 export async function readAsUint8Array(
   file: File,
   start: number,
-  end: number
+  end: number,
 ): Promise<Uint8Array> {
   const fileChunk = file.slice(start, end);
 
@@ -129,7 +129,7 @@ export function isCssColor(value: any): boolean {
 // Stolen from: https://www.regextester.com/103452
 export function isValidHostname(value: string): boolean {
   return /(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{0,62}[a-zA-Z0-9]\.)+[a-zA-Z]{2,63}$)/.test(
-    value
+    value,
   );
 }
 

@@ -32,7 +32,7 @@ export default function OfferDetail() {
 
   const [offer, { refetch }] = createResource(
     () => offerId,
-    async (offerId: string) => offerService.getOffer({ offerId })
+    async (offerId: string) => offerService.getOffer({ offerId }),
   );
 
   const [showDeleteOffer, setShowDeleteOffer] = createSignal(false);

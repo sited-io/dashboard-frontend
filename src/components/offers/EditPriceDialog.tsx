@@ -21,7 +21,7 @@ import {
 import { Font } from "../content/Font";
 import { Form } from "../form/Form";
 import { MdButton } from "../form/MdButton";
-import { MdSelect, SelectKey } from "../form/MdSelect";
+import { MdSelect } from "../form/MdSelect";
 import { MdTextField } from "../form/MdTextField";
 import { PriceField } from "../form/PriceField";
 import { MdDialog } from "../layout/MdDialog";
@@ -49,8 +49,6 @@ export function EditPriceDialog(props: Props) {
   } as PutPriceToOfferRequest;
 
   const [request, setRequest] = createStore(_.clone(emptyRequest));
-
-  const [errors] = createStore({});
 
   function priceTypeOptions() {
     return getEnumVariants(PriceType).map((p) => ({

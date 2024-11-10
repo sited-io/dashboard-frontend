@@ -40,7 +40,7 @@ function initialize() {
   const [session] = createResource(fetchSession);
   const [websites, websitesActions] = createResource(
     () => session()?.userId,
-    async (userId: string) => websiteService.listWebsites({ userId })
+    async (userId: string) => websiteService.listWebsites({ userId }),
   );
   const [selectedWebsiteId, _setSelectedWebsiteId] = createSignal<string>();
   const [selectedWebsite, selectedWebsiteActions] = createResource(
@@ -49,7 +49,7 @@ function initialize() {
       if (!_.isNil(websiteId) && !_.isEmpty(websiteId)) {
         return websiteService.getWebiste({ websiteId });
       }
-    }
+    },
   );
 
   createEffect(() => {
@@ -69,7 +69,7 @@ function initialize() {
   function getWebsiteFromStore(websites: WebsiteResponse[] | undefined) {
     if (!isServer) {
       const storedWebsiteId = localStorage?.getItem(
-        SELECTED_WEBSITE_STORAGE_KEY
+        SELECTED_WEBSITE_STORAGE_KEY,
       );
       return websites?.find((w) => w.websiteId === storedWebsiteId);
     }

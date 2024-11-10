@@ -1,5 +1,6 @@
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
-import { For, createResource, createSignal } from "solid-js";
+import { For, createSignal } from "solid-js";
+
 import { TKEYS } from "~/locales";
 import {
   DomainResponse,

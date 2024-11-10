@@ -19,7 +19,7 @@ type Props = {
 export function EditStaticPage(props: Props) {
   const [staticPage] = createResource(
     () => props.page.pageId,
-    async (pageId: bigint) => staticPageService.getStaticPage({ pageId })
+    async (pageId: bigint) => staticPageService.getStaticPage({ pageId }),
   );
 
   async function handleSave(components: PlainMessage<Component>[]) {

@@ -1,15 +1,12 @@
-import { useNavigate } from "@solidjs/router";
-import _ from "lodash";
-import { For, createResource, onMount } from "solid-js";
+import { For } from "solid-js";
+
 import { Font } from "~/components/content/Font";
 import { Section } from "~/components/layout/Section";
 import { SectionTitle } from "~/components/layout/SectionTitle";
-
 import { useWebsiteContext } from "~/contexts/WebsiteContext";
 import { Page } from "~/layout/Page";
 import { buildUrl } from "~/lib/env";
 import { TKEYS } from "~/locales";
-import { fetchSession } from "~/services/auth";
 
 export const indexPath = () => "/";
 export const indexUrl = () => buildUrl(indexPath());

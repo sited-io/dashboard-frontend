@@ -47,14 +47,14 @@ export default function Pages() {
 
   const [pagesResponse, pagesActions] = createResource(
     () => selectedWebsite()?.websiteId,
-    async (websiteId: string) => pageService.listPages({ websiteId })
+    async (websiteId: string) => pageService.listPages({ websiteId }),
   );
 
   function pagesDisplay() {
     return _.orderBy(
       pagesResponse()?.pages,
       ["isHomePage", "path"],
-      ["desc", "asc"]
+      ["desc", "asc"],
     );
   }
 
@@ -68,7 +68,7 @@ export default function Pages() {
 
   function handleStartEditPageSettings(pageId: bigint) {
     setPageToEditSettings(
-      pagesResponse()?.pages.find((p) => p.pageId === pageId)
+      pagesResponse()?.pages.find((p) => p.pageId === pageId),
     );
   }
 

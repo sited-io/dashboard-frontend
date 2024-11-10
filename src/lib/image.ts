@@ -1,7 +1,7 @@
 export async function resizeImage(
   url: string,
   maxWidth: number,
-  maxHeight: number
+  maxHeight: number,
 ): Promise<File> {
   return new Promise((resolve, reject) => {
     const img = new Image();

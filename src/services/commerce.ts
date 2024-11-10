@@ -31,7 +31,7 @@ const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 
 const shopClient = createPromiseClient(
   ShopService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const shopService = {
@@ -48,7 +48,7 @@ export const shopService = {
 
 const offerClient = createPromiseClient(
   OfferService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const offerService = {
@@ -99,7 +99,7 @@ export const offerService = {
     await offerClient.addImageToOffer(request, { headers });
   },
   removeImageFromOffer: async (
-    request: PartialMessage<RemoveImageFromOfferRequest>
+    request: PartialMessage<RemoveImageFromOfferRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -111,7 +111,7 @@ export const offerService = {
     await offerClient.putPriceToOffer(request, { headers });
   },
   removePriceFromOffer: async (
-    request: PartialMessage<RemovePriceFromOfferRequest>
+    request: PartialMessage<RemovePriceFromOfferRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();
@@ -121,7 +121,7 @@ export const offerService = {
 
 const shippingRateClient = createPromiseClient(
   ShippingRateService,
-  createGrpcWebTransport({ baseUrl })
+  createGrpcWebTransport({ baseUrl }),
 );
 
 export const shippingRateService = {
@@ -140,13 +140,13 @@ export const shippingRateService = {
     });
     if (_.isNil(shippingRate)) {
       throw new Error(
-        "[shippingRateService.getShippingRate]: response was empty"
+        "[shippingRateService.getShippingRate]: response was empty",
       );
     }
     return toPlainMessage(shippingRate) as ShippingRateResponse;
   },
   deleteShippingRate: async (
-    request: PartialMessage<DeleteShippingRateRequest>
+    request: PartialMessage<DeleteShippingRateRequest>,
   ) => {
     "use server";
     const headers = await withAuthHeader();

@@ -30,11 +30,11 @@ export function AddImageDialog(props: Props) {
   };
 
   const [form, setForm] = createStore(_.clone(emptyForm));
-  const [errors, setErrors] = createStore({
+  const [, setErrors] = createStore({
     image: [] as string[],
   });
 
-  const [uploading, setUploading] = createSignal(false);
+  const [, setUploading] = createSignal(false);
 
   function resetErrors() {
     setErrors({ image: [] });

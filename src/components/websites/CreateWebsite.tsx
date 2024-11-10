@@ -23,7 +23,7 @@ export function CreateWebsite() {
 
   const [request, setRequest] = createStore(_.clone(emptyRequest));
 
-  const [errors, setErrors] = createStore({
+  const [, setErrors] = createStore({
     name: [] as string[],
   });
 

@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
@@ -41,22 +48,40 @@ export class StaticPageResponse extends Message<StaticPageResponse> {
     { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "components", kind: "message", T: Component, repeated: true },
+    {
+      no: 4,
+      name: "components",
+      kind: "message",
+      T: Component,
+      repeated: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StaticPageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StaticPageResponse {
     return new StaticPageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StaticPageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StaticPageResponse {
     return new StaticPageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StaticPageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StaticPageResponse {
     return new StaticPageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StaticPageResponse | PlainMessage<StaticPageResponse> | undefined, b: StaticPageResponse | PlainMessage<StaticPageResponse> | undefined): boolean {
+  static equals(
+    a: StaticPageResponse | PlainMessage<StaticPageResponse> | undefined,
+    b: StaticPageResponse | PlainMessage<StaticPageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(StaticPageResponse, a, b);
   }
 }
@@ -81,19 +106,31 @@ export class GetStaticPageRequest extends Message<GetStaticPageRequest> {
     { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStaticPageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetStaticPageRequest {
     return new GetStaticPageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStaticPageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetStaticPageRequest {
     return new GetStaticPageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStaticPageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetStaticPageRequest {
     return new GetStaticPageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStaticPageRequest | PlainMessage<GetStaticPageRequest> | undefined, b: GetStaticPageRequest | PlainMessage<GetStaticPageRequest> | undefined): boolean {
+  static equals(
+    a: GetStaticPageRequest | PlainMessage<GetStaticPageRequest> | undefined,
+    b: GetStaticPageRequest | PlainMessage<GetStaticPageRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(GetStaticPageRequest, a, b);
   }
 }
@@ -118,19 +155,31 @@ export class GetStaticPageResponse extends Message<GetStaticPageResponse> {
     { no: 1, name: "static_page", kind: "message", T: StaticPageResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStaticPageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetStaticPageResponse {
     return new GetStaticPageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStaticPageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetStaticPageResponse {
     return new GetStaticPageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStaticPageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetStaticPageResponse {
     return new GetStaticPageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStaticPageResponse | PlainMessage<GetStaticPageResponse> | undefined, b: GetStaticPageResponse | PlainMessage<GetStaticPageResponse> | undefined): boolean {
+  static equals(
+    a: GetStaticPageResponse | PlainMessage<GetStaticPageResponse> | undefined,
+    b: GetStaticPageResponse | PlainMessage<GetStaticPageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(GetStaticPageResponse, a, b);
   }
 }
@@ -158,22 +207,46 @@ export class UpdateStaticPageRequest extends Message<UpdateStaticPageRequest> {
   static readonly typeName = "sited_io.websites.v1.UpdateStaticPageRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "components", kind: "message", T: Component, repeated: true },
+    {
+      no: 2,
+      name: "components",
+      kind: "message",
+      T: Component,
+      repeated: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStaticPageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateStaticPageRequest {
     return new UpdateStaticPageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStaticPageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateStaticPageRequest {
     return new UpdateStaticPageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStaticPageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateStaticPageRequest {
     return new UpdateStaticPageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateStaticPageRequest | PlainMessage<UpdateStaticPageRequest> | undefined, b: UpdateStaticPageRequest | PlainMessage<UpdateStaticPageRequest> | undefined): boolean {
+  static equals(
+    a:
+      | UpdateStaticPageRequest
+      | PlainMessage<UpdateStaticPageRequest>
+      | undefined,
+    b:
+      | UpdateStaticPageRequest
+      | PlainMessage<UpdateStaticPageRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateStaticPageRequest, a, b);
   }
 }
@@ -198,19 +271,37 @@ export class UpdateStaticPageResponse extends Message<UpdateStaticPageResponse> 
     { no: 1, name: "static_page", kind: "message", T: StaticPageResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStaticPageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateStaticPageResponse {
     return new UpdateStaticPageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStaticPageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateStaticPageResponse {
     return new UpdateStaticPageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStaticPageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateStaticPageResponse {
     return new UpdateStaticPageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateStaticPageResponse | PlainMessage<UpdateStaticPageResponse> | undefined, b: UpdateStaticPageResponse | PlainMessage<UpdateStaticPageResponse> | undefined): boolean {
+  static equals(
+    a:
+      | UpdateStaticPageResponse
+      | PlainMessage<UpdateStaticPageResponse>
+      | undefined,
+    b:
+      | UpdateStaticPageResponse
+      | PlainMessage<UpdateStaticPageResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateStaticPageResponse, a, b);
   }
 }
@@ -237,23 +328,40 @@ export class Component extends Message<Component> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.Component";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "component_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "component_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 2, name: "component_type", kind: "message", T: ComponentType },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Component {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): Component {
     return new Component().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Component {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): Component {
     return new Component().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Component {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): Component {
     return new Component().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Component | PlainMessage<Component> | undefined, b: Component | PlainMessage<Component> | undefined): boolean {
+  static equals(
+    a: Component | PlainMessage<Component> | undefined,
+    b: Component | PlainMessage<Component> | undefined,
+  ): boolean {
     return proto3.util.equals(Component, a, b);
   }
 }
@@ -265,19 +373,22 @@ export class ComponentType extends Message<ComponentType> {
   /**
    * @generated from oneof sited_io.websites.v1.ComponentType.inner
    */
-  inner: {
-    /**
-     * @generated from field: sited_io.websites.v1.HeaderComponent header = 1;
-     */
-    value: HeaderComponent;
-    case: "header";
-  } | {
-    /**
-     * @generated from field: sited_io.websites.v1.ParagraphComponent paragraph = 2;
-     */
-    value: ParagraphComponent;
-    case: "paragraph";
-  } | { case: undefined; value?: undefined } = { case: undefined };
+  inner:
+    | {
+        /**
+         * @generated from field: sited_io.websites.v1.HeaderComponent header = 1;
+         */
+        value: HeaderComponent;
+        case: "header";
+      }
+    | {
+        /**
+         * @generated from field: sited_io.websites.v1.ParagraphComponent paragraph = 2;
+         */
+        value: ParagraphComponent;
+        case: "paragraph";
+      }
+    | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<ComponentType>) {
     super();
@@ -287,23 +398,47 @@ export class ComponentType extends Message<ComponentType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ComponentType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "header", kind: "message", T: HeaderComponent, oneof: "inner" },
-    { no: 2, name: "paragraph", kind: "message", T: ParagraphComponent, oneof: "inner" },
+    {
+      no: 1,
+      name: "header",
+      kind: "message",
+      T: HeaderComponent,
+      oneof: "inner",
+    },
+    {
+      no: 2,
+      name: "paragraph",
+      kind: "message",
+      T: ParagraphComponent,
+      oneof: "inner",
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ComponentType {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ComponentType {
     return new ComponentType().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ComponentType {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ComponentType {
     return new ComponentType().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ComponentType {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ComponentType {
     return new ComponentType().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ComponentType | PlainMessage<ComponentType> | undefined, b: ComponentType | PlainMessage<ComponentType> | undefined): boolean {
+  static equals(
+    a: ComponentType | PlainMessage<ComponentType> | undefined,
+    b: ComponentType | PlainMessage<ComponentType> | undefined,
+  ): boolean {
     return proto3.util.equals(ComponentType, a, b);
   }
 }
@@ -334,19 +469,31 @@ export class HeaderComponent extends Message<HeaderComponent> {
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HeaderComponent {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): HeaderComponent {
     return new HeaderComponent().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HeaderComponent {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): HeaderComponent {
     return new HeaderComponent().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HeaderComponent {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): HeaderComponent {
     return new HeaderComponent().fromJsonString(jsonString, options);
   }
 
-  static equals(a: HeaderComponent | PlainMessage<HeaderComponent> | undefined, b: HeaderComponent | PlainMessage<HeaderComponent> | undefined): boolean {
+  static equals(
+    a: HeaderComponent | PlainMessage<HeaderComponent> | undefined,
+    b: HeaderComponent | PlainMessage<HeaderComponent> | undefined,
+  ): boolean {
     return proto3.util.equals(HeaderComponent, a, b);
   }
 }
@@ -368,22 +515,40 @@ export class ParagraphComponent extends Message<ParagraphComponent> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ParagraphComponent";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "content", kind: "message", T: InlineElement, repeated: true },
+    {
+      no: 1,
+      name: "content",
+      kind: "message",
+      T: InlineElement,
+      repeated: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParagraphComponent {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ParagraphComponent {
     return new ParagraphComponent().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParagraphComponent {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ParagraphComponent {
     return new ParagraphComponent().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParagraphComponent {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ParagraphComponent {
     return new ParagraphComponent().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ParagraphComponent | PlainMessage<ParagraphComponent> | undefined, b: ParagraphComponent | PlainMessage<ParagraphComponent> | undefined): boolean {
+  static equals(
+    a: ParagraphComponent | PlainMessage<ParagraphComponent> | undefined,
+    b: ParagraphComponent | PlainMessage<ParagraphComponent> | undefined,
+  ): boolean {
     return proto3.util.equals(ParagraphComponent, a, b);
   }
 }
@@ -395,19 +560,22 @@ export class InlineElement extends Message<InlineElement> {
   /**
    * @generated from oneof sited_io.websites.v1.InlineElement.element_type
    */
-  elementType: {
-    /**
-     * @generated from field: sited_io.websites.v1.TextElement text = 1;
-     */
-    value: TextElement;
-    case: "text";
-  } | {
-    /**
-     * @generated from field: sited_io.websites.v1.LinkElement link = 2;
-     */
-    value: LinkElement;
-    case: "link";
-  } | { case: undefined; value?: undefined } = { case: undefined };
+  elementType:
+    | {
+        /**
+         * @generated from field: sited_io.websites.v1.TextElement text = 1;
+         */
+        value: TextElement;
+        case: "text";
+      }
+    | {
+        /**
+         * @generated from field: sited_io.websites.v1.LinkElement link = 2;
+         */
+        value: LinkElement;
+        case: "link";
+      }
+    | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<InlineElement>) {
     super();
@@ -417,23 +585,47 @@ export class InlineElement extends Message<InlineElement> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.InlineElement";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "text", kind: "message", T: TextElement, oneof: "element_type" },
-    { no: 2, name: "link", kind: "message", T: LinkElement, oneof: "element_type" },
+    {
+      no: 1,
+      name: "text",
+      kind: "message",
+      T: TextElement,
+      oneof: "element_type",
+    },
+    {
+      no: 2,
+      name: "link",
+      kind: "message",
+      T: LinkElement,
+      oneof: "element_type",
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InlineElement {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): InlineElement {
     return new InlineElement().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InlineElement {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): InlineElement {
     return new InlineElement().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InlineElement {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): InlineElement {
     return new InlineElement().fromJsonString(jsonString, options);
   }
 
-  static equals(a: InlineElement | PlainMessage<InlineElement> | undefined, b: InlineElement | PlainMessage<InlineElement> | undefined): boolean {
+  static equals(
+    a: InlineElement | PlainMessage<InlineElement> | undefined,
+    b: InlineElement | PlainMessage<InlineElement> | undefined,
+  ): boolean {
     return proto3.util.equals(InlineElement, a, b);
   }
 }
@@ -458,19 +650,31 @@ export class TextElement extends Message<TextElement> {
     { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TextElement {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): TextElement {
     return new TextElement().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TextElement {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): TextElement {
     return new TextElement().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TextElement {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): TextElement {
     return new TextElement().fromJsonString(jsonString, options);
   }
 
-  static equals(a: TextElement | PlainMessage<TextElement> | undefined, b: TextElement | PlainMessage<TextElement> | undefined): boolean {
+  static equals(
+    a: TextElement | PlainMessage<TextElement> | undefined,
+    b: TextElement | PlainMessage<TextElement> | undefined,
+  ): boolean {
     return proto3.util.equals(TextElement, a, b);
   }
 }
@@ -501,20 +705,31 @@ export class LinkElement extends Message<LinkElement> {
     { no: 2, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkElement {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): LinkElement {
     return new LinkElement().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkElement {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): LinkElement {
     return new LinkElement().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkElement {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): LinkElement {
     return new LinkElement().fromJsonString(jsonString, options);
   }
 
-  static equals(a: LinkElement | PlainMessage<LinkElement> | undefined, b: LinkElement | PlainMessage<LinkElement> | undefined): boolean {
+  static equals(
+    a: LinkElement | PlainMessage<LinkElement> | undefined,
+    b: LinkElement | PlainMessage<LinkElement> | undefined,
+  ): boolean {
     return proto3.util.equals(LinkElement, a, b);
   }
 }
-

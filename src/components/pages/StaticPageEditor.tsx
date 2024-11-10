@@ -75,7 +75,7 @@ export default function StaticPageEditor(props: Props) {
 }
 
 function getComponentFromBlock(
-  block: OutputBlockData<string, any>
+  block: OutputBlockData<string, any>,
 ): PlainMessage<Component> {
   switch (block.type) {
     case "header":
@@ -84,14 +84,13 @@ function getComponentFromBlock(
       return getComponentFromParagraph(block.data.text);
 
     default:
-      const err = `Unknown block type ${block.type}`;
-      throw new Error(err);
+      throw new Error(`Unknown block type ${block.type}`);
   }
 }
 
 function getComponentFromHeader(
   level: number,
-  content: string
+  content: string,
 ): PlainMessage<Component> {
   return {
     componentType: {
@@ -150,8 +149,7 @@ function getParagraphContentFromHtml(text: string): InlineElement[] {
         break;
 
       default:
-        const err = `Cannot handle HTML nodeName ${node.nodeName}`;
-        throw new Error(err);
+        throw new Error(`Cannot handle HTML nodeName ${node.nodeName}`);
     }
   }
 
@@ -178,13 +176,14 @@ function getBlockFromComponent(component: Component): OutputBlockData {
         },
       };
     default:
-      const err = `Cannot convert componoent ${component.componentType?.inner.case} to block`;
-      throw new Error(err);
+      throw new Error(
+        `Cannot convert componoent ${component.componentType?.inner.case} to block`,
+      );
   }
 }
 
 function getParagraphHtmlFromInlineElement(
-  inlineElement: InlineElement
+  inlineElement: InlineElement,
 ): string {
   switch (inlineElement.elementType.case) {
     case "text":
@@ -192,8 +191,8 @@ function getParagraphHtmlFromInlineElement(
     case "link":
       return `<a href=${inlineElement.elementType.value.url}>${inlineElement.elementType.value.text}</a>`;
     default:
-      const err = `Cannot convert inlineElement ${inlineElement.elementType.case} to text`;
-      throw new Error(err);
+      throw new Error(
+        `Cannot convert inlineElement ${inlineElement.elementType.case} to text`,
+      );
   }
 }
-

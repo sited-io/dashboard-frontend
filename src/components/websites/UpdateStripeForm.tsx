@@ -35,7 +35,7 @@ export function UpdateStripeForm(props: Props) {
         .catch((err) => {
           console.error(err);
           return;
-        })
+        }),
   );
 
   function stripeAccountState() {

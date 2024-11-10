@@ -1,6 +1,5 @@
 import { onCleanup } from "solid-js";
 
-/* eslint-disable */
 declare module "solid-js" {
   namespace JSX {
     interface Directives {
@@ -8,7 +7,6 @@ declare module "solid-js" {
     }
   }
 }
-/* eslint-enable */
 
 export function clickOutside(element: Element, accessor: () => () => void) {
   function onClick(e: Event) {
