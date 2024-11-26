@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
@@ -74,39 +67,22 @@ export class DomainResponse extends Message<DomainResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "domain_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "status",
-      kind: "enum",
-      T: proto3.getEnumType(DomainStatus),
-    },
+    { no: 3, name: "status", kind: "enum", T: proto3.getEnumType(DomainStatus) },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DomainResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DomainResponse {
     return new DomainResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DomainResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DomainResponse {
     return new DomainResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DomainResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DomainResponse {
     return new DomainResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DomainResponse | PlainMessage<DomainResponse> | undefined,
-    b: DomainResponse | PlainMessage<DomainResponse> | undefined,
-  ): boolean {
+  static equals(a: DomainResponse | PlainMessage<DomainResponse> | undefined, b: DomainResponse | PlainMessage<DomainResponse> | undefined): boolean {
     return proto3.util.equals(DomainResponse, a, b);
   }
 }
@@ -137,31 +113,19 @@ export class CreateDomainRequest extends Message<CreateDomainRequest> {
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateDomainRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDomainRequest {
     return new CreateDomainRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateDomainRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDomainRequest {
     return new CreateDomainRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateDomainRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDomainRequest {
     return new CreateDomainRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateDomainRequest | PlainMessage<CreateDomainRequest> | undefined,
-    b: CreateDomainRequest | PlainMessage<CreateDomainRequest> | undefined,
-  ): boolean {
+  static equals(a: CreateDomainRequest | PlainMessage<CreateDomainRequest> | undefined, b: CreateDomainRequest | PlainMessage<CreateDomainRequest> | undefined): boolean {
     return proto3.util.equals(CreateDomainRequest, a, b);
   }
 }
@@ -186,31 +150,19 @@ export class CreateDomainResponse extends Message<CreateDomainResponse> {
     { no: 1, name: "domain", kind: "message", T: DomainResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateDomainResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDomainResponse {
     return new CreateDomainResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateDomainResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDomainResponse {
     return new CreateDomainResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateDomainResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDomainResponse {
     return new CreateDomainResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateDomainResponse | PlainMessage<CreateDomainResponse> | undefined,
-    b: CreateDomainResponse | PlainMessage<CreateDomainResponse> | undefined,
-  ): boolean {
+  static equals(a: CreateDomainResponse | PlainMessage<CreateDomainResponse> | undefined, b: CreateDomainResponse | PlainMessage<CreateDomainResponse> | undefined): boolean {
     return proto3.util.equals(CreateDomainResponse, a, b);
   }
 }
@@ -235,37 +187,19 @@ export class CheckDomainStatusRequest extends Message<CheckDomainStatusRequest> 
     { no: 1, name: "domain_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CheckDomainStatusRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckDomainStatusRequest {
     return new CheckDomainStatusRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CheckDomainStatusRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckDomainStatusRequest {
     return new CheckDomainStatusRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CheckDomainStatusRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckDomainStatusRequest {
     return new CheckDomainStatusRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CheckDomainStatusRequest
-      | PlainMessage<CheckDomainStatusRequest>
-      | undefined,
-    b:
-      | CheckDomainStatusRequest
-      | PlainMessage<CheckDomainStatusRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: CheckDomainStatusRequest | PlainMessage<CheckDomainStatusRequest> | undefined, b: CheckDomainStatusRequest | PlainMessage<CheckDomainStatusRequest> | undefined): boolean {
     return proto3.util.equals(CheckDomainStatusRequest, a, b);
   }
 }
@@ -290,37 +224,19 @@ export class CheckDomainStatusResponse extends Message<CheckDomainStatusResponse
     { no: 1, name: "domain", kind: "message", T: DomainResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CheckDomainStatusResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckDomainStatusResponse {
     return new CheckDomainStatusResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CheckDomainStatusResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckDomainStatusResponse {
     return new CheckDomainStatusResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CheckDomainStatusResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckDomainStatusResponse {
     return new CheckDomainStatusResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CheckDomainStatusResponse
-      | PlainMessage<CheckDomainStatusResponse>
-      | undefined,
-    b:
-      | CheckDomainStatusResponse
-      | PlainMessage<CheckDomainStatusResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: CheckDomainStatusResponse | PlainMessage<CheckDomainStatusResponse> | undefined, b: CheckDomainStatusResponse | PlainMessage<CheckDomainStatusResponse> | undefined): boolean {
     return proto3.util.equals(CheckDomainStatusResponse, a, b);
   }
 }
@@ -345,31 +261,19 @@ export class DeleteDomainRequest extends Message<DeleteDomainRequest> {
     { no: 1, name: "domain_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteDomainRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDomainRequest {
     return new DeleteDomainRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteDomainRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDomainRequest {
     return new DeleteDomainRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteDomainRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDomainRequest {
     return new DeleteDomainRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteDomainRequest | PlainMessage<DeleteDomainRequest> | undefined,
-    b: DeleteDomainRequest | PlainMessage<DeleteDomainRequest> | undefined,
-  ): boolean {
+  static equals(a: DeleteDomainRequest | PlainMessage<DeleteDomainRequest> | undefined, b: DeleteDomainRequest | PlainMessage<DeleteDomainRequest> | undefined): boolean {
     return proto3.util.equals(DeleteDomainRequest, a, b);
   }
 }
@@ -385,33 +289,23 @@ export class DeleteDomainResponse extends Message<DeleteDomainResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.DeleteDomainResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteDomainResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDomainResponse {
     return new DeleteDomainResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteDomainResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDomainResponse {
     return new DeleteDomainResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteDomainResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDomainResponse {
     return new DeleteDomainResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteDomainResponse | PlainMessage<DeleteDomainResponse> | undefined,
-    b: DeleteDomainResponse | PlainMessage<DeleteDomainResponse> | undefined,
-  ): boolean {
+  static equals(a: DeleteDomainResponse | PlainMessage<DeleteDomainResponse> | undefined, b: DeleteDomainResponse | PlainMessage<DeleteDomainResponse> | undefined): boolean {
     return proto3.util.equals(DeleteDomainResponse, a, b);
   }
 }
+

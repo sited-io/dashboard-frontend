@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -73,46 +66,23 @@ export class DomainStatusResponse extends Message<DomainStatusResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "status",
-      kind: "enum",
-      T: proto3.getEnumType(DomainStatus),
-    },
-    {
-      no: 4,
-      name: "client_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 3, name: "status", kind: "enum", T: proto3.getEnumType(DomainStatus) },
+    { no: 4, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DomainStatusResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DomainStatusResponse {
     return new DomainStatusResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DomainStatusResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DomainStatusResponse {
     return new DomainStatusResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DomainStatusResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DomainStatusResponse {
     return new DomainStatusResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DomainStatusResponse | PlainMessage<DomainStatusResponse> | undefined,
-    b: DomainStatusResponse | PlainMessage<DomainStatusResponse> | undefined,
-  ): boolean {
+  static equals(a: DomainStatusResponse | PlainMessage<DomainStatusResponse> | undefined, b: DomainStatusResponse | PlainMessage<DomainStatusResponse> | undefined): boolean {
     return proto3.util.equals(DomainStatusResponse, a, b);
   }
 }
@@ -143,37 +113,19 @@ export class AddDomainToShopRequest extends Message<AddDomainToShopRequest> {
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddDomainToShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddDomainToShopRequest {
     return new AddDomainToShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddDomainToShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddDomainToShopRequest {
     return new AddDomainToShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddDomainToShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddDomainToShopRequest {
     return new AddDomainToShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddDomainToShopRequest
-      | PlainMessage<AddDomainToShopRequest>
-      | undefined,
-    b:
-      | AddDomainToShopRequest
-      | PlainMessage<AddDomainToShopRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: AddDomainToShopRequest | PlainMessage<AddDomainToShopRequest> | undefined, b: AddDomainToShopRequest | PlainMessage<AddDomainToShopRequest> | undefined): boolean {
     return proto3.util.equals(AddDomainToShopRequest, a, b);
   }
 }
@@ -189,39 +141,22 @@ export class AddDomainToShopResponse extends Message<AddDomainToShopResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.AddDomainToShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddDomainToShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddDomainToShopResponse {
     return new AddDomainToShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddDomainToShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddDomainToShopResponse {
     return new AddDomainToShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddDomainToShopResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddDomainToShopResponse {
     return new AddDomainToShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddDomainToShopResponse
-      | PlainMessage<AddDomainToShopResponse>
-      | undefined,
-    b:
-      | AddDomainToShopResponse
-      | PlainMessage<AddDomainToShopResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: AddDomainToShopResponse | PlainMessage<AddDomainToShopResponse> | undefined, b: AddDomainToShopResponse | PlainMessage<AddDomainToShopResponse> | undefined): boolean {
     return proto3.util.equals(AddDomainToShopResponse, a, b);
   }
 }
@@ -246,37 +181,19 @@ export class GetDomainStatusRequest extends Message<GetDomainStatusRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetDomainStatusRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDomainStatusRequest {
     return new GetDomainStatusRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetDomainStatusRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDomainStatusRequest {
     return new GetDomainStatusRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetDomainStatusRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDomainStatusRequest {
     return new GetDomainStatusRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetDomainStatusRequest
-      | PlainMessage<GetDomainStatusRequest>
-      | undefined,
-    b:
-      | GetDomainStatusRequest
-      | PlainMessage<GetDomainStatusRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: GetDomainStatusRequest | PlainMessage<GetDomainStatusRequest> | undefined, b: GetDomainStatusRequest | PlainMessage<GetDomainStatusRequest> | undefined): boolean {
     return proto3.util.equals(GetDomainStatusRequest, a, b);
   }
 }
@@ -301,37 +218,19 @@ export class GetDomainStatusResponse extends Message<GetDomainStatusResponse> {
     { no: 1, name: "domain_status", kind: "message", T: DomainStatusResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetDomainStatusResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDomainStatusResponse {
     return new GetDomainStatusResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetDomainStatusResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDomainStatusResponse {
     return new GetDomainStatusResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetDomainStatusResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDomainStatusResponse {
     return new GetDomainStatusResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetDomainStatusResponse
-      | PlainMessage<GetDomainStatusResponse>
-      | undefined,
-    b:
-      | GetDomainStatusResponse
-      | PlainMessage<GetDomainStatusResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: GetDomainStatusResponse | PlainMessage<GetDomainStatusResponse> | undefined, b: GetDomainStatusResponse | PlainMessage<GetDomainStatusResponse> | undefined): boolean {
     return proto3.util.equals(GetDomainStatusResponse, a, b);
   }
 }
@@ -356,40 +255,19 @@ export class GetClientIdForDomainRequest extends Message<GetClientIdForDomainReq
     { no: 1, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetClientIdForDomainRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientIdForDomainRequest {
     return new GetClientIdForDomainRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetClientIdForDomainRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientIdForDomainRequest {
     return new GetClientIdForDomainRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetClientIdForDomainRequest {
-    return new GetClientIdForDomainRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientIdForDomainRequest {
+    return new GetClientIdForDomainRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetClientIdForDomainRequest
-      | PlainMessage<GetClientIdForDomainRequest>
-      | undefined,
-    b:
-      | GetClientIdForDomainRequest
-      | PlainMessage<GetClientIdForDomainRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: GetClientIdForDomainRequest | PlainMessage<GetClientIdForDomainRequest> | undefined, b: GetClientIdForDomainRequest | PlainMessage<GetClientIdForDomainRequest> | undefined): boolean {
     return proto3.util.equals(GetClientIdForDomainRequest, a, b);
   }
 }
@@ -409,52 +287,24 @@ export class GetClientIdForDomainResponse extends Message<GetClientIdForDomainRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v1.GetClientIdForDomainResponse";
+  static readonly typeName = "sited_io.commerce.v1.GetClientIdForDomainResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "client_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetClientIdForDomainResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientIdForDomainResponse {
     return new GetClientIdForDomainResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetClientIdForDomainResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientIdForDomainResponse {
     return new GetClientIdForDomainResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetClientIdForDomainResponse {
-    return new GetClientIdForDomainResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientIdForDomainResponse {
+    return new GetClientIdForDomainResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetClientIdForDomainResponse
-      | PlainMessage<GetClientIdForDomainResponse>
-      | undefined,
-    b:
-      | GetClientIdForDomainResponse
-      | PlainMessage<GetClientIdForDomainResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: GetClientIdForDomainResponse | PlainMessage<GetClientIdForDomainResponse> | undefined, b: GetClientIdForDomainResponse | PlainMessage<GetClientIdForDomainResponse> | undefined): boolean {
     return proto3.util.equals(GetClientIdForDomainResponse, a, b);
   }
 }
@@ -493,46 +343,23 @@ export class UpdateDomainStatusRequest extends Message<UpdateDomainStatusRequest
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "status",
-      kind: "enum",
-      T: proto3.getEnumType(DomainStatus),
-    },
+    { no: 3, name: "status", kind: "enum", T: proto3.getEnumType(DomainStatus) },
     { no: 4, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateDomainStatusRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDomainStatusRequest {
     return new UpdateDomainStatusRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateDomainStatusRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDomainStatusRequest {
     return new UpdateDomainStatusRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateDomainStatusRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDomainStatusRequest {
     return new UpdateDomainStatusRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateDomainStatusRequest
-      | PlainMessage<UpdateDomainStatusRequest>
-      | undefined,
-    b:
-      | UpdateDomainStatusRequest
-      | PlainMessage<UpdateDomainStatusRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateDomainStatusRequest | PlainMessage<UpdateDomainStatusRequest> | undefined, b: UpdateDomainStatusRequest | PlainMessage<UpdateDomainStatusRequest> | undefined): boolean {
     return proto3.util.equals(UpdateDomainStatusRequest, a, b);
   }
 }
@@ -548,39 +375,22 @@ export class UpdateDomainStatusResponse extends Message<UpdateDomainStatusRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.UpdateDomainStatusResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateDomainStatusResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDomainStatusResponse {
     return new UpdateDomainStatusResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateDomainStatusResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDomainStatusResponse {
     return new UpdateDomainStatusResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateDomainStatusResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDomainStatusResponse {
     return new UpdateDomainStatusResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateDomainStatusResponse
-      | PlainMessage<UpdateDomainStatusResponse>
-      | undefined,
-    b:
-      | UpdateDomainStatusResponse
-      | PlainMessage<UpdateDomainStatusResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateDomainStatusResponse | PlainMessage<UpdateDomainStatusResponse> | undefined, b: UpdateDomainStatusResponse | PlainMessage<UpdateDomainStatusResponse> | undefined): boolean {
     return proto3.util.equals(UpdateDomainStatusResponse, a, b);
   }
 }
@@ -611,40 +421,19 @@ export class RemoveDomainFromShopRequest extends Message<RemoveDomainFromShopReq
     { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveDomainFromShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveDomainFromShopRequest {
     return new RemoveDomainFromShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveDomainFromShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveDomainFromShopRequest {
     return new RemoveDomainFromShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveDomainFromShopRequest {
-    return new RemoveDomainFromShopRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveDomainFromShopRequest {
+    return new RemoveDomainFromShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveDomainFromShopRequest
-      | PlainMessage<RemoveDomainFromShopRequest>
-      | undefined,
-    b:
-      | RemoveDomainFromShopRequest
-      | PlainMessage<RemoveDomainFromShopRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveDomainFromShopRequest | PlainMessage<RemoveDomainFromShopRequest> | undefined, b: RemoveDomainFromShopRequest | PlainMessage<RemoveDomainFromShopRequest> | undefined): boolean {
     return proto3.util.equals(RemoveDomainFromShopRequest, a, b);
   }
 }
@@ -659,44 +448,24 @@ export class RemoveDomainFromShopResponse extends Message<RemoveDomainFromShopRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v1.RemoveDomainFromShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v1.RemoveDomainFromShopResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveDomainFromShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveDomainFromShopResponse {
     return new RemoveDomainFromShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveDomainFromShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveDomainFromShopResponse {
     return new RemoveDomainFromShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveDomainFromShopResponse {
-    return new RemoveDomainFromShopResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveDomainFromShopResponse {
+    return new RemoveDomainFromShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveDomainFromShopResponse
-      | PlainMessage<RemoveDomainFromShopResponse>
-      | undefined,
-    b:
-      | RemoveDomainFromShopResponse
-      | PlainMessage<RemoveDomainFromShopResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveDomainFromShopResponse | PlainMessage<RemoveDomainFromShopResponse> | undefined, b: RemoveDomainFromShopResponse | PlainMessage<RemoveDomainFromShopResponse> | undefined): boolean {
     return proto3.util.equals(RemoveDomainFromShopResponse, a, b);
   }
 }
+

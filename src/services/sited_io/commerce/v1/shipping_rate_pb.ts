@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Currency } from "./price_pb.js";
 
@@ -1204,249 +1197,245 @@ export enum ShippingCountry {
   ZZ = 236,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ShippingCountry)
-proto3.util.setEnumType(
-  ShippingCountry,
-  "sited_io.commerce.v1.ShippingCountry",
-  [
-    { no: 0, name: "SHIPPING_COUNTRY_UNSPECIFIED" },
-    { no: 1, name: "SHIPPING_COUNTRY_AC" },
-    { no: 2, name: "SHIPPING_COUNTRY_AD" },
-    { no: 3, name: "SHIPPING_COUNTRY_AE" },
-    { no: 4, name: "SHIPPING_COUNTRY_AF" },
-    { no: 5, name: "SHIPPING_COUNTRY_AG" },
-    { no: 6, name: "SHIPPING_COUNTRY_AI" },
-    { no: 7, name: "SHIPPING_COUNTRY_AL" },
-    { no: 8, name: "SHIPPING_COUNTRY_AM" },
-    { no: 9, name: "SHIPPING_COUNTRY_AO" },
-    { no: 10, name: "SHIPPING_COUNTRY_AQ" },
-    { no: 11, name: "SHIPPING_COUNTRY_AR" },
-    { no: 12, name: "SHIPPING_COUNTRY_AT" },
-    { no: 13, name: "SHIPPING_COUNTRY_AU" },
-    { no: 14, name: "SHIPPING_COUNTRY_AW" },
-    { no: 15, name: "SHIPPING_COUNTRY_AX" },
-    { no: 16, name: "SHIPPING_COUNTRY_AZ" },
-    { no: 17, name: "SHIPPING_COUNTRY_BA" },
-    { no: 18, name: "SHIPPING_COUNTRY_BB" },
-    { no: 19, name: "SHIPPING_COUNTRY_BD" },
-    { no: 20, name: "SHIPPING_COUNTRY_BE" },
-    { no: 21, name: "SHIPPING_COUNTRY_BF" },
-    { no: 22, name: "SHIPPING_COUNTRY_BG" },
-    { no: 23, name: "SHIPPING_COUNTRY_BH" },
-    { no: 24, name: "SHIPPING_COUNTRY_BI" },
-    { no: 25, name: "SHIPPING_COUNTRY_BJ" },
-    { no: 26, name: "SHIPPING_COUNTRY_BL" },
-    { no: 27, name: "SHIPPING_COUNTRY_BM" },
-    { no: 28, name: "SHIPPING_COUNTRY_BN" },
-    { no: 29, name: "SHIPPING_COUNTRY_BO" },
-    { no: 30, name: "SHIPPING_COUNTRY_BQ" },
-    { no: 31, name: "SHIPPING_COUNTRY_BR" },
-    { no: 32, name: "SHIPPING_COUNTRY_BS" },
-    { no: 33, name: "SHIPPING_COUNTRY_BT" },
-    { no: 34, name: "SHIPPING_COUNTRY_BV" },
-    { no: 35, name: "SHIPPING_COUNTRY_BW" },
-    { no: 36, name: "SHIPPING_COUNTRY_BY" },
-    { no: 37, name: "SHIPPING_COUNTRY_BZ" },
-    { no: 38, name: "SHIPPING_COUNTRY_CA" },
-    { no: 39, name: "SHIPPING_COUNTRY_CD" },
-    { no: 40, name: "SHIPPING_COUNTRY_CF" },
-    { no: 41, name: "SHIPPING_COUNTRY_CG" },
-    { no: 42, name: "SHIPPING_COUNTRY_CH" },
-    { no: 43, name: "SHIPPING_COUNTRY_CI" },
-    { no: 44, name: "SHIPPING_COUNTRY_CK" },
-    { no: 45, name: "SHIPPING_COUNTRY_CL" },
-    { no: 46, name: "SHIPPING_COUNTRY_CM" },
-    { no: 47, name: "SHIPPING_COUNTRY_CN" },
-    { no: 48, name: "SHIPPING_COUNTRY_CO" },
-    { no: 49, name: "SHIPPING_COUNTRY_CR" },
-    { no: 50, name: "SHIPPING_COUNTRY_CV" },
-    { no: 51, name: "SHIPPING_COUNTRY_CW" },
-    { no: 52, name: "SHIPPING_COUNTRY_CY" },
-    { no: 53, name: "SHIPPING_COUNTRY_CZ" },
-    { no: 54, name: "SHIPPING_COUNTRY_DE" },
-    { no: 55, name: "SHIPPING_COUNTRY_DJ" },
-    { no: 56, name: "SHIPPING_COUNTRY_DK" },
-    { no: 57, name: "SHIPPING_COUNTRY_DM" },
-    { no: 58, name: "SHIPPING_COUNTRY_DO" },
-    { no: 59, name: "SHIPPING_COUNTRY_DZ" },
-    { no: 60, name: "SHIPPING_COUNTRY_EC" },
-    { no: 61, name: "SHIPPING_COUNTRY_EE" },
-    { no: 62, name: "SHIPPING_COUNTRY_EG" },
-    { no: 63, name: "SHIPPING_COUNTRY_EH" },
-    { no: 64, name: "SHIPPING_COUNTRY_ER" },
-    { no: 65, name: "SHIPPING_COUNTRY_ES" },
-    { no: 66, name: "SHIPPING_COUNTRY_ET" },
-    { no: 67, name: "SHIPPING_COUNTRY_FI" },
-    { no: 68, name: "SHIPPING_COUNTRY_FJ" },
-    { no: 69, name: "SHIPPING_COUNTRY_FK" },
-    { no: 70, name: "SHIPPING_COUNTRY_FO" },
-    { no: 71, name: "SHIPPING_COUNTRY_FR" },
-    { no: 72, name: "SHIPPING_COUNTRY_GA" },
-    { no: 73, name: "SHIPPING_COUNTRY_GB" },
-    { no: 74, name: "SHIPPING_COUNTRY_GD" },
-    { no: 75, name: "SHIPPING_COUNTRY_GE" },
-    { no: 76, name: "SHIPPING_COUNTRY_GF" },
-    { no: 77, name: "SHIPPING_COUNTRY_GG" },
-    { no: 78, name: "SHIPPING_COUNTRY_GH" },
-    { no: 79, name: "SHIPPING_COUNTRY_GI" },
-    { no: 80, name: "SHIPPING_COUNTRY_GL" },
-    { no: 81, name: "SHIPPING_COUNTRY_GM" },
-    { no: 82, name: "SHIPPING_COUNTRY_GN" },
-    { no: 83, name: "SHIPPING_COUNTRY_GP" },
-    { no: 84, name: "SHIPPING_COUNTRY_GQ" },
-    { no: 85, name: "SHIPPING_COUNTRY_GR" },
-    { no: 86, name: "SHIPPING_COUNTRY_GS" },
-    { no: 87, name: "SHIPPING_COUNTRY_GT" },
-    { no: 88, name: "SHIPPING_COUNTRY_GU" },
-    { no: 89, name: "SHIPPING_COUNTRY_GW" },
-    { no: 90, name: "SHIPPING_COUNTRY_GY" },
-    { no: 91, name: "SHIPPING_COUNTRY_HK" },
-    { no: 92, name: "SHIPPING_COUNTRY_HN" },
-    { no: 93, name: "SHIPPING_COUNTRY_HR" },
-    { no: 94, name: "SHIPPING_COUNTRY_HT" },
-    { no: 95, name: "SHIPPING_COUNTRY_HU" },
-    { no: 96, name: "SHIPPING_COUNTRY_ID" },
-    { no: 97, name: "SHIPPING_COUNTRY_IE" },
-    { no: 98, name: "SHIPPING_COUNTRY_IL" },
-    { no: 99, name: "SHIPPING_COUNTRY_IM" },
-    { no: 100, name: "SHIPPING_COUNTRY_IN" },
-    { no: 101, name: "SHIPPING_COUNTRY_IO" },
-    { no: 102, name: "SHIPPING_COUNTRY_IQ" },
-    { no: 103, name: "SHIPPING_COUNTRY_IS" },
-    { no: 104, name: "SHIPPING_COUNTRY_IT" },
-    { no: 105, name: "SHIPPING_COUNTRY_JE" },
-    { no: 106, name: "SHIPPING_COUNTRY_JM" },
-    { no: 107, name: "SHIPPING_COUNTRY_JO" },
-    { no: 108, name: "SHIPPING_COUNTRY_JP" },
-    { no: 109, name: "SHIPPING_COUNTRY_KE" },
-    { no: 110, name: "SHIPPING_COUNTRY_KG" },
-    { no: 111, name: "SHIPPING_COUNTRY_KH" },
-    { no: 112, name: "SHIPPING_COUNTRY_KI" },
-    { no: 113, name: "SHIPPING_COUNTRY_KM" },
-    { no: 114, name: "SHIPPING_COUNTRY_KN" },
-    { no: 115, name: "SHIPPING_COUNTRY_KR" },
-    { no: 116, name: "SHIPPING_COUNTRY_KW" },
-    { no: 117, name: "SHIPPING_COUNTRY_KY" },
-    { no: 118, name: "SHIPPING_COUNTRY_LA" },
-    { no: 119, name: "SHIPPING_COUNTRY_LB" },
-    { no: 120, name: "SHIPPING_COUNTRY_LC" },
-    { no: 121, name: "SHIPPING_COUNTRY_LI" },
-    { no: 122, name: "SHIPPING_COUNTRY_LK" },
-    { no: 123, name: "SHIPPING_COUNTRY_LR" },
-    { no: 124, name: "SHIPPING_COUNTRY_LS" },
-    { no: 125, name: "SHIPPING_COUNTRY_LT" },
-    { no: 126, name: "SHIPPING_COUNTRY_LU" },
-    { no: 127, name: "SHIPPING_COUNTRY_LV" },
-    { no: 128, name: "SHIPPING_COUNTRY_LY" },
-    { no: 129, name: "SHIPPING_COUNTRY_MA" },
-    { no: 130, name: "SHIPPING_COUNTRY_MC" },
-    { no: 131, name: "SHIPPING_COUNTRY_MD" },
-    { no: 132, name: "SHIPPING_COUNTRY_ME" },
-    { no: 133, name: "SHIPPING_COUNTRY_MF" },
-    { no: 134, name: "SHIPPING_COUNTRY_MG" },
-    { no: 135, name: "SHIPPING_COUNTRY_MK" },
-    { no: 136, name: "SHIPPING_COUNTRY_ML" },
-    { no: 137, name: "SHIPPING_COUNTRY_MM" },
-    { no: 138, name: "SHIPPING_COUNTRY_MN" },
-    { no: 139, name: "SHIPPING_COUNTRY_MO" },
-    { no: 140, name: "SHIPPING_COUNTRY_MQ" },
-    { no: 141, name: "SHIPPING_COUNTRY_MR" },
-    { no: 142, name: "SHIPPING_COUNTRY_MS" },
-    { no: 143, name: "SHIPPING_COUNTRY_MT" },
-    { no: 144, name: "SHIPPING_COUNTRY_MU" },
-    { no: 145, name: "SHIPPING_COUNTRY_MV" },
-    { no: 146, name: "SHIPPING_COUNTRY_MW" },
-    { no: 147, name: "SHIPPING_COUNTRY_MX" },
-    { no: 148, name: "SHIPPING_COUNTRY_MY" },
-    { no: 149, name: "SHIPPING_COUNTRY_MZ" },
-    { no: 150, name: "SHIPPING_COUNTRY_NA" },
-    { no: 151, name: "SHIPPING_COUNTRY_NC" },
-    { no: 152, name: "SHIPPING_COUNTRY_NE" },
-    { no: 153, name: "SHIPPING_COUNTRY_NG" },
-    { no: 154, name: "SHIPPING_COUNTRY_NI" },
-    { no: 155, name: "SHIPPING_COUNTRY_NL" },
-    { no: 156, name: "SHIPPING_COUNTRY_NO" },
-    { no: 157, name: "SHIPPING_COUNTRY_NP" },
-    { no: 158, name: "SHIPPING_COUNTRY_NR" },
-    { no: 159, name: "SHIPPING_COUNTRY_NU" },
-    { no: 160, name: "SHIPPING_COUNTRY_NZ" },
-    { no: 161, name: "SHIPPING_COUNTRY_OM" },
-    { no: 162, name: "SHIPPING_COUNTRY_PA" },
-    { no: 163, name: "SHIPPING_COUNTRY_PE" },
-    { no: 164, name: "SHIPPING_COUNTRY_PF" },
-    { no: 165, name: "SHIPPING_COUNTRY_PG" },
-    { no: 166, name: "SHIPPING_COUNTRY_PH" },
-    { no: 167, name: "SHIPPING_COUNTRY_PK" },
-    { no: 168, name: "SHIPPING_COUNTRY_PL" },
-    { no: 169, name: "SHIPPING_COUNTRY_PM" },
-    { no: 170, name: "SHIPPING_COUNTRY_PN" },
-    { no: 171, name: "SHIPPING_COUNTRY_PR" },
-    { no: 172, name: "SHIPPING_COUNTRY_PS" },
-    { no: 173, name: "SHIPPING_COUNTRY_PT" },
-    { no: 174, name: "SHIPPING_COUNTRY_PY" },
-    { no: 175, name: "SHIPPING_COUNTRY_QA" },
-    { no: 176, name: "SHIPPING_COUNTRY_RE" },
-    { no: 177, name: "SHIPPING_COUNTRY_RO" },
-    { no: 178, name: "SHIPPING_COUNTRY_RS" },
-    { no: 179, name: "SHIPPING_COUNTRY_RU" },
-    { no: 180, name: "SHIPPING_COUNTRY_RW" },
-    { no: 181, name: "SHIPPING_COUNTRY_SA" },
-    { no: 182, name: "SHIPPING_COUNTRY_SB" },
-    { no: 183, name: "SHIPPING_COUNTRY_SC" },
-    { no: 184, name: "SHIPPING_COUNTRY_SE" },
-    { no: 185, name: "SHIPPING_COUNTRY_SG" },
-    { no: 186, name: "SHIPPING_COUNTRY_SH" },
-    { no: 187, name: "SHIPPING_COUNTRY_SI" },
-    { no: 188, name: "SHIPPING_COUNTRY_SJ" },
-    { no: 189, name: "SHIPPING_COUNTRY_SK" },
-    { no: 190, name: "SHIPPING_COUNTRY_SL" },
-    { no: 191, name: "SHIPPING_COUNTRY_SM" },
-    { no: 192, name: "SHIPPING_COUNTRY_SN" },
-    { no: 193, name: "SHIPPING_COUNTRY_SO" },
-    { no: 194, name: "SHIPPING_COUNTRY_SR" },
-    { no: 195, name: "SHIPPING_COUNTRY_SS" },
-    { no: 196, name: "SHIPPING_COUNTRY_ST" },
-    { no: 197, name: "SHIPPING_COUNTRY_SV" },
-    { no: 198, name: "SHIPPING_COUNTRY_SX" },
-    { no: 199, name: "SHIPPING_COUNTRY_SZ" },
-    { no: 200, name: "SHIPPING_COUNTRY_TA" },
-    { no: 201, name: "SHIPPING_COUNTRY_TC" },
-    { no: 202, name: "SHIPPING_COUNTRY_TD" },
-    { no: 203, name: "SHIPPING_COUNTRY_TF" },
-    { no: 204, name: "SHIPPING_COUNTRY_TG" },
-    { no: 205, name: "SHIPPING_COUNTRY_TH" },
-    { no: 206, name: "SHIPPING_COUNTRY_TJ" },
-    { no: 207, name: "SHIPPING_COUNTRY_TK" },
-    { no: 208, name: "SHIPPING_COUNTRY_TL" },
-    { no: 209, name: "SHIPPING_COUNTRY_TM" },
-    { no: 210, name: "SHIPPING_COUNTRY_TN" },
-    { no: 211, name: "SHIPPING_COUNTRY_TO" },
-    { no: 212, name: "SHIPPING_COUNTRY_TR" },
-    { no: 213, name: "SHIPPING_COUNTRY_TT" },
-    { no: 214, name: "SHIPPING_COUNTRY_TV" },
-    { no: 215, name: "SHIPPING_COUNTRY_TW" },
-    { no: 216, name: "SHIPPING_COUNTRY_TZ" },
-    { no: 217, name: "SHIPPING_COUNTRY_UA" },
-    { no: 218, name: "SHIPPING_COUNTRY_UG" },
-    { no: 219, name: "SHIPPING_COUNTRY_US" },
-    { no: 220, name: "SHIPPING_COUNTRY_UY" },
-    { no: 221, name: "SHIPPING_COUNTRY_UZ" },
-    { no: 222, name: "SHIPPING_COUNTRY_VA" },
-    { no: 223, name: "SHIPPING_COUNTRY_VC" },
-    { no: 224, name: "SHIPPING_COUNTRY_VE" },
-    { no: 225, name: "SHIPPING_COUNTRY_VG" },
-    { no: 226, name: "SHIPPING_COUNTRY_VN" },
-    { no: 227, name: "SHIPPING_COUNTRY_VU" },
-    { no: 228, name: "SHIPPING_COUNTRY_WF" },
-    { no: 229, name: "SHIPPING_COUNTRY_WS" },
-    { no: 230, name: "SHIPPING_COUNTRY_XK" },
-    { no: 231, name: "SHIPPING_COUNTRY_YE" },
-    { no: 232, name: "SHIPPING_COUNTRY_YT" },
-    { no: 233, name: "SHIPPING_COUNTRY_ZA" },
-    { no: 234, name: "SHIPPING_COUNTRY_ZM" },
-    { no: 235, name: "SHIPPING_COUNTRY_ZW" },
-    { no: 236, name: "SHIPPING_COUNTRY_ZZ" },
-  ],
-);
+proto3.util.setEnumType(ShippingCountry, "sited_io.commerce.v1.ShippingCountry", [
+  { no: 0, name: "SHIPPING_COUNTRY_UNSPECIFIED" },
+  { no: 1, name: "SHIPPING_COUNTRY_AC" },
+  { no: 2, name: "SHIPPING_COUNTRY_AD" },
+  { no: 3, name: "SHIPPING_COUNTRY_AE" },
+  { no: 4, name: "SHIPPING_COUNTRY_AF" },
+  { no: 5, name: "SHIPPING_COUNTRY_AG" },
+  { no: 6, name: "SHIPPING_COUNTRY_AI" },
+  { no: 7, name: "SHIPPING_COUNTRY_AL" },
+  { no: 8, name: "SHIPPING_COUNTRY_AM" },
+  { no: 9, name: "SHIPPING_COUNTRY_AO" },
+  { no: 10, name: "SHIPPING_COUNTRY_AQ" },
+  { no: 11, name: "SHIPPING_COUNTRY_AR" },
+  { no: 12, name: "SHIPPING_COUNTRY_AT" },
+  { no: 13, name: "SHIPPING_COUNTRY_AU" },
+  { no: 14, name: "SHIPPING_COUNTRY_AW" },
+  { no: 15, name: "SHIPPING_COUNTRY_AX" },
+  { no: 16, name: "SHIPPING_COUNTRY_AZ" },
+  { no: 17, name: "SHIPPING_COUNTRY_BA" },
+  { no: 18, name: "SHIPPING_COUNTRY_BB" },
+  { no: 19, name: "SHIPPING_COUNTRY_BD" },
+  { no: 20, name: "SHIPPING_COUNTRY_BE" },
+  { no: 21, name: "SHIPPING_COUNTRY_BF" },
+  { no: 22, name: "SHIPPING_COUNTRY_BG" },
+  { no: 23, name: "SHIPPING_COUNTRY_BH" },
+  { no: 24, name: "SHIPPING_COUNTRY_BI" },
+  { no: 25, name: "SHIPPING_COUNTRY_BJ" },
+  { no: 26, name: "SHIPPING_COUNTRY_BL" },
+  { no: 27, name: "SHIPPING_COUNTRY_BM" },
+  { no: 28, name: "SHIPPING_COUNTRY_BN" },
+  { no: 29, name: "SHIPPING_COUNTRY_BO" },
+  { no: 30, name: "SHIPPING_COUNTRY_BQ" },
+  { no: 31, name: "SHIPPING_COUNTRY_BR" },
+  { no: 32, name: "SHIPPING_COUNTRY_BS" },
+  { no: 33, name: "SHIPPING_COUNTRY_BT" },
+  { no: 34, name: "SHIPPING_COUNTRY_BV" },
+  { no: 35, name: "SHIPPING_COUNTRY_BW" },
+  { no: 36, name: "SHIPPING_COUNTRY_BY" },
+  { no: 37, name: "SHIPPING_COUNTRY_BZ" },
+  { no: 38, name: "SHIPPING_COUNTRY_CA" },
+  { no: 39, name: "SHIPPING_COUNTRY_CD" },
+  { no: 40, name: "SHIPPING_COUNTRY_CF" },
+  { no: 41, name: "SHIPPING_COUNTRY_CG" },
+  { no: 42, name: "SHIPPING_COUNTRY_CH" },
+  { no: 43, name: "SHIPPING_COUNTRY_CI" },
+  { no: 44, name: "SHIPPING_COUNTRY_CK" },
+  { no: 45, name: "SHIPPING_COUNTRY_CL" },
+  { no: 46, name: "SHIPPING_COUNTRY_CM" },
+  { no: 47, name: "SHIPPING_COUNTRY_CN" },
+  { no: 48, name: "SHIPPING_COUNTRY_CO" },
+  { no: 49, name: "SHIPPING_COUNTRY_CR" },
+  { no: 50, name: "SHIPPING_COUNTRY_CV" },
+  { no: 51, name: "SHIPPING_COUNTRY_CW" },
+  { no: 52, name: "SHIPPING_COUNTRY_CY" },
+  { no: 53, name: "SHIPPING_COUNTRY_CZ" },
+  { no: 54, name: "SHIPPING_COUNTRY_DE" },
+  { no: 55, name: "SHIPPING_COUNTRY_DJ" },
+  { no: 56, name: "SHIPPING_COUNTRY_DK" },
+  { no: 57, name: "SHIPPING_COUNTRY_DM" },
+  { no: 58, name: "SHIPPING_COUNTRY_DO" },
+  { no: 59, name: "SHIPPING_COUNTRY_DZ" },
+  { no: 60, name: "SHIPPING_COUNTRY_EC" },
+  { no: 61, name: "SHIPPING_COUNTRY_EE" },
+  { no: 62, name: "SHIPPING_COUNTRY_EG" },
+  { no: 63, name: "SHIPPING_COUNTRY_EH" },
+  { no: 64, name: "SHIPPING_COUNTRY_ER" },
+  { no: 65, name: "SHIPPING_COUNTRY_ES" },
+  { no: 66, name: "SHIPPING_COUNTRY_ET" },
+  { no: 67, name: "SHIPPING_COUNTRY_FI" },
+  { no: 68, name: "SHIPPING_COUNTRY_FJ" },
+  { no: 69, name: "SHIPPING_COUNTRY_FK" },
+  { no: 70, name: "SHIPPING_COUNTRY_FO" },
+  { no: 71, name: "SHIPPING_COUNTRY_FR" },
+  { no: 72, name: "SHIPPING_COUNTRY_GA" },
+  { no: 73, name: "SHIPPING_COUNTRY_GB" },
+  { no: 74, name: "SHIPPING_COUNTRY_GD" },
+  { no: 75, name: "SHIPPING_COUNTRY_GE" },
+  { no: 76, name: "SHIPPING_COUNTRY_GF" },
+  { no: 77, name: "SHIPPING_COUNTRY_GG" },
+  { no: 78, name: "SHIPPING_COUNTRY_GH" },
+  { no: 79, name: "SHIPPING_COUNTRY_GI" },
+  { no: 80, name: "SHIPPING_COUNTRY_GL" },
+  { no: 81, name: "SHIPPING_COUNTRY_GM" },
+  { no: 82, name: "SHIPPING_COUNTRY_GN" },
+  { no: 83, name: "SHIPPING_COUNTRY_GP" },
+  { no: 84, name: "SHIPPING_COUNTRY_GQ" },
+  { no: 85, name: "SHIPPING_COUNTRY_GR" },
+  { no: 86, name: "SHIPPING_COUNTRY_GS" },
+  { no: 87, name: "SHIPPING_COUNTRY_GT" },
+  { no: 88, name: "SHIPPING_COUNTRY_GU" },
+  { no: 89, name: "SHIPPING_COUNTRY_GW" },
+  { no: 90, name: "SHIPPING_COUNTRY_GY" },
+  { no: 91, name: "SHIPPING_COUNTRY_HK" },
+  { no: 92, name: "SHIPPING_COUNTRY_HN" },
+  { no: 93, name: "SHIPPING_COUNTRY_HR" },
+  { no: 94, name: "SHIPPING_COUNTRY_HT" },
+  { no: 95, name: "SHIPPING_COUNTRY_HU" },
+  { no: 96, name: "SHIPPING_COUNTRY_ID" },
+  { no: 97, name: "SHIPPING_COUNTRY_IE" },
+  { no: 98, name: "SHIPPING_COUNTRY_IL" },
+  { no: 99, name: "SHIPPING_COUNTRY_IM" },
+  { no: 100, name: "SHIPPING_COUNTRY_IN" },
+  { no: 101, name: "SHIPPING_COUNTRY_IO" },
+  { no: 102, name: "SHIPPING_COUNTRY_IQ" },
+  { no: 103, name: "SHIPPING_COUNTRY_IS" },
+  { no: 104, name: "SHIPPING_COUNTRY_IT" },
+  { no: 105, name: "SHIPPING_COUNTRY_JE" },
+  { no: 106, name: "SHIPPING_COUNTRY_JM" },
+  { no: 107, name: "SHIPPING_COUNTRY_JO" },
+  { no: 108, name: "SHIPPING_COUNTRY_JP" },
+  { no: 109, name: "SHIPPING_COUNTRY_KE" },
+  { no: 110, name: "SHIPPING_COUNTRY_KG" },
+  { no: 111, name: "SHIPPING_COUNTRY_KH" },
+  { no: 112, name: "SHIPPING_COUNTRY_KI" },
+  { no: 113, name: "SHIPPING_COUNTRY_KM" },
+  { no: 114, name: "SHIPPING_COUNTRY_KN" },
+  { no: 115, name: "SHIPPING_COUNTRY_KR" },
+  { no: 116, name: "SHIPPING_COUNTRY_KW" },
+  { no: 117, name: "SHIPPING_COUNTRY_KY" },
+  { no: 118, name: "SHIPPING_COUNTRY_LA" },
+  { no: 119, name: "SHIPPING_COUNTRY_LB" },
+  { no: 120, name: "SHIPPING_COUNTRY_LC" },
+  { no: 121, name: "SHIPPING_COUNTRY_LI" },
+  { no: 122, name: "SHIPPING_COUNTRY_LK" },
+  { no: 123, name: "SHIPPING_COUNTRY_LR" },
+  { no: 124, name: "SHIPPING_COUNTRY_LS" },
+  { no: 125, name: "SHIPPING_COUNTRY_LT" },
+  { no: 126, name: "SHIPPING_COUNTRY_LU" },
+  { no: 127, name: "SHIPPING_COUNTRY_LV" },
+  { no: 128, name: "SHIPPING_COUNTRY_LY" },
+  { no: 129, name: "SHIPPING_COUNTRY_MA" },
+  { no: 130, name: "SHIPPING_COUNTRY_MC" },
+  { no: 131, name: "SHIPPING_COUNTRY_MD" },
+  { no: 132, name: "SHIPPING_COUNTRY_ME" },
+  { no: 133, name: "SHIPPING_COUNTRY_MF" },
+  { no: 134, name: "SHIPPING_COUNTRY_MG" },
+  { no: 135, name: "SHIPPING_COUNTRY_MK" },
+  { no: 136, name: "SHIPPING_COUNTRY_ML" },
+  { no: 137, name: "SHIPPING_COUNTRY_MM" },
+  { no: 138, name: "SHIPPING_COUNTRY_MN" },
+  { no: 139, name: "SHIPPING_COUNTRY_MO" },
+  { no: 140, name: "SHIPPING_COUNTRY_MQ" },
+  { no: 141, name: "SHIPPING_COUNTRY_MR" },
+  { no: 142, name: "SHIPPING_COUNTRY_MS" },
+  { no: 143, name: "SHIPPING_COUNTRY_MT" },
+  { no: 144, name: "SHIPPING_COUNTRY_MU" },
+  { no: 145, name: "SHIPPING_COUNTRY_MV" },
+  { no: 146, name: "SHIPPING_COUNTRY_MW" },
+  { no: 147, name: "SHIPPING_COUNTRY_MX" },
+  { no: 148, name: "SHIPPING_COUNTRY_MY" },
+  { no: 149, name: "SHIPPING_COUNTRY_MZ" },
+  { no: 150, name: "SHIPPING_COUNTRY_NA" },
+  { no: 151, name: "SHIPPING_COUNTRY_NC" },
+  { no: 152, name: "SHIPPING_COUNTRY_NE" },
+  { no: 153, name: "SHIPPING_COUNTRY_NG" },
+  { no: 154, name: "SHIPPING_COUNTRY_NI" },
+  { no: 155, name: "SHIPPING_COUNTRY_NL" },
+  { no: 156, name: "SHIPPING_COUNTRY_NO" },
+  { no: 157, name: "SHIPPING_COUNTRY_NP" },
+  { no: 158, name: "SHIPPING_COUNTRY_NR" },
+  { no: 159, name: "SHIPPING_COUNTRY_NU" },
+  { no: 160, name: "SHIPPING_COUNTRY_NZ" },
+  { no: 161, name: "SHIPPING_COUNTRY_OM" },
+  { no: 162, name: "SHIPPING_COUNTRY_PA" },
+  { no: 163, name: "SHIPPING_COUNTRY_PE" },
+  { no: 164, name: "SHIPPING_COUNTRY_PF" },
+  { no: 165, name: "SHIPPING_COUNTRY_PG" },
+  { no: 166, name: "SHIPPING_COUNTRY_PH" },
+  { no: 167, name: "SHIPPING_COUNTRY_PK" },
+  { no: 168, name: "SHIPPING_COUNTRY_PL" },
+  { no: 169, name: "SHIPPING_COUNTRY_PM" },
+  { no: 170, name: "SHIPPING_COUNTRY_PN" },
+  { no: 171, name: "SHIPPING_COUNTRY_PR" },
+  { no: 172, name: "SHIPPING_COUNTRY_PS" },
+  { no: 173, name: "SHIPPING_COUNTRY_PT" },
+  { no: 174, name: "SHIPPING_COUNTRY_PY" },
+  { no: 175, name: "SHIPPING_COUNTRY_QA" },
+  { no: 176, name: "SHIPPING_COUNTRY_RE" },
+  { no: 177, name: "SHIPPING_COUNTRY_RO" },
+  { no: 178, name: "SHIPPING_COUNTRY_RS" },
+  { no: 179, name: "SHIPPING_COUNTRY_RU" },
+  { no: 180, name: "SHIPPING_COUNTRY_RW" },
+  { no: 181, name: "SHIPPING_COUNTRY_SA" },
+  { no: 182, name: "SHIPPING_COUNTRY_SB" },
+  { no: 183, name: "SHIPPING_COUNTRY_SC" },
+  { no: 184, name: "SHIPPING_COUNTRY_SE" },
+  { no: 185, name: "SHIPPING_COUNTRY_SG" },
+  { no: 186, name: "SHIPPING_COUNTRY_SH" },
+  { no: 187, name: "SHIPPING_COUNTRY_SI" },
+  { no: 188, name: "SHIPPING_COUNTRY_SJ" },
+  { no: 189, name: "SHIPPING_COUNTRY_SK" },
+  { no: 190, name: "SHIPPING_COUNTRY_SL" },
+  { no: 191, name: "SHIPPING_COUNTRY_SM" },
+  { no: 192, name: "SHIPPING_COUNTRY_SN" },
+  { no: 193, name: "SHIPPING_COUNTRY_SO" },
+  { no: 194, name: "SHIPPING_COUNTRY_SR" },
+  { no: 195, name: "SHIPPING_COUNTRY_SS" },
+  { no: 196, name: "SHIPPING_COUNTRY_ST" },
+  { no: 197, name: "SHIPPING_COUNTRY_SV" },
+  { no: 198, name: "SHIPPING_COUNTRY_SX" },
+  { no: 199, name: "SHIPPING_COUNTRY_SZ" },
+  { no: 200, name: "SHIPPING_COUNTRY_TA" },
+  { no: 201, name: "SHIPPING_COUNTRY_TC" },
+  { no: 202, name: "SHIPPING_COUNTRY_TD" },
+  { no: 203, name: "SHIPPING_COUNTRY_TF" },
+  { no: 204, name: "SHIPPING_COUNTRY_TG" },
+  { no: 205, name: "SHIPPING_COUNTRY_TH" },
+  { no: 206, name: "SHIPPING_COUNTRY_TJ" },
+  { no: 207, name: "SHIPPING_COUNTRY_TK" },
+  { no: 208, name: "SHIPPING_COUNTRY_TL" },
+  { no: 209, name: "SHIPPING_COUNTRY_TM" },
+  { no: 210, name: "SHIPPING_COUNTRY_TN" },
+  { no: 211, name: "SHIPPING_COUNTRY_TO" },
+  { no: 212, name: "SHIPPING_COUNTRY_TR" },
+  { no: 213, name: "SHIPPING_COUNTRY_TT" },
+  { no: 214, name: "SHIPPING_COUNTRY_TV" },
+  { no: 215, name: "SHIPPING_COUNTRY_TW" },
+  { no: 216, name: "SHIPPING_COUNTRY_TZ" },
+  { no: 217, name: "SHIPPING_COUNTRY_UA" },
+  { no: 218, name: "SHIPPING_COUNTRY_UG" },
+  { no: 219, name: "SHIPPING_COUNTRY_US" },
+  { no: 220, name: "SHIPPING_COUNTRY_UY" },
+  { no: 221, name: "SHIPPING_COUNTRY_UZ" },
+  { no: 222, name: "SHIPPING_COUNTRY_VA" },
+  { no: 223, name: "SHIPPING_COUNTRY_VC" },
+  { no: 224, name: "SHIPPING_COUNTRY_VE" },
+  { no: 225, name: "SHIPPING_COUNTRY_VG" },
+  { no: 226, name: "SHIPPING_COUNTRY_VN" },
+  { no: 227, name: "SHIPPING_COUNTRY_VU" },
+  { no: 228, name: "SHIPPING_COUNTRY_WF" },
+  { no: 229, name: "SHIPPING_COUNTRY_WS" },
+  { no: 230, name: "SHIPPING_COUNTRY_XK" },
+  { no: 231, name: "SHIPPING_COUNTRY_YE" },
+  { no: 232, name: "SHIPPING_COUNTRY_YT" },
+  { no: 233, name: "SHIPPING_COUNTRY_ZA" },
+  { no: 234, name: "SHIPPING_COUNTRY_ZM" },
+  { no: 235, name: "SHIPPING_COUNTRY_ZW" },
+  { no: 236, name: "SHIPPING_COUNTRY_ZZ" },
+]);
 
 /**
  * @generated from message sited_io.commerce.v1.ShippingRateResponse
@@ -1495,56 +1484,28 @@ export class ShippingRateResponse extends Message<ShippingRateResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.ShippingRateResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "shipping_rate_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "shipping_rate_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 5, name: "currency", kind: "enum", T: proto3.getEnumType(Currency) },
-    {
-      no: 6,
-      name: "all_countries",
-      kind: "scalar",
-      T: 8 /* ScalarType.BOOL */,
-    },
-    {
-      no: 7,
-      name: "specific_countries",
-      kind: "enum",
-      T: proto3.getEnumType(ShippingCountry),
-      repeated: true,
-    },
+    { no: 6, name: "all_countries", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "specific_countries", kind: "enum", T: proto3.getEnumType(ShippingCountry), repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ShippingRateResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShippingRateResponse {
     return new ShippingRateResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ShippingRateResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShippingRateResponse {
     return new ShippingRateResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ShippingRateResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShippingRateResponse {
     return new ShippingRateResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ShippingRateResponse | PlainMessage<ShippingRateResponse> | undefined,
-    b: ShippingRateResponse | PlainMessage<ShippingRateResponse> | undefined,
-  ): boolean {
+  static equals(a: ShippingRateResponse | PlainMessage<ShippingRateResponse> | undefined, b: ShippingRateResponse | PlainMessage<ShippingRateResponse> | undefined): boolean {
     return proto3.util.equals(ShippingRateResponse, a, b);
   }
 }
@@ -1589,52 +1550,23 @@ export class PutShippingRateRequest extends Message<PutShippingRateRequest> {
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "currency", kind: "enum", T: proto3.getEnumType(Currency) },
-    {
-      no: 4,
-      name: "all_countries",
-      kind: "scalar",
-      T: 8 /* ScalarType.BOOL */,
-    },
-    {
-      no: 5,
-      name: "specific_countries",
-      kind: "enum",
-      T: proto3.getEnumType(ShippingCountry),
-      repeated: true,
-    },
+    { no: 4, name: "all_countries", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "specific_countries", kind: "enum", T: proto3.getEnumType(ShippingCountry), repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutShippingRateRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShippingRateRequest {
     return new PutShippingRateRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShippingRateRequest {
     return new PutShippingRateRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShippingRateRequest {
     return new PutShippingRateRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutShippingRateRequest
-      | PlainMessage<PutShippingRateRequest>
-      | undefined,
-    b:
-      | PutShippingRateRequest
-      | PlainMessage<PutShippingRateRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: PutShippingRateRequest | PlainMessage<PutShippingRateRequest> | undefined, b: PutShippingRateRequest | PlainMessage<PutShippingRateRequest> | undefined): boolean {
     return proto3.util.equals(PutShippingRateRequest, a, b);
   }
 }
@@ -1650,39 +1582,22 @@ export class PutShippingRateResponse extends Message<PutShippingRateResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.PutShippingRateResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutShippingRateResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShippingRateResponse {
     return new PutShippingRateResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShippingRateResponse {
     return new PutShippingRateResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShippingRateResponse {
     return new PutShippingRateResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutShippingRateResponse
-      | PlainMessage<PutShippingRateResponse>
-      | undefined,
-    b:
-      | PutShippingRateResponse
-      | PlainMessage<PutShippingRateResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: PutShippingRateResponse | PlainMessage<PutShippingRateResponse> | undefined, b: PutShippingRateResponse | PlainMessage<PutShippingRateResponse> | undefined): boolean {
     return proto3.util.equals(PutShippingRateResponse, a, b);
   }
 }
@@ -1704,46 +1619,22 @@ export class GetShippingRateRequest extends Message<GetShippingRateRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.GetShippingRateRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetShippingRateRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShippingRateRequest {
     return new GetShippingRateRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetShippingRateRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShippingRateRequest {
     return new GetShippingRateRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetShippingRateRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShippingRateRequest {
     return new GetShippingRateRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetShippingRateRequest
-      | PlainMessage<GetShippingRateRequest>
-      | undefined,
-    b:
-      | GetShippingRateRequest
-      | PlainMessage<GetShippingRateRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: GetShippingRateRequest | PlainMessage<GetShippingRateRequest> | undefined, b: GetShippingRateRequest | PlainMessage<GetShippingRateRequest> | undefined): boolean {
     return proto3.util.equals(GetShippingRateRequest, a, b);
   }
 }
@@ -1768,37 +1659,19 @@ export class GetShippingRateResponse extends Message<GetShippingRateResponse> {
     { no: 1, name: "shipping_rate", kind: "message", T: ShippingRateResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetShippingRateResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShippingRateResponse {
     return new GetShippingRateResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetShippingRateResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShippingRateResponse {
     return new GetShippingRateResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetShippingRateResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShippingRateResponse {
     return new GetShippingRateResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetShippingRateResponse
-      | PlainMessage<GetShippingRateResponse>
-      | undefined,
-    b:
-      | GetShippingRateResponse
-      | PlainMessage<GetShippingRateResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: GetShippingRateResponse | PlainMessage<GetShippingRateResponse> | undefined, b: GetShippingRateResponse | PlainMessage<GetShippingRateResponse> | undefined): boolean {
     return proto3.util.equals(GetShippingRateResponse, a, b);
   }
 }
@@ -1820,45 +1693,22 @@ export class DeleteShippingRateRequest extends Message<DeleteShippingRateRequest
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.DeleteShippingRateRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "shipping_rate_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "shipping_rate_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteShippingRateRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShippingRateRequest {
     return new DeleteShippingRateRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShippingRateRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShippingRateRequest {
     return new DeleteShippingRateRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShippingRateRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShippingRateRequest {
     return new DeleteShippingRateRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | DeleteShippingRateRequest
-      | PlainMessage<DeleteShippingRateRequest>
-      | undefined,
-    b:
-      | DeleteShippingRateRequest
-      | PlainMessage<DeleteShippingRateRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: DeleteShippingRateRequest | PlainMessage<DeleteShippingRateRequest> | undefined, b: DeleteShippingRateRequest | PlainMessage<DeleteShippingRateRequest> | undefined): boolean {
     return proto3.util.equals(DeleteShippingRateRequest, a, b);
   }
 }
@@ -1874,39 +1724,23 @@ export class DeleteShippingRateResponse extends Message<DeleteShippingRateRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.DeleteShippingRateResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteShippingRateResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShippingRateResponse {
     return new DeleteShippingRateResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShippingRateResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShippingRateResponse {
     return new DeleteShippingRateResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShippingRateResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShippingRateResponse {
     return new DeleteShippingRateResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | DeleteShippingRateResponse
-      | PlainMessage<DeleteShippingRateResponse>
-      | undefined,
-    b:
-      | DeleteShippingRateResponse
-      | PlainMessage<DeleteShippingRateResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: DeleteShippingRateResponse | PlainMessage<DeleteShippingRateResponse> | undefined, b: DeleteShippingRateResponse | PlainMessage<DeleteShippingRateResponse> | undefined): boolean {
     return proto3.util.equals(DeleteShippingRateResponse, a, b);
   }
 }
+

@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { MediaUpload } from "../../media/v1/media_pb.js";
 
@@ -41,54 +34,24 @@ export class CustomizationResponse extends Message<CustomizationResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.CustomizationResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "primary_color",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 2,
-      name: "secondary_color",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 3,
-      name: "logo_image_url",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "primary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "secondary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "logo_image_url", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CustomizationResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CustomizationResponse {
     return new CustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CustomizationResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CustomizationResponse {
     return new CustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CustomizationResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CustomizationResponse {
     return new CustomizationResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CustomizationResponse | PlainMessage<CustomizationResponse> | undefined,
-    b: CustomizationResponse | PlainMessage<CustomizationResponse> | undefined,
-  ): boolean {
+  static equals(a: CustomizationResponse | PlainMessage<CustomizationResponse> | undefined, b: CustomizationResponse | PlainMessage<CustomizationResponse> | undefined): boolean {
     return proto3.util.equals(CustomizationResponse, a, b);
   }
 }
@@ -121,53 +84,23 @@ export class UpdateCustomizationRequest extends Message<UpdateCustomizationReque
   static readonly typeName = "sited_io.websites.v1.UpdateCustomizationRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "primary_color",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 3,
-      name: "secondary_color",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 2, name: "primary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "secondary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateCustomizationRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateCustomizationRequest {
     return new UpdateCustomizationRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateCustomizationRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateCustomizationRequest {
     return new UpdateCustomizationRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateCustomizationRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateCustomizationRequest {
     return new UpdateCustomizationRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateCustomizationRequest
-      | PlainMessage<UpdateCustomizationRequest>
-      | undefined,
-    b:
-      | UpdateCustomizationRequest
-      | PlainMessage<UpdateCustomizationRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateCustomizationRequest | PlainMessage<UpdateCustomizationRequest> | undefined, b: UpdateCustomizationRequest | PlainMessage<UpdateCustomizationRequest> | undefined): boolean {
     return proto3.util.equals(UpdateCustomizationRequest, a, b);
   }
 }
@@ -192,40 +125,19 @@ export class UpdateCustomizationResponse extends Message<UpdateCustomizationResp
     { no: 1, name: "customization", kind: "message", T: CustomizationResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateCustomizationResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateCustomizationResponse {
     return new UpdateCustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateCustomizationResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateCustomizationResponse {
     return new UpdateCustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateCustomizationResponse {
-    return new UpdateCustomizationResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateCustomizationResponse {
+    return new UpdateCustomizationResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateCustomizationResponse
-      | PlainMessage<UpdateCustomizationResponse>
-      | undefined,
-    b:
-      | UpdateCustomizationResponse
-      | PlainMessage<UpdateCustomizationResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateCustomizationResponse | PlainMessage<UpdateCustomizationResponse> | undefined, b: UpdateCustomizationResponse | PlainMessage<UpdateCustomizationResponse> | undefined): boolean {
     return proto3.util.equals(UpdateCustomizationResponse, a, b);
   }
 }
@@ -256,31 +168,19 @@ export class PutLogoImageRequest extends Message<PutLogoImageRequest> {
     { no: 2, name: "image", kind: "message", T: MediaUpload },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutLogoImageRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutLogoImageRequest {
     return new PutLogoImageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutLogoImageRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutLogoImageRequest {
     return new PutLogoImageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutLogoImageRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutLogoImageRequest {
     return new PutLogoImageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PutLogoImageRequest | PlainMessage<PutLogoImageRequest> | undefined,
-    b: PutLogoImageRequest | PlainMessage<PutLogoImageRequest> | undefined,
-  ): boolean {
+  static equals(a: PutLogoImageRequest | PlainMessage<PutLogoImageRequest> | undefined, b: PutLogoImageRequest | PlainMessage<PutLogoImageRequest> | undefined): boolean {
     return proto3.util.equals(PutLogoImageRequest, a, b);
   }
 }
@@ -296,33 +196,22 @@ export class PutLogoImageResponse extends Message<PutLogoImageResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.PutLogoImageResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutLogoImageResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutLogoImageResponse {
     return new PutLogoImageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutLogoImageResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutLogoImageResponse {
     return new PutLogoImageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutLogoImageResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutLogoImageResponse {
     return new PutLogoImageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PutLogoImageResponse | PlainMessage<PutLogoImageResponse> | undefined,
-    b: PutLogoImageResponse | PlainMessage<PutLogoImageResponse> | undefined,
-  ): boolean {
+  static equals(a: PutLogoImageResponse | PlainMessage<PutLogoImageResponse> | undefined, b: PutLogoImageResponse | PlainMessage<PutLogoImageResponse> | undefined): boolean {
     return proto3.util.equals(PutLogoImageResponse, a, b);
   }
 }
@@ -347,37 +236,19 @@ export class RemoveLogoImageRequest extends Message<RemoveLogoImageRequest> {
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveLogoImageRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveLogoImageRequest {
     return new RemoveLogoImageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveLogoImageRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveLogoImageRequest {
     return new RemoveLogoImageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveLogoImageRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveLogoImageRequest {
     return new RemoveLogoImageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveLogoImageRequest
-      | PlainMessage<RemoveLogoImageRequest>
-      | undefined,
-    b:
-      | RemoveLogoImageRequest
-      | PlainMessage<RemoveLogoImageRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveLogoImageRequest | PlainMessage<RemoveLogoImageRequest> | undefined, b: RemoveLogoImageRequest | PlainMessage<RemoveLogoImageRequest> | undefined): boolean {
     return proto3.util.equals(RemoveLogoImageRequest, a, b);
   }
 }
@@ -393,39 +264,23 @@ export class RemoveLogoImageResponse extends Message<RemoveLogoImageResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.RemoveLogoImageResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveLogoImageResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveLogoImageResponse {
     return new RemoveLogoImageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveLogoImageResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveLogoImageResponse {
     return new RemoveLogoImageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveLogoImageResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveLogoImageResponse {
     return new RemoveLogoImageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveLogoImageResponse
-      | PlainMessage<RemoveLogoImageResponse>
-      | undefined,
-    b:
-      | RemoveLogoImageResponse
-      | PlainMessage<RemoveLogoImageResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveLogoImageResponse | PlainMessage<RemoveLogoImageResponse> | undefined, b: RemoveLogoImageResponse | PlainMessage<RemoveLogoImageResponse> | undefined): boolean {
     return proto3.util.equals(RemoveLogoImageResponse, a, b);
   }
 }
+

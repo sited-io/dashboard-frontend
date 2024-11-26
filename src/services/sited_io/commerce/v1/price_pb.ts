@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -74,14 +67,10 @@ export enum PriceBillingScheme {
   PER_UNIT = 1,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PriceBillingScheme)
-proto3.util.setEnumType(
-  PriceBillingScheme,
-  "sited_io.commerce.v1.PriceBillingScheme",
-  [
-    { no: 0, name: "PRICE_BILLING_SCHEME_UNSPECIFIED" },
-    { no: 1, name: "PRICE_BILLING_SCHEME_PER_UNIT" },
-  ],
-);
+proto3.util.setEnumType(PriceBillingScheme, "sited_io.commerce.v1.PriceBillingScheme", [
+  { no: 0, name: "PRICE_BILLING_SCHEME_UNSPECIFIED" },
+  { no: 1, name: "PRICE_BILLING_SCHEME_PER_UNIT" },
+]);
 
 /**
  * @generated from enum sited_io.commerce.v1.RecurringInterval
@@ -113,17 +102,13 @@ export enum RecurringInterval {
   YEAR = 4,
 }
 // Retrieve enum metadata with: proto3.getEnumType(RecurringInterval)
-proto3.util.setEnumType(
-  RecurringInterval,
-  "sited_io.commerce.v1.RecurringInterval",
-  [
-    { no: 0, name: "RECURRING_INTERVAL_UNSPECIFIED" },
-    { no: 1, name: "RECURRING_INTERVAL_DAY" },
-    { no: 2, name: "RECURRING_INTERVAL_WEEK" },
-    { no: 3, name: "RECURRING_INTERVAL_MONTH" },
-    { no: 4, name: "RECURRING_INTERVAL_YEAR" },
-  ],
-);
+proto3.util.setEnumType(RecurringInterval, "sited_io.commerce.v1.RecurringInterval", [
+  { no: 0, name: "RECURRING_INTERVAL_UNSPECIFIED" },
+  { no: 1, name: "RECURRING_INTERVAL_DAY" },
+  { no: 2, name: "RECURRING_INTERVAL_WEEK" },
+  { no: 3, name: "RECURRING_INTERVAL_MONTH" },
+  { no: 4, name: "RECURRING_INTERVAL_YEAR" },
+]);
 
 /**
  * @generated from message sited_io.commerce.v1.Recurring
@@ -152,52 +137,24 @@ export class Recurring extends Message<Recurring> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.Recurring";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "interval",
-      kind: "enum",
-      T: proto3.getEnumType(RecurringInterval),
-    },
-    {
-      no: 2,
-      name: "interval_count",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
-    {
-      no: 3,
-      name: "trial_period_days",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-      opt: true,
-    },
+    { no: 1, name: "interval", kind: "enum", T: proto3.getEnumType(RecurringInterval) },
+    { no: 2, name: "interval_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "trial_period_days", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): Recurring {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Recurring {
     return new Recurring().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): Recurring {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Recurring {
     return new Recurring().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): Recurring {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Recurring {
     return new Recurring().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Recurring | PlainMessage<Recurring> | undefined,
-    b: Recurring | PlainMessage<Recurring> | undefined,
-  ): boolean {
+  static equals(a: Recurring | PlainMessage<Recurring> | undefined, b: Recurring | PlainMessage<Recurring> | undefined): boolean {
     return proto3.util.equals(Recurring, a, b);
   }
 }
@@ -240,52 +197,26 @@ export class Price extends Message<Price> {
   static readonly typeName = "sited_io.commerce.v1.Price";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "currency", kind: "enum", T: proto3.getEnumType(Currency) },
-    {
-      no: 2,
-      name: "price_type",
-      kind: "enum",
-      T: proto3.getEnumType(PriceType),
-    },
-    {
-      no: 3,
-      name: "billing_scheme",
-      kind: "enum",
-      T: proto3.getEnumType(PriceBillingScheme),
-    },
-    {
-      no: 4,
-      name: "unit_amount",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
+    { no: 2, name: "price_type", kind: "enum", T: proto3.getEnumType(PriceType) },
+    { no: 3, name: "billing_scheme", kind: "enum", T: proto3.getEnumType(PriceBillingScheme) },
+    { no: 4, name: "unit_amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 5, name: "recurring", kind: "message", T: Recurring, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): Price {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Price {
     return new Price().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): Price {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Price {
     return new Price().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): Price {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Price {
     return new Price().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Price | PlainMessage<Price> | undefined,
-    b: Price | PlainMessage<Price> | undefined,
-  ): boolean {
+  static equals(a: Price | PlainMessage<Price> | undefined, b: Price | PlainMessage<Price> | undefined): boolean {
     return proto3.util.equals(Price, a, b);
   }
 }
+
