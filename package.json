@@ -8,7 +8,7 @@
     "start": "vinxi start --port 8001",
     "version": "vinxi version",
     "lint": "eslint src/**",
-    "format": "prettier . --write"
+    "format": "prettier --write ."
   },
   "engines": {
     "node": ">=18"
