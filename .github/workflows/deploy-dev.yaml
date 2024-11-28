@@ -1,0 +1,36 @@
+name: Deploy to dev environment
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+env:
+  NOMAD_ADDR: ${{ secrets.DEV_NOMAD_ADDR }}
+  IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
+jobs:
+  build:
+    environment: development
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Build Docker image
+        run: >
+          docker build \
+            --build-arg VITE_SERIVCE_APIS_URL=https://api-dev.peoplesmarkets.com \
+            --build-arg VITE_AUTH_OAUTH_CLIENT_ID=232051261124460707@main \
+            --build-arg VITE_FILE_MAX_SIZE=128000000 \
+            --build-arg VITE_IMAGE_MAX_SIZE=4096000 \
+            --tag $IMAGE_TAG --file Dockerfile .
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Docker image to ghcr
+        run: docker push $IMAGE_TAG

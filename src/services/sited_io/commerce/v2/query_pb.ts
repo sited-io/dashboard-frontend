@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Direction } from "../../types/query/v1/query_pb.js";
 
@@ -27,11 +34,15 @@ export enum OffersOrderByField {
   UPDATED_AT = 2,
 }
 // Retrieve enum metadata with: proto3.getEnumType(OffersOrderByField)
-proto3.util.setEnumType(OffersOrderByField, "sited_io.commerce.v2.OffersOrderByField", [
-  { no: 0, name: "OFFERS_ORDER_BY_FIELD_UNSPECIFIED" },
-  { no: 1, name: "OFFERS_ORDER_BY_FIELD_CREATED_AT" },
-  { no: 2, name: "OFFERS_ORDER_BY_FIELD_UPDATED_AT" },
-]);
+proto3.util.setEnumType(
+  OffersOrderByField,
+  "sited_io.commerce.v2.OffersOrderByField",
+  [
+    { no: 0, name: "OFFERS_ORDER_BY_FIELD_UNSPECIFIED" },
+    { no: 1, name: "OFFERS_ORDER_BY_FIELD_CREATED_AT" },
+    { no: 2, name: "OFFERS_ORDER_BY_FIELD_UPDATED_AT" },
+  ],
+);
 
 /**
  * @generated from enum sited_io.commerce.v2.OffersFilterField
@@ -63,13 +74,17 @@ export enum OffersFilterField {
   TYPE = 4,
 }
 // Retrieve enum metadata with: proto3.getEnumType(OffersFilterField)
-proto3.util.setEnumType(OffersFilterField, "sited_io.commerce.v2.OffersFilterField", [
-  { no: 0, name: "OFFERS_FILTER_FIELD_UNSPECIFIED" },
-  { no: 1, name: "OFFERS_FILTER_FIELD_NAME" },
-  { no: 2, name: "OFFERS_FILTER_FIELD_DESCRIPTION" },
-  { no: 3, name: "OFFERS_FILTER_FIELD_NAME_AND_DESCRIPTION" },
-  { no: 4, name: "OFFERS_FILTER_FIELD_TYPE" },
-]);
+proto3.util.setEnumType(
+  OffersFilterField,
+  "sited_io.commerce.v2.OffersFilterField",
+  [
+    { no: 0, name: "OFFERS_FILTER_FIELD_UNSPECIFIED" },
+    { no: 1, name: "OFFERS_FILTER_FIELD_NAME" },
+    { no: 2, name: "OFFERS_FILTER_FIELD_DESCRIPTION" },
+    { no: 3, name: "OFFERS_FILTER_FIELD_NAME_AND_DESCRIPTION" },
+    { no: 4, name: "OFFERS_FILTER_FIELD_TYPE" },
+  ],
+);
 
 /**
  * @generated from enum sited_io.commerce.v2.FileOrderByField
@@ -96,12 +111,16 @@ export enum FileOrderByField {
   ORDERING = 3,
 }
 // Retrieve enum metadata with: proto3.getEnumType(FileOrderByField)
-proto3.util.setEnumType(FileOrderByField, "sited_io.commerce.v2.FileOrderByField", [
-  { no: 0, name: "FILE_ORDER_BY_FIELD_UNSPECIFIED" },
-  { no: 1, name: "FILE_ORDER_BY_FIELD_CREATED_AT" },
-  { no: 2, name: "FILE_ORDER_BY_FIELD_UPDATED_AT" },
-  { no: 3, name: "FILE_ORDER_BY_FIELD_ORDERING" },
-]);
+proto3.util.setEnumType(
+  FileOrderByField,
+  "sited_io.commerce.v2.FileOrderByField",
+  [
+    { no: 0, name: "FILE_ORDER_BY_FIELD_UNSPECIFIED" },
+    { no: 1, name: "FILE_ORDER_BY_FIELD_CREATED_AT" },
+    { no: 2, name: "FILE_ORDER_BY_FIELD_UPDATED_AT" },
+    { no: 3, name: "FILE_ORDER_BY_FIELD_ORDERING" },
+  ],
+);
 
 /**
  * @generated from enum sited_io.commerce.v2.FileFilterField
@@ -123,11 +142,15 @@ export enum FileFilterField {
   OFFER_ID = 2,
 }
 // Retrieve enum metadata with: proto3.getEnumType(FileFilterField)
-proto3.util.setEnumType(FileFilterField, "sited_io.commerce.v2.FileFilterField", [
-  { no: 0, name: "FILE_FILTER_FIELD_UNSPECIFIED" },
-  { no: 1, name: "FILE_FILTER_FIELD_FILENAME" },
-  { no: 2, name: "FILE_FILTER_FIELD_OFFER_ID" },
-]);
+proto3.util.setEnumType(
+  FileFilterField,
+  "sited_io.commerce.v2.FileFilterField",
+  [
+    { no: 0, name: "FILE_FILTER_FIELD_UNSPECIFIED" },
+    { no: 1, name: "FILE_FILTER_FIELD_FILENAME" },
+    { no: 2, name: "FILE_FILTER_FIELD_OFFER_ID" },
+  ],
+);
 
 /**
  * @generated from message sited_io.commerce.v2.OffersOrderBy
@@ -151,23 +174,45 @@ export class OffersOrderBy extends Message<OffersOrderBy> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OffersOrderBy";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(OffersOrderByField) },
-    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Direction) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(OffersOrderByField),
+    },
+    {
+      no: 2,
+      name: "direction",
+      kind: "enum",
+      T: proto3.getEnumType(Direction),
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OffersOrderBy {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OffersOrderBy {
     return new OffersOrderBy().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OffersOrderBy {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OffersOrderBy {
     return new OffersOrderBy().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OffersOrderBy {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OffersOrderBy {
     return new OffersOrderBy().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OffersOrderBy | PlainMessage<OffersOrderBy> | undefined, b: OffersOrderBy | PlainMessage<OffersOrderBy> | undefined): boolean {
+  static equals(
+    a: OffersOrderBy | PlainMessage<OffersOrderBy> | undefined,
+    b: OffersOrderBy | PlainMessage<OffersOrderBy> | undefined,
+  ): boolean {
     return proto3.util.equals(OffersOrderBy, a, b);
   }
 }
@@ -194,23 +239,40 @@ export class OffersFilter extends Message<OffersFilter> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OffersFilter";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(OffersFilterField) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(OffersFilterField),
+    },
     { no: 2, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OffersFilter {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OffersFilter {
     return new OffersFilter().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OffersFilter {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OffersFilter {
     return new OffersFilter().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OffersFilter {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OffersFilter {
     return new OffersFilter().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OffersFilter | PlainMessage<OffersFilter> | undefined, b: OffersFilter | PlainMessage<OffersFilter> | undefined): boolean {
+  static equals(
+    a: OffersFilter | PlainMessage<OffersFilter> | undefined,
+    b: OffersFilter | PlainMessage<OffersFilter> | undefined,
+  ): boolean {
     return proto3.util.equals(OffersFilter, a, b);
   }
 }
@@ -237,23 +299,45 @@ export class FileOrderBy extends Message<FileOrderBy> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.FileOrderBy";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(FileOrderByField) },
-    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Direction) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(FileOrderByField),
+    },
+    {
+      no: 2,
+      name: "direction",
+      kind: "enum",
+      T: proto3.getEnumType(Direction),
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FileOrderBy {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): FileOrderBy {
     return new FileOrderBy().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FileOrderBy {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): FileOrderBy {
     return new FileOrderBy().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FileOrderBy {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): FileOrderBy {
     return new FileOrderBy().fromJsonString(jsonString, options);
   }
 
-  static equals(a: FileOrderBy | PlainMessage<FileOrderBy> | undefined, b: FileOrderBy | PlainMessage<FileOrderBy> | undefined): boolean {
+  static equals(
+    a: FileOrderBy | PlainMessage<FileOrderBy> | undefined,
+    b: FileOrderBy | PlainMessage<FileOrderBy> | undefined,
+  ): boolean {
     return proto3.util.equals(FileOrderBy, a, b);
   }
 }
@@ -280,24 +364,40 @@ export class FileFilter extends Message<FileFilter> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.FileFilter";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(FileFilterField) },
+    {
+      no: 1,
+      name: "field",
+      kind: "enum",
+      T: proto3.getEnumType(FileFilterField),
+    },
     { no: 2, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FileFilter {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): FileFilter {
     return new FileFilter().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FileFilter {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): FileFilter {
     return new FileFilter().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FileFilter {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): FileFilter {
     return new FileFilter().fromJsonString(jsonString, options);
   }
 
-  static equals(a: FileFilter | PlainMessage<FileFilter> | undefined, b: FileFilter | PlainMessage<FileFilter> | undefined): boolean {
+  static equals(
+    a: FileFilter | PlainMessage<FileFilter> | undefined,
+    b: FileFilter | PlainMessage<FileFilter> | undefined,
+  ): boolean {
     return proto3.util.equals(FileFilter, a, b);
   }
 }
-

@@ -3,7 +3,34 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMediaToOfferRequest, AddMediaToOfferResponse, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse, CreateMediaRequest, CreateMediaResponse, DeleteMediaRequest, DeleteMediaResponse, DownloadMediaRequest, DownloadMediaResponse, GetMediaRequest, GetMediaResponse, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse, ListAccessibleMediaRequest, ListAccessibleMediaResponse, ListMediaRequest, ListMediaResponse, PutMultipartChunkRequest, PutMultipartChunkResponse, RemoveMediaFromOfferRequest, RemoveMediaFromOfferResponse, UpdateMediaOfferOrderingRequest, UpdateMediaOfferOrderingResponse, UpdateMediaRequest, UpdateMediaResponse } from "./media_pb.js";
+import {
+  AddMediaToOfferRequest,
+  AddMediaToOfferResponse,
+  CompleteMultipartUploadRequest,
+  CompleteMultipartUploadResponse,
+  CreateMediaRequest,
+  CreateMediaResponse,
+  DeleteMediaRequest,
+  DeleteMediaResponse,
+  DownloadMediaRequest,
+  DownloadMediaResponse,
+  GetMediaRequest,
+  GetMediaResponse,
+  InitiateMultipartUploadRequest,
+  InitiateMultipartUploadResponse,
+  ListAccessibleMediaRequest,
+  ListAccessibleMediaResponse,
+  ListMediaRequest,
+  ListMediaResponse,
+  PutMultipartChunkRequest,
+  PutMultipartChunkResponse,
+  RemoveMediaFromOfferRequest,
+  RemoveMediaFromOfferResponse,
+  UpdateMediaOfferOrderingRequest,
+  UpdateMediaOfferOrderingResponse,
+  UpdateMediaRequest,
+  UpdateMediaResponse,
+} from "./media_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -129,6 +156,5 @@ export const MediaService = {
       O: RemoveMediaFromOfferResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-

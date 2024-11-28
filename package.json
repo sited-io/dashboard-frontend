@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vinxi dev --port 8001",
     "gen": "rm -rf src/services/sited_io && buf generate service-apis/proto --template buf.gen.service-apis.yaml",
-    "build": "vinxi build --port 8001",
+    "build": "vinxi build",
     "start": "vinxi start --port 8001",
     "version": "vinxi version",
     "lint": "eslint src/**",

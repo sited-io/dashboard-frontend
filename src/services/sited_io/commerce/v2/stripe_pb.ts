@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -18,19 +25,22 @@ export class StripeAccount extends Message<StripeAccount> {
   /**
    * @generated from oneof sited_io.commerce.v2.StripeAccount.status
    */
-  status: {
-    /**
-     * @generated from field: sited_io.commerce.v2.StripeAccount.Pending pending = 2;
-     */
-    value: StripeAccount_Pending;
-    case: "pending";
-  } | {
-    /**
-     * @generated from field: sited_io.commerce.v2.StripeAccount.Configured configured = 3;
-     */
-    value: StripeAccount_Configured;
-    case: "configured";
-  } | { case: undefined; value?: undefined } = { case: undefined };
+  status:
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.StripeAccount.Pending pending = 2;
+         */
+        value: StripeAccount_Pending;
+        case: "pending";
+      }
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.StripeAccount.Configured configured = 3;
+         */
+        value: StripeAccount_Configured;
+        case: "configured";
+      }
+    | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<StripeAccount>) {
     super();
@@ -40,24 +50,53 @@ export class StripeAccount extends Message<StripeAccount> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.StripeAccount";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "stripe_account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "pending", kind: "message", T: StripeAccount_Pending, oneof: "status" },
-    { no: 3, name: "configured", kind: "message", T: StripeAccount_Configured, oneof: "status" },
+    {
+      no: 1,
+      name: "stripe_account_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
+    {
+      no: 2,
+      name: "pending",
+      kind: "message",
+      T: StripeAccount_Pending,
+      oneof: "status",
+    },
+    {
+      no: 3,
+      name: "configured",
+      kind: "message",
+      T: StripeAccount_Configured,
+      oneof: "status",
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StripeAccount {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StripeAccount {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StripeAccount {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount {
     return new StripeAccount().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StripeAccount | PlainMessage<StripeAccount> | undefined, b: StripeAccount | PlainMessage<StripeAccount> | undefined): boolean {
+  static equals(
+    a: StripeAccount | PlainMessage<StripeAccount> | undefined,
+    b: StripeAccount | PlainMessage<StripeAccount> | undefined,
+  ): boolean {
     return proto3.util.equals(StripeAccount, a, b);
   }
 }
@@ -82,19 +121,31 @@ export class StripeAccount_Pending extends Message<StripeAccount_Pending> {
     { no: 1, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StripeAccount_Pending {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StripeAccount_Pending {
     return new StripeAccount_Pending().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StripeAccount_Pending {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount_Pending {
     return new StripeAccount_Pending().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StripeAccount_Pending {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount_Pending {
     return new StripeAccount_Pending().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StripeAccount_Pending | PlainMessage<StripeAccount_Pending> | undefined, b: StripeAccount_Pending | PlainMessage<StripeAccount_Pending> | undefined): boolean {
+  static equals(
+    a: StripeAccount_Pending | PlainMessage<StripeAccount_Pending> | undefined,
+    b: StripeAccount_Pending | PlainMessage<StripeAccount_Pending> | undefined,
+  ): boolean {
     return proto3.util.equals(StripeAccount_Pending, a, b);
   }
 }
@@ -121,24 +172,51 @@ export class StripeAccount_Configured extends Message<StripeAccount_Configured> 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.StripeAccount.Configured";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "charges_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "details_submitted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    {
+      no: 1,
+      name: "charges_enabled",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+    },
+    {
+      no: 2,
+      name: "details_submitted",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StripeAccount_Configured {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): StripeAccount_Configured {
     return new StripeAccount_Configured().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StripeAccount_Configured {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount_Configured {
     return new StripeAccount_Configured().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StripeAccount_Configured {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): StripeAccount_Configured {
     return new StripeAccount_Configured().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StripeAccount_Configured | PlainMessage<StripeAccount_Configured> | undefined, b: StripeAccount_Configured | PlainMessage<StripeAccount_Configured> | undefined): boolean {
+  static equals(
+    a:
+      | StripeAccount_Configured
+      | PlainMessage<StripeAccount_Configured>
+      | undefined,
+    b:
+      | StripeAccount_Configured
+      | PlainMessage<StripeAccount_Configured>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(StripeAccount_Configured, a, b);
   }
 }
-

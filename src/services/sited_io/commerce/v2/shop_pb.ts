@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Offer } from "./offer_pb.js";
 
@@ -45,20 +52,31 @@ export class Shop extends Message<Shop> {
     { no: 4, name: "offers", kind: "message", T: Offer, repeated: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Shop {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): Shop {
     return new Shop().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Shop {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): Shop {
     return new Shop().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Shop {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): Shop {
     return new Shop().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Shop | PlainMessage<Shop> | undefined, b: Shop | PlainMessage<Shop> | undefined): boolean {
+  static equals(
+    a: Shop | PlainMessage<Shop> | undefined,
+    b: Shop | PlainMessage<Shop> | undefined,
+  ): boolean {
     return proto3.util.equals(Shop, a, b);
   }
 }
-

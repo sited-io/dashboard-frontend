@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
@@ -34,24 +41,45 @@ export class UserQuota extends Message<UserQuota> {
   static readonly typeName = "sited_io.commerce.v2.UserQuota";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "max_allowed_size_bytes", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "uploaded_size_bytes", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    {
+      no: 2,
+      name: "max_allowed_size_bytes",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 3,
+      name: "uploaded_size_bytes",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserQuota {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UserQuota {
     return new UserQuota().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserQuota {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UserQuota {
     return new UserQuota().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserQuota {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UserQuota {
     return new UserQuota().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UserQuota | PlainMessage<UserQuota> | undefined, b: UserQuota | PlainMessage<UserQuota> | undefined): boolean {
+  static equals(
+    a: UserQuota | PlainMessage<UserQuota> | undefined,
+    b: UserQuota | PlainMessage<UserQuota> | undefined,
+  ): boolean {
     return proto3.util.equals(UserQuota, a, b);
   }
 }
-

@@ -3,7 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CancelMediaSubscriptionRequest, CancelMediaSubscriptionResponse, GetMediaSubscriptionRequest, GetMediaSubscriptionResponse, ListMediaSubscriptionsRequest, ListMediaSubscriptionsResponse, PutMediaSubscriptionRequest, PutMediaSubscriptionResponse, ResumeMediaSubscriptionRequest, ResumeMediaSubscriptionResponse } from "./media_subscription_pb.js";
+import {
+  CancelMediaSubscriptionRequest,
+  CancelMediaSubscriptionResponse,
+  GetMediaSubscriptionRequest,
+  GetMediaSubscriptionResponse,
+  ListMediaSubscriptionsRequest,
+  ListMediaSubscriptionsResponse,
+  PutMediaSubscriptionRequest,
+  PutMediaSubscriptionResponse,
+  ResumeMediaSubscriptionRequest,
+  ResumeMediaSubscriptionResponse,
+} from "./media_subscription_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -57,6 +68,5 @@ export const MediaSubscriptionService = {
       O: ResumeMediaSubscriptionResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-
