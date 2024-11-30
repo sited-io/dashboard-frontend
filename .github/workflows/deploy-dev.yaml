@@ -47,6 +47,8 @@ jobs:
       - name: Get Nomad token from Vault
         uses: hashicorp/vault-action@v2
         with:
+          url: $VAULT_ADDR
+          token: $VAULT_TOKEN
           secrets: |
             nomad/creds/${{ secrets.DEV_SERVICE_DEPLOYER_USERNAME }} secret_id | NOMAD_TOKEN ;
 
