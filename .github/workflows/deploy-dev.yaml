@@ -5,8 +5,6 @@ on:
     branches:
       - dev
 env:
-  VAULT_ADDR: ${{ secrets.DEV_VAULT_ADDR }}
-  VAULT_TOKEN: ${{ secrets.DEV_VAULT_TOKEN }}
   NOMAD_ADDR: ${{ secrets.DEV_NOMAD_ADDR }}
   IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
 jobs:
@@ -47,8 +45,8 @@ jobs:
       - name: Get Nomad token from Vault
         uses: hashicorp/vault-action@v2
         with:
-          url: $VAULT_ADDR
-          token: $VAULT_TOKEN
+          url: ${{ secrets.DEV_VAULT_ADDR }}
+          token: ${{ secrets.DEV_VAULT_TOKEN }}
           secrets: |
             nomad/creds/${{ secrets.DEV_SERVICE_DEPLOYER_USERNAME }} secret_id | NOMAD_TOKEN ;
 
