@@ -46,9 +46,11 @@ jobs:
         uses: hashicorp/vault-action@v2
         with:
           url: ${{ secrets.DEV_VAULT_ADDR }}
-          token: ${{ secrets.DEV_VAULT_TOKEN }}
+          method: userpass
+          username: services-deployer
+          password: ${{ secrets.DEV_SERVICE_DEPLOYER_PASSWORD }}
           secrets: |
-            nomad/creds/${{ secrets.DEV_SERVICE_DEPLOYER_USERNAME }} secret_id | NOMAD_TOKEN ;
+            nomad/creds/services-deployer secret_id | NOMAD_TOKEN ;
 
       - name: Deploy job
         run: |
