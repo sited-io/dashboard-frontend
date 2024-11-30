@@ -5,6 +5,8 @@ on:
     branches:
       - dev
 env:
+  VAULT_ADDR: ${{ secrets.DEV_VAULT_ADDR }}
+  VAULT_TOKEN: ${{ secrets.DEV_VAULT_TOKEN }}
   NOMAD_ADDR: ${{ secrets.DEV_NOMAD_ADDR }}
   IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
 jobs:
@@ -34,3 +36,21 @@ jobs:
 
       - name: Push Docker image to ghcr
         run: docker push $IMAGE_TAG
+
+  deploy:
+    environment: development
+    runs-on: self-hosted
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Nomad token from Vault
+        uses: hashicorp/vault-action@v2
+        with:
+          secrets: |
+            nomad/creds/${{ secrets.DEV_SERVICE_DEPLOYER_USERNAME }} secret_id | NOMAD_TOKEN ;
+
+      - name: Deploy job
+        run: |
+          sed -i -e "s|__IMAGE__|$IMAGE_TAG|g" service.nomad
+          nomad job run -verbose service.nomad
