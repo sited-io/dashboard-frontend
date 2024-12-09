@@ -47,6 +47,7 @@ job "dashboard-frontend" {
         change_mode = "restart"
         data = <<EOF
 PORT={{ env "NOMAD_PORT_http" }}
+
 {{ with secret "kv2/data/services/dashboard-frontend" }}
 OAUTH_URL='{{ .Data.data.OAUTH_URL }}'
 OAUTH_ORG_ID='{{ .Data.data.OAUTH_ORG_ID }}'

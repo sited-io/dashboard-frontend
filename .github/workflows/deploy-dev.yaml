@@ -20,10 +20,10 @@ jobs:
       - name: Build Docker image
         run: >
           docker build \
-            --build-arg VITE_SERIVCE_APIS_URL=https://api-dev.peoplesmarkets.com \
-            --build-arg VITE_AUTH_OAUTH_CLIENT_ID=232051261124460707@main \
-            --build-arg VITE_FILE_MAX_SIZE=128000000 \
-            --build-arg VITE_IMAGE_MAX_SIZE=4096000 \
+            --build-arg VITE_SERIVCE_APIS_URL=${{ vars.VITE_SERIVCE_APIS_URL }} \
+            --build-arg VITE_AUTH_OAUTH_CLIENT_ID=${{ vars.VITE_AUTH_OAUTH_CLIENT_ID }} \
+            --build-arg VITE_FILE_MAX_SIZE=${{ vars.VITE_FILE_MAX_SIZE }} \
+            --build-arg VITE_IMAGE_MAX_SIZE=${{ vars.VITE_IMAGE_MAX_SIZE }} \
             --tag $IMAGE_TAG --file Dockerfile .
 
       - name: Login to GitHub Container Registry
