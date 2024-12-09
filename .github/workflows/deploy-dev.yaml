@@ -2,8 +2,9 @@ name: Deploy to dev environment
 on:
   workflow_dispatch:
   push:
-    branches:
-      - dev
+    branches: [dev]
+  pull_request:
+    branches: [dev]
 env:
   NOMAD_ADDR: ${{ secrets.DEV_NOMAD_ADDR }}
   IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
