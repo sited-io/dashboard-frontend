@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [dev]
 env:
-  VAULT_ADDR: ${{ vars.DEV_VAULT_ADDR }}
   NOMAD_ADDR: ${{ vars.DEV_NOMAD_ADDR }}
   IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
 jobs:
@@ -47,6 +46,7 @@ jobs:
       - name: Get Nomad token from Vault
         uses: hashicorp/vault-action@v2
         with:
+          url: ${{ vars.DEV_VAULT_ADDR }}
           method: userpass
           username: services-deployer
           password: ${{ secrets.DEV_SERVICE_DEPLOYER_PASSWORD }}
