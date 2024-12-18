@@ -30,6 +30,7 @@ export function EditDetailsDialog(props: Props) {
   const emptyRequest = {
     offerId: props.offer.offerId,
     name: props.offer.name,
+    description: props.offer.description,
     type: props.offer.type,
   } as UpdateOfferRequest;
 
@@ -37,6 +38,7 @@ export function EditDetailsDialog(props: Props) {
 
   const [errors, setErrors] = createStore({
     name: [] as string[],
+    description: [] as string[],
   });
 
   function offerTypeOptions() {
@@ -58,6 +60,11 @@ export function EditDetailsDialog(props: Props) {
   function handleOfferTypeSelect(type: string) {
     resetErrors();
     setRequest("type", _.toInteger(type));
+  }
+
+  function handleDescriptionInput(description: string) {
+    resetErrors();
+    setRequest("description", description);
   }
 
   async function handleUpdateOffer(event: SubmitEvent) {
@@ -106,6 +113,15 @@ export function EditDetailsDialog(props: Props) {
               options={offerTypeOptions}
               selected={() => request.type}
               onChange={handleOfferTypeSelect}
+            />
+
+            <MdTextField
+              type="textarea"
+              value={request.description}
+              label={trans(TKEYS.offers.labels.description)}
+              onValue={handleDescriptionInput}
+              error={!_.isEmpty(errors.description)}
+              errorText={errors.description}
             />
           </Form>
         </div>

@@ -128,6 +128,7 @@ export const TKEYS = {
       name: "offers.labels.name",
       image: "offers.labels.image",
       type: "offers.labels.type",
+      description: "offers.labels.description",
     },
   },
   images: {

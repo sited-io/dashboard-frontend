@@ -9,16 +9,11 @@ import { SignIn } from "./SignIn";
 
 export function Layout(props: RouteSectionProps<any>) {
   const [session] = createResource(fetchSession);
-  const { websites, selectedWebsite } = useWebsiteContext();
-
-  function websiteName() {
-    const name = selectedWebsite()?.name;
-    return name ? name + " -" : "";
-  }
+  const { websites } = useWebsiteContext();
 
   return (
     <>
-      <Title>Dashboard -{websiteName()} sited.io</Title>
+      <Title>Dashboard - sited.io</Title>
 
       <ResourceBoundary resource={session}>
         <Show when={session()?.isAuthenticated} fallback={<SignIn />}>

@@ -137,6 +137,7 @@ export const DE: typeof TKEYS = {
       name: "Name",
       image: "Bild",
       type: "Typ",
+      description: "Beschreibung",
     },
   },
   images: {
