@@ -3,18 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  CreateShopRequest,
-  CreateShopResponse,
-  DeleteShopRequest,
-  DeleteShopResponse,
-  GetShopRequest,
-  GetShopResponse,
-  ListShopsRequest,
-  ListShopsResponse,
-  UpdateShopRequest,
-  UpdateShopResponse,
-} from "./shop_pb.js";
+import { CreateShopRequest, CreateShopResponse, DeleteShopRequest, DeleteShopResponse, GetShopRequest, GetShopResponse, ListShopsRequest, ListShopsResponse, UpdateShopRequest, UpdateShopResponse } from "./shop_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -68,5 +57,6 @@ export const ShopService = {
       O: DeleteShopResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

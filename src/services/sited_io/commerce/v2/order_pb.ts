@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
@@ -62,44 +55,26 @@ export class Order extends Message<Order> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "buyer_user_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 3, name: "buyer_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 4, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "order_type", kind: "message", T: OrderType },
     { no: 7, name: "payment_method", kind: "message", T: PaymentMethod },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): Order {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Order {
     return new Order().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): Order {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Order {
     return new Order().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): Order {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Order {
     return new Order().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Order | PlainMessage<Order> | undefined,
-    b: Order | PlainMessage<Order> | undefined,
-  ): boolean {
+  static equals(a: Order | PlainMessage<Order> | undefined, b: Order | PlainMessage<Order> | undefined): boolean {
     return proto3.util.equals(Order, a, b);
   }
 }
@@ -111,22 +86,19 @@ export class OrderType extends Message<OrderType> {
   /**
    * @generated from oneof sited_io.commerce.v2.OrderType.order_type_kind
    */
-  orderTypeKind:
-    | {
-        /**
-         * @generated from field: sited_io.commerce.v2.OrderType.OneOff one_off = 1;
-         */
-        value: OrderType_OneOff;
-        case: "oneOff";
-      }
-    | {
-        /**
-         * @generated from field: sited_io.commerce.v2.OrderType.Subscription subscription = 2;
-         */
-        value: OrderType_Subscription;
-        case: "subscription";
-      }
-    | { case: undefined; value?: undefined } = { case: undefined };
+  orderTypeKind: {
+    /**
+     * @generated from field: sited_io.commerce.v2.OrderType.OneOff one_off = 1;
+     */
+    value: OrderType_OneOff;
+    case: "oneOff";
+  } | {
+    /**
+     * @generated from field: sited_io.commerce.v2.OrderType.Subscription subscription = 2;
+     */
+    value: OrderType_Subscription;
+    case: "subscription";
+  } | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<OrderType>) {
     super();
@@ -136,47 +108,23 @@ export class OrderType extends Message<OrderType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OrderType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "one_off",
-      kind: "message",
-      T: OrderType_OneOff,
-      oneof: "order_type_kind",
-    },
-    {
-      no: 2,
-      name: "subscription",
-      kind: "message",
-      T: OrderType_Subscription,
-      oneof: "order_type_kind",
-    },
+    { no: 1, name: "one_off", kind: "message", T: OrderType_OneOff, oneof: "order_type_kind" },
+    { no: 2, name: "subscription", kind: "message", T: OrderType_Subscription, oneof: "order_type_kind" },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): OrderType {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrderType {
     return new OrderType().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrderType {
     return new OrderType().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderType {
     return new OrderType().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: OrderType | PlainMessage<OrderType> | undefined,
-    b: OrderType | PlainMessage<OrderType> | undefined,
-  ): boolean {
+  static equals(a: OrderType | PlainMessage<OrderType> | undefined, b: OrderType | PlainMessage<OrderType> | undefined): boolean {
     return proto3.util.equals(OrderType, a, b);
   }
 }
@@ -198,40 +146,22 @@ export class OrderType_OneOff extends Message<OrderType_OneOff> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OrderType.OneOff";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "payed_at",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
+    { no: 1, name: "payed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): OrderType_OneOff {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrderType_OneOff {
     return new OrderType_OneOff().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType_OneOff {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrderType_OneOff {
     return new OrderType_OneOff().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType_OneOff {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderType_OneOff {
     return new OrderType_OneOff().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: OrderType_OneOff | PlainMessage<OrderType_OneOff> | undefined,
-    b: OrderType_OneOff | PlainMessage<OrderType_OneOff> | undefined,
-  ): boolean {
+  static equals(a: OrderType_OneOff | PlainMessage<OrderType_OneOff> | undefined, b: OrderType_OneOff | PlainMessage<OrderType_OneOff> | undefined): boolean {
     return proto3.util.equals(OrderType_OneOff, a, b);
   }
 }
@@ -283,80 +213,28 @@ export class OrderType_Subscription extends Message<OrderType_Subscription> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OrderType.Subscription";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "current_period_start",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-    },
-    {
-      no: 2,
-      name: "current_period_end",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-    },
+    { no: 1, name: "current_period_start", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "current_period_end", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 4,
-      name: "payed_at",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
-    {
-      no: 5,
-      name: "payed_until",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
-    {
-      no: 6,
-      name: "canceled_at",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
-    {
-      no: 7,
-      name: "cancel_at",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
+    { no: 4, name: "payed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: "payed_until", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: "canceled_at", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 7, name: "cancel_at", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): OrderType_Subscription {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrderType_Subscription {
     return new OrderType_Subscription().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType_Subscription {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrderType_Subscription {
     return new OrderType_Subscription().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): OrderType_Subscription {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderType_Subscription {
     return new OrderType_Subscription().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | OrderType_Subscription
-      | PlainMessage<OrderType_Subscription>
-      | undefined,
-    b:
-      | OrderType_Subscription
-      | PlainMessage<OrderType_Subscription>
-      | undefined,
-  ): boolean {
+  static equals(a: OrderType_Subscription | PlainMessage<OrderType_Subscription> | undefined, b: OrderType_Subscription | PlainMessage<OrderType_Subscription> | undefined): boolean {
     return proto3.util.equals(OrderType_Subscription, a, b);
   }
 }
@@ -368,15 +246,13 @@ export class PaymentMethod extends Message<PaymentMethod> {
   /**
    * @generated from oneof sited_io.commerce.v2.PaymentMethod.payment_method_kind
    */
-  paymentMethodKind:
-    | {
-        /**
-         * @generated from field: sited_io.commerce.v2.PaymentMethod.Stripe stripe = 1;
-         */
-        value: PaymentMethod_Stripe;
-        case: "stripe";
-      }
-    | { case: undefined; value?: undefined } = { case: undefined };
+  paymentMethodKind: {
+    /**
+     * @generated from field: sited_io.commerce.v2.PaymentMethod.Stripe stripe = 1;
+     */
+    value: PaymentMethod_Stripe;
+    case: "stripe";
+  } | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<PaymentMethod>) {
     super();
@@ -386,40 +262,22 @@ export class PaymentMethod extends Message<PaymentMethod> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PaymentMethod";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "stripe",
-      kind: "message",
-      T: PaymentMethod_Stripe,
-      oneof: "payment_method_kind",
-    },
+    { no: 1, name: "stripe", kind: "message", T: PaymentMethod_Stripe, oneof: "payment_method_kind" },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PaymentMethod {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentMethod {
     return new PaymentMethod().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PaymentMethod {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentMethod {
     return new PaymentMethod().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PaymentMethod {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentMethod {
     return new PaymentMethod().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PaymentMethod | PlainMessage<PaymentMethod> | undefined,
-    b: PaymentMethod | PlainMessage<PaymentMethod> | undefined,
-  ): boolean {
+  static equals(a: PaymentMethod | PlainMessage<PaymentMethod> | undefined, b: PaymentMethod | PlainMessage<PaymentMethod> | undefined): boolean {
     return proto3.util.equals(PaymentMethod, a, b);
   }
 }
@@ -441,40 +299,23 @@ export class PaymentMethod_Stripe extends Message<PaymentMethod_Stripe> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PaymentMethod.Stripe";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "subscription_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PaymentMethod_Stripe {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentMethod_Stripe {
     return new PaymentMethod_Stripe().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PaymentMethod_Stripe {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentMethod_Stripe {
     return new PaymentMethod_Stripe().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PaymentMethod_Stripe {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentMethod_Stripe {
     return new PaymentMethod_Stripe().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PaymentMethod_Stripe | PlainMessage<PaymentMethod_Stripe> | undefined,
-    b: PaymentMethod_Stripe | PlainMessage<PaymentMethod_Stripe> | undefined,
-  ): boolean {
+  static equals(a: PaymentMethod_Stripe | PlainMessage<PaymentMethod_Stripe> | undefined, b: PaymentMethod_Stripe | PlainMessage<PaymentMethod_Stripe> | undefined): boolean {
     return proto3.util.equals(PaymentMethod_Stripe, a, b);
   }
 }
+

@@ -3,12 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  GetStaticPageRequest,
-  GetStaticPageResponse,
-  UpdateStaticPageRequest,
-  UpdateStaticPageResponse,
-} from "./static_page_pb.js";
+import { GetStaticPageRequest, GetStaticPageResponse, UpdateStaticPageRequest, UpdateStaticPageResponse } from "./static_page_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -35,5 +30,6 @@ export const StaticPageService = {
       O: UpdateStaticPageResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

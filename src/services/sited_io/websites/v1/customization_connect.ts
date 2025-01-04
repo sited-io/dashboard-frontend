@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  PutLogoImageRequest,
-  PutLogoImageResponse,
-  RemoveLogoImageRequest,
-  RemoveLogoImageResponse,
-  UpdateCustomizationRequest,
-  UpdateCustomizationResponse,
-} from "./customization_pb.js";
+import { PutLogoImageRequest, PutLogoImageResponse, RemoveLogoImageRequest, RemoveLogoImageResponse, UpdateCustomizationRequest, UpdateCustomizationResponse } from "./customization_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,5 +39,6 @@ export const CustomizationService = {
       O: RemoveLogoImageResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

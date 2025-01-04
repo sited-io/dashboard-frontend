@@ -3,20 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { Direction } from "../../types/v1/ordering_pb.js";
-import {
-  PaginationRequest,
-  PaginationResponse,
-} from "../../types/v1/pagination_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.media.v1.MediaOrderByField
@@ -43,16 +33,12 @@ export enum MediaOrderByField {
   ORDERING = 3,
 }
 // Retrieve enum metadata with: proto3.getEnumType(MediaOrderByField)
-proto3.util.setEnumType(
-  MediaOrderByField,
-  "sited_io.media.v1.MediaOrderByField",
-  [
-    { no: 0, name: "MEDIA_ORDER_BY_FIELD_UNSPECIFIED" },
-    { no: 1, name: "MEDIA_ORDER_BY_FIELD_CREATED_AT" },
-    { no: 2, name: "MEDIA_ORDER_BY_FIELD_UPDATED_AT" },
-    { no: 3, name: "MEDIA_ORDER_BY_FIELD_ORDERING" },
-  ],
-);
+proto3.util.setEnumType(MediaOrderByField, "sited_io.media.v1.MediaOrderByField", [
+  { no: 0, name: "MEDIA_ORDER_BY_FIELD_UNSPECIFIED" },
+  { no: 1, name: "MEDIA_ORDER_BY_FIELD_CREATED_AT" },
+  { no: 2, name: "MEDIA_ORDER_BY_FIELD_UPDATED_AT" },
+  { no: 3, name: "MEDIA_ORDER_BY_FIELD_ORDERING" },
+]);
 
 /**
  * @generated from enum sited_io.media.v1.MediaFilterField
@@ -74,15 +60,11 @@ export enum MediaFilterField {
   OFFER_ID = 2,
 }
 // Retrieve enum metadata with: proto3.getEnumType(MediaFilterField)
-proto3.util.setEnumType(
-  MediaFilterField,
-  "sited_io.media.v1.MediaFilterField",
-  [
-    { no: 0, name: "MEDIA_FILTER_FIELD_UNSPECIFIED" },
-    { no: 1, name: "MEDIA_FILTER_FIELD_NAME" },
-    { no: 2, name: "MEDIA_FILTER_FIELD_OFFER_ID" },
-  ],
-);
+proto3.util.setEnumType(MediaFilterField, "sited_io.media.v1.MediaFilterField", [
+  { no: 0, name: "MEDIA_FILTER_FIELD_UNSPECIFIED" },
+  { no: 1, name: "MEDIA_FILTER_FIELD_NAME" },
+  { no: 2, name: "MEDIA_FILTER_FIELD_OFFER_ID" },
+]);
 
 /**
  * @generated from message sited_io.media.v1.MediaResponse
@@ -142,13 +124,7 @@ export class MediaResponse extends Message<MediaResponse> {
   static readonly typeName = "sited_io.media.v1.MediaResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "offer_ids",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      repeated: true,
-    },
+    { no: 2, name: "offer_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 3, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
@@ -158,31 +134,19 @@ export class MediaResponse extends Message<MediaResponse> {
     { no: 9, name: "ordering", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): MediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaResponse {
     return new MediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): MediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MediaResponse {
     return new MediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): MediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MediaResponse {
     return new MediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: MediaResponse | PlainMessage<MediaResponse> | undefined,
-    b: MediaResponse | PlainMessage<MediaResponse> | undefined,
-  ): boolean {
+  static equals(a: MediaResponse | PlainMessage<MediaResponse> | undefined, b: MediaResponse | PlainMessage<MediaResponse> | undefined): boolean {
     return proto3.util.equals(MediaResponse, a, b);
   }
 }
@@ -209,40 +173,23 @@ export class MediaUpload extends Message<MediaUpload> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.MediaUpload";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "content_type",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): MediaUpload {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaUpload {
     return new MediaUpload().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): MediaUpload {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MediaUpload {
     return new MediaUpload().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): MediaUpload {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MediaUpload {
     return new MediaUpload().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: MediaUpload | PlainMessage<MediaUpload> | undefined,
-    b: MediaUpload | PlainMessage<MediaUpload> | undefined,
-  ): boolean {
+  static equals(a: MediaUpload | PlainMessage<MediaUpload> | undefined, b: MediaUpload | PlainMessage<MediaUpload> | undefined): boolean {
     return proto3.util.equals(MediaUpload, a, b);
   }
 }
@@ -285,31 +232,19 @@ export class CreateMediaRequest extends Message<CreateMediaRequest> {
     { no: 4, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateMediaRequest {
     return new CreateMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateMediaRequest {
     return new CreateMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateMediaRequest {
     return new CreateMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateMediaRequest | PlainMessage<CreateMediaRequest> | undefined,
-    b: CreateMediaRequest | PlainMessage<CreateMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: CreateMediaRequest | PlainMessage<CreateMediaRequest> | undefined, b: CreateMediaRequest | PlainMessage<CreateMediaRequest> | undefined): boolean {
     return proto3.util.equals(CreateMediaRequest, a, b);
   }
 }
@@ -334,31 +269,19 @@ export class CreateMediaResponse extends Message<CreateMediaResponse> {
     { no: 1, name: "media", kind: "message", T: MediaResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateMediaResponse {
     return new CreateMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateMediaResponse {
     return new CreateMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateMediaResponse {
     return new CreateMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateMediaResponse | PlainMessage<CreateMediaResponse> | undefined,
-    b: CreateMediaResponse | PlainMessage<CreateMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: CreateMediaResponse | PlainMessage<CreateMediaResponse> | undefined, b: CreateMediaResponse | PlainMessage<CreateMediaResponse> | undefined): boolean {
     return proto3.util.equals(CreateMediaResponse, a, b);
   }
 }
@@ -383,31 +306,19 @@ export class GetMediaRequest extends Message<GetMediaRequest> {
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMediaRequest {
     return new GetMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMediaRequest {
     return new GetMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMediaRequest {
     return new GetMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetMediaRequest | PlainMessage<GetMediaRequest> | undefined,
-    b: GetMediaRequest | PlainMessage<GetMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: GetMediaRequest | PlainMessage<GetMediaRequest> | undefined, b: GetMediaRequest | PlainMessage<GetMediaRequest> | undefined): boolean {
     return proto3.util.equals(GetMediaRequest, a, b);
   }
 }
@@ -432,31 +343,19 @@ export class GetMediaResponse extends Message<GetMediaResponse> {
     { no: 1, name: "media", kind: "message", T: MediaResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMediaResponse {
     return new GetMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMediaResponse {
     return new GetMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMediaResponse {
     return new GetMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetMediaResponse | PlainMessage<GetMediaResponse> | undefined,
-    b: GetMediaResponse | PlainMessage<GetMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: GetMediaResponse | PlainMessage<GetMediaResponse> | undefined, b: GetMediaResponse | PlainMessage<GetMediaResponse> | undefined): boolean {
     return proto3.util.equals(GetMediaResponse, a, b);
   }
 }
@@ -481,31 +380,19 @@ export class DownloadMediaRequest extends Message<DownloadMediaRequest> {
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DownloadMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DownloadMediaRequest {
     return new DownloadMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DownloadMediaRequest {
     return new DownloadMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DownloadMediaRequest {
     return new DownloadMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DownloadMediaRequest | PlainMessage<DownloadMediaRequest> | undefined,
-    b: DownloadMediaRequest | PlainMessage<DownloadMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: DownloadMediaRequest | PlainMessage<DownloadMediaRequest> | undefined, b: DownloadMediaRequest | PlainMessage<DownloadMediaRequest> | undefined): boolean {
     return proto3.util.equals(DownloadMediaRequest, a, b);
   }
 }
@@ -527,39 +414,22 @@ export class DownloadMediaResponse extends Message<DownloadMediaResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.DownloadMediaResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "download_url",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DownloadMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DownloadMediaResponse {
     return new DownloadMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DownloadMediaResponse {
     return new DownloadMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DownloadMediaResponse {
     return new DownloadMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DownloadMediaResponse | PlainMessage<DownloadMediaResponse> | undefined,
-    b: DownloadMediaResponse | PlainMessage<DownloadMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: DownloadMediaResponse | PlainMessage<DownloadMediaResponse> | undefined, b: DownloadMediaResponse | PlainMessage<DownloadMediaResponse> | undefined): boolean {
     return proto3.util.equals(DownloadMediaResponse, a, b);
   }
 }
@@ -586,45 +456,23 @@ export class MediaOrderBy extends Message<MediaOrderBy> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.MediaOrderBy";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "field",
-      kind: "enum",
-      T: proto3.getEnumType(MediaOrderByField),
-    },
-    {
-      no: 2,
-      name: "direction",
-      kind: "enum",
-      T: proto3.getEnumType(Direction),
-    },
+    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(MediaOrderByField) },
+    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Direction) },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): MediaOrderBy {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaOrderBy {
     return new MediaOrderBy().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): MediaOrderBy {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MediaOrderBy {
     return new MediaOrderBy().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): MediaOrderBy {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MediaOrderBy {
     return new MediaOrderBy().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: MediaOrderBy | PlainMessage<MediaOrderBy> | undefined,
-    b: MediaOrderBy | PlainMessage<MediaOrderBy> | undefined,
-  ): boolean {
+  static equals(a: MediaOrderBy | PlainMessage<MediaOrderBy> | undefined, b: MediaOrderBy | PlainMessage<MediaOrderBy> | undefined): boolean {
     return proto3.util.equals(MediaOrderBy, a, b);
   }
 }
@@ -651,40 +499,23 @@ export class MediaFilter extends Message<MediaFilter> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.MediaFilter";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "field",
-      kind: "enum",
-      T: proto3.getEnumType(MediaFilterField),
-    },
+    { no: 1, name: "field", kind: "enum", T: proto3.getEnumType(MediaFilterField) },
     { no: 2, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): MediaFilter {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaFilter {
     return new MediaFilter().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): MediaFilter {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MediaFilter {
     return new MediaFilter().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): MediaFilter {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MediaFilter {
     return new MediaFilter().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: MediaFilter | PlainMessage<MediaFilter> | undefined,
-    b: MediaFilter | PlainMessage<MediaFilter> | undefined,
-  ): boolean {
+  static equals(a: MediaFilter | PlainMessage<MediaFilter> | undefined, b: MediaFilter | PlainMessage<MediaFilter> | undefined): boolean {
     return proto3.util.equals(MediaFilter, a, b);
   }
 }
@@ -722,42 +553,24 @@ export class ListMediaRequest extends Message<ListMediaRequest> {
   static readonly typeName = "sited_io.media.v1.ListMediaRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "pagination",
-      kind: "message",
-      T: PaginationRequest,
-      opt: true,
-    },
+    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
     { no: 3, name: "order_by", kind: "message", T: MediaOrderBy, opt: true },
     { no: 4, name: "filter", kind: "message", T: MediaFilter, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMediaRequest {
     return new ListMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMediaRequest {
     return new ListMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMediaRequest {
     return new ListMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListMediaRequest | PlainMessage<ListMediaRequest> | undefined,
-    b: ListMediaRequest | PlainMessage<ListMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: ListMediaRequest | PlainMessage<ListMediaRequest> | undefined, b: ListMediaRequest | PlainMessage<ListMediaRequest> | undefined): boolean {
     return proto3.util.equals(ListMediaRequest, a, b);
   }
 }
@@ -784,41 +597,23 @@ export class ListMediaResponse extends Message<ListMediaResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ListMediaResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "medias",
-      kind: "message",
-      T: MediaResponse,
-      repeated: true,
-    },
+    { no: 1, name: "medias", kind: "message", T: MediaResponse, repeated: true },
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMediaResponse {
     return new ListMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMediaResponse {
     return new ListMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMediaResponse {
     return new ListMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListMediaResponse | PlainMessage<ListMediaResponse> | undefined,
-    b: ListMediaResponse | PlainMessage<ListMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: ListMediaResponse | PlainMessage<ListMediaResponse> | undefined, b: ListMediaResponse | PlainMessage<ListMediaResponse> | undefined): boolean {
     return proto3.util.equals(ListMediaResponse, a, b);
   }
 }
@@ -850,48 +645,24 @@ export class ListAccessibleMediaRequest extends Message<ListAccessibleMediaReque
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ListAccessibleMediaRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 2,
-      name: "pagination",
-      kind: "message",
-      T: PaginationRequest,
-      opt: true,
-    },
+    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
     { no: 3, name: "order_by", kind: "message", T: MediaOrderBy, opt: true },
     { no: 4, name: "filter", kind: "message", T: MediaFilter, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListAccessibleMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAccessibleMediaRequest {
     return new ListAccessibleMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListAccessibleMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAccessibleMediaRequest {
     return new ListAccessibleMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListAccessibleMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAccessibleMediaRequest {
     return new ListAccessibleMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | ListAccessibleMediaRequest
-      | PlainMessage<ListAccessibleMediaRequest>
-      | undefined,
-    b:
-      | ListAccessibleMediaRequest
-      | PlainMessage<ListAccessibleMediaRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: ListAccessibleMediaRequest | PlainMessage<ListAccessibleMediaRequest> | undefined, b: ListAccessibleMediaRequest | PlainMessage<ListAccessibleMediaRequest> | undefined): boolean {
     return proto3.util.equals(ListAccessibleMediaRequest, a, b);
   }
 }
@@ -918,50 +689,23 @@ export class ListAccessibleMediaResponse extends Message<ListAccessibleMediaResp
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ListAccessibleMediaResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "medias",
-      kind: "message",
-      T: MediaResponse,
-      repeated: true,
-    },
+    { no: 1, name: "medias", kind: "message", T: MediaResponse, repeated: true },
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListAccessibleMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAccessibleMediaResponse {
     return new ListAccessibleMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListAccessibleMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAccessibleMediaResponse {
     return new ListAccessibleMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListAccessibleMediaResponse {
-    return new ListAccessibleMediaResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAccessibleMediaResponse {
+    return new ListAccessibleMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | ListAccessibleMediaResponse
-      | PlainMessage<ListAccessibleMediaResponse>
-      | undefined,
-    b:
-      | ListAccessibleMediaResponse
-      | PlainMessage<ListAccessibleMediaResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: ListAccessibleMediaResponse | PlainMessage<ListAccessibleMediaResponse> | undefined, b: ListAccessibleMediaResponse | PlainMessage<ListAccessibleMediaResponse> | undefined): boolean {
     return proto3.util.equals(ListAccessibleMediaResponse, a, b);
   }
 }
@@ -999,48 +743,24 @@ export class UpdateMediaRequest extends Message<UpdateMediaRequest> {
   static readonly typeName = "sited_io.media.v1.UpdateMediaRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "name",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "file", kind: "message", T: MediaUpload, opt: true },
-    {
-      no: 4,
-      name: "file_name",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 4, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMediaRequest {
     return new UpdateMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMediaRequest {
     return new UpdateMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMediaRequest {
     return new UpdateMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: UpdateMediaRequest | PlainMessage<UpdateMediaRequest> | undefined,
-    b: UpdateMediaRequest | PlainMessage<UpdateMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: UpdateMediaRequest | PlainMessage<UpdateMediaRequest> | undefined, b: UpdateMediaRequest | PlainMessage<UpdateMediaRequest> | undefined): boolean {
     return proto3.util.equals(UpdateMediaRequest, a, b);
   }
 }
@@ -1065,31 +785,19 @@ export class UpdateMediaResponse extends Message<UpdateMediaResponse> {
     { no: 1, name: "media", kind: "message", T: MediaResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMediaResponse {
     return new UpdateMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMediaResponse {
     return new UpdateMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMediaResponse {
     return new UpdateMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: UpdateMediaResponse | PlainMessage<UpdateMediaResponse> | undefined,
-    b: UpdateMediaResponse | PlainMessage<UpdateMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: UpdateMediaResponse | PlainMessage<UpdateMediaResponse> | undefined, b: UpdateMediaResponse | PlainMessage<UpdateMediaResponse> | undefined): boolean {
     return proto3.util.equals(UpdateMediaResponse, a, b);
   }
 }
@@ -1114,31 +822,19 @@ export class DeleteMediaRequest extends Message<DeleteMediaRequest> {
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteMediaRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteMediaRequest {
     return new DeleteMediaRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteMediaRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteMediaRequest {
     return new DeleteMediaRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteMediaRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteMediaRequest {
     return new DeleteMediaRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteMediaRequest | PlainMessage<DeleteMediaRequest> | undefined,
-    b: DeleteMediaRequest | PlainMessage<DeleteMediaRequest> | undefined,
-  ): boolean {
+  static equals(a: DeleteMediaRequest | PlainMessage<DeleteMediaRequest> | undefined, b: DeleteMediaRequest | PlainMessage<DeleteMediaRequest> | undefined): boolean {
     return proto3.util.equals(DeleteMediaRequest, a, b);
   }
 }
@@ -1154,33 +850,22 @@ export class DeleteMediaResponse extends Message<DeleteMediaResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.DeleteMediaResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteMediaResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteMediaResponse {
     return new DeleteMediaResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteMediaResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteMediaResponse {
     return new DeleteMediaResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteMediaResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteMediaResponse {
     return new DeleteMediaResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteMediaResponse | PlainMessage<DeleteMediaResponse> | undefined,
-    b: DeleteMediaResponse | PlainMessage<DeleteMediaResponse> | undefined,
-  ): boolean {
+  static equals(a: DeleteMediaResponse | PlainMessage<DeleteMediaResponse> | undefined, b: DeleteMediaResponse | PlainMessage<DeleteMediaResponse> | undefined): boolean {
     return proto3.util.equals(DeleteMediaResponse, a, b);
   }
 }
@@ -1208,48 +893,22 @@ export class InitiateMultipartUploadRequest extends Message<InitiateMultipartUpl
   static readonly typeName = "sited_io.media.v1.InitiateMultipartUploadRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "content_type",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 2, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): InitiateMultipartUploadRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateMultipartUploadRequest {
     return new InitiateMultipartUploadRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateMultipartUploadRequest {
     return new InitiateMultipartUploadRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadRequest {
-    return new InitiateMultipartUploadRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateMultipartUploadRequest {
+    return new InitiateMultipartUploadRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | InitiateMultipartUploadRequest
-      | PlainMessage<InitiateMultipartUploadRequest>
-      | undefined,
-    b:
-      | InitiateMultipartUploadRequest
-      | PlainMessage<InitiateMultipartUploadRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: InitiateMultipartUploadRequest | PlainMessage<InitiateMultipartUploadRequest> | undefined, b: InitiateMultipartUploadRequest | PlainMessage<InitiateMultipartUploadRequest> | undefined): boolean {
     return proto3.util.equals(InitiateMultipartUploadRequest, a, b);
   }
 }
@@ -1274,47 +933,25 @@ export class InitiateMultipartUploadResponse extends Message<InitiateMultipartUp
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.media.v1.InitiateMultipartUploadResponse";
+  static readonly typeName = "sited_io.media.v1.InitiateMultipartUploadResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "upload_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): InitiateMultipartUploadResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateMultipartUploadResponse {
     return new InitiateMultipartUploadResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateMultipartUploadResponse {
     return new InitiateMultipartUploadResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadResponse {
-    return new InitiateMultipartUploadResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateMultipartUploadResponse {
+    return new InitiateMultipartUploadResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | InitiateMultipartUploadResponse
-      | PlainMessage<InitiateMultipartUploadResponse>
-      | undefined,
-    b:
-      | InitiateMultipartUploadResponse
-      | PlainMessage<InitiateMultipartUploadResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: InitiateMultipartUploadResponse | PlainMessage<InitiateMultipartUploadResponse> | undefined, b: InitiateMultipartUploadResponse | PlainMessage<InitiateMultipartUploadResponse> | undefined): boolean {
     return proto3.util.equals(InitiateMultipartUploadResponse, a, b);
   }
 }
@@ -1353,46 +990,23 @@ export class PutMultipartChunkRequest extends Message<PutMultipartChunkRequest> 
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "upload_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "part_number",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
+    { no: 3, name: "part_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 4, name: "chunk", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutMultipartChunkRequest
-      | PlainMessage<PutMultipartChunkRequest>
-      | undefined,
-    b:
-      | PutMultipartChunkRequest
-      | PlainMessage<PutMultipartChunkRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: PutMultipartChunkRequest | PlainMessage<PutMultipartChunkRequest> | undefined, b: PutMultipartChunkRequest | PlainMessage<PutMultipartChunkRequest> | undefined): boolean {
     return proto3.util.equals(PutMultipartChunkRequest, a, b);
   }
 }
@@ -1419,40 +1033,23 @@ export class Part extends Message<Part> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.Part";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "part_number",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
+    { no: 1, name: "part_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "etag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): Part {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Part {
     return new Part().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): Part {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Part {
     return new Part().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): Part {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Part {
     return new Part().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Part | PlainMessage<Part> | undefined,
-    b: Part | PlainMessage<Part> | undefined,
-  ): boolean {
+  static equals(a: Part | PlainMessage<Part> | undefined, b: Part | PlainMessage<Part> | undefined): boolean {
     return proto3.util.equals(Part, a, b);
   }
 }
@@ -1477,37 +1074,19 @@ export class PutMultipartChunkResponse extends Message<PutMultipartChunkResponse
     { no: 1, name: "part", kind: "message", T: Part },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutMultipartChunkResponse
-      | PlainMessage<PutMultipartChunkResponse>
-      | undefined,
-    b:
-      | PutMultipartChunkResponse
-      | PlainMessage<PutMultipartChunkResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: PutMultipartChunkResponse | PlainMessage<PutMultipartChunkResponse> | undefined, b: PutMultipartChunkResponse | PlainMessage<PutMultipartChunkResponse> | undefined): boolean {
     return proto3.util.equals(PutMultipartChunkResponse, a, b);
   }
 }
@@ -1544,40 +1123,19 @@ export class CompleteMultipartUploadRequest extends Message<CompleteMultipartUpl
     { no: 3, name: "parts", kind: "message", T: Part, repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CompleteMultipartUploadRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteMultipartUploadRequest {
     return new CompleteMultipartUploadRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteMultipartUploadRequest {
     return new CompleteMultipartUploadRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadRequest {
-    return new CompleteMultipartUploadRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteMultipartUploadRequest {
+    return new CompleteMultipartUploadRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CompleteMultipartUploadRequest
-      | PlainMessage<CompleteMultipartUploadRequest>
-      | undefined,
-    b:
-      | CompleteMultipartUploadRequest
-      | PlainMessage<CompleteMultipartUploadRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: CompleteMultipartUploadRequest | PlainMessage<CompleteMultipartUploadRequest> | undefined, b: CompleteMultipartUploadRequest | PlainMessage<CompleteMultipartUploadRequest> | undefined): boolean {
     return proto3.util.equals(CompleteMultipartUploadRequest, a, b);
   }
 }
@@ -1592,44 +1150,23 @@ export class CompleteMultipartUploadResponse extends Message<CompleteMultipartUp
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.media.v1.CompleteMultipartUploadResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.media.v1.CompleteMultipartUploadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CompleteMultipartUploadResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteMultipartUploadResponse {
     return new CompleteMultipartUploadResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteMultipartUploadResponse {
     return new CompleteMultipartUploadResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadResponse {
-    return new CompleteMultipartUploadResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteMultipartUploadResponse {
+    return new CompleteMultipartUploadResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CompleteMultipartUploadResponse
-      | PlainMessage<CompleteMultipartUploadResponse>
-      | undefined,
-    b:
-      | CompleteMultipartUploadResponse
-      | PlainMessage<CompleteMultipartUploadResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: CompleteMultipartUploadResponse | PlainMessage<CompleteMultipartUploadResponse> | undefined, b: CompleteMultipartUploadResponse | PlainMessage<CompleteMultipartUploadResponse> | undefined): boolean {
     return proto3.util.equals(CompleteMultipartUploadResponse, a, b);
   }
 }
@@ -1663,46 +1200,22 @@ export class AddMediaToOfferRequest extends Message<AddMediaToOfferRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "ordering",
-      kind: "scalar",
-      T: 3 /* ScalarType.INT64 */,
-      opt: true,
-    },
+    { no: 3, name: "ordering", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddMediaToOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMediaToOfferRequest {
     return new AddMediaToOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddMediaToOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMediaToOfferRequest {
     return new AddMediaToOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddMediaToOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMediaToOfferRequest {
     return new AddMediaToOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddMediaToOfferRequest
-      | PlainMessage<AddMediaToOfferRequest>
-      | undefined,
-    b:
-      | AddMediaToOfferRequest
-      | PlainMessage<AddMediaToOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: AddMediaToOfferRequest | PlainMessage<AddMediaToOfferRequest> | undefined, b: AddMediaToOfferRequest | PlainMessage<AddMediaToOfferRequest> | undefined): boolean {
     return proto3.util.equals(AddMediaToOfferRequest, a, b);
   }
 }
@@ -1718,39 +1231,22 @@ export class AddMediaToOfferResponse extends Message<AddMediaToOfferResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.AddMediaToOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddMediaToOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMediaToOfferResponse {
     return new AddMediaToOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddMediaToOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMediaToOfferResponse {
     return new AddMediaToOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddMediaToOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMediaToOfferResponse {
     return new AddMediaToOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddMediaToOfferResponse
-      | PlainMessage<AddMediaToOfferResponse>
-      | undefined,
-    b:
-      | AddMediaToOfferResponse
-      | PlainMessage<AddMediaToOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: AddMediaToOfferResponse | PlainMessage<AddMediaToOfferResponse> | undefined, b: AddMediaToOfferResponse | PlainMessage<AddMediaToOfferResponse> | undefined): boolean {
     return proto3.util.equals(AddMediaToOfferResponse, a, b);
   }
 }
@@ -1780,48 +1276,26 @@ export class UpdateMediaOfferOrderingRequest extends Message<UpdateMediaOfferOrd
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.media.v1.UpdateMediaOfferOrderingRequest";
+  static readonly typeName = "sited_io.media.v1.UpdateMediaOfferOrderingRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "ordering", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateMediaOfferOrderingRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMediaOfferOrderingRequest {
     return new UpdateMediaOfferOrderingRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaOfferOrderingRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMediaOfferOrderingRequest {
     return new UpdateMediaOfferOrderingRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaOfferOrderingRequest {
-    return new UpdateMediaOfferOrderingRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMediaOfferOrderingRequest {
+    return new UpdateMediaOfferOrderingRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateMediaOfferOrderingRequest
-      | PlainMessage<UpdateMediaOfferOrderingRequest>
-      | undefined,
-    b:
-      | UpdateMediaOfferOrderingRequest
-      | PlainMessage<UpdateMediaOfferOrderingRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateMediaOfferOrderingRequest | PlainMessage<UpdateMediaOfferOrderingRequest> | undefined, b: UpdateMediaOfferOrderingRequest | PlainMessage<UpdateMediaOfferOrderingRequest> | undefined): boolean {
     return proto3.util.equals(UpdateMediaOfferOrderingRequest, a, b);
   }
 }
@@ -1836,44 +1310,23 @@ export class UpdateMediaOfferOrderingResponse extends Message<UpdateMediaOfferOr
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.media.v1.UpdateMediaOfferOrderingResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.media.v1.UpdateMediaOfferOrderingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateMediaOfferOrderingResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMediaOfferOrderingResponse {
     return new UpdateMediaOfferOrderingResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaOfferOrderingResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMediaOfferOrderingResponse {
     return new UpdateMediaOfferOrderingResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateMediaOfferOrderingResponse {
-    return new UpdateMediaOfferOrderingResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMediaOfferOrderingResponse {
+    return new UpdateMediaOfferOrderingResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateMediaOfferOrderingResponse
-      | PlainMessage<UpdateMediaOfferOrderingResponse>
-      | undefined,
-    b:
-      | UpdateMediaOfferOrderingResponse
-      | PlainMessage<UpdateMediaOfferOrderingResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateMediaOfferOrderingResponse | PlainMessage<UpdateMediaOfferOrderingResponse> | undefined, b: UpdateMediaOfferOrderingResponse | PlainMessage<UpdateMediaOfferOrderingResponse> | undefined): boolean {
     return proto3.util.equals(UpdateMediaOfferOrderingResponse, a, b);
   }
 }
@@ -1904,40 +1357,19 @@ export class RemoveMediaFromOfferRequest extends Message<RemoveMediaFromOfferReq
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveMediaFromOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveMediaFromOfferRequest {
     return new RemoveMediaFromOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveMediaFromOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveMediaFromOfferRequest {
     return new RemoveMediaFromOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveMediaFromOfferRequest {
-    return new RemoveMediaFromOfferRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveMediaFromOfferRequest {
+    return new RemoveMediaFromOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveMediaFromOfferRequest
-      | PlainMessage<RemoveMediaFromOfferRequest>
-      | undefined,
-    b:
-      | RemoveMediaFromOfferRequest
-      | PlainMessage<RemoveMediaFromOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveMediaFromOfferRequest | PlainMessage<RemoveMediaFromOfferRequest> | undefined, b: RemoveMediaFromOfferRequest | PlainMessage<RemoveMediaFromOfferRequest> | undefined): boolean {
     return proto3.util.equals(RemoveMediaFromOfferRequest, a, b);
   }
 }
@@ -1953,42 +1385,23 @@ export class RemoveMediaFromOfferResponse extends Message<RemoveMediaFromOfferRe
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.RemoveMediaFromOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveMediaFromOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveMediaFromOfferResponse {
     return new RemoveMediaFromOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveMediaFromOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveMediaFromOfferResponse {
     return new RemoveMediaFromOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveMediaFromOfferResponse {
-    return new RemoveMediaFromOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveMediaFromOfferResponse {
+    return new RemoveMediaFromOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveMediaFromOfferResponse
-      | PlainMessage<RemoveMediaFromOfferResponse>
-      | undefined,
-    b:
-      | RemoveMediaFromOfferResponse
-      | PlainMessage<RemoveMediaFromOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveMediaFromOfferResponse | PlainMessage<RemoveMediaFromOfferResponse> | undefined, b: RemoveMediaFromOfferResponse | PlainMessage<RemoveMediaFromOfferResponse> | undefined): boolean {
     return proto3.util.equals(RemoveMediaFromOfferResponse, a, b);
   }
 }
+

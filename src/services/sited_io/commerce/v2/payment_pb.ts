@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { OrderType, PaymentMethod } from "./order_pb.js";
 
@@ -53,42 +46,25 @@ export class Payment extends Message<Payment> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "buyer_user_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 3, name: "buyer_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 4, name: "order_type", kind: "message", T: OrderType },
     { no: 5, name: "payment_method", kind: "message", T: PaymentMethod },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): Payment {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Payment {
     return new Payment().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): Payment {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Payment {
     return new Payment().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): Payment {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Payment {
     return new Payment().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Payment | PlainMessage<Payment> | undefined,
-    b: Payment | PlainMessage<Payment> | undefined,
-  ): boolean {
+  static equals(a: Payment | PlainMessage<Payment> | undefined, b: Payment | PlainMessage<Payment> | undefined): boolean {
     return proto3.util.equals(Payment, a, b);
   }
 }
+

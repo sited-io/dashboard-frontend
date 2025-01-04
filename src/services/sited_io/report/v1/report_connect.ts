@@ -21,5 +21,6 @@ export const ReportService = {
       O: CreateReportResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

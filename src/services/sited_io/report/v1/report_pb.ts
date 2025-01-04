@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -72,41 +65,24 @@ export class CreateReportRequest extends Message<CreateReportRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.report.v1.CreateReportRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "report_type",
-      kind: "enum",
-      T: proto3.getEnumType(ReportType),
-    },
+    { no: 1, name: "report_type", kind: "enum", T: proto3.getEnumType(ReportType) },
     { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateReportRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateReportRequest {
     return new CreateReportRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateReportRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateReportRequest {
     return new CreateReportRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateReportRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateReportRequest {
     return new CreateReportRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateReportRequest | PlainMessage<CreateReportRequest> | undefined,
-    b: CreateReportRequest | PlainMessage<CreateReportRequest> | undefined,
-  ): boolean {
+  static equals(a: CreateReportRequest | PlainMessage<CreateReportRequest> | undefined, b: CreateReportRequest | PlainMessage<CreateReportRequest> | undefined): boolean {
     return proto3.util.equals(CreateReportRequest, a, b);
   }
 }
@@ -128,40 +104,23 @@ export class CreateReportResponse extends Message<CreateReportResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.report.v1.CreateReportResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "link",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateReportResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateReportResponse {
     return new CreateReportResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateReportResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateReportResponse {
     return new CreateReportResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateReportResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateReportResponse {
     return new CreateReportResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateReportResponse | PlainMessage<CreateReportResponse> | undefined,
-    b: CreateReportResponse | PlainMessage<CreateReportResponse> | undefined,
-  ): boolean {
+  static equals(a: CreateReportResponse | PlainMessage<CreateReportResponse> | undefined, b: CreateReportResponse | PlainMessage<CreateReportResponse> | undefined): boolean {
     return proto3.util.equals(CreateReportResponse, a, b);
   }
 }
+

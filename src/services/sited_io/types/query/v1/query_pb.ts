@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -65,31 +58,19 @@ export class PaginationRequest extends Message<PaginationRequest> {
     { no: 2, name: "size", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PaginationRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationRequest {
     return new PaginationRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PaginationRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationRequest {
     return new PaginationRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PaginationRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationRequest {
     return new PaginationRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PaginationRequest | PlainMessage<PaginationRequest> | undefined,
-    b: PaginationRequest | PlainMessage<PaginationRequest> | undefined,
-  ): boolean {
+  static equals(a: PaginationRequest | PlainMessage<PaginationRequest> | undefined, b: PaginationRequest | PlainMessage<PaginationRequest> | undefined): boolean {
     return proto3.util.equals(PaginationRequest, a, b);
   }
 }
@@ -123,39 +104,23 @@ export class PaginationResponse extends Message<PaginationResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "page", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "size", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    {
-      no: 3,
-      name: "total_elements",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
+    { no: 3, name: "total_elements", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PaginationResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationResponse {
     return new PaginationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PaginationResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationResponse {
     return new PaginationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PaginationResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationResponse {
     return new PaginationResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: PaginationResponse | PlainMessage<PaginationResponse> | undefined,
-    b: PaginationResponse | PlainMessage<PaginationResponse> | undefined,
-  ): boolean {
+  static equals(a: PaginationResponse | PlainMessage<PaginationResponse> | undefined, b: PaginationResponse | PlainMessage<PaginationResponse> | undefined): boolean {
     return proto3.util.equals(PaginationResponse, a, b);
   }
 }
+

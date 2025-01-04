@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  CheckDomainStatusRequest,
-  CheckDomainStatusResponse,
-  CreateDomainRequest,
-  CreateDomainResponse,
-  DeleteDomainRequest,
-  DeleteDomainResponse,
-} from "./domain_pb.js";
+import { CheckDomainStatusRequest, CheckDomainStatusResponse, CreateDomainRequest, CreateDomainResponse, DeleteDomainRequest, DeleteDomainResponse } from "./domain_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,5 +39,6 @@ export const DomainService = {
       O: DeleteDomainResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

@@ -3,22 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  CancelSubscriptionRequest,
-  CancelSubscriptionResponse,
-  CreateAccountLinkRequest,
-  CreateAccountLinkResponse,
-  CreateAccountRequest,
-  CreateAccountResponse,
-  CreateCheckoutSessionRequest,
-  CreateCheckoutSessionResponse,
-  GetAccountDetailsRequest,
-  GetAccountDetailsResponse,
-  GetAccountRequest,
-  GetAccountResponse,
-  ResumeSubscriptionRequest,
-  ResumeSubscriptionResponse,
-} from "./stripe_pb.js";
+import { CancelSubscriptionRequest, CancelSubscriptionResponse, CreateAccountLinkRequest, CreateAccountLinkResponse, CreateAccountRequest, CreateAccountResponse, CreateCheckoutSessionRequest, CreateCheckoutSessionResponse, GetAccountDetailsRequest, GetAccountDetailsResponse, GetAccountRequest, GetAccountResponse, ResumeSubscriptionRequest, ResumeSubscriptionResponse } from "./stripe_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -90,5 +75,6 @@ export const StripeService = {
       O: ResumeSubscriptionResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

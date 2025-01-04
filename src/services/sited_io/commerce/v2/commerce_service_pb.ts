@@ -3,20 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { Offer, Offer_Details, OfferType, PriceType } from "./offer_pb.js";
-import {
-  PaginationRequest,
-  PaginationResponse,
-} from "../../types/query/v1/query_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../types/query/v1/query_pb.js";
 import { OffersFilter, OffersOrderBy } from "./query_pb.js";
 import { CurrencyCode } from "../../types/currency/v1/currency_pb.js";
 import { CountryCode } from "../../types/country/v1/country_pb.js";
@@ -51,31 +41,19 @@ export class CreateOfferRequest extends Message<CreateOfferRequest> {
     { no: 2, name: "offer_type", kind: "message", T: OfferType },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOfferRequest {
     return new CreateOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOfferRequest {
     return new CreateOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOfferRequest {
     return new CreateOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateOfferRequest | PlainMessage<CreateOfferRequest> | undefined,
-    b: CreateOfferRequest | PlainMessage<CreateOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: CreateOfferRequest | PlainMessage<CreateOfferRequest> | undefined, b: CreateOfferRequest | PlainMessage<CreateOfferRequest> | undefined): boolean {
     return proto3.util.equals(CreateOfferRequest, a, b);
   }
 }
@@ -100,31 +78,19 @@ export class CreateOfferResponse extends Message<CreateOfferResponse> {
     { no: 1, name: "offer", kind: "message", T: Offer },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOfferResponse {
     return new CreateOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOfferResponse {
     return new CreateOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOfferResponse {
     return new CreateOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateOfferResponse | PlainMessage<CreateOfferResponse> | undefined,
-    b: CreateOfferResponse | PlainMessage<CreateOfferResponse> | undefined,
-  ): boolean {
+  static equals(a: CreateOfferResponse | PlainMessage<CreateOfferResponse> | undefined, b: CreateOfferResponse | PlainMessage<CreateOfferResponse> | undefined): boolean {
     return proto3.util.equals(CreateOfferResponse, a, b);
   }
 }
@@ -149,31 +115,19 @@ export class GetOfferRequest extends Message<GetOfferRequest> {
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfferRequest {
     return new GetOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOfferRequest {
     return new GetOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOfferRequest {
     return new GetOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetOfferRequest | PlainMessage<GetOfferRequest> | undefined,
-    b: GetOfferRequest | PlainMessage<GetOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: GetOfferRequest | PlainMessage<GetOfferRequest> | undefined, b: GetOfferRequest | PlainMessage<GetOfferRequest> | undefined): boolean {
     return proto3.util.equals(GetOfferRequest, a, b);
   }
 }
@@ -198,31 +152,19 @@ export class GetOfferResponse extends Message<GetOfferResponse> {
     { no: 1, name: "offer", kind: "message", T: Offer },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfferResponse {
     return new GetOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOfferResponse {
     return new GetOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOfferResponse {
     return new GetOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetOfferResponse | PlainMessage<GetOfferResponse> | undefined,
-    b: GetOfferResponse | PlainMessage<GetOfferResponse> | undefined,
-  ): boolean {
+  static equals(a: GetOfferResponse | PlainMessage<GetOfferResponse> | undefined, b: GetOfferResponse | PlainMessage<GetOfferResponse> | undefined): boolean {
     return proto3.util.equals(GetOfferResponse, a, b);
   }
 }
@@ -264,56 +206,26 @@ export class ListOffersRequest extends Message<ListOffersRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.ListOffersRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "owner",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 2,
-      name: "shop_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 3,
-      name: "pagination",
-      kind: "message",
-      T: PaginationRequest,
-      opt: true,
-    },
+    { no: 1, name: "owner", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
     { no: 4, name: "order_by", kind: "message", T: OffersOrderBy, opt: true },
     { no: 5, name: "filter", kind: "message", T: OffersFilter, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListOffersRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOffersRequest {
     return new ListOffersRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListOffersRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOffersRequest {
     return new ListOffersRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListOffersRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOffersRequest {
     return new ListOffersRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListOffersRequest | PlainMessage<ListOffersRequest> | undefined,
-    b: ListOffersRequest | PlainMessage<ListOffersRequest> | undefined,
-  ): boolean {
+  static equals(a: ListOffersRequest | PlainMessage<ListOffersRequest> | undefined, b: ListOffersRequest | PlainMessage<ListOffersRequest> | undefined): boolean {
     return proto3.util.equals(ListOffersRequest, a, b);
   }
 }
@@ -344,31 +256,19 @@ export class ListOffersResponse extends Message<ListOffersResponse> {
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListOffersResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOffersResponse {
     return new ListOffersResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListOffersResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOffersResponse {
     return new ListOffersResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListOffersResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOffersResponse {
     return new ListOffersResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListOffersResponse | PlainMessage<ListOffersResponse> | undefined,
-    b: ListOffersResponse | PlainMessage<ListOffersResponse> | undefined,
-  ): boolean {
+  static equals(a: ListOffersResponse | PlainMessage<ListOffersResponse> | undefined, b: ListOffersResponse | PlainMessage<ListOffersResponse> | undefined): boolean {
     return proto3.util.equals(ListOffersResponse, a, b);
   }
 }
@@ -405,31 +305,19 @@ export class UpdateOfferRequest extends Message<UpdateOfferRequest> {
     { no: 3, name: "offer_type", kind: "message", T: OfferType },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateOfferRequest {
     return new UpdateOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateOfferRequest {
     return new UpdateOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateOfferRequest {
     return new UpdateOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: UpdateOfferRequest | PlainMessage<UpdateOfferRequest> | undefined,
-    b: UpdateOfferRequest | PlainMessage<UpdateOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: UpdateOfferRequest | PlainMessage<UpdateOfferRequest> | undefined, b: UpdateOfferRequest | PlainMessage<UpdateOfferRequest> | undefined): boolean {
     return proto3.util.equals(UpdateOfferRequest, a, b);
   }
 }
@@ -454,31 +342,19 @@ export class UpdateOfferResponse extends Message<UpdateOfferResponse> {
     { no: 1, name: "offer", kind: "message", T: Offer },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateOfferResponse {
     return new UpdateOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateOfferResponse {
     return new UpdateOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateOfferResponse {
     return new UpdateOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: UpdateOfferResponse | PlainMessage<UpdateOfferResponse> | undefined,
-    b: UpdateOfferResponse | PlainMessage<UpdateOfferResponse> | undefined,
-  ): boolean {
+  static equals(a: UpdateOfferResponse | PlainMessage<UpdateOfferResponse> | undefined, b: UpdateOfferResponse | PlainMessage<UpdateOfferResponse> | undefined): boolean {
     return proto3.util.equals(UpdateOfferResponse, a, b);
   }
 }
@@ -503,31 +379,19 @@ export class DeleteOfferRequest extends Message<DeleteOfferRequest> {
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteOfferRequest {
     return new DeleteOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteOfferRequest {
     return new DeleteOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteOfferRequest {
     return new DeleteOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteOfferRequest | PlainMessage<DeleteOfferRequest> | undefined,
-    b: DeleteOfferRequest | PlainMessage<DeleteOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: DeleteOfferRequest | PlainMessage<DeleteOfferRequest> | undefined, b: DeleteOfferRequest | PlainMessage<DeleteOfferRequest> | undefined): boolean {
     return proto3.util.equals(DeleteOfferRequest, a, b);
   }
 }
@@ -543,33 +407,22 @@ export class DeleteOfferResponse extends Message<DeleteOfferResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.DeleteOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteOfferResponse {
     return new DeleteOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteOfferResponse {
     return new DeleteOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteOfferResponse {
     return new DeleteOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteOfferResponse | PlainMessage<DeleteOfferResponse> | undefined,
-    b: DeleteOfferResponse | PlainMessage<DeleteOfferResponse> | undefined,
-  ): boolean {
+  static equals(a: DeleteOfferResponse | PlainMessage<DeleteOfferResponse> | undefined, b: DeleteOfferResponse | PlainMessage<DeleteOfferResponse> | undefined): boolean {
     return proto3.util.equals(DeleteOfferResponse, a, b);
   }
 }
@@ -607,52 +460,24 @@ export class PutPriceToOfferRequest extends Message<PutPriceToOfferRequest> {
   static readonly typeName = "sited_io.commerce.v2.PutPriceToOfferRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "unit_amount",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
-    {
-      no: 3,
-      name: "currency",
-      kind: "enum",
-      T: proto3.getEnumType(CurrencyCode),
-    },
+    { no: 2, name: "unit_amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "currency", kind: "enum", T: proto3.getEnumType(CurrencyCode) },
     { no: 4, name: "price_type", kind: "message", T: PriceType },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutPriceToOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutPriceToOfferRequest {
     return new PutPriceToOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutPriceToOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutPriceToOfferRequest {
     return new PutPriceToOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutPriceToOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutPriceToOfferRequest {
     return new PutPriceToOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutPriceToOfferRequest
-      | PlainMessage<PutPriceToOfferRequest>
-      | undefined,
-    b:
-      | PutPriceToOfferRequest
-      | PlainMessage<PutPriceToOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: PutPriceToOfferRequest | PlainMessage<PutPriceToOfferRequest> | undefined, b: PutPriceToOfferRequest | PlainMessage<PutPriceToOfferRequest> | undefined): boolean {
     return proto3.util.equals(PutPriceToOfferRequest, a, b);
   }
 }
@@ -668,39 +493,22 @@ export class PutPriceToOfferResponse extends Message<PutPriceToOfferResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PutPriceToOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutPriceToOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutPriceToOfferResponse {
     return new PutPriceToOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutPriceToOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutPriceToOfferResponse {
     return new PutPriceToOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutPriceToOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutPriceToOfferResponse {
     return new PutPriceToOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutPriceToOfferResponse
-      | PlainMessage<PutPriceToOfferResponse>
-      | undefined,
-    b:
-      | PutPriceToOfferResponse
-      | PlainMessage<PutPriceToOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: PutPriceToOfferResponse | PlainMessage<PutPriceToOfferResponse> | undefined, b: PutPriceToOfferResponse | PlainMessage<PutPriceToOfferResponse> | undefined): boolean {
     return proto3.util.equals(PutPriceToOfferResponse, a, b);
   }
 }
@@ -725,40 +533,19 @@ export class RemovePriceFromOfferRequest extends Message<RemovePriceFromOfferReq
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemovePriceFromOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemovePriceFromOfferRequest {
     return new RemovePriceFromOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemovePriceFromOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemovePriceFromOfferRequest {
     return new RemovePriceFromOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemovePriceFromOfferRequest {
-    return new RemovePriceFromOfferRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemovePriceFromOfferRequest {
+    return new RemovePriceFromOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemovePriceFromOfferRequest
-      | PlainMessage<RemovePriceFromOfferRequest>
-      | undefined,
-    b:
-      | RemovePriceFromOfferRequest
-      | PlainMessage<RemovePriceFromOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemovePriceFromOfferRequest | PlainMessage<RemovePriceFromOfferRequest> | undefined, b: RemovePriceFromOfferRequest | PlainMessage<RemovePriceFromOfferRequest> | undefined): boolean {
     return proto3.util.equals(RemovePriceFromOfferRequest, a, b);
   }
 }
@@ -773,44 +560,23 @@ export class RemovePriceFromOfferResponse extends Message<RemovePriceFromOfferRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.RemovePriceFromOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v2.RemovePriceFromOfferResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemovePriceFromOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemovePriceFromOfferResponse {
     return new RemovePriceFromOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemovePriceFromOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemovePriceFromOfferResponse {
     return new RemovePriceFromOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemovePriceFromOfferResponse {
-    return new RemovePriceFromOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemovePriceFromOfferResponse {
+    return new RemovePriceFromOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemovePriceFromOfferResponse
-      | PlainMessage<RemovePriceFromOfferResponse>
-      | undefined,
-    b:
-      | RemovePriceFromOfferResponse
-      | PlainMessage<RemovePriceFromOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemovePriceFromOfferResponse | PlainMessage<RemovePriceFromOfferResponse> | undefined, b: RemovePriceFromOfferResponse | PlainMessage<RemovePriceFromOfferResponse> | undefined): boolean {
     return proto3.util.equals(RemovePriceFromOfferResponse, a, b);
   }
 }
@@ -850,71 +616,28 @@ export class PutShippingRateToOfferRequest extends Message<PutShippingRateToOffe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.PutShippingRateToOfferRequest";
+  static readonly typeName = "sited_io.commerce.v2.PutShippingRateToOfferRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "unit_amount",
-      kind: "scalar",
-      T: 13 /* ScalarType.UINT32 */,
-    },
-    {
-      no: 3,
-      name: "currency",
-      kind: "enum",
-      T: proto3.getEnumType(CurrencyCode),
-    },
-    {
-      no: 4,
-      name: "all_countries",
-      kind: "scalar",
-      T: 8 /* ScalarType.BOOL */,
-    },
-    {
-      no: 5,
-      name: "specific_countries",
-      kind: "enum",
-      T: proto3.getEnumType(CountryCode),
-      repeated: true,
-    },
+    { no: 2, name: "unit_amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "currency", kind: "enum", T: proto3.getEnumType(CurrencyCode) },
+    { no: 4, name: "all_countries", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "specific_countries", kind: "enum", T: proto3.getEnumType(CountryCode), repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutShippingRateToOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShippingRateToOfferRequest {
     return new PutShippingRateToOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateToOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShippingRateToOfferRequest {
     return new PutShippingRateToOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateToOfferRequest {
-    return new PutShippingRateToOfferRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShippingRateToOfferRequest {
+    return new PutShippingRateToOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutShippingRateToOfferRequest
-      | PlainMessage<PutShippingRateToOfferRequest>
-      | undefined,
-    b:
-      | PutShippingRateToOfferRequest
-      | PlainMessage<PutShippingRateToOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: PutShippingRateToOfferRequest | PlainMessage<PutShippingRateToOfferRequest> | undefined, b: PutShippingRateToOfferRequest | PlainMessage<PutShippingRateToOfferRequest> | undefined): boolean {
     return proto3.util.equals(PutShippingRateToOfferRequest, a, b);
   }
 }
@@ -929,44 +652,23 @@ export class PutShippingRateToOfferResponse extends Message<PutShippingRateToOff
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.PutShippingRateToOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v2.PutShippingRateToOfferResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutShippingRateToOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShippingRateToOfferResponse {
     return new PutShippingRateToOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateToOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShippingRateToOfferResponse {
     return new PutShippingRateToOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutShippingRateToOfferResponse {
-    return new PutShippingRateToOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShippingRateToOfferResponse {
+    return new PutShippingRateToOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutShippingRateToOfferResponse
-      | PlainMessage<PutShippingRateToOfferResponse>
-      | undefined,
-    b:
-      | PutShippingRateToOfferResponse
-      | PlainMessage<PutShippingRateToOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: PutShippingRateToOfferResponse | PlainMessage<PutShippingRateToOfferResponse> | undefined, b: PutShippingRateToOfferResponse | PlainMessage<PutShippingRateToOfferResponse> | undefined): boolean {
     return proto3.util.equals(PutShippingRateToOfferResponse, a, b);
   }
 }
@@ -986,49 +688,24 @@ export class RemoveShippingRateFromOfferRequest extends Message<RemoveShippingRa
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.RemoveShippingRateFromOfferRequest";
+  static readonly typeName = "sited_io.commerce.v2.RemoveShippingRateFromOfferRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveShippingRateFromOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveShippingRateFromOfferRequest {
     return new RemoveShippingRateFromOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveShippingRateFromOfferRequest {
-    return new RemoveShippingRateFromOfferRequest().fromJson(
-      jsonValue,
-      options,
-    );
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveShippingRateFromOfferRequest {
+    return new RemoveShippingRateFromOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveShippingRateFromOfferRequest {
-    return new RemoveShippingRateFromOfferRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveShippingRateFromOfferRequest {
+    return new RemoveShippingRateFromOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveShippingRateFromOfferRequest
-      | PlainMessage<RemoveShippingRateFromOfferRequest>
-      | undefined,
-    b:
-      | RemoveShippingRateFromOfferRequest
-      | PlainMessage<RemoveShippingRateFromOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveShippingRateFromOfferRequest | PlainMessage<RemoveShippingRateFromOfferRequest> | undefined, b: RemoveShippingRateFromOfferRequest | PlainMessage<RemoveShippingRateFromOfferRequest> | undefined): boolean {
     return proto3.util.equals(RemoveShippingRateFromOfferRequest, a, b);
   }
 }
@@ -1043,47 +720,23 @@ export class RemoveShippingRateFromOfferResponse extends Message<RemoveShippingR
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.RemoveShippingRateFromOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v2.RemoveShippingRateFromOfferResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveShippingRateFromOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveShippingRateFromOfferResponse {
     return new RemoveShippingRateFromOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveShippingRateFromOfferResponse {
-    return new RemoveShippingRateFromOfferResponse().fromJson(
-      jsonValue,
-      options,
-    );
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveShippingRateFromOfferResponse {
+    return new RemoveShippingRateFromOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveShippingRateFromOfferResponse {
-    return new RemoveShippingRateFromOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveShippingRateFromOfferResponse {
+    return new RemoveShippingRateFromOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveShippingRateFromOfferResponse
-      | PlainMessage<RemoveShippingRateFromOfferResponse>
-      | undefined,
-    b:
-      | RemoveShippingRateFromOfferResponse
-      | PlainMessage<RemoveShippingRateFromOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveShippingRateFromOfferResponse | PlainMessage<RemoveShippingRateFromOfferResponse> | undefined, b: RemoveShippingRateFromOfferResponse | PlainMessage<RemoveShippingRateFromOfferResponse> | undefined): boolean {
     return proto3.util.equals(RemoveShippingRateFromOfferResponse, a, b);
   }
 }
@@ -1120,37 +773,19 @@ export class AddImageToOfferRequest extends Message<AddImageToOfferRequest> {
     { no: 3, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddImageToOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddImageToOfferRequest {
     return new AddImageToOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddImageToOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddImageToOfferRequest {
     return new AddImageToOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddImageToOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddImageToOfferRequest {
     return new AddImageToOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddImageToOfferRequest
-      | PlainMessage<AddImageToOfferRequest>
-      | undefined,
-    b:
-      | AddImageToOfferRequest
-      | PlainMessage<AddImageToOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: AddImageToOfferRequest | PlainMessage<AddImageToOfferRequest> | undefined, b: AddImageToOfferRequest | PlainMessage<AddImageToOfferRequest> | undefined): boolean {
     return proto3.util.equals(AddImageToOfferRequest, a, b);
   }
 }
@@ -1166,39 +801,22 @@ export class AddImageToOfferResponse extends Message<AddImageToOfferResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.AddImageToOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddImageToOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddImageToOfferResponse {
     return new AddImageToOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddImageToOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddImageToOfferResponse {
     return new AddImageToOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddImageToOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddImageToOfferResponse {
     return new AddImageToOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddImageToOfferResponse
-      | PlainMessage<AddImageToOfferResponse>
-      | undefined,
-    b:
-      | AddImageToOfferResponse
-      | PlainMessage<AddImageToOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: AddImageToOfferResponse | PlainMessage<AddImageToOfferResponse> | undefined, b: AddImageToOfferResponse | PlainMessage<AddImageToOfferResponse> | undefined): boolean {
     return proto3.util.equals(AddImageToOfferResponse, a, b);
   }
 }
@@ -1225,46 +843,23 @@ export class UpdateImageOrderingRequest extends Message<UpdateImageOrderingReque
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.UpdateImageOrderingRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_image_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_image_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateImageOrderingRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateImageOrderingRequest {
     return new UpdateImageOrderingRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateImageOrderingRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateImageOrderingRequest {
     return new UpdateImageOrderingRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateImageOrderingRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateImageOrderingRequest {
     return new UpdateImageOrderingRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateImageOrderingRequest
-      | PlainMessage<UpdateImageOrderingRequest>
-      | undefined,
-    b:
-      | UpdateImageOrderingRequest
-      | PlainMessage<UpdateImageOrderingRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateImageOrderingRequest | PlainMessage<UpdateImageOrderingRequest> | undefined, b: UpdateImageOrderingRequest | PlainMessage<UpdateImageOrderingRequest> | undefined): boolean {
     return proto3.util.equals(UpdateImageOrderingRequest, a, b);
   }
 }
@@ -1280,42 +875,22 @@ export class UpdateImageOrderingResponse extends Message<UpdateImageOrderingResp
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.UpdateImageOrderingResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateImageOrderingResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateImageOrderingResponse {
     return new UpdateImageOrderingResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateImageOrderingResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateImageOrderingResponse {
     return new UpdateImageOrderingResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateImageOrderingResponse {
-    return new UpdateImageOrderingResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateImageOrderingResponse {
+    return new UpdateImageOrderingResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateImageOrderingResponse
-      | PlainMessage<UpdateImageOrderingResponse>
-      | undefined,
-    b:
-      | UpdateImageOrderingResponse
-      | PlainMessage<UpdateImageOrderingResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateImageOrderingResponse | PlainMessage<UpdateImageOrderingResponse> | undefined, b: UpdateImageOrderingResponse | PlainMessage<UpdateImageOrderingResponse> | undefined): boolean {
     return proto3.util.equals(UpdateImageOrderingResponse, a, b);
   }
 }
@@ -1342,49 +917,23 @@ export class RemoveImageFromOfferRequest extends Message<RemoveImageFromOfferReq
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.RemoveImageFromOfferRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_image_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_image_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveImageFromOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveImageFromOfferRequest {
     return new RemoveImageFromOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveImageFromOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveImageFromOfferRequest {
     return new RemoveImageFromOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveImageFromOfferRequest {
-    return new RemoveImageFromOfferRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveImageFromOfferRequest {
+    return new RemoveImageFromOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveImageFromOfferRequest
-      | PlainMessage<RemoveImageFromOfferRequest>
-      | undefined,
-    b:
-      | RemoveImageFromOfferRequest
-      | PlainMessage<RemoveImageFromOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveImageFromOfferRequest | PlainMessage<RemoveImageFromOfferRequest> | undefined, b: RemoveImageFromOfferRequest | PlainMessage<RemoveImageFromOfferRequest> | undefined): boolean {
     return proto3.util.equals(RemoveImageFromOfferRequest, a, b);
   }
 }
@@ -1399,44 +948,23 @@ export class RemoveImageFromOfferResponse extends Message<RemoveImageFromOfferRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.RemoveImageFromOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v2.RemoveImageFromOfferResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveImageFromOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveImageFromOfferResponse {
     return new RemoveImageFromOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveImageFromOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveImageFromOfferResponse {
     return new RemoveImageFromOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveImageFromOfferResponse {
-    return new RemoveImageFromOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveImageFromOfferResponse {
+    return new RemoveImageFromOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveImageFromOfferResponse
-      | PlainMessage<RemoveImageFromOfferResponse>
-      | undefined,
-    b:
-      | RemoveImageFromOfferResponse
-      | PlainMessage<RemoveImageFromOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveImageFromOfferResponse | PlainMessage<RemoveImageFromOfferResponse> | undefined, b: RemoveImageFromOfferResponse | PlainMessage<RemoveImageFromOfferResponse> | undefined): boolean {
     return proto3.util.equals(RemoveImageFromOfferResponse, a, b);
   }
 }
@@ -1481,47 +1009,23 @@ export class AddFileToOfferRequest extends Message<AddFileToOfferRequest> {
     { no: 1, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "content", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
-    {
-      no: 4,
-      name: "content_type",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 5,
-      name: "ordering",
-      kind: "scalar",
-      T: 5 /* ScalarType.INT32 */,
-      opt: true,
-    },
+    { no: 4, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddFileToOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddFileToOfferRequest {
     return new AddFileToOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddFileToOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddFileToOfferRequest {
     return new AddFileToOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddFileToOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddFileToOfferRequest {
     return new AddFileToOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: AddFileToOfferRequest | PlainMessage<AddFileToOfferRequest> | undefined,
-    b: AddFileToOfferRequest | PlainMessage<AddFileToOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: AddFileToOfferRequest | PlainMessage<AddFileToOfferRequest> | undefined, b: AddFileToOfferRequest | PlainMessage<AddFileToOfferRequest> | undefined): boolean {
     return proto3.util.equals(AddFileToOfferRequest, a, b);
   }
 }
@@ -1537,39 +1041,22 @@ export class AddFileToOfferResponse extends Message<AddFileToOfferResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.AddFileToOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddFileToOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddFileToOfferResponse {
     return new AddFileToOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddFileToOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddFileToOfferResponse {
     return new AddFileToOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddFileToOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddFileToOfferResponse {
     return new AddFileToOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddFileToOfferResponse
-      | PlainMessage<AddFileToOfferResponse>
-      | undefined,
-    b:
-      | AddFileToOfferResponse
-      | PlainMessage<AddFileToOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: AddFileToOfferResponse | PlainMessage<AddFileToOfferResponse> | undefined, b: AddFileToOfferResponse | PlainMessage<AddFileToOfferResponse> | undefined): boolean {
     return proto3.util.equals(AddFileToOfferResponse, a, b);
   }
 }
@@ -1609,67 +1096,28 @@ export class InitiateMultipartUploadRequest extends Message<InitiateMultipartUpl
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.InitiateMultipartUploadRequest";
+  static readonly typeName = "sited_io.commerce.v2.InitiateMultipartUploadRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "total_size_bytes",
-      kind: "scalar",
-      T: 4 /* ScalarType.UINT64 */,
-    },
-    {
-      no: 4,
-      name: "content_type",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
-    {
-      no: 5,
-      name: "ordering",
-      kind: "scalar",
-      T: 5 /* ScalarType.INT32 */,
-      opt: true,
-    },
+    { no: 3, name: "total_size_bytes", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 4, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): InitiateMultipartUploadRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateMultipartUploadRequest {
     return new InitiateMultipartUploadRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateMultipartUploadRequest {
     return new InitiateMultipartUploadRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadRequest {
-    return new InitiateMultipartUploadRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateMultipartUploadRequest {
+    return new InitiateMultipartUploadRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | InitiateMultipartUploadRequest
-      | PlainMessage<InitiateMultipartUploadRequest>
-      | undefined,
-    b:
-      | InitiateMultipartUploadRequest
-      | PlainMessage<InitiateMultipartUploadRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: InitiateMultipartUploadRequest | PlainMessage<InitiateMultipartUploadRequest> | undefined, b: InitiateMultipartUploadRequest | PlainMessage<InitiateMultipartUploadRequest> | undefined): boolean {
     return proto3.util.equals(InitiateMultipartUploadRequest, a, b);
   }
 }
@@ -1699,53 +1147,26 @@ export class InitiateMultipartUploadResponse extends Message<InitiateMultipartUp
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.InitiateMultipartUploadResponse";
+  static readonly typeName = "sited_io.commerce.v2.InitiateMultipartUploadResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "upload_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): InitiateMultipartUploadResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateMultipartUploadResponse {
     return new InitiateMultipartUploadResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateMultipartUploadResponse {
     return new InitiateMultipartUploadResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): InitiateMultipartUploadResponse {
-    return new InitiateMultipartUploadResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateMultipartUploadResponse {
+    return new InitiateMultipartUploadResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | InitiateMultipartUploadResponse
-      | PlainMessage<InitiateMultipartUploadResponse>
-      | undefined,
-    b:
-      | InitiateMultipartUploadResponse
-      | PlainMessage<InitiateMultipartUploadResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: InitiateMultipartUploadResponse | PlainMessage<InitiateMultipartUploadResponse> | undefined, b: InitiateMultipartUploadResponse | PlainMessage<InitiateMultipartUploadResponse> | undefined): boolean {
     return proto3.util.equals(InitiateMultipartUploadResponse, a, b);
   }
 }
@@ -1782,48 +1203,25 @@ export class PutMultipartChunkRequest extends Message<PutMultipartChunkRequest> 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PutMultipartChunkRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "upload_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "part_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "chunk", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMultipartChunkRequest {
     return new PutMultipartChunkRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutMultipartChunkRequest
-      | PlainMessage<PutMultipartChunkRequest>
-      | undefined,
-    b:
-      | PutMultipartChunkRequest
-      | PlainMessage<PutMultipartChunkRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: PutMultipartChunkRequest | PlainMessage<PutMultipartChunkRequest> | undefined, b: PutMultipartChunkRequest | PlainMessage<PutMultipartChunkRequest> | undefined): boolean {
     return proto3.util.equals(PutMultipartChunkRequest, a, b);
   }
 }
@@ -1848,37 +1246,19 @@ export class PutMultipartChunkResponse extends Message<PutMultipartChunkResponse
     { no: 1, name: "part", kind: "message", T: MultipartPart },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): PutMultipartChunkResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMultipartChunkResponse {
     return new PutMultipartChunkResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | PutMultipartChunkResponse
-      | PlainMessage<PutMultipartChunkResponse>
-      | undefined,
-    b:
-      | PutMultipartChunkResponse
-      | PlainMessage<PutMultipartChunkResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: PutMultipartChunkResponse | PlainMessage<PutMultipartChunkResponse> | undefined, b: PutMultipartChunkResponse | PlainMessage<PutMultipartChunkResponse> | undefined): boolean {
     return proto3.util.equals(PutMultipartChunkResponse, a, b);
   }
 }
@@ -1908,53 +1288,26 @@ export class CompleteMultipartUploadRequest extends Message<CompleteMultipartUpl
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.CompleteMultipartUploadRequest";
+  static readonly typeName = "sited_io.commerce.v2.CompleteMultipartUploadRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "upload_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "parts", kind: "message", T: MultipartPart, repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CompleteMultipartUploadRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteMultipartUploadRequest {
     return new CompleteMultipartUploadRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteMultipartUploadRequest {
     return new CompleteMultipartUploadRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadRequest {
-    return new CompleteMultipartUploadRequest().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteMultipartUploadRequest {
+    return new CompleteMultipartUploadRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CompleteMultipartUploadRequest
-      | PlainMessage<CompleteMultipartUploadRequest>
-      | undefined,
-    b:
-      | CompleteMultipartUploadRequest
-      | PlainMessage<CompleteMultipartUploadRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: CompleteMultipartUploadRequest | PlainMessage<CompleteMultipartUploadRequest> | undefined, b: CompleteMultipartUploadRequest | PlainMessage<CompleteMultipartUploadRequest> | undefined): boolean {
     return proto3.util.equals(CompleteMultipartUploadRequest, a, b);
   }
 }
@@ -1969,44 +1322,23 @@ export class CompleteMultipartUploadResponse extends Message<CompleteMultipartUp
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName =
-    "sited_io.commerce.v2.CompleteMultipartUploadResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly typeName = "sited_io.commerce.v2.CompleteMultipartUploadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CompleteMultipartUploadResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteMultipartUploadResponse {
     return new CompleteMultipartUploadResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteMultipartUploadResponse {
     return new CompleteMultipartUploadResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CompleteMultipartUploadResponse {
-    return new CompleteMultipartUploadResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteMultipartUploadResponse {
+    return new CompleteMultipartUploadResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CompleteMultipartUploadResponse
-      | PlainMessage<CompleteMultipartUploadResponse>
-      | undefined,
-    b:
-      | CompleteMultipartUploadResponse
-      | PlainMessage<CompleteMultipartUploadResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: CompleteMultipartUploadResponse | PlainMessage<CompleteMultipartUploadResponse> | undefined, b: CompleteMultipartUploadResponse | PlainMessage<CompleteMultipartUploadResponse> | undefined): boolean {
     return proto3.util.equals(CompleteMultipartUploadResponse, a, b);
   }
 }
@@ -2028,39 +1360,22 @@ export class DownloadFileRequest extends Message<DownloadFileRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.DownloadFileRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DownloadFileRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DownloadFileRequest {
     return new DownloadFileRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadFileRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DownloadFileRequest {
     return new DownloadFileRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadFileRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DownloadFileRequest {
     return new DownloadFileRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DownloadFileRequest | PlainMessage<DownloadFileRequest> | undefined,
-    b: DownloadFileRequest | PlainMessage<DownloadFileRequest> | undefined,
-  ): boolean {
+  static equals(a: DownloadFileRequest | PlainMessage<DownloadFileRequest> | undefined, b: DownloadFileRequest | PlainMessage<DownloadFileRequest> | undefined): boolean {
     return proto3.util.equals(DownloadFileRequest, a, b);
   }
 }
@@ -2082,39 +1397,22 @@ export class DownloadFileResponse extends Message<DownloadFileResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.DownloadFileResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "download_url",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DownloadFileResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DownloadFileResponse {
     return new DownloadFileResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadFileResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DownloadFileResponse {
     return new DownloadFileResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DownloadFileResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DownloadFileResponse {
     return new DownloadFileResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DownloadFileResponse | PlainMessage<DownloadFileResponse> | undefined,
-    b: DownloadFileResponse | PlainMessage<DownloadFileResponse> | undefined,
-  ): boolean {
+  static equals(a: DownloadFileResponse | PlainMessage<DownloadFileResponse> | undefined, b: DownloadFileResponse | PlainMessage<DownloadFileResponse> | undefined): boolean {
     return proto3.util.equals(DownloadFileResponse, a, b);
   }
 }
@@ -2141,46 +1439,23 @@ export class UpdateFileOrderingRequest extends Message<UpdateFileOrderingRequest
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.UpdateFileOrderingRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateFileOrderingRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFileOrderingRequest {
     return new UpdateFileOrderingRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateFileOrderingRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFileOrderingRequest {
     return new UpdateFileOrderingRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateFileOrderingRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFileOrderingRequest {
     return new UpdateFileOrderingRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateFileOrderingRequest
-      | PlainMessage<UpdateFileOrderingRequest>
-      | undefined,
-    b:
-      | UpdateFileOrderingRequest
-      | PlainMessage<UpdateFileOrderingRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateFileOrderingRequest | PlainMessage<UpdateFileOrderingRequest> | undefined, b: UpdateFileOrderingRequest | PlainMessage<UpdateFileOrderingRequest> | undefined): boolean {
     return proto3.util.equals(UpdateFileOrderingRequest, a, b);
   }
 }
@@ -2196,39 +1471,22 @@ export class UpdateFileOrderingResponse extends Message<UpdateFileOrderingRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.UpdateFileOrderingResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): UpdateFileOrderingResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFileOrderingResponse {
     return new UpdateFileOrderingResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateFileOrderingResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFileOrderingResponse {
     return new UpdateFileOrderingResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): UpdateFileOrderingResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFileOrderingResponse {
     return new UpdateFileOrderingResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | UpdateFileOrderingResponse
-      | PlainMessage<UpdateFileOrderingResponse>
-      | undefined,
-    b:
-      | UpdateFileOrderingResponse
-      | PlainMessage<UpdateFileOrderingResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: UpdateFileOrderingResponse | PlainMessage<UpdateFileOrderingResponse> | undefined, b: UpdateFileOrderingResponse | PlainMessage<UpdateFileOrderingResponse> | undefined): boolean {
     return proto3.util.equals(UpdateFileOrderingResponse, a, b);
   }
 }
@@ -2250,45 +1508,22 @@ export class RemoveFileFromOfferRequest extends Message<RemoveFileFromOfferReque
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.RemoveFileFromOfferRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_file_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveFileFromOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveFileFromOfferRequest {
     return new RemoveFileFromOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveFileFromOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveFileFromOfferRequest {
     return new RemoveFileFromOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveFileFromOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveFileFromOfferRequest {
     return new RemoveFileFromOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveFileFromOfferRequest
-      | PlainMessage<RemoveFileFromOfferRequest>
-      | undefined,
-    b:
-      | RemoveFileFromOfferRequest
-      | PlainMessage<RemoveFileFromOfferRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveFileFromOfferRequest | PlainMessage<RemoveFileFromOfferRequest> | undefined, b: RemoveFileFromOfferRequest | PlainMessage<RemoveFileFromOfferRequest> | undefined): boolean {
     return proto3.util.equals(RemoveFileFromOfferRequest, a, b);
   }
 }
@@ -2304,42 +1539,22 @@ export class RemoveFileFromOfferResponse extends Message<RemoveFileFromOfferResp
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.RemoveFileFromOfferResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveFileFromOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveFileFromOfferResponse {
     return new RemoveFileFromOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveFileFromOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveFileFromOfferResponse {
     return new RemoveFileFromOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveFileFromOfferResponse {
-    return new RemoveFileFromOfferResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveFileFromOfferResponse {
+    return new RemoveFileFromOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveFileFromOfferResponse
-      | PlainMessage<RemoveFileFromOfferResponse>
-      | undefined,
-    b:
-      | RemoveFileFromOfferResponse
-      | PlainMessage<RemoveFileFromOfferResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveFileFromOfferResponse | PlainMessage<RemoveFileFromOfferResponse> | undefined, b: RemoveFileFromOfferResponse | PlainMessage<RemoveFileFromOfferResponse> | undefined): boolean {
     return proto3.util.equals(RemoveFileFromOfferResponse, a, b);
   }
 }
@@ -2364,31 +1579,19 @@ export class CreateShopRequest extends Message<CreateShopRequest> {
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShopRequest {
     return new CreateShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShopRequest {
     return new CreateShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShopRequest {
     return new CreateShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined,
-    b: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined,
-  ): boolean {
+  static equals(a: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined, b: CreateShopRequest | PlainMessage<CreateShopRequest> | undefined): boolean {
     return proto3.util.equals(CreateShopRequest, a, b);
   }
 }
@@ -2413,31 +1616,19 @@ export class CreateShopResponse extends Message<CreateShopResponse> {
     { no: 1, name: "shop", kind: "message", T: Shop },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShopResponse {
     return new CreateShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShopResponse {
     return new CreateShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateShopResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShopResponse {
     return new CreateShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined,
-    b: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined,
-  ): boolean {
+  static equals(a: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined, b: CreateShopResponse | PlainMessage<CreateShopResponse> | undefined): boolean {
     return proto3.util.equals(CreateShopResponse, a, b);
   }
 }
@@ -2462,31 +1653,19 @@ export class GetShopRequest extends Message<GetShopRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopRequest {
     return new GetShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopRequest {
     return new GetShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopRequest {
     return new GetShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetShopRequest | PlainMessage<GetShopRequest> | undefined,
-    b: GetShopRequest | PlainMessage<GetShopRequest> | undefined,
-  ): boolean {
+  static equals(a: GetShopRequest | PlainMessage<GetShopRequest> | undefined, b: GetShopRequest | PlainMessage<GetShopRequest> | undefined): boolean {
     return proto3.util.equals(GetShopRequest, a, b);
   }
 }
@@ -2511,31 +1690,19 @@ export class GetShopResponse extends Message<GetShopResponse> {
     { no: 1, name: "shop", kind: "message", T: Shop },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopResponse {
     return new GetShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopResponse {
     return new GetShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetShopResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopResponse {
     return new GetShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetShopResponse | PlainMessage<GetShopResponse> | undefined,
-    b: GetShopResponse | PlainMessage<GetShopResponse> | undefined,
-  ): boolean {
+  static equals(a: GetShopResponse | PlainMessage<GetShopResponse> | undefined, b: GetShopResponse | PlainMessage<GetShopResponse> | undefined): boolean {
     return proto3.util.equals(GetShopResponse, a, b);
   }
 }
@@ -2560,31 +1727,19 @@ export class DeleteShopRequest extends Message<DeleteShopRequest> {
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopRequest {
     return new DeleteShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopRequest {
     return new DeleteShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopRequest {
     return new DeleteShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined,
-    b: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined,
-  ): boolean {
+  static equals(a: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined, b: DeleteShopRequest | PlainMessage<DeleteShopRequest> | undefined): boolean {
     return proto3.util.equals(DeleteShopRequest, a, b);
   }
 }
@@ -2600,33 +1755,22 @@ export class DeleteShopResponse extends Message<DeleteShopResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.DeleteShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): DeleteShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopResponse {
     return new DeleteShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopResponse {
     return new DeleteShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): DeleteShopResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopResponse {
     return new DeleteShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined,
-    b: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined,
-  ): boolean {
+  static equals(a: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined, b: DeleteShopResponse | PlainMessage<DeleteShopResponse> | undefined): boolean {
     return proto3.util.equals(DeleteShopResponse, a, b);
   }
 }
@@ -2657,31 +1801,19 @@ export class AddOfferToShopRequest extends Message<AddOfferToShopRequest> {
     { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddOfferToShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddOfferToShopRequest {
     return new AddOfferToShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddOfferToShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddOfferToShopRequest {
     return new AddOfferToShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddOfferToShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddOfferToShopRequest {
     return new AddOfferToShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: AddOfferToShopRequest | PlainMessage<AddOfferToShopRequest> | undefined,
-    b: AddOfferToShopRequest | PlainMessage<AddOfferToShopRequest> | undefined,
-  ): boolean {
+  static equals(a: AddOfferToShopRequest | PlainMessage<AddOfferToShopRequest> | undefined, b: AddOfferToShopRequest | PlainMessage<AddOfferToShopRequest> | undefined): boolean {
     return proto3.util.equals(AddOfferToShopRequest, a, b);
   }
 }
@@ -2697,39 +1829,22 @@ export class AddOfferToShopResponse extends Message<AddOfferToShopResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.AddOfferToShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): AddOfferToShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddOfferToShopResponse {
     return new AddOfferToShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): AddOfferToShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddOfferToShopResponse {
     return new AddOfferToShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): AddOfferToShopResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddOfferToShopResponse {
     return new AddOfferToShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | AddOfferToShopResponse
-      | PlainMessage<AddOfferToShopResponse>
-      | undefined,
-    b:
-      | AddOfferToShopResponse
-      | PlainMessage<AddOfferToShopResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: AddOfferToShopResponse | PlainMessage<AddOfferToShopResponse> | undefined, b: AddOfferToShopResponse | PlainMessage<AddOfferToShopResponse> | undefined): boolean {
     return proto3.util.equals(AddOfferToShopResponse, a, b);
   }
 }
@@ -2760,37 +1875,19 @@ export class RemoveOfferFromShopRequest extends Message<RemoveOfferFromShopReque
     { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveOfferFromShopRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveOfferFromShopRequest {
     return new RemoveOfferFromShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveOfferFromShopRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveOfferFromShopRequest {
     return new RemoveOfferFromShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveOfferFromShopRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveOfferFromShopRequest {
     return new RemoveOfferFromShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveOfferFromShopRequest
-      | PlainMessage<RemoveOfferFromShopRequest>
-      | undefined,
-    b:
-      | RemoveOfferFromShopRequest
-      | PlainMessage<RemoveOfferFromShopRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveOfferFromShopRequest | PlainMessage<RemoveOfferFromShopRequest> | undefined, b: RemoveOfferFromShopRequest | PlainMessage<RemoveOfferFromShopRequest> | undefined): boolean {
     return proto3.util.equals(RemoveOfferFromShopRequest, a, b);
   }
 }
@@ -2806,42 +1903,22 @@ export class RemoveOfferFromShopResponse extends Message<RemoveOfferFromShopResp
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.RemoveOfferFromShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): RemoveOfferFromShopResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveOfferFromShopResponse {
     return new RemoveOfferFromShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveOfferFromShopResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveOfferFromShopResponse {
     return new RemoveOfferFromShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): RemoveOfferFromShopResponse {
-    return new RemoveOfferFromShopResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveOfferFromShopResponse {
+    return new RemoveOfferFromShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | RemoveOfferFromShopResponse
-      | PlainMessage<RemoveOfferFromShopResponse>
-      | undefined,
-    b:
-      | RemoveOfferFromShopResponse
-      | PlainMessage<RemoveOfferFromShopResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: RemoveOfferFromShopResponse | PlainMessage<RemoveOfferFromShopResponse> | undefined, b: RemoveOfferFromShopResponse | PlainMessage<RemoveOfferFromShopResponse> | undefined): boolean {
     return proto3.util.equals(RemoveOfferFromShopResponse, a, b);
   }
 }
@@ -2866,31 +1943,19 @@ export class GetOrderRequest extends Message<GetOrderRequest> {
     { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetOrderRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrderRequest {
     return new GetOrderRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetOrderRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrderRequest {
     return new GetOrderRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetOrderRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrderRequest {
     return new GetOrderRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetOrderRequest | PlainMessage<GetOrderRequest> | undefined,
-    b: GetOrderRequest | PlainMessage<GetOrderRequest> | undefined,
-  ): boolean {
+  static equals(a: GetOrderRequest | PlainMessage<GetOrderRequest> | undefined, b: GetOrderRequest | PlainMessage<GetOrderRequest> | undefined): boolean {
     return proto3.util.equals(GetOrderRequest, a, b);
   }
 }
@@ -2915,31 +1980,19 @@ export class GetOrderResponse extends Message<GetOrderResponse> {
     { no: 1, name: "order", kind: "message", T: Order },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetOrderResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrderResponse {
     return new GetOrderResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetOrderResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrderResponse {
     return new GetOrderResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetOrderResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrderResponse {
     return new GetOrderResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetOrderResponse | PlainMessage<GetOrderResponse> | undefined,
-    b: GetOrderResponse | PlainMessage<GetOrderResponse> | undefined,
-  ): boolean {
+  static equals(a: GetOrderResponse | PlainMessage<GetOrderResponse> | undefined, b: GetOrderResponse | PlainMessage<GetOrderResponse> | undefined): boolean {
     return proto3.util.equals(GetOrderResponse, a, b);
   }
 }
@@ -2961,40 +2014,22 @@ export class ListOrdersRequest extends Message<ListOrdersRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.ListOrdersRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "offer_id",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-      opt: true,
-    },
+    { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListOrdersRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrdersRequest {
     return new ListOrdersRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListOrdersRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrdersRequest {
     return new ListOrdersRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListOrdersRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrdersRequest {
     return new ListOrdersRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListOrdersRequest | PlainMessage<ListOrdersRequest> | undefined,
-    b: ListOrdersRequest | PlainMessage<ListOrdersRequest> | undefined,
-  ): boolean {
+  static equals(a: ListOrdersRequest | PlainMessage<ListOrdersRequest> | undefined, b: ListOrdersRequest | PlainMessage<ListOrdersRequest> | undefined): boolean {
     return proto3.util.equals(ListOrdersRequest, a, b);
   }
 }
@@ -3019,31 +2054,19 @@ export class ListOrdersResponse extends Message<ListOrdersResponse> {
     { no: 1, name: "orders", kind: "message", T: Order, repeated: true },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ListOrdersResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrdersResponse {
     return new ListOrdersResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ListOrdersResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrdersResponse {
     return new ListOrdersResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ListOrdersResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrdersResponse {
     return new ListOrdersResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: ListOrdersResponse | PlainMessage<ListOrdersResponse> | undefined,
-    b: ListOrdersResponse | PlainMessage<ListOrdersResponse> | undefined,
-  ): boolean {
+  static equals(a: ListOrdersResponse | PlainMessage<ListOrdersResponse> | undefined, b: ListOrdersResponse | PlainMessage<ListOrdersResponse> | undefined): boolean {
     return proto3.util.equals(ListOrdersResponse, a, b);
   }
 }
@@ -3076,46 +2099,23 @@ export class CreateStripeAccountRequest extends Message<CreateStripeAccountReque
   static readonly typeName = "sited_io.commerce.v2.CreateStripeAccountRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 2,
-      name: "refresh_url",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 2, name: "refresh_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "return_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateStripeAccountRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateStripeAccountRequest {
     return new CreateStripeAccountRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateStripeAccountRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateStripeAccountRequest {
     return new CreateStripeAccountRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateStripeAccountRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateStripeAccountRequest {
     return new CreateStripeAccountRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CreateStripeAccountRequest
-      | PlainMessage<CreateStripeAccountRequest>
-      | undefined,
-    b:
-      | CreateStripeAccountRequest
-      | PlainMessage<CreateStripeAccountRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: CreateStripeAccountRequest | PlainMessage<CreateStripeAccountRequest> | undefined, b: CreateStripeAccountRequest | PlainMessage<CreateStripeAccountRequest> | undefined): boolean {
     return proto3.util.equals(CreateStripeAccountRequest, a, b);
   }
 }
@@ -3140,40 +2140,19 @@ export class CreateStripeAccountResponse extends Message<CreateStripeAccountResp
     { no: 1, name: "stripe_account", kind: "message", T: StripeAccount },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CreateStripeAccountResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateStripeAccountResponse {
     return new CreateStripeAccountResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CreateStripeAccountResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateStripeAccountResponse {
     return new CreateStripeAccountResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CreateStripeAccountResponse {
-    return new CreateStripeAccountResponse().fromJsonString(
-      jsonString,
-      options,
-    );
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateStripeAccountResponse {
+    return new CreateStripeAccountResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CreateStripeAccountResponse
-      | PlainMessage<CreateStripeAccountResponse>
-      | undefined,
-    b:
-      | CreateStripeAccountResponse
-      | PlainMessage<CreateStripeAccountResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: CreateStripeAccountResponse | PlainMessage<CreateStripeAccountResponse> | undefined, b: CreateStripeAccountResponse | PlainMessage<CreateStripeAccountResponse> | undefined): boolean {
     return proto3.util.equals(CreateStripeAccountResponse, a, b);
   }
 }
@@ -3198,37 +2177,19 @@ export class GetStripeAccountRequest extends Message<GetStripeAccountRequest> {
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetStripeAccountRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStripeAccountRequest {
     return new GetStripeAccountRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetStripeAccountRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStripeAccountRequest {
     return new GetStripeAccountRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetStripeAccountRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStripeAccountRequest {
     return new GetStripeAccountRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetStripeAccountRequest
-      | PlainMessage<GetStripeAccountRequest>
-      | undefined,
-    b:
-      | GetStripeAccountRequest
-      | PlainMessage<GetStripeAccountRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: GetStripeAccountRequest | PlainMessage<GetStripeAccountRequest> | undefined, b: GetStripeAccountRequest | PlainMessage<GetStripeAccountRequest> | undefined): boolean {
     return proto3.util.equals(GetStripeAccountRequest, a, b);
   }
 }
@@ -3253,37 +2214,19 @@ export class GetStripeAccountResponse extends Message<GetStripeAccountResponse> 
     { no: 1, name: "stripe_account", kind: "message", T: StripeAccount },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): GetStripeAccountResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStripeAccountResponse {
     return new GetStripeAccountResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): GetStripeAccountResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStripeAccountResponse {
     return new GetStripeAccountResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): GetStripeAccountResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStripeAccountResponse {
     return new GetStripeAccountResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | GetStripeAccountResponse
-      | PlainMessage<GetStripeAccountResponse>
-      | undefined,
-    b:
-      | GetStripeAccountResponse
-      | PlainMessage<GetStripeAccountResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: GetStripeAccountResponse | PlainMessage<GetStripeAccountResponse> | undefined, b: GetStripeAccountResponse | PlainMessage<GetStripeAccountResponse> | undefined): boolean {
     return proto3.util.equals(GetStripeAccountResponse, a, b);
   }
 }
@@ -3305,15 +2248,13 @@ export class BuyOfferRequest extends Message<BuyOfferRequest> {
   /**
    * @generated from oneof sited_io.commerce.v2.BuyOfferRequest.payment_method
    */
-  paymentMethod:
-    | {
-        /**
-         * @generated from field: sited_io.commerce.v2.BuyOfferRequest.Stripe stripe = 3;
-         */
-        value: BuyOfferRequest_Stripe;
-        case: "stripe";
-      }
-    | { case: undefined; value?: undefined } = { case: undefined };
+  paymentMethod: {
+    /**
+     * @generated from field: sited_io.commerce.v2.BuyOfferRequest.Stripe stripe = 3;
+     */
+    value: BuyOfferRequest_Stripe;
+    case: "stripe";
+  } | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<BuyOfferRequest>) {
     super();
@@ -3325,40 +2266,22 @@ export class BuyOfferRequest extends Message<BuyOfferRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    {
-      no: 3,
-      name: "stripe",
-      kind: "message",
-      T: BuyOfferRequest_Stripe,
-      oneof: "payment_method",
-    },
+    { no: 3, name: "stripe", kind: "message", T: BuyOfferRequest_Stripe, oneof: "payment_method" },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): BuyOfferRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuyOfferRequest {
     return new BuyOfferRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuyOfferRequest {
     return new BuyOfferRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuyOfferRequest {
     return new BuyOfferRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: BuyOfferRequest | PlainMessage<BuyOfferRequest> | undefined,
-    b: BuyOfferRequest | PlainMessage<BuyOfferRequest> | undefined,
-  ): boolean {
+  static equals(a: BuyOfferRequest | PlainMessage<BuyOfferRequest> | undefined, b: BuyOfferRequest | PlainMessage<BuyOfferRequest> | undefined): boolean {
     return proto3.util.equals(BuyOfferRequest, a, b);
   }
 }
@@ -3385,46 +2308,23 @@ export class BuyOfferRequest_Stripe extends Message<BuyOfferRequest_Stripe> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.BuyOfferRequest.Stripe";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "success_url",
-      kind: "scalar",
-      T: 9 /* ScalarType.STRING */,
-    },
+    { no: 1, name: "success_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "cancel_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): BuyOfferRequest_Stripe {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuyOfferRequest_Stripe {
     return new BuyOfferRequest_Stripe().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferRequest_Stripe {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuyOfferRequest_Stripe {
     return new BuyOfferRequest_Stripe().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferRequest_Stripe {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuyOfferRequest_Stripe {
     return new BuyOfferRequest_Stripe().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | BuyOfferRequest_Stripe
-      | PlainMessage<BuyOfferRequest_Stripe>
-      | undefined,
-    b:
-      | BuyOfferRequest_Stripe
-      | PlainMessage<BuyOfferRequest_Stripe>
-      | undefined,
-  ): boolean {
+  static equals(a: BuyOfferRequest_Stripe | PlainMessage<BuyOfferRequest_Stripe> | undefined, b: BuyOfferRequest_Stripe | PlainMessage<BuyOfferRequest_Stripe> | undefined): boolean {
     return proto3.util.equals(BuyOfferRequest_Stripe, a, b);
   }
 }
@@ -3436,15 +2336,13 @@ export class BuyOfferResponse extends Message<BuyOfferResponse> {
   /**
    * @generated from oneof sited_io.commerce.v2.BuyOfferResponse.payment_method
    */
-  paymentMethod:
-    | {
-        /**
-         * @generated from field: sited_io.commerce.v2.BuyOfferResponse.Stripe stripe = 1;
-         */
-        value: BuyOfferResponse_Stripe;
-        case: "stripe";
-      }
-    | { case: undefined; value?: undefined } = { case: undefined };
+  paymentMethod: {
+    /**
+     * @generated from field: sited_io.commerce.v2.BuyOfferResponse.Stripe stripe = 1;
+     */
+    value: BuyOfferResponse_Stripe;
+    case: "stripe";
+  } | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<BuyOfferResponse>) {
     super();
@@ -3454,40 +2352,22 @@ export class BuyOfferResponse extends Message<BuyOfferResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.BuyOfferResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    {
-      no: 1,
-      name: "stripe",
-      kind: "message",
-      T: BuyOfferResponse_Stripe,
-      oneof: "payment_method",
-    },
+    { no: 1, name: "stripe", kind: "message", T: BuyOfferResponse_Stripe, oneof: "payment_method" },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): BuyOfferResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuyOfferResponse {
     return new BuyOfferResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuyOfferResponse {
     return new BuyOfferResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuyOfferResponse {
     return new BuyOfferResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: BuyOfferResponse | PlainMessage<BuyOfferResponse> | undefined,
-    b: BuyOfferResponse | PlainMessage<BuyOfferResponse> | undefined,
-  ): boolean {
+  static equals(a: BuyOfferResponse | PlainMessage<BuyOfferResponse> | undefined, b: BuyOfferResponse | PlainMessage<BuyOfferResponse> | undefined): boolean {
     return proto3.util.equals(BuyOfferResponse, a, b);
   }
 }
@@ -3512,37 +2392,19 @@ export class BuyOfferResponse_Stripe extends Message<BuyOfferResponse_Stripe> {
     { no: 1, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): BuyOfferResponse_Stripe {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuyOfferResponse_Stripe {
     return new BuyOfferResponse_Stripe().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferResponse_Stripe {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuyOfferResponse_Stripe {
     return new BuyOfferResponse_Stripe().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): BuyOfferResponse_Stripe {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuyOfferResponse_Stripe {
     return new BuyOfferResponse_Stripe().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | BuyOfferResponse_Stripe
-      | PlainMessage<BuyOfferResponse_Stripe>
-      | undefined,
-    b:
-      | BuyOfferResponse_Stripe
-      | PlainMessage<BuyOfferResponse_Stripe>
-      | undefined,
-  ): boolean {
+  static equals(a: BuyOfferResponse_Stripe | PlainMessage<BuyOfferResponse_Stripe> | undefined, b: BuyOfferResponse_Stripe | PlainMessage<BuyOfferResponse_Stripe> | undefined): boolean {
     return proto3.util.equals(BuyOfferResponse_Stripe, a, b);
   }
 }
@@ -3567,37 +2429,19 @@ export class CancelSubscriptionRequest extends Message<CancelSubscriptionRequest
     { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CancelSubscriptionRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CancelSubscriptionRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CancelSubscriptionRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelSubscriptionRequest {
     return new CancelSubscriptionRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CancelSubscriptionRequest
-      | PlainMessage<CancelSubscriptionRequest>
-      | undefined,
-    b:
-      | CancelSubscriptionRequest
-      | PlainMessage<CancelSubscriptionRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: CancelSubscriptionRequest | PlainMessage<CancelSubscriptionRequest> | undefined, b: CancelSubscriptionRequest | PlainMessage<CancelSubscriptionRequest> | undefined): boolean {
     return proto3.util.equals(CancelSubscriptionRequest, a, b);
   }
 }
@@ -3613,39 +2457,22 @@ export class CancelSubscriptionResponse extends Message<CancelSubscriptionRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.CancelSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): CancelSubscriptionResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): CancelSubscriptionResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): CancelSubscriptionResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelSubscriptionResponse {
     return new CancelSubscriptionResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | CancelSubscriptionResponse
-      | PlainMessage<CancelSubscriptionResponse>
-      | undefined,
-    b:
-      | CancelSubscriptionResponse
-      | PlainMessage<CancelSubscriptionResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: CancelSubscriptionResponse | PlainMessage<CancelSubscriptionResponse> | undefined, b: CancelSubscriptionResponse | PlainMessage<CancelSubscriptionResponse> | undefined): boolean {
     return proto3.util.equals(CancelSubscriptionResponse, a, b);
   }
 }
@@ -3670,37 +2497,19 @@ export class ResumeSubscriptionRequest extends Message<ResumeSubscriptionRequest
     { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ResumeSubscriptionRequest {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ResumeSubscriptionRequest {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ResumeSubscriptionRequest {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeSubscriptionRequest {
     return new ResumeSubscriptionRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | ResumeSubscriptionRequest
-      | PlainMessage<ResumeSubscriptionRequest>
-      | undefined,
-    b:
-      | ResumeSubscriptionRequest
-      | PlainMessage<ResumeSubscriptionRequest>
-      | undefined,
-  ): boolean {
+  static equals(a: ResumeSubscriptionRequest | PlainMessage<ResumeSubscriptionRequest> | undefined, b: ResumeSubscriptionRequest | PlainMessage<ResumeSubscriptionRequest> | undefined): boolean {
     return proto3.util.equals(ResumeSubscriptionRequest, a, b);
   }
 }
@@ -3716,39 +2525,23 @@ export class ResumeSubscriptionResponse extends Message<ResumeSubscriptionRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.ResumeSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): ResumeSubscriptionResponse {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): ResumeSubscriptionResponse {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): ResumeSubscriptionResponse {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeSubscriptionResponse {
     return new ResumeSubscriptionResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a:
-      | ResumeSubscriptionResponse
-      | PlainMessage<ResumeSubscriptionResponse>
-      | undefined,
-    b:
-      | ResumeSubscriptionResponse
-      | PlainMessage<ResumeSubscriptionResponse>
-      | undefined,
-  ): boolean {
+  static equals(a: ResumeSubscriptionResponse | PlainMessage<ResumeSubscriptionResponse> | undefined, b: ResumeSubscriptionResponse | PlainMessage<ResumeSubscriptionResponse> | undefined): boolean {
     return proto3.util.equals(ResumeSubscriptionResponse, a, b);
   }
 }
+

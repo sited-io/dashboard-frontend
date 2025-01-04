@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  DeleteShippingRateRequest,
-  DeleteShippingRateResponse,
-  GetShippingRateRequest,
-  GetShippingRateResponse,
-  PutShippingRateRequest,
-  PutShippingRateResponse,
-} from "./shipping_rate_pb.js";
+import { DeleteShippingRateRequest, DeleteShippingRateResponse, GetShippingRateRequest, GetShippingRateResponse, PutShippingRateRequest, PutShippingRateResponse } from "./shipping_rate_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,5 +39,6 @@ export const ShippingRateService = {
       O: DeleteShippingRateResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

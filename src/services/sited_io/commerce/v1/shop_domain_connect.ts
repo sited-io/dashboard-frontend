@@ -3,18 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  AddDomainToShopRequest,
-  AddDomainToShopResponse,
-  GetClientIdForDomainRequest,
-  GetClientIdForDomainResponse,
-  GetDomainStatusRequest,
-  GetDomainStatusResponse,
-  RemoveDomainFromShopRequest,
-  RemoveDomainFromShopResponse,
-  UpdateDomainStatusRequest,
-  UpdateDomainStatusResponse,
-} from "./shop_domain_pb.js";
+import { AddDomainToShopRequest, AddDomainToShopResponse, GetClientIdForDomainRequest, GetClientIdForDomainResponse, GetDomainStatusRequest, GetDomainStatusResponse, RemoveDomainFromShopRequest, RemoveDomainFromShopResponse, UpdateDomainStatusRequest, UpdateDomainStatusResponse } from "./shop_domain_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -69,5 +58,6 @@ export const ShopDomainService = {
       O: RemoveDomainFromShopResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

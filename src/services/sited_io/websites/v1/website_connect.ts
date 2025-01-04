@@ -3,18 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import {
-  CreateWebsiteRequest,
-  CreateWebsiteResponse,
-  DeleteWebsiteRequest,
-  DeleteWebsiteResponse,
-  GetWebsiteRequest,
-  GetWebsiteResponse,
-  ListWebsitesRequest,
-  ListWebsitesResponse,
-  UpdateWebsiteRequest,
-  UpdateWebsiteResponse,
-} from "./website_pb.js";
+import { CreateWebsiteRequest, CreateWebsiteResponse, DeleteWebsiteRequest, DeleteWebsiteResponse, GetWebsiteRequest, GetWebsiteResponse, ListWebsitesRequest, ListWebsitesResponse, UpdateWebsiteRequest, UpdateWebsiteResponse } from "./website_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -68,5 +57,6 @@ export const WebsiteService = {
       O: DeleteWebsiteResponse,
       kind: MethodKind.Unary,
     },
-  },
+  }
 } as const;
+

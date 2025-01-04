@@ -3,14 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type {
-  BinaryReadOptions,
-  FieldList,
-  JsonReadOptions,
-  JsonValue,
-  PartialMessage,
-  PlainMessage,
-} from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -39,31 +32,20 @@ export class MultipartPart extends Message<MultipartPart> {
     { no: 2, name: "etag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>,
-  ): MultipartPart {
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MultipartPart {
     return new MultipartPart().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>,
-  ): MultipartPart {
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MultipartPart {
     return new MultipartPart().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>,
-  ): MultipartPart {
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MultipartPart {
     return new MultipartPart().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: MultipartPart | PlainMessage<MultipartPart> | undefined,
-    b: MultipartPart | PlainMessage<MultipartPart> | undefined,
-  ): boolean {
+  static equals(a: MultipartPart | PlainMessage<MultipartPart> | undefined, b: MultipartPart | PlainMessage<MultipartPart> | undefined): boolean {
     return proto3.util.equals(MultipartPart, a, b);
   }
 }
+
