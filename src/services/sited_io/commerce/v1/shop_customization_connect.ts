@@ -3,7 +3,22 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteShopCustomizationRequest, DeleteShopCustomizationResponse, GetShopCustomizationRequest, GetShopCustomizationResponse, PutBannerImageToShopRequest, PutBannerImageToShopResponse, PutLogoImageToShopRequest, PutLogoImageToShopResponse, PutShopCustomizationRequest, PutShopCustomizationResponse, RemoveBannerImageFromShopRequest, RemoveBannerImageFromShopResponse, RemoveLogoImageFromShopRequest, RemoveLogoImageFromShopResponse } from "./shop_customization_pb.js";
+import {
+  DeleteShopCustomizationRequest,
+  DeleteShopCustomizationResponse,
+  GetShopCustomizationRequest,
+  GetShopCustomizationResponse,
+  PutBannerImageToShopRequest,
+  PutBannerImageToShopResponse,
+  PutLogoImageToShopRequest,
+  PutLogoImageToShopResponse,
+  PutShopCustomizationRequest,
+  PutShopCustomizationResponse,
+  RemoveBannerImageFromShopRequest,
+  RemoveBannerImageFromShopResponse,
+  RemoveLogoImageFromShopRequest,
+  RemoveLogoImageFromShopResponse,
+} from "./shop_customization_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -75,6 +90,5 @@ export const ShopCustomizationService = {
       O: RemoveLogoImageFromShopResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-

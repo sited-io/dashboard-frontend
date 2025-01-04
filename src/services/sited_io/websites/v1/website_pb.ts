@@ -3,12 +3,22 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { CustomizationResponse } from "./customization_pb.js";
 import { DomainResponse } from "./domain_pb.js";
 import { PageResponse } from "./page_pb.js";
-import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
+import {
+  PaginationRequest,
+  PaginationResponse,
+} from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from message sited_io.websites.v1.WebsiteResponse
@@ -74,23 +84,41 @@ export class WebsiteResponse extends Message<WebsiteResponse> {
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "customization", kind: "message", T: CustomizationResponse },
-    { no: 8, name: "domains", kind: "message", T: DomainResponse, repeated: true },
+    {
+      no: 8,
+      name: "domains",
+      kind: "message",
+      T: DomainResponse,
+      repeated: true,
+    },
     { no: 9, name: "pages", kind: "message", T: PageResponse, repeated: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WebsiteResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): WebsiteResponse {
     return new WebsiteResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WebsiteResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): WebsiteResponse {
     return new WebsiteResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WebsiteResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): WebsiteResponse {
     return new WebsiteResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: WebsiteResponse | PlainMessage<WebsiteResponse> | undefined, b: WebsiteResponse | PlainMessage<WebsiteResponse> | undefined): boolean {
+  static equals(
+    a: WebsiteResponse | PlainMessage<WebsiteResponse> | undefined,
+    b: WebsiteResponse | PlainMessage<WebsiteResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(WebsiteResponse, a, b);
   }
 }
@@ -115,19 +143,31 @@ export class CreateWebsiteRequest extends Message<CreateWebsiteRequest> {
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateWebsiteRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateWebsiteRequest {
     return new CreateWebsiteRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateWebsiteRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateWebsiteRequest {
     return new CreateWebsiteRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateWebsiteRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateWebsiteRequest {
     return new CreateWebsiteRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateWebsiteRequest | PlainMessage<CreateWebsiteRequest> | undefined, b: CreateWebsiteRequest | PlainMessage<CreateWebsiteRequest> | undefined): boolean {
+  static equals(
+    a: CreateWebsiteRequest | PlainMessage<CreateWebsiteRequest> | undefined,
+    b: CreateWebsiteRequest | PlainMessage<CreateWebsiteRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateWebsiteRequest, a, b);
   }
 }
@@ -152,19 +192,31 @@ export class CreateWebsiteResponse extends Message<CreateWebsiteResponse> {
     { no: 1, name: "website", kind: "message", T: WebsiteResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateWebsiteResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreateWebsiteResponse {
     return new CreateWebsiteResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateWebsiteResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreateWebsiteResponse {
     return new CreateWebsiteResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateWebsiteResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreateWebsiteResponse {
     return new CreateWebsiteResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateWebsiteResponse | PlainMessage<CreateWebsiteResponse> | undefined, b: CreateWebsiteResponse | PlainMessage<CreateWebsiteResponse> | undefined): boolean {
+  static equals(
+    a: CreateWebsiteResponse | PlainMessage<CreateWebsiteResponse> | undefined,
+    b: CreateWebsiteResponse | PlainMessage<CreateWebsiteResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(CreateWebsiteResponse, a, b);
   }
 }
@@ -196,24 +248,54 @@ export class GetWebsiteRequest extends Message<GetWebsiteRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.GetWebsiteRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 3, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 1,
+      name: "website_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "domain",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "client_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWebsiteRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetWebsiteRequest {
     return new GetWebsiteRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWebsiteRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetWebsiteRequest {
     return new GetWebsiteRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWebsiteRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetWebsiteRequest {
     return new GetWebsiteRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetWebsiteRequest | PlainMessage<GetWebsiteRequest> | undefined, b: GetWebsiteRequest | PlainMessage<GetWebsiteRequest> | undefined): boolean {
+  static equals(
+    a: GetWebsiteRequest | PlainMessage<GetWebsiteRequest> | undefined,
+    b: GetWebsiteRequest | PlainMessage<GetWebsiteRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(GetWebsiteRequest, a, b);
   }
 }
@@ -238,19 +320,31 @@ export class GetWebsiteResponse extends Message<GetWebsiteResponse> {
     { no: 1, name: "website", kind: "message", T: WebsiteResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWebsiteResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetWebsiteResponse {
     return new GetWebsiteResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWebsiteResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetWebsiteResponse {
     return new GetWebsiteResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWebsiteResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetWebsiteResponse {
     return new GetWebsiteResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetWebsiteResponse | PlainMessage<GetWebsiteResponse> | undefined, b: GetWebsiteResponse | PlainMessage<GetWebsiteResponse> | undefined): boolean {
+  static equals(
+    a: GetWebsiteResponse | PlainMessage<GetWebsiteResponse> | undefined,
+    b: GetWebsiteResponse | PlainMessage<GetWebsiteResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(GetWebsiteResponse, a, b);
   }
 }
@@ -277,23 +371,47 @@ export class ListWebsitesRequest extends Message<ListWebsitesRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ListWebsitesRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
+    {
+      no: 1,
+      name: "user_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "pagination",
+      kind: "message",
+      T: PaginationRequest,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWebsitesRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListWebsitesRequest {
     return new ListWebsitesRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWebsitesRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListWebsitesRequest {
     return new ListWebsitesRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWebsitesRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListWebsitesRequest {
     return new ListWebsitesRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListWebsitesRequest | PlainMessage<ListWebsitesRequest> | undefined, b: ListWebsitesRequest | PlainMessage<ListWebsitesRequest> | undefined): boolean {
+  static equals(
+    a: ListWebsitesRequest | PlainMessage<ListWebsitesRequest> | undefined,
+    b: ListWebsitesRequest | PlainMessage<ListWebsitesRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(ListWebsitesRequest, a, b);
   }
 }
@@ -320,23 +438,41 @@ export class ListWebsitesResponse extends Message<ListWebsitesResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ListWebsitesResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "websites", kind: "message", T: WebsiteResponse, repeated: true },
+    {
+      no: 1,
+      name: "websites",
+      kind: "message",
+      T: WebsiteResponse,
+      repeated: true,
+    },
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWebsitesResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListWebsitesResponse {
     return new ListWebsitesResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWebsitesResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListWebsitesResponse {
     return new ListWebsitesResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWebsitesResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListWebsitesResponse {
     return new ListWebsitesResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListWebsitesResponse | PlainMessage<ListWebsitesResponse> | undefined, b: ListWebsitesResponse | PlainMessage<ListWebsitesResponse> | undefined): boolean {
+  static equals(
+    a: ListWebsitesResponse | PlainMessage<ListWebsitesResponse> | undefined,
+    b: ListWebsitesResponse | PlainMessage<ListWebsitesResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(ListWebsitesResponse, a, b);
   }
 }
@@ -364,22 +500,40 @@ export class UpdateWebsiteRequest extends Message<UpdateWebsiteRequest> {
   static readonly typeName = "sited_io.websites.v1.UpdateWebsiteRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 2,
+      name: "name",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWebsiteRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateWebsiteRequest {
     return new UpdateWebsiteRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWebsiteRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateWebsiteRequest {
     return new UpdateWebsiteRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWebsiteRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateWebsiteRequest {
     return new UpdateWebsiteRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateWebsiteRequest | PlainMessage<UpdateWebsiteRequest> | undefined, b: UpdateWebsiteRequest | PlainMessage<UpdateWebsiteRequest> | undefined): boolean {
+  static equals(
+    a: UpdateWebsiteRequest | PlainMessage<UpdateWebsiteRequest> | undefined,
+    b: UpdateWebsiteRequest | PlainMessage<UpdateWebsiteRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateWebsiteRequest, a, b);
   }
 }
@@ -404,19 +558,31 @@ export class UpdateWebsiteResponse extends Message<UpdateWebsiteResponse> {
     { no: 1, name: "website", kind: "message", T: WebsiteResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWebsiteResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdateWebsiteResponse {
     return new UpdateWebsiteResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWebsiteResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateWebsiteResponse {
     return new UpdateWebsiteResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWebsiteResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdateWebsiteResponse {
     return new UpdateWebsiteResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdateWebsiteResponse | PlainMessage<UpdateWebsiteResponse> | undefined, b: UpdateWebsiteResponse | PlainMessage<UpdateWebsiteResponse> | undefined): boolean {
+  static equals(
+    a: UpdateWebsiteResponse | PlainMessage<UpdateWebsiteResponse> | undefined,
+    b: UpdateWebsiteResponse | PlainMessage<UpdateWebsiteResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdateWebsiteResponse, a, b);
   }
 }
@@ -441,19 +607,31 @@ export class DeleteWebsiteRequest extends Message<DeleteWebsiteRequest> {
     { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWebsiteRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteWebsiteRequest {
     return new DeleteWebsiteRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWebsiteRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteWebsiteRequest {
     return new DeleteWebsiteRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWebsiteRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteWebsiteRequest {
     return new DeleteWebsiteRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeleteWebsiteRequest | PlainMessage<DeleteWebsiteRequest> | undefined, b: DeleteWebsiteRequest | PlainMessage<DeleteWebsiteRequest> | undefined): boolean {
+  static equals(
+    a: DeleteWebsiteRequest | PlainMessage<DeleteWebsiteRequest> | undefined,
+    b: DeleteWebsiteRequest | PlainMessage<DeleteWebsiteRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteWebsiteRequest, a, b);
   }
 }
@@ -469,23 +647,33 @@ export class DeleteWebsiteResponse extends Message<DeleteWebsiteResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.DeleteWebsiteResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWebsiteResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteWebsiteResponse {
     return new DeleteWebsiteResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWebsiteResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteWebsiteResponse {
     return new DeleteWebsiteResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWebsiteResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteWebsiteResponse {
     return new DeleteWebsiteResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeleteWebsiteResponse | PlainMessage<DeleteWebsiteResponse> | undefined, b: DeleteWebsiteResponse | PlainMessage<DeleteWebsiteResponse> | undefined): boolean {
+  static equals(
+    a: DeleteWebsiteResponse | PlainMessage<DeleteWebsiteResponse> | undefined,
+    b: DeleteWebsiteResponse | PlainMessage<DeleteWebsiteResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteWebsiteResponse, a, b);
   }
 }
-

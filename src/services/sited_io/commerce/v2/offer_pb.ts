@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { CurrencyCode } from "../../types/currency/v1/currency_pb.js";
 import { CountryCode } from "../../types/country/v1/country_pb.js";
@@ -77,24 +84,42 @@ export class Offer extends Message<Offer> {
     { no: 5, name: "details", kind: "message", T: Offer_Details },
     { no: 6, name: "offer_type", kind: "message", T: OfferType },
     { no: 7, name: "price", kind: "message", T: OfferPrice, opt: true },
-    { no: 8, name: "shipping_rate", kind: "message", T: ShippingRate, opt: true },
+    {
+      no: 8,
+      name: "shipping_rate",
+      kind: "message",
+      T: ShippingRate,
+      opt: true,
+    },
     { no: 9, name: "images", kind: "message", T: OfferImage, repeated: true },
     { no: 10, name: "files", kind: "message", T: OfferFile, repeated: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Offer {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): Offer {
     return new Offer().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Offer {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): Offer {
     return new Offer().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Offer {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): Offer {
     return new Offer().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Offer | PlainMessage<Offer> | undefined, b: Offer | PlainMessage<Offer> | undefined): boolean {
+  static equals(
+    a: Offer | PlainMessage<Offer> | undefined,
+    b: Offer | PlainMessage<Offer> | undefined,
+  ): boolean {
     return proto3.util.equals(Offer, a, b);
   }
 }
@@ -122,22 +147,40 @@ export class Offer_Details extends Message<Offer_Details> {
   static readonly typeName = "sited_io.commerce.v2.Offer.Details";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 2,
+      name: "description",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Offer_Details {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): Offer_Details {
     return new Offer_Details().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Offer_Details {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): Offer_Details {
     return new Offer_Details().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Offer_Details {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): Offer_Details {
     return new Offer_Details().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Offer_Details | PlainMessage<Offer_Details> | undefined, b: Offer_Details | PlainMessage<Offer_Details> | undefined): boolean {
+  static equals(
+    a: Offer_Details | PlainMessage<Offer_Details> | undefined,
+    b: Offer_Details | PlainMessage<Offer_Details> | undefined,
+  ): boolean {
     return proto3.util.equals(Offer_Details, a, b);
   }
 }
@@ -149,19 +192,22 @@ export class OfferType extends Message<OfferType> {
   /**
    * @generated from oneof sited_io.commerce.v2.OfferType.offer_type_kind
    */
-  offerTypeKind: {
-    /**
-     * @generated from field: sited_io.commerce.v2.OfferType.Physical physical = 1;
-     */
-    value: OfferType_Physical;
-    case: "physical";
-  } | {
-    /**
-     * @generated from field: sited_io.commerce.v2.OfferType.Digital digital = 2;
-     */
-    value: OfferType_Digital;
-    case: "digital";
-  } | { case: undefined; value?: undefined } = { case: undefined };
+  offerTypeKind:
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.OfferType.Physical physical = 1;
+         */
+        value: OfferType_Physical;
+        case: "physical";
+      }
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.OfferType.Digital digital = 2;
+         */
+        value: OfferType_Digital;
+        case: "digital";
+      }
+    | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<OfferType>) {
     super();
@@ -171,23 +217,47 @@ export class OfferType extends Message<OfferType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "physical", kind: "message", T: OfferType_Physical, oneof: "offer_type_kind" },
-    { no: 2, name: "digital", kind: "message", T: OfferType_Digital, oneof: "offer_type_kind" },
+    {
+      no: 1,
+      name: "physical",
+      kind: "message",
+      T: OfferType_Physical,
+      oneof: "offer_type_kind",
+    },
+    {
+      no: 2,
+      name: "digital",
+      kind: "message",
+      T: OfferType_Digital,
+      oneof: "offer_type_kind",
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferType {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferType {
     return new OfferType().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferType {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType {
     return new OfferType().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferType {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType {
     return new OfferType().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferType | PlainMessage<OfferType> | undefined, b: OfferType | PlainMessage<OfferType> | undefined): boolean {
+  static equals(
+    a: OfferType | PlainMessage<OfferType> | undefined,
+    b: OfferType | PlainMessage<OfferType> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferType, a, b);
   }
 }
@@ -203,22 +273,33 @@ export class OfferType_Physical extends Message<OfferType_Physical> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferType.Physical";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferType_Physical {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferType_Physical {
     return new OfferType_Physical().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferType_Physical {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType_Physical {
     return new OfferType_Physical().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferType_Physical {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType_Physical {
     return new OfferType_Physical().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferType_Physical | PlainMessage<OfferType_Physical> | undefined, b: OfferType_Physical | PlainMessage<OfferType_Physical> | undefined): boolean {
+  static equals(
+    a: OfferType_Physical | PlainMessage<OfferType_Physical> | undefined,
+    b: OfferType_Physical | PlainMessage<OfferType_Physical> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferType_Physical, a, b);
   }
 }
@@ -234,22 +315,33 @@ export class OfferType_Digital extends Message<OfferType_Digital> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferType.Digital";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferType_Digital {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferType_Digital {
     return new OfferType_Digital().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferType_Digital {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType_Digital {
     return new OfferType_Digital().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferType_Digital {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferType_Digital {
     return new OfferType_Digital().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferType_Digital | PlainMessage<OfferType_Digital> | undefined, b: OfferType_Digital | PlainMessage<OfferType_Digital> | undefined): boolean {
+  static equals(
+    a: OfferType_Digital | PlainMessage<OfferType_Digital> | undefined,
+    b: OfferType_Digital | PlainMessage<OfferType_Digital> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferType_Digital, a, b);
   }
 }
@@ -281,24 +373,46 @@ export class OfferPrice extends Message<OfferPrice> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferPrice";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "unit_amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 2, name: "currency", kind: "enum", T: proto3.getEnumType(CurrencyCode) },
+    {
+      no: 1,
+      name: "unit_amount",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+    },
+    {
+      no: 2,
+      name: "currency",
+      kind: "enum",
+      T: proto3.getEnumType(CurrencyCode),
+    },
     { no: 3, name: "price_type", kind: "message", T: PriceType },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferPrice {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferPrice {
     return new OfferPrice().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferPrice {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferPrice {
     return new OfferPrice().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferPrice {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferPrice {
     return new OfferPrice().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferPrice | PlainMessage<OfferPrice> | undefined, b: OfferPrice | PlainMessage<OfferPrice> | undefined): boolean {
+  static equals(
+    a: OfferPrice | PlainMessage<OfferPrice> | undefined,
+    b: OfferPrice | PlainMessage<OfferPrice> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferPrice, a, b);
   }
 }
@@ -310,19 +424,22 @@ export class PriceType extends Message<PriceType> {
   /**
    * @generated from oneof sited_io.commerce.v2.PriceType.price_type_kind
    */
-  priceTypeKind: {
-    /**
-     * @generated from field: sited_io.commerce.v2.PriceType.OneTime one_time = 1;
-     */
-    value: PriceType_OneTime;
-    case: "oneTime";
-  } | {
-    /**
-     * @generated from field: sited_io.commerce.v2.PriceType.Recurring recurring = 2;
-     */
-    value: PriceType_Recurring;
-    case: "recurring";
-  } | { case: undefined; value?: undefined } = { case: undefined };
+  priceTypeKind:
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.PriceType.OneTime one_time = 1;
+         */
+        value: PriceType_OneTime;
+        case: "oneTime";
+      }
+    | {
+        /**
+         * @generated from field: sited_io.commerce.v2.PriceType.Recurring recurring = 2;
+         */
+        value: PriceType_Recurring;
+        case: "recurring";
+      }
+    | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<PriceType>) {
     super();
@@ -332,23 +449,47 @@ export class PriceType extends Message<PriceType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PriceType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "one_time", kind: "message", T: PriceType_OneTime, oneof: "price_type_kind" },
-    { no: 2, name: "recurring", kind: "message", T: PriceType_Recurring, oneof: "price_type_kind" },
+    {
+      no: 1,
+      name: "one_time",
+      kind: "message",
+      T: PriceType_OneTime,
+      oneof: "price_type_kind",
+    },
+    {
+      no: 2,
+      name: "recurring",
+      kind: "message",
+      T: PriceType_Recurring,
+      oneof: "price_type_kind",
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PriceType {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PriceType {
     return new PriceType().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PriceType {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType {
     return new PriceType().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PriceType {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType {
     return new PriceType().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PriceType | PlainMessage<PriceType> | undefined, b: PriceType | PlainMessage<PriceType> | undefined): boolean {
+  static equals(
+    a: PriceType | PlainMessage<PriceType> | undefined,
+    b: PriceType | PlainMessage<PriceType> | undefined,
+  ): boolean {
     return proto3.util.equals(PriceType, a, b);
   }
 }
@@ -364,22 +505,33 @@ export class PriceType_OneTime extends Message<PriceType_OneTime> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PriceType.OneTime";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PriceType_OneTime {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PriceType_OneTime {
     return new PriceType_OneTime().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PriceType_OneTime {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType_OneTime {
     return new PriceType_OneTime().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PriceType_OneTime {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType_OneTime {
     return new PriceType_OneTime().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PriceType_OneTime | PlainMessage<PriceType_OneTime> | undefined, b: PriceType_OneTime | PlainMessage<PriceType_OneTime> | undefined): boolean {
+  static equals(
+    a: PriceType_OneTime | PlainMessage<PriceType_OneTime> | undefined,
+    b: PriceType_OneTime | PlainMessage<PriceType_OneTime> | undefined,
+  ): boolean {
     return proto3.util.equals(PriceType_OneTime, a, b);
   }
 }
@@ -411,24 +563,52 @@ export class PriceType_Recurring extends Message<PriceType_Recurring> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.PriceType.Recurring";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "interval", kind: "enum", T: proto3.getEnumType(PriceType_Recurring_Interval) },
-    { no: 2, name: "interval_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 3, name: "trial_period_days", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    {
+      no: 1,
+      name: "interval",
+      kind: "enum",
+      T: proto3.getEnumType(PriceType_Recurring_Interval),
+    },
+    {
+      no: 2,
+      name: "interval_count",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+    },
+    {
+      no: 3,
+      name: "trial_period_days",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PriceType_Recurring {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PriceType_Recurring {
     return new PriceType_Recurring().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PriceType_Recurring {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType_Recurring {
     return new PriceType_Recurring().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PriceType_Recurring {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PriceType_Recurring {
     return new PriceType_Recurring().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PriceType_Recurring | PlainMessage<PriceType_Recurring> | undefined, b: PriceType_Recurring | PlainMessage<PriceType_Recurring> | undefined): boolean {
+  static equals(
+    a: PriceType_Recurring | PlainMessage<PriceType_Recurring> | undefined,
+    b: PriceType_Recurring | PlainMessage<PriceType_Recurring> | undefined,
+  ): boolean {
     return proto3.util.equals(PriceType_Recurring, a, b);
   }
 }
@@ -463,13 +643,17 @@ export enum PriceType_Recurring_Interval {
   YEAR = 4,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PriceType_Recurring_Interval)
-proto3.util.setEnumType(PriceType_Recurring_Interval, "sited_io.commerce.v2.PriceType.Recurring.Interval", [
-  { no: 0, name: "INTERVAL_UNSPECIFIED" },
-  { no: 1, name: "INTERVAL_DAY" },
-  { no: 2, name: "INTERVAL_WEEK" },
-  { no: 3, name: "INTERVAL_MONTH" },
-  { no: 4, name: "INTERVAL_YEAR" },
-]);
+proto3.util.setEnumType(
+  PriceType_Recurring_Interval,
+  "sited_io.commerce.v2.PriceType.Recurring.Interval",
+  [
+    { no: 0, name: "INTERVAL_UNSPECIFIED" },
+    { no: 1, name: "INTERVAL_DAY" },
+    { no: 2, name: "INTERVAL_WEEK" },
+    { no: 3, name: "INTERVAL_MONTH" },
+    { no: 4, name: "INTERVAL_YEAR" },
+  ],
+);
 
 /**
  * @generated from message sited_io.commerce.v2.ShippingRate
@@ -503,25 +687,58 @@ export class ShippingRate extends Message<ShippingRate> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.ShippingRate";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 3, name: "unit_amount", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 4, name: "currency", kind: "enum", T: proto3.getEnumType(CurrencyCode) },
-    { no: 5, name: "all_countries", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 6, name: "specific_countries", kind: "enum", T: proto3.getEnumType(CountryCode), repeated: true },
+    {
+      no: 3,
+      name: "unit_amount",
+      kind: "scalar",
+      T: 13 /* ScalarType.UINT32 */,
+    },
+    {
+      no: 4,
+      name: "currency",
+      kind: "enum",
+      T: proto3.getEnumType(CurrencyCode),
+    },
+    {
+      no: 5,
+      name: "all_countries",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+    },
+    {
+      no: 6,
+      name: "specific_countries",
+      kind: "enum",
+      T: proto3.getEnumType(CountryCode),
+      repeated: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShippingRate {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ShippingRate {
     return new ShippingRate().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShippingRate {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ShippingRate {
     return new ShippingRate().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShippingRate {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ShippingRate {
     return new ShippingRate().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ShippingRate | PlainMessage<ShippingRate> | undefined, b: ShippingRate | PlainMessage<ShippingRate> | undefined): boolean {
+  static equals(
+    a: ShippingRate | PlainMessage<ShippingRate> | undefined,
+    b: ShippingRate | PlainMessage<ShippingRate> | undefined,
+  ): boolean {
     return proto3.util.equals(ShippingRate, a, b);
   }
 }
@@ -558,25 +775,42 @@ export class OfferImage extends Message<OfferImage> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferImage";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "offer_image_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "offer_image_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 2, name: "owner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferImage {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferImage {
     return new OfferImage().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferImage {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferImage {
     return new OfferImage().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferImage {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferImage {
     return new OfferImage().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferImage | PlainMessage<OfferImage> | undefined, b: OfferImage | PlainMessage<OfferImage> | undefined): boolean {
+  static equals(
+    a: OfferImage | PlainMessage<OfferImage> | undefined,
+    b: OfferImage | PlainMessage<OfferImage> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferImage, a, b);
   }
 }
@@ -638,31 +872,63 @@ export class OfferFile extends Message<OfferFile> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v2.OfferFile";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "offer_file_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "offer_file_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "owner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 6, name: "total_size_bytes", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 7, name: "uploaded_size_bytes", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    {
+      no: 5,
+      name: "content_type",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 6,
+      name: "total_size_bytes",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 7,
+      name: "uploaded_size_bytes",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
     { no: 8, name: "ordering", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "file_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfferFile {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): OfferFile {
     return new OfferFile().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfferFile {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): OfferFile {
     return new OfferFile().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfferFile {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): OfferFile {
     return new OfferFile().fromJsonString(jsonString, options);
   }
 
-  static equals(a: OfferFile | PlainMessage<OfferFile> | undefined, b: OfferFile | PlainMessage<OfferFile> | undefined): boolean {
+  static equals(
+    a: OfferFile | PlainMessage<OfferFile> | undefined,
+    b: OfferFile | PlainMessage<OfferFile> | undefined,
+  ): boolean {
     return proto3.util.equals(OfferFile, a, b);
   }
 }
-

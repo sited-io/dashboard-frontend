@@ -31,7 +31,7 @@ import {
   MediaSubscriptionResponse,
   ResumeMediaSubscriptionRequest,
 } from "./sited_io/media/v1/media_subscription_pb";
-import { PaginationResponse } from "./sited_io/types/v1/pagination_pb";
+import { PaginationResponse } from "./sited_io/types/query/v1/query_pb";
 
 const baseUrl = import.meta.env.VITE_SERIVCE_APIS_URL;
 

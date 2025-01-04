@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { MediaUpload } from "../../media/v1/media_pb.js";
 
@@ -100,27 +107,80 @@ export class ShopCustomizationResponse extends Message<ShopCustomizationResponse
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "created_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 4, name: "updated_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 5, name: "logo_image_light_url", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 6, name: "logo_image_dark_url", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 7, name: "banner_image_light_url", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 8, name: "banner_image_dark_url", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 9, name: "primary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 10, name: "layout_type", kind: "enum", T: proto3.getEnumType(ShopLayoutType) },
+    {
+      no: 5,
+      name: "logo_image_light_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 6,
+      name: "logo_image_dark_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 7,
+      name: "banner_image_light_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 8,
+      name: "banner_image_dark_url",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 9,
+      name: "primary_color",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 10,
+      name: "layout_type",
+      kind: "enum",
+      T: proto3.getEnumType(ShopLayoutType),
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShopCustomizationResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ShopCustomizationResponse {
     return new ShopCustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShopCustomizationResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ShopCustomizationResponse {
     return new ShopCustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShopCustomizationResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ShopCustomizationResponse {
     return new ShopCustomizationResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ShopCustomizationResponse | PlainMessage<ShopCustomizationResponse> | undefined, b: ShopCustomizationResponse | PlainMessage<ShopCustomizationResponse> | undefined): boolean {
+  static equals(
+    a:
+      | ShopCustomizationResponse
+      | PlainMessage<ShopCustomizationResponse>
+      | undefined,
+    b:
+      | ShopCustomizationResponse
+      | PlainMessage<ShopCustomizationResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ShopCustomizationResponse, a, b);
   }
 }
@@ -154,23 +214,55 @@ export class PutShopCustomizationRequest extends Message<PutShopCustomizationReq
   static readonly typeName = "sited_io.commerce.v1.PutShopCustomizationRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "primary_color", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 3, name: "layout_type", kind: "enum", T: proto3.getEnumType(ShopLayoutType) },
+    {
+      no: 2,
+      name: "primary_color",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "layout_type",
+      kind: "enum",
+      T: proto3.getEnumType(ShopLayoutType),
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShopCustomizationRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutShopCustomizationRequest {
     return new PutShopCustomizationRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShopCustomizationRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutShopCustomizationRequest {
     return new PutShopCustomizationRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShopCustomizationRequest {
-    return new PutShopCustomizationRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutShopCustomizationRequest {
+    return new PutShopCustomizationRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutShopCustomizationRequest | PlainMessage<PutShopCustomizationRequest> | undefined, b: PutShopCustomizationRequest | PlainMessage<PutShopCustomizationRequest> | undefined): boolean {
+  static equals(
+    a:
+      | PutShopCustomizationRequest
+      | PlainMessage<PutShopCustomizationRequest>
+      | undefined,
+    b:
+      | PutShopCustomizationRequest
+      | PlainMessage<PutShopCustomizationRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutShopCustomizationRequest, a, b);
   }
 }
@@ -190,24 +282,51 @@ export class PutShopCustomizationResponse extends Message<PutShopCustomizationRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.PutShopCustomizationResponse";
+  static readonly typeName =
+    "sited_io.commerce.v1.PutShopCustomizationResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "shop_customization", kind: "message", T: ShopCustomizationResponse },
+    {
+      no: 1,
+      name: "shop_customization",
+      kind: "message",
+      T: ShopCustomizationResponse,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutShopCustomizationResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutShopCustomizationResponse {
     return new PutShopCustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutShopCustomizationResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutShopCustomizationResponse {
     return new PutShopCustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutShopCustomizationResponse {
-    return new PutShopCustomizationResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutShopCustomizationResponse {
+    return new PutShopCustomizationResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutShopCustomizationResponse | PlainMessage<PutShopCustomizationResponse> | undefined, b: PutShopCustomizationResponse | PlainMessage<PutShopCustomizationResponse> | undefined): boolean {
+  static equals(
+    a:
+      | PutShopCustomizationResponse
+      | PlainMessage<PutShopCustomizationResponse>
+      | undefined,
+    b:
+      | PutShopCustomizationResponse
+      | PlainMessage<PutShopCustomizationResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutShopCustomizationResponse, a, b);
   }
 }
@@ -232,19 +351,40 @@ export class GetShopCustomizationRequest extends Message<GetShopCustomizationReq
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopCustomizationRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetShopCustomizationRequest {
     return new GetShopCustomizationRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopCustomizationRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopCustomizationRequest {
     return new GetShopCustomizationRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopCustomizationRequest {
-    return new GetShopCustomizationRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopCustomizationRequest {
+    return new GetShopCustomizationRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: GetShopCustomizationRequest | PlainMessage<GetShopCustomizationRequest> | undefined, b: GetShopCustomizationRequest | PlainMessage<GetShopCustomizationRequest> | undefined): boolean {
+  static equals(
+    a:
+      | GetShopCustomizationRequest
+      | PlainMessage<GetShopCustomizationRequest>
+      | undefined,
+    b:
+      | GetShopCustomizationRequest
+      | PlainMessage<GetShopCustomizationRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetShopCustomizationRequest, a, b);
   }
 }
@@ -264,24 +404,51 @@ export class GetShopCustomizationResponse extends Message<GetShopCustomizationRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.GetShopCustomizationResponse";
+  static readonly typeName =
+    "sited_io.commerce.v1.GetShopCustomizationResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "shop_customization", kind: "message", T: ShopCustomizationResponse },
+    {
+      no: 1,
+      name: "shop_customization",
+      kind: "message",
+      T: ShopCustomizationResponse,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShopCustomizationResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetShopCustomizationResponse {
     return new GetShopCustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShopCustomizationResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopCustomizationResponse {
     return new GetShopCustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShopCustomizationResponse {
-    return new GetShopCustomizationResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetShopCustomizationResponse {
+    return new GetShopCustomizationResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: GetShopCustomizationResponse | PlainMessage<GetShopCustomizationResponse> | undefined, b: GetShopCustomizationResponse | PlainMessage<GetShopCustomizationResponse> | undefined): boolean {
+  static equals(
+    a:
+      | GetShopCustomizationResponse
+      | PlainMessage<GetShopCustomizationResponse>
+      | undefined,
+    b:
+      | GetShopCustomizationResponse
+      | PlainMessage<GetShopCustomizationResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetShopCustomizationResponse, a, b);
   }
 }
@@ -301,24 +468,46 @@ export class DeleteShopCustomizationRequest extends Message<DeleteShopCustomizat
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.DeleteShopCustomizationRequest";
+  static readonly typeName =
+    "sited_io.commerce.v1.DeleteShopCustomizationRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopCustomizationRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteShopCustomizationRequest {
     return new DeleteShopCustomizationRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopCustomizationRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopCustomizationRequest {
     return new DeleteShopCustomizationRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopCustomizationRequest {
-    return new DeleteShopCustomizationRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopCustomizationRequest {
+    return new DeleteShopCustomizationRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: DeleteShopCustomizationRequest | PlainMessage<DeleteShopCustomizationRequest> | undefined, b: DeleteShopCustomizationRequest | PlainMessage<DeleteShopCustomizationRequest> | undefined): boolean {
+  static equals(
+    a:
+      | DeleteShopCustomizationRequest
+      | PlainMessage<DeleteShopCustomizationRequest>
+      | undefined,
+    b:
+      | DeleteShopCustomizationRequest
+      | PlainMessage<DeleteShopCustomizationRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteShopCustomizationRequest, a, b);
   }
 }
@@ -333,23 +522,44 @@ export class DeleteShopCustomizationResponse extends Message<DeleteShopCustomiza
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.DeleteShopCustomizationResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.commerce.v1.DeleteShopCustomizationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteShopCustomizationResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeleteShopCustomizationResponse {
     return new DeleteShopCustomizationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteShopCustomizationResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopCustomizationResponse {
     return new DeleteShopCustomizationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteShopCustomizationResponse {
-    return new DeleteShopCustomizationResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeleteShopCustomizationResponse {
+    return new DeleteShopCustomizationResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: DeleteShopCustomizationResponse | PlainMessage<DeleteShopCustomizationResponse> | undefined, b: DeleteShopCustomizationResponse | PlainMessage<DeleteShopCustomizationResponse> | undefined): boolean {
+  static equals(
+    a:
+      | DeleteShopCustomizationResponse
+      | PlainMessage<DeleteShopCustomizationResponse>
+      | undefined,
+    b:
+      | DeleteShopCustomizationResponse
+      | PlainMessage<DeleteShopCustomizationResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(DeleteShopCustomizationResponse, a, b);
   }
 }
@@ -386,19 +596,40 @@ export class PutBannerImageToShopRequest extends Message<PutBannerImageToShopReq
     { no: 3, name: "image_dark", kind: "message", T: MediaUpload, opt: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutBannerImageToShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutBannerImageToShopRequest {
     return new PutBannerImageToShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutBannerImageToShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutBannerImageToShopRequest {
     return new PutBannerImageToShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutBannerImageToShopRequest {
-    return new PutBannerImageToShopRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutBannerImageToShopRequest {
+    return new PutBannerImageToShopRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutBannerImageToShopRequest | PlainMessage<PutBannerImageToShopRequest> | undefined, b: PutBannerImageToShopRequest | PlainMessage<PutBannerImageToShopRequest> | undefined): boolean {
+  static equals(
+    a:
+      | PutBannerImageToShopRequest
+      | PlainMessage<PutBannerImageToShopRequest>
+      | undefined,
+    b:
+      | PutBannerImageToShopRequest
+      | PlainMessage<PutBannerImageToShopRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutBannerImageToShopRequest, a, b);
   }
 }
@@ -413,23 +644,44 @@ export class PutBannerImageToShopResponse extends Message<PutBannerImageToShopRe
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.PutBannerImageToShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.commerce.v1.PutBannerImageToShopResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutBannerImageToShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutBannerImageToShopResponse {
     return new PutBannerImageToShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutBannerImageToShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutBannerImageToShopResponse {
     return new PutBannerImageToShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutBannerImageToShopResponse {
-    return new PutBannerImageToShopResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutBannerImageToShopResponse {
+    return new PutBannerImageToShopResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutBannerImageToShopResponse | PlainMessage<PutBannerImageToShopResponse> | undefined, b: PutBannerImageToShopResponse | PlainMessage<PutBannerImageToShopResponse> | undefined): boolean {
+  static equals(
+    a:
+      | PutBannerImageToShopResponse
+      | PlainMessage<PutBannerImageToShopResponse>
+      | undefined,
+    b:
+      | PutBannerImageToShopResponse
+      | PlainMessage<PutBannerImageToShopResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutBannerImageToShopResponse, a, b);
   }
 }
@@ -449,24 +701,46 @@ export class RemoveBannerImageFromShopRequest extends Message<RemoveBannerImageF
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.RemoveBannerImageFromShopRequest";
+  static readonly typeName =
+    "sited_io.commerce.v1.RemoveBannerImageFromShopRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveBannerImageFromShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): RemoveBannerImageFromShopRequest {
     return new RemoveBannerImageFromShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveBannerImageFromShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveBannerImageFromShopRequest {
     return new RemoveBannerImageFromShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveBannerImageFromShopRequest {
-    return new RemoveBannerImageFromShopRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveBannerImageFromShopRequest {
+    return new RemoveBannerImageFromShopRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: RemoveBannerImageFromShopRequest | PlainMessage<RemoveBannerImageFromShopRequest> | undefined, b: RemoveBannerImageFromShopRequest | PlainMessage<RemoveBannerImageFromShopRequest> | undefined): boolean {
+  static equals(
+    a:
+      | RemoveBannerImageFromShopRequest
+      | PlainMessage<RemoveBannerImageFromShopRequest>
+      | undefined,
+    b:
+      | RemoveBannerImageFromShopRequest
+      | PlainMessage<RemoveBannerImageFromShopRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(RemoveBannerImageFromShopRequest, a, b);
   }
 }
@@ -481,23 +755,44 @@ export class RemoveBannerImageFromShopResponse extends Message<RemoveBannerImage
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.RemoveBannerImageFromShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.commerce.v1.RemoveBannerImageFromShopResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveBannerImageFromShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): RemoveBannerImageFromShopResponse {
     return new RemoveBannerImageFromShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveBannerImageFromShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveBannerImageFromShopResponse {
     return new RemoveBannerImageFromShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveBannerImageFromShopResponse {
-    return new RemoveBannerImageFromShopResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveBannerImageFromShopResponse {
+    return new RemoveBannerImageFromShopResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: RemoveBannerImageFromShopResponse | PlainMessage<RemoveBannerImageFromShopResponse> | undefined, b: RemoveBannerImageFromShopResponse | PlainMessage<RemoveBannerImageFromShopResponse> | undefined): boolean {
+  static equals(
+    a:
+      | RemoveBannerImageFromShopResponse
+      | PlainMessage<RemoveBannerImageFromShopResponse>
+      | undefined,
+    b:
+      | RemoveBannerImageFromShopResponse
+      | PlainMessage<RemoveBannerImageFromShopResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(RemoveBannerImageFromShopResponse, a, b);
   }
 }
@@ -534,19 +829,37 @@ export class PutLogoImageToShopRequest extends Message<PutLogoImageToShopRequest
     { no: 3, name: "image_dark", kind: "message", T: MediaUpload, opt: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutLogoImageToShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutLogoImageToShopRequest {
     return new PutLogoImageToShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutLogoImageToShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutLogoImageToShopRequest {
     return new PutLogoImageToShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutLogoImageToShopRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutLogoImageToShopRequest {
     return new PutLogoImageToShopRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PutLogoImageToShopRequest | PlainMessage<PutLogoImageToShopRequest> | undefined, b: PutLogoImageToShopRequest | PlainMessage<PutLogoImageToShopRequest> | undefined): boolean {
+  static equals(
+    a:
+      | PutLogoImageToShopRequest
+      | PlainMessage<PutLogoImageToShopRequest>
+      | undefined,
+    b:
+      | PutLogoImageToShopRequest
+      | PlainMessage<PutLogoImageToShopRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutLogoImageToShopRequest, a, b);
   }
 }
@@ -562,22 +875,39 @@ export class PutLogoImageToShopResponse extends Message<PutLogoImageToShopRespon
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.commerce.v1.PutLogoImageToShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutLogoImageToShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutLogoImageToShopResponse {
     return new PutLogoImageToShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutLogoImageToShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutLogoImageToShopResponse {
     return new PutLogoImageToShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutLogoImageToShopResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutLogoImageToShopResponse {
     return new PutLogoImageToShopResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PutLogoImageToShopResponse | PlainMessage<PutLogoImageToShopResponse> | undefined, b: PutLogoImageToShopResponse | PlainMessage<PutLogoImageToShopResponse> | undefined): boolean {
+  static equals(
+    a:
+      | PutLogoImageToShopResponse
+      | PlainMessage<PutLogoImageToShopResponse>
+      | undefined,
+    b:
+      | PutLogoImageToShopResponse
+      | PlainMessage<PutLogoImageToShopResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutLogoImageToShopResponse, a, b);
   }
 }
@@ -597,24 +927,46 @@ export class RemoveLogoImageFromShopRequest extends Message<RemoveLogoImageFromS
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.RemoveLogoImageFromShopRequest";
+  static readonly typeName =
+    "sited_io.commerce.v1.RemoveLogoImageFromShopRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveLogoImageFromShopRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): RemoveLogoImageFromShopRequest {
     return new RemoveLogoImageFromShopRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveLogoImageFromShopRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveLogoImageFromShopRequest {
     return new RemoveLogoImageFromShopRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveLogoImageFromShopRequest {
-    return new RemoveLogoImageFromShopRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveLogoImageFromShopRequest {
+    return new RemoveLogoImageFromShopRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: RemoveLogoImageFromShopRequest | PlainMessage<RemoveLogoImageFromShopRequest> | undefined, b: RemoveLogoImageFromShopRequest | PlainMessage<RemoveLogoImageFromShopRequest> | undefined): boolean {
+  static equals(
+    a:
+      | RemoveLogoImageFromShopRequest
+      | PlainMessage<RemoveLogoImageFromShopRequest>
+      | undefined,
+    b:
+      | RemoveLogoImageFromShopRequest
+      | PlainMessage<RemoveLogoImageFromShopRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(RemoveLogoImageFromShopRequest, a, b);
   }
 }
@@ -629,24 +981,44 @@ export class RemoveLogoImageFromShopResponse extends Message<RemoveLogoImageFrom
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.commerce.v1.RemoveLogoImageFromShopResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.commerce.v1.RemoveLogoImageFromShopResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveLogoImageFromShopResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): RemoveLogoImageFromShopResponse {
     return new RemoveLogoImageFromShopResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveLogoImageFromShopResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveLogoImageFromShopResponse {
     return new RemoveLogoImageFromShopResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveLogoImageFromShopResponse {
-    return new RemoveLogoImageFromShopResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): RemoveLogoImageFromShopResponse {
+    return new RemoveLogoImageFromShopResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: RemoveLogoImageFromShopResponse | PlainMessage<RemoveLogoImageFromShopResponse> | undefined, b: RemoveLogoImageFromShopResponse | PlainMessage<RemoveLogoImageFromShopResponse> | undefined): boolean {
+  static equals(
+    a:
+      | RemoveLogoImageFromShopResponse
+      | PlainMessage<RemoveLogoImageFromShopResponse>
+      | undefined,
+    b:
+      | RemoveLogoImageFromShopResponse
+      | PlainMessage<RemoveLogoImageFromShopResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(RemoveLogoImageFromShopResponse, a, b);
   }
 }
-

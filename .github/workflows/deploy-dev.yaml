@@ -1,0 +1,59 @@
+name: Deploy to dev environment
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+env:
+  NOMAD_ADDR: ${{ vars.DEV_NOMAD_ADDR }}
+  IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
+jobs:
+  build:
+    environment: development
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Build Docker image
+        run: >
+          docker build \
+            --build-arg VITE_SERIVCE_APIS_URL=${{ vars.VITE_SERIVCE_APIS_URL }} \
+            --build-arg VITE_AUTH_OAUTH_CLIENT_ID=${{ vars.VITE_AUTH_OAUTH_CLIENT_ID }} \
+            --build-arg VITE_FILE_MAX_SIZE=${{ vars.VITE_FILE_MAX_SIZE }} \
+            --build-arg VITE_IMAGE_MAX_SIZE=${{ vars.VITE_IMAGE_MAX_SIZE }} \
+            --tag $IMAGE_TAG --file Dockerfile .
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Docker image to ghcr
+        run: docker push $IMAGE_TAG
+
+  deploy:
+    environment: development
+    runs-on: self-hosted
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Nomad token from Vault
+        uses: hashicorp/vault-action@v2
+        with:
+          url: ${{ vars.DEV_VAULT_ADDR }}
+          method: userpass
+          username: services-deployer
+          password: ${{ secrets.DEV_SERVICE_DEPLOYER_PASSWORD }}
+          secrets: |
+            nomad/creds/services-deployer secret_id | NOMAD_TOKEN ;
+
+      - name: Deploy job
+        run: |
+          sed -i -e "s|__IMAGE__|$IMAGE_TAG|g" service.nomad
+          nomad job run -verbose service.nomad

@@ -3,9 +3,19 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
+import {
+  PaginationRequest,
+  PaginationResponse,
+} from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from enum sited_io.websites.v1.PageType
@@ -83,19 +93,31 @@ export class PageResponse extends Message<PageResponse> {
     { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PageResponse {
     return new PageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PageResponse {
     return new PageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PageResponse {
     return new PageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: PageResponse | PlainMessage<PageResponse> | undefined, b: PageResponse | PlainMessage<PageResponse> | undefined): boolean {
+  static equals(
+    a: PageResponse | PlainMessage<PageResponse> | undefined,
+    b: PageResponse | PlainMessage<PageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(PageResponse, a, b);
   }
 }
@@ -147,22 +169,40 @@ export class CreatePageRequest extends Message<CreatePageRequest> {
     { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "is_home_page", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 6,
+      name: "path",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreatePageRequest {
     return new CreatePageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreatePageRequest {
     return new CreatePageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreatePageRequest {
     return new CreatePageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreatePageRequest | PlainMessage<CreatePageRequest> | undefined, b: CreatePageRequest | PlainMessage<CreatePageRequest> | undefined): boolean {
+  static equals(
+    a: CreatePageRequest | PlainMessage<CreatePageRequest> | undefined,
+    b: CreatePageRequest | PlainMessage<CreatePageRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(CreatePageRequest, a, b);
   }
 }
@@ -187,19 +227,31 @@ export class CreatePageResponse extends Message<CreatePageResponse> {
     { no: 1, name: "page", kind: "message", T: PageResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CreatePageResponse {
     return new CreatePageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CreatePageResponse {
     return new CreatePageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CreatePageResponse {
     return new CreatePageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreatePageResponse | PlainMessage<CreatePageResponse> | undefined, b: CreatePageResponse | PlainMessage<CreatePageResponse> | undefined): boolean {
+  static equals(
+    a: CreatePageResponse | PlainMessage<CreatePageResponse> | undefined,
+    b: CreatePageResponse | PlainMessage<CreatePageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(CreatePageResponse, a, b);
   }
 }
@@ -231,24 +283,54 @@ export class GetPageRequest extends Message<GetPageRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.GetPageRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 2, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 3, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 1,
+      name: "page_id",
+      kind: "scalar",
+      T: 3 /* ScalarType.INT64 */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "website_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "path",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetPageRequest {
     return new GetPageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetPageRequest {
     return new GetPageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetPageRequest {
     return new GetPageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetPageRequest | PlainMessage<GetPageRequest> | undefined, b: GetPageRequest | PlainMessage<GetPageRequest> | undefined): boolean {
+  static equals(
+    a: GetPageRequest | PlainMessage<GetPageRequest> | undefined,
+    b: GetPageRequest | PlainMessage<GetPageRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(GetPageRequest, a, b);
   }
 }
@@ -273,19 +355,31 @@ export class GetPageResponse extends Message<GetPageResponse> {
     { no: 1, name: "page", kind: "message", T: PageResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetPageResponse {
     return new GetPageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetPageResponse {
     return new GetPageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetPageResponse {
     return new GetPageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetPageResponse | PlainMessage<GetPageResponse> | undefined, b: GetPageResponse | PlainMessage<GetPageResponse> | undefined): boolean {
+  static equals(
+    a: GetPageResponse | PlainMessage<GetPageResponse> | undefined,
+    b: GetPageResponse | PlainMessage<GetPageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(GetPageResponse, a, b);
   }
 }
@@ -312,23 +406,47 @@ export class ListPagesRequest extends Message<ListPagesRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.ListPagesRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "website_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
+    {
+      no: 1,
+      name: "website_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "pagination",
+      kind: "message",
+      T: PaginationRequest,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPagesRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListPagesRequest {
     return new ListPagesRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPagesRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListPagesRequest {
     return new ListPagesRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPagesRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListPagesRequest {
     return new ListPagesRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListPagesRequest | PlainMessage<ListPagesRequest> | undefined, b: ListPagesRequest | PlainMessage<ListPagesRequest> | undefined): boolean {
+  static equals(
+    a: ListPagesRequest | PlainMessage<ListPagesRequest> | undefined,
+    b: ListPagesRequest | PlainMessage<ListPagesRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(ListPagesRequest, a, b);
   }
 }
@@ -359,19 +477,31 @@ export class ListPagesResponse extends Message<ListPagesResponse> {
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPagesResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListPagesResponse {
     return new ListPagesResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPagesResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListPagesResponse {
     return new ListPagesResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPagesResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListPagesResponse {
     return new ListPagesResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: ListPagesResponse | PlainMessage<ListPagesResponse> | undefined, b: ListPagesResponse | PlainMessage<ListPagesResponse> | undefined): boolean {
+  static equals(
+    a: ListPagesResponse | PlainMessage<ListPagesResponse> | undefined,
+    b: ListPagesResponse | PlainMessage<ListPagesResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(ListPagesResponse, a, b);
   }
 }
@@ -419,26 +549,68 @@ export class UpdatePageRequest extends Message<UpdatePageRequest> {
   static readonly typeName = "sited_io.websites.v1.UpdatePageRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "page_type", kind: "enum", T: proto3.getEnumType(PageType), opt: true },
-    { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 5, name: "is_home_page", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
-    { no: 6, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 2,
+      name: "page_type",
+      kind: "enum",
+      T: proto3.getEnumType(PageType),
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "content_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 4,
+      name: "title",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 5,
+      name: "is_home_page",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+      opt: true,
+    },
+    {
+      no: 6,
+      name: "path",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdatePageRequest {
     return new UpdatePageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdatePageRequest {
     return new UpdatePageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdatePageRequest {
     return new UpdatePageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdatePageRequest | PlainMessage<UpdatePageRequest> | undefined, b: UpdatePageRequest | PlainMessage<UpdatePageRequest> | undefined): boolean {
+  static equals(
+    a: UpdatePageRequest | PlainMessage<UpdatePageRequest> | undefined,
+    b: UpdatePageRequest | PlainMessage<UpdatePageRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdatePageRequest, a, b);
   }
 }
@@ -463,19 +635,31 @@ export class UpdatePageResponse extends Message<UpdatePageResponse> {
     { no: 1, name: "page", kind: "message", T: PageResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UpdatePageResponse {
     return new UpdatePageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UpdatePageResponse {
     return new UpdatePageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UpdatePageResponse {
     return new UpdatePageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: UpdatePageResponse | PlainMessage<UpdatePageResponse> | undefined, b: UpdatePageResponse | PlainMessage<UpdatePageResponse> | undefined): boolean {
+  static equals(
+    a: UpdatePageResponse | PlainMessage<UpdatePageResponse> | undefined,
+    b: UpdatePageResponse | PlainMessage<UpdatePageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(UpdatePageResponse, a, b);
   }
 }
@@ -500,19 +684,31 @@ export class DeletePageRequest extends Message<DeletePageRequest> {
     { no: 1, name: "page_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeletePageRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeletePageRequest {
     return new DeletePageRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeletePageRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeletePageRequest {
     return new DeletePageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeletePageRequest {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeletePageRequest {
     return new DeletePageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeletePageRequest | PlainMessage<DeletePageRequest> | undefined, b: DeletePageRequest | PlainMessage<DeletePageRequest> | undefined): boolean {
+  static equals(
+    a: DeletePageRequest | PlainMessage<DeletePageRequest> | undefined,
+    b: DeletePageRequest | PlainMessage<DeletePageRequest> | undefined,
+  ): boolean {
     return proto3.util.equals(DeletePageRequest, a, b);
   }
 }
@@ -528,23 +724,33 @@ export class DeletePageResponse extends Message<DeletePageResponse> {
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.websites.v1.DeletePageResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeletePageResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): DeletePageResponse {
     return new DeletePageResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeletePageResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): DeletePageResponse {
     return new DeletePageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeletePageResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): DeletePageResponse {
     return new DeletePageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: DeletePageResponse | PlainMessage<DeletePageResponse> | undefined, b: DeletePageResponse | PlainMessage<DeletePageResponse> | undefined): boolean {
+  static equals(
+    a: DeletePageResponse | PlainMessage<DeletePageResponse> | undefined,
+    b: DeletePageResponse | PlainMessage<DeletePageResponse> | undefined,
+  ): boolean {
     return proto3.util.equals(DeletePageResponse, a, b);
   }
 }
-

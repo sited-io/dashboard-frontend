@@ -3,9 +3,19 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage,
+} from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../types/v1/pagination_pb.js";
+import {
+  PaginationRequest,
+  PaginationResponse,
+} from "../../types/v1/pagination_pb.js";
 
 /**
  * @generated from message sited_io.media.v1.MediaSubscriptionResponse
@@ -79,33 +89,99 @@ export class MediaSubscriptionResponse extends Message<MediaSubscriptionResponse
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.MediaSubscriptionResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "buyer_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "media_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
+    {
+      no: 2,
+      name: "buyer_user_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 4, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "current_period_start", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 7, name: "current_period_end", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 8, name: "subscription_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 6,
+      name: "current_period_start",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 7,
+      name: "current_period_end",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 8,
+      name: "subscription_status",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 9, name: "payed_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 10, name: "payed_until", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 11, name: "stripe_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 12, name: "canceled_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
-    { no: 13, name: "cancel_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
+    {
+      no: 10,
+      name: "payed_until",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 11,
+      name: "stripe_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 12,
+      name: "canceled_at",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+      opt: true,
+    },
+    {
+      no: 13,
+      name: "cancel_at",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): MediaSubscriptionResponse {
     return new MediaSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MediaSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): MediaSubscriptionResponse {
     return new MediaSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MediaSubscriptionResponse {
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): MediaSubscriptionResponse {
     return new MediaSubscriptionResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: MediaSubscriptionResponse | PlainMessage<MediaSubscriptionResponse> | undefined, b: MediaSubscriptionResponse | PlainMessage<MediaSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | MediaSubscriptionResponse
+      | PlainMessage<MediaSubscriptionResponse>
+      | undefined,
+    b:
+      | MediaSubscriptionResponse
+      | PlainMessage<MediaSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(MediaSubscriptionResponse, a, b);
   }
 }
@@ -182,33 +258,102 @@ export class PutMediaSubscriptionRequest extends Message<PutMediaSubscriptionReq
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.PutMediaSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "buyer_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "media_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
+    {
+      no: 2,
+      name: "buyer_user_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 3, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "current_period_start", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 5, name: "current_period_end", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 6, name: "subscription_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 4,
+      name: "current_period_start",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 5,
+      name: "current_period_end",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
+    {
+      no: 6,
+      name: "subscription_status",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
     { no: 7, name: "payed_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 8, name: "payed_until", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    {
+      no: 8,
+      name: "payed_until",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+    },
     { no: 9, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "stripe_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 11, name: "canceled_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
-    { no: 12, name: "cancel_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
+    {
+      no: 10,
+      name: "stripe_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 11,
+      name: "canceled_at",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+      opt: true,
+    },
+    {
+      no: 12,
+      name: "cancel_at",
+      kind: "scalar",
+      T: 4 /* ScalarType.UINT64 */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMediaSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutMediaSubscriptionRequest {
     return new PutMediaSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMediaSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutMediaSubscriptionRequest {
     return new PutMediaSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMediaSubscriptionRequest {
-    return new PutMediaSubscriptionRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutMediaSubscriptionRequest {
+    return new PutMediaSubscriptionRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutMediaSubscriptionRequest | PlainMessage<PutMediaSubscriptionRequest> | undefined, b: PutMediaSubscriptionRequest | PlainMessage<PutMediaSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | PutMediaSubscriptionRequest
+      | PlainMessage<PutMediaSubscriptionRequest>
+      | undefined,
+    b:
+      | PutMediaSubscriptionRequest
+      | PlainMessage<PutMediaSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutMediaSubscriptionRequest, a, b);
   }
 }
@@ -224,22 +369,42 @@ export class PutMediaSubscriptionResponse extends Message<PutMediaSubscriptionRe
 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.PutMediaSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PutMediaSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): PutMediaSubscriptionResponse {
     return new PutMediaSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PutMediaSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): PutMediaSubscriptionResponse {
     return new PutMediaSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PutMediaSubscriptionResponse {
-    return new PutMediaSubscriptionResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): PutMediaSubscriptionResponse {
+    return new PutMediaSubscriptionResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: PutMediaSubscriptionResponse | PlainMessage<PutMediaSubscriptionResponse> | undefined, b: PutMediaSubscriptionResponse | PlainMessage<PutMediaSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | PutMediaSubscriptionResponse
+      | PlainMessage<PutMediaSubscriptionResponse>
+      | undefined,
+    b:
+      | PutMediaSubscriptionResponse
+      | PlainMessage<PutMediaSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(PutMediaSubscriptionResponse, a, b);
   }
 }
@@ -266,23 +431,56 @@ export class GetMediaSubscriptionRequest extends Message<GetMediaSubscriptionReq
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.GetMediaSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "offer_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 1,
+      name: "media_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "offer_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMediaSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetMediaSubscriptionRequest {
     return new GetMediaSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMediaSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetMediaSubscriptionRequest {
     return new GetMediaSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMediaSubscriptionRequest {
-    return new GetMediaSubscriptionRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetMediaSubscriptionRequest {
+    return new GetMediaSubscriptionRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: GetMediaSubscriptionRequest | PlainMessage<GetMediaSubscriptionRequest> | undefined, b: GetMediaSubscriptionRequest | PlainMessage<GetMediaSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | GetMediaSubscriptionRequest
+      | PlainMessage<GetMediaSubscriptionRequest>
+      | undefined,
+    b:
+      | GetMediaSubscriptionRequest
+      | PlainMessage<GetMediaSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetMediaSubscriptionRequest, a, b);
   }
 }
@@ -304,22 +502,48 @@ export class GetMediaSubscriptionResponse extends Message<GetMediaSubscriptionRe
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.GetMediaSubscriptionResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription", kind: "message", T: MediaSubscriptionResponse },
+    {
+      no: 1,
+      name: "media_subscription",
+      kind: "message",
+      T: MediaSubscriptionResponse,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMediaSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetMediaSubscriptionResponse {
     return new GetMediaSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMediaSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetMediaSubscriptionResponse {
     return new GetMediaSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMediaSubscriptionResponse {
-    return new GetMediaSubscriptionResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetMediaSubscriptionResponse {
+    return new GetMediaSubscriptionResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: GetMediaSubscriptionResponse | PlainMessage<GetMediaSubscriptionResponse> | undefined, b: GetMediaSubscriptionResponse | PlainMessage<GetMediaSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | GetMediaSubscriptionResponse
+      | PlainMessage<GetMediaSubscriptionResponse>
+      | undefined,
+    b:
+      | GetMediaSubscriptionResponse
+      | PlainMessage<GetMediaSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(GetMediaSubscriptionResponse, a, b);
   }
 }
@@ -351,24 +575,63 @@ export class ListMediaSubscriptionsRequest extends Message<ListMediaSubscription
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ListMediaSubscriptionsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "shop_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "pagination", kind: "message", T: PaginationRequest, opt: true },
-    { no: 3, name: "is_accessible", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    {
+      no: 1,
+      name: "shop_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+      opt: true,
+    },
+    {
+      no: 2,
+      name: "pagination",
+      kind: "message",
+      T: PaginationRequest,
+      opt: true,
+    },
+    {
+      no: 3,
+      name: "is_accessible",
+      kind: "scalar",
+      T: 8 /* ScalarType.BOOL */,
+      opt: true,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMediaSubscriptionsRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListMediaSubscriptionsRequest {
     return new ListMediaSubscriptionsRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMediaSubscriptionsRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListMediaSubscriptionsRequest {
     return new ListMediaSubscriptionsRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMediaSubscriptionsRequest {
-    return new ListMediaSubscriptionsRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListMediaSubscriptionsRequest {
+    return new ListMediaSubscriptionsRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: ListMediaSubscriptionsRequest | PlainMessage<ListMediaSubscriptionsRequest> | undefined, b: ListMediaSubscriptionsRequest | PlainMessage<ListMediaSubscriptionsRequest> | undefined): boolean {
+  static equals(
+    a:
+      | ListMediaSubscriptionsRequest
+      | PlainMessage<ListMediaSubscriptionsRequest>
+      | undefined,
+    b:
+      | ListMediaSubscriptionsRequest
+      | PlainMessage<ListMediaSubscriptionsRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ListMediaSubscriptionsRequest, a, b);
   }
 }
@@ -395,23 +658,50 @@ export class ListMediaSubscriptionsResponse extends Message<ListMediaSubscriptio
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ListMediaSubscriptionsResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscriptions", kind: "message", T: MediaSubscriptionResponse, repeated: true },
+    {
+      no: 1,
+      name: "media_subscriptions",
+      kind: "message",
+      T: MediaSubscriptionResponse,
+      repeated: true,
+    },
     { no: 2, name: "pagination", kind: "message", T: PaginationResponse },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMediaSubscriptionsResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ListMediaSubscriptionsResponse {
     return new ListMediaSubscriptionsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMediaSubscriptionsResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ListMediaSubscriptionsResponse {
     return new ListMediaSubscriptionsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMediaSubscriptionsResponse {
-    return new ListMediaSubscriptionsResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ListMediaSubscriptionsResponse {
+    return new ListMediaSubscriptionsResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: ListMediaSubscriptionsResponse | PlainMessage<ListMediaSubscriptionsResponse> | undefined, b: ListMediaSubscriptionsResponse | PlainMessage<ListMediaSubscriptionsResponse> | undefined): boolean {
+  static equals(
+    a:
+      | ListMediaSubscriptionsResponse
+      | PlainMessage<ListMediaSubscriptionsResponse>
+      | undefined,
+    b:
+      | ListMediaSubscriptionsResponse
+      | PlainMessage<ListMediaSubscriptionsResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ListMediaSubscriptionsResponse, a, b);
   }
 }
@@ -433,22 +723,48 @@ export class CancelMediaSubscriptionRequest extends Message<CancelMediaSubscript
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.CancelMediaSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "media_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelMediaSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CancelMediaSubscriptionRequest {
     return new CancelMediaSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelMediaSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CancelMediaSubscriptionRequest {
     return new CancelMediaSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelMediaSubscriptionRequest {
-    return new CancelMediaSubscriptionRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CancelMediaSubscriptionRequest {
+    return new CancelMediaSubscriptionRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: CancelMediaSubscriptionRequest | PlainMessage<CancelMediaSubscriptionRequest> | undefined, b: CancelMediaSubscriptionRequest | PlainMessage<CancelMediaSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | CancelMediaSubscriptionRequest
+      | PlainMessage<CancelMediaSubscriptionRequest>
+      | undefined,
+    b:
+      | CancelMediaSubscriptionRequest
+      | PlainMessage<CancelMediaSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CancelMediaSubscriptionRequest, a, b);
   }
 }
@@ -463,23 +779,44 @@ export class CancelMediaSubscriptionResponse extends Message<CancelMediaSubscrip
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.media.v1.CancelMediaSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.media.v1.CancelMediaSubscriptionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelMediaSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): CancelMediaSubscriptionResponse {
     return new CancelMediaSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelMediaSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): CancelMediaSubscriptionResponse {
     return new CancelMediaSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelMediaSubscriptionResponse {
-    return new CancelMediaSubscriptionResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): CancelMediaSubscriptionResponse {
+    return new CancelMediaSubscriptionResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: CancelMediaSubscriptionResponse | PlainMessage<CancelMediaSubscriptionResponse> | undefined, b: CancelMediaSubscriptionResponse | PlainMessage<CancelMediaSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | CancelMediaSubscriptionResponse
+      | PlainMessage<CancelMediaSubscriptionResponse>
+      | undefined,
+    b:
+      | CancelMediaSubscriptionResponse
+      | PlainMessage<CancelMediaSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(CancelMediaSubscriptionResponse, a, b);
   }
 }
@@ -501,22 +838,48 @@ export class ResumeMediaSubscriptionRequest extends Message<ResumeMediaSubscript
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sited_io.media.v1.ResumeMediaSubscriptionRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "media_subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    {
+      no: 1,
+      name: "media_subscription_id",
+      kind: "scalar",
+      T: 9 /* ScalarType.STRING */,
+    },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeMediaSubscriptionRequest {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ResumeMediaSubscriptionRequest {
     return new ResumeMediaSubscriptionRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeMediaSubscriptionRequest {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeMediaSubscriptionRequest {
     return new ResumeMediaSubscriptionRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeMediaSubscriptionRequest {
-    return new ResumeMediaSubscriptionRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeMediaSubscriptionRequest {
+    return new ResumeMediaSubscriptionRequest().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: ResumeMediaSubscriptionRequest | PlainMessage<ResumeMediaSubscriptionRequest> | undefined, b: ResumeMediaSubscriptionRequest | PlainMessage<ResumeMediaSubscriptionRequest> | undefined): boolean {
+  static equals(
+    a:
+      | ResumeMediaSubscriptionRequest
+      | PlainMessage<ResumeMediaSubscriptionRequest>
+      | undefined,
+    b:
+      | ResumeMediaSubscriptionRequest
+      | PlainMessage<ResumeMediaSubscriptionRequest>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ResumeMediaSubscriptionRequest, a, b);
   }
 }
@@ -531,24 +894,44 @@ export class ResumeMediaSubscriptionResponse extends Message<ResumeMediaSubscrip
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sited_io.media.v1.ResumeMediaSubscriptionResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-  ]);
+  static readonly typeName =
+    "sited_io.media.v1.ResumeMediaSubscriptionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => []);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResumeMediaSubscriptionResponse {
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): ResumeMediaSubscriptionResponse {
     return new ResumeMediaSubscriptionResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResumeMediaSubscriptionResponse {
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeMediaSubscriptionResponse {
     return new ResumeMediaSubscriptionResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeMediaSubscriptionResponse {
-    return new ResumeMediaSubscriptionResponse().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): ResumeMediaSubscriptionResponse {
+    return new ResumeMediaSubscriptionResponse().fromJsonString(
+      jsonString,
+      options,
+    );
   }
 
-  static equals(a: ResumeMediaSubscriptionResponse | PlainMessage<ResumeMediaSubscriptionResponse> | undefined, b: ResumeMediaSubscriptionResponse | PlainMessage<ResumeMediaSubscriptionResponse> | undefined): boolean {
+  static equals(
+    a:
+      | ResumeMediaSubscriptionResponse
+      | PlainMessage<ResumeMediaSubscriptionResponse>
+      | undefined,
+    b:
+      | ResumeMediaSubscriptionResponse
+      | PlainMessage<ResumeMediaSubscriptionResponse>
+      | undefined,
+  ): boolean {
     return proto3.util.equals(ResumeMediaSubscriptionResponse, a, b);
   }
 }
-

@@ -3,7 +3,28 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddImageToOfferRequest, AddImageToOfferResponse, CreateOfferRequest, CreateOfferResponse, DeleteOfferRequest, DeleteOfferResponse, GetMyOfferRequest, GetMyOfferResponse, GetOfferRequest, GetOfferResponse, ListOffersRequest, ListOffersResponse, PutPriceToOfferRequest, PutPriceToOfferResponse, RemoveImageFromOfferRequest, RemoveImageFromOfferResponse, RemovePriceFromOfferRequest, RemovePriceFromOfferResponse, UpdateOfferRequest, UpdateOfferResponse } from "./offer_pb.js";
+import {
+  AddImageToOfferRequest,
+  AddImageToOfferResponse,
+  CreateOfferRequest,
+  CreateOfferResponse,
+  DeleteOfferRequest,
+  DeleteOfferResponse,
+  GetMyOfferRequest,
+  GetMyOfferResponse,
+  GetOfferRequest,
+  GetOfferResponse,
+  ListOffersRequest,
+  ListOffersResponse,
+  PutPriceToOfferRequest,
+  PutPriceToOfferResponse,
+  RemoveImageFromOfferRequest,
+  RemoveImageFromOfferResponse,
+  RemovePriceFromOfferRequest,
+  RemovePriceFromOfferResponse,
+  UpdateOfferRequest,
+  UpdateOfferResponse,
+} from "./offer_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -102,6 +123,5 @@ export const OfferService = {
       O: RemovePriceFromOfferResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-
